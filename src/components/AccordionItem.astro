@@ -1,0 +1,48 @@
+---
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<details class="summary-item">
+  <summary class="summary-title">{title}</summary>
+  <div class="summary-content">
+    <div class="summary-inner">
+      <slot />
+    </div>
+  </div>
+</details>
+
+<style>
+  .summary-item {
+    width: 100%;
+  }
+
+  .summary-title {
+    font-size: 10vw;
+    line-height: 1;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+    transition: all 0.3s ease;
+  }
+
+  .summary-item .summary-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: all 300ms ease;
+  }
+
+  .summary-item[open] .summary-content {
+    grid-template-rows: 1fr;
+  }
+
+  .summary-item .summary-content .summary-inner {
+    overflow: hidden;
+    min-height: 0;
+  }
+</style>
