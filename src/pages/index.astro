@@ -15,7 +15,7 @@ import "../styles/FaceTracker.css";
   <body>
     <Header />
     <main>
-      <h1>Andy Zou</h1>
+      <h1 class="title">Andy Zou</h1>
 
       <div class="face-container">
         <svg viewBox="0 0 640 640" class="circular-labels" aria-hidden="true">
@@ -73,7 +73,7 @@ import "../styles/FaceTracker.css";
         </div>
       </div>
 
-      <AccordionItem title="Directing">
+      <AccordionItem title="Director">
         <p>
           From pacing to design, Andy’s guiding star when it comes to creative
           is the audience. Making content that resonates beat by beat with
@@ -89,22 +89,17 @@ import "../styles/FaceTracker.css";
           <li>Making It</li>
         </ul>
       </AccordionItem>
-      <AccordionItem title="Editing">
+      <AccordionItem title="Creative">
         <p>
           Andy is a lifelong editor, with a deep understanding of the Adobe suite. He can even code in it.
         </p>
       </AccordionItem>
-      <AccordionItem title="Producing">
+      <AccordionItem title="Technologist">
         <p>
           Andy is a producer, with a deep understanding of the production process. He can even code in it.
         </p>
       </AccordionItem>
-      <AccordionItem title="Technologist">
-        <p>
-          Andy is a technologist, with a deep understanding of the technology process. He can even code in it.
-        </p>
-      </AccordionItem>
-      <AccordionItem title="VFX">
+      <AccordionItem title="Weirdo">
         <p>
           Andy is a VFX artist, with a deep understanding of the VFX process. He can even code in it.
         </p>
@@ -121,6 +116,11 @@ import "../styles/FaceTracker.css";
     </main>
 
     <style>
+      .title {
+        font-size: 10vw;
+        margin-bottom: 1rem;
+      }
+
       main {
         padding: 1em;
         display: flex;
@@ -132,7 +132,7 @@ import "../styles/FaceTracker.css";
       /* Container sizes to SVG; face-tracker is overlaid and centered in the circle */
       .face-container {
         position: relative;
-        display: inline-block;
+        display: none;
         width: min(70vw, 70vh);
         aspect-ratio: 1;
         container-type: size;
