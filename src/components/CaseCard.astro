@@ -1,0 +1,25 @@
+---
+interface Props {
+  id: string;
+  title: string;
+  imageSrc: string;
+  imageAlt: string;
+  reverse?: boolean;
+}
+
+const { id, title, imageSrc, imageAlt, reverse = false } = Astro.props;
+---
+
+<section id={id} class={`case-card flex gap-8 flex-col my-4 ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
+  <div class="flex-1 flex-col justify-end my-auto">
+    <h3 class="text-center font-bold">{title}</h3>
+    <p class="text-justify md:px-24">
+      <slot />
+    </p>
+  </div>
+  <img
+    src={imageSrc}
+    alt={imageAlt}
+    class="card-hero flex-1 min-w-0 w-full h-auto object-contain self-center"
+  />
+</section>

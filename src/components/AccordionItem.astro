@@ -7,7 +7,7 @@ const { title } = Astro.props;
 
 <details class="summary-item" open>
   <summary class="summary-title">{title}</summary>
-  <div class="summary-content">
+  <div class="summary-content mb-8">
     <div class="summary-inner">
       <slot />
     </div>
@@ -20,7 +20,7 @@ const { title } = Astro.props;
   }
 
   .summary-title {
-    font-size: 10vw;
+    font-size: clamp(5rem, 10vw, 15rem);
     line-height: 1;
     font-weight: bold;
     cursor: pointer;

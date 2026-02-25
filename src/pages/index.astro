@@ -3,6 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import AccordionItem from "../components/AccordionItem.astro";
+import CaseCard from "../components/CaseCard.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import "../styles/FaceTracker.css";
 ---
@@ -13,7 +14,7 @@ import "../styles/FaceTracker.css";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <Header />
+    <!-- <Header /> -->
     <main>
       <h1 class="title">Andy Zou</h1>
 
@@ -74,46 +75,97 @@ import "../styles/FaceTracker.css";
       </div>
 
       <AccordionItem title="Director">
-        <p class="px-16">
-          From pacing to design, Andy’s guiding star when it comes to creative
-          is the audience. Making content that resonates beat by beat with
-          people is his goal. Whether it’s building on trending tropes or shared
-          humanity, Andy strives to find what resonates with people.
-        </p>
-        <section id="comedy-central" class="case-card flex gap-8 flex-col md:flex-row">
-          <div class="flex-1 flex-col justify-end my-auto">
-            <h2 class="text-center font-bold">Comedy Central Digital</h2>
-            <p class="text-md text-justify">
-              As a Social Producer on Comedy Central's Webby-winning digital
-              team, Andy spearheaded multiple projects like episodes of <i>Mini-Mocks</i
-              >, music videos, and other original content collaborations with
-              notable influencers.
-            </p>
-          </div>
-          <img
-            src="/public/blog-placeholder-2.jpg"
-            alt="Comedy Central Collage"
-            class="card-hero flex-1 min-w-0 w-full h-auto"
-          />
-        </section>
+        <CaseCard
+          id="comedy-central"
+          title=""
+          imageSrc="/public/blog-placeholder-2.jpg"
+          imageAlt="Comedy Central Collage"
+          reverse
+        >
+          From pacing to design, Andy’s guiding star with directing is
+          resonating with the audience. Whether it’s building on the latest
+          trends or cultural moments, he seeks to connect with the audience on a
+          human level.
+        </CaseCard>
+        <CaseCard
+          id="comedy-central"
+          title="Comedy Central Digital"
+          imageSrc="/public/blog-placeholder-2.jpg"
+          imageAlt="Comedy Central Collage"
+        >
+          As a Social Producer on Comedy Central's Webby-winning digital team,
+          Andy spearheaded directing on multiple projects like <i>Mini-Mocks</i
+          >, music videos, and other original content collaborations with
+          notable influencers.
+        </CaseCard>
+        <CaseCard
+          id="comedy-central"
+          title="Comedy Central Digital"
+          imageSrc="/public/blog-placeholder-2.jpg"
+          imageAlt="Comedy Central Collage"
+          reverse
+        >
+          As a Social Producer on Comedy Central's Webby-winning digital team,
+          Andy spearheaded multiple projects like episodes of <i>Mini-Mocks</i>,
+          music videos, and other original content collaborations with notable
+          influencers.
+        </CaseCard>
       </AccordionItem>
       <AccordionItem title="Creative">
-        <p>
-          Andy is a lifelong editor, with a deep understanding of the Adobe
-          suite. He can even code in it.
-        </p>
+        <CaseCard
+          id="polygon"
+          title="Polygon Labs Spec Spot"
+          imageSrc="/public/blog-placeholder-2.jpg"
+          imageAlt="Polygon Labs Spec Spot"
+        >
+          Developed a flagship spot for Polygon Labs, translating his understanding of web3 infrastructure into a relatable concept.
+        </CaseCard>
       </AccordionItem>
       <AccordionItem title="Technologist">
-        <p>
-          Andy is a producer, with a deep understanding of the production
-          process. He can even code in it.
-        </p>
+        <CaseCard
+          id="tech"
+          title=""
+          imageSrc="/public/blog-placeholder-2.jpg"
+          imageAlt="Tech Forward Collage"
+          reverse
+        >
+          With a background in Mathematics & Computer Science, Andy has always
+          embraced the technical aspects of production. from coding custom After
+          Effects scripts to attempting niche immersive VR workflows, he enjoys
+          expanding his capabilities.
+        </CaseCard>
+        <CaseCard
+          id="tech"
+          title=""
+          imageSrc="/public/blog-placeholder-2.jpg"
+          imageAlt="Tech Forward Collage"
+        >
+          A constant tinkerer, Andy's breadth of experience includes traditional
+          3D tools such as Unreal Engine, Unity, Blender, and more.
+        </CaseCard>
+        <CaseCard
+          id="ai"
+          title=""
+          imageSrc="/public/blog-placeholder-2.jpg"
+          imageAlt="AI Collage"
+          reverse
+        >
+          But Andy also knows how to grow with the times, dabbling in AI-driven
+          generative workflows from platforms like Higgsfield and Kling to
+          API-driven bespoke applications such as ComfyUI and Veo3.
+        </CaseCard>
       </AccordionItem>
       <AccordionItem title="Weirdo">
-        <p>
-          Andy is a VFX artist, with a deep understanding of the VFX process. He
-          can even code in it.
-        </p>
+        <CaseCard
+          id="personal-projects"
+          title="Personal Projects"
+          imageSrc="/public/blog-placeholder-2.jpg"
+          imageAlt="Personal Projects Collage"
+        >
+          Having started in the comedy scene, Andy has cultivated a unique voice
+          in his personal work, always tapping into absurd humor that still
+          manages to resonate on a human level.</CaseCard
+        >
       </AccordionItem>
       <Footer />
       <script>
@@ -134,6 +186,8 @@ import "../styles/FaceTracker.css";
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        max-width: 1280px;
+        margin: 0 auto;
       }
 
       /* Container sizes to SVG; face-tracker is overlaid and centered in the circle */
