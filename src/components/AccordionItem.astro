@@ -5,7 +5,7 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<details class="summary-item">
+<details class="summary-item" open>
   <summary class="summary-title">{title}</summary>
   <div class="summary-content">
     <div class="summary-inner">
@@ -26,12 +26,14 @@ const { title } = Astro.props;
     cursor: pointer;
     user-select: none;
     list-style: none;
-    &:hover {
+    transition: background-color 0.3s ease;
+  }
+  /* Only enable hover on hover-capable devices */
+  @media (hover: hover) and (pointer: fine) {
+    .summary-title:hover {
       background-color: rgba(0, 0, 0, 0.05);
     }
-    transition: all 0.3s ease;
   }
-
   .summary-item .summary-content {
     display: grid;
     grid-template-rows: 0fr;
