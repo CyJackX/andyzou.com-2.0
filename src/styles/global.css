@@ -55,7 +55,6 @@ h4,
 h5,
 h6 {
 	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
 	line-height: 1.2;
 }
 h1 {
@@ -79,12 +78,10 @@ b {
 }
 a {
 	color: var(--accent);
+	text-decoration: underline
 }
 a:hover {
 	color: var(--accent);
-}
-p {
-	margin-bottom: 1em;
 }
 .prose p {
 	margin-bottom: 2em;
@@ -119,10 +116,6 @@ blockquote {
 	padding: 0 0 0 20px;
 	margin: 0px;
 	font-size: 1.333em;
-}
-hr {
-	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
 }
 @media (max-width: 768px) {
 	body {

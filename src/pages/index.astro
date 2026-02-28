@@ -1,11 +1,20 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
+import Image from "astro/components/Image.astro";
 import Footer from "../components/Footer.astro";
 import AccordionItem from "../components/AccordionItem.astro";
 import CaseCard from "../components/CaseCard.astro";
+import CaseCard2 from "../components/CaseCard2.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import "../styles/FaceTracker.css";
+import blogPlaceholder2 from "../images/blog-placeholder-2.jpg";
+import azaleaShoot from "../images/AzaleaShootSelects-07.jpg";
+import polygon from "../images/polygon.png";
+import pissterine from "../images/pissterine.jpg";
+import tootsies from "../images/tootsies_06.06.25-04326-Enhanced-NR.jpg";
+import tootsies2 from "../images/tootsies_06.06.25-03807.jpg";
+import dbh from "../images/dbh.jpg";
 ---
 
 <!doctype html>
@@ -17,22 +26,20 @@ import "../styles/FaceTracker.css";
     <!-- <Header /> -->
     <main>
       <h1 class="title">Andy Zou</h1>
+      <h2>Video Director & Creative Technologist</h2>
 
-      <div class="face-container">
+      <!-- <div class="face-container">
         <svg viewBox="0 0 640 640" class="circular-labels" aria-hidden="true">
           <defs>
-            <!-- Top arc: 9 o'clock → 3 o'clock (through 12) -->
             <path
               id="circle-path-top"
               d="M 30 320 A 290 290 0 0 1 610 320"
               fill="none"></path>
-            <!-- Bottom arc: 3 o'clock → 9 o'clock (through 6), opposite direction -->
             <path
               id="circle-path-bottom"
               d="M 30 320 A 290 290 0 0 0 610 320"
               fill="none"></path>
           </defs>
-          <!-- NW quadrant -->
           <text class="circle-label">
             <textPath
               href="#circle-path-top"
@@ -40,7 +47,6 @@ import "../styles/FaceTracker.css";
               text-anchor="middle">Director</textPath
             >
           </text>
-          <!-- NE / top right -->
           <text class="circle-label">
             <textPath
               href="#circle-path-top"
@@ -48,7 +54,6 @@ import "../styles/FaceTracker.css";
               text-anchor="middle">Creative</textPath
             >
           </text>
-          <!-- SW quadrant -->
           <text class="circle-label">
             <textPath
               href="#circle-path-bottom"
@@ -56,7 +61,6 @@ import "../styles/FaceTracker.css";
               text-anchor="middle">Tech Wiz</textPath
             >
           </text>
-          <!-- SE quadrant -->
           <text class="circle-label">
             <textPath
               href="#circle-path-bottom"
@@ -72,13 +76,12 @@ import "../styles/FaceTracker.css";
           data-debug="true"
         >
         </div>
-      </div>
+      </div> -->
 
       <AccordionItem title="Director">
         <CaseCard
           id="comedy-central"
-          title=""
-          imageSrc="/public/blog-placeholder-2.jpg"
+          imageSrc={blogPlaceholder2}
           imageAlt="Comedy Central Collage"
           reverse
         >
@@ -90,7 +93,7 @@ import "../styles/FaceTracker.css";
         <CaseCard
           id="comedy-central"
           title="Comedy Central Digital"
-          imageSrc="/public/blog-placeholder-2.jpg"
+          imageSrc={blogPlaceholder2}
           imageAlt="Comedy Central Collage"
         >
           As a Social Producer on Comedy Central's Webby-winning digital team,
@@ -99,57 +102,106 @@ import "../styles/FaceTracker.css";
           notable influencers.
         </CaseCard>
         <CaseCard
-          id="comedy-central"
-          title="Comedy Central Digital"
-          imageSrc="/public/blog-placeholder-2.jpg"
+          id="snapchat"
+          title="Making It"
+          imageSrc={blogPlaceholder2}
           imageAlt="Comedy Central Collage"
           reverse
         >
-          As a Social Producer on Comedy Central's Webby-winning digital team,
-          Andy spearheaded multiple projects like episodes of <i>Mini-Mocks</i>,
-          music videos, and other original content collaborations with notable
-          influencers.
+          As Director, Cinematographer, and Editor, Andy brought an original
+          vertical series to life for Snapchat's <i>Snap Originals</i>.
         </CaseCard>
-      </AccordionItem>
-      <AccordionItem title="Creative">
+        <CaseCard2 imageSrc={dbh} imageAlt="Death Becomes Her" class="w-2xl">
+          <span slot="title">Death Becomes Her<br/> on Broadway</span>
+          <span slot="copy">asdfas dasd fasd fsad </span>
+        </CaseCard2>
+        <CaseCard
+          id="other-directing"
+          title="Shorts & More"
+          imageSrc={blogPlaceholder2}
+          imageAlt="Shorts and more"
+        >
+          Andy has written, directed, and produced on a wide array of projects
+          ranging from branded content to comedy shorts, music videos, and more.
+          https://www.youtube.com/watch?v=_98xIvAvOhE
+        </CaseCard>
+
+        <section
+          id="rizzle"
+          class={`case-card flex gap-4 md:gap-8 flex-col my-8`}
+        >
+          <div class="flex-1 flex-col justify-end my-auto">
+            <h3 class="text-center font-bold">Rizzle</h3>
+            <p class="text-center hidden md:px-24 md:block">
+              Created a series of videos for vertical platform Rizzle and won
+              $1000 in its Asian Comedy Festival Competition.
+            </p>
+          </div>
+          <div class="flex-1 flex">
+            <video
+              src={"/videos/rizzle1.mp4"}
+              class="rizzlevideo"
+              autoplay
+              loop
+              muted
+              playsinline></video>
+            <video
+              src={"/videos/rizzle2.mp4"}
+              class="rizzlevideo"
+              autoplay
+              loop
+              muted
+              playsinline></video>
+            <video
+              src={"/videos/rizzle3.mp4"}
+              class="rizzlevideo"
+              autoplay
+              loop
+              muted
+              playsinline></video>
+          </div>
+
+          <p class="text-center md:px-24 md:hidden"></p>
+        </section>
         <CaseCard
           id="polygon"
           title="Polygon Labs Spec Spot"
-          imageSrc="/public/blog-placeholder-2.jpg"
+          imageSrc={polygon}
           imageAlt="Polygon Labs Spec Spot"
         >
-          Developed a flagship spot for Polygon Labs, translating his understanding of web3 infrastructure into a relatable concept.
+          Pitched a flagship spot for Polygon Labs, translating his
+          understanding of web3 infrastructure into a relatable concept.
+        </CaseCard>
+        <CaseCard
+          id="instant-magenta"
+          title="Producing & Other Creative Services"
+          imageSrc={blogPlaceholder2}
+          imageAlt="Instant Magenta Collage"
+          reverse
+        >
+          From editing for Hollywood socials to full-service promos for Broadway
+          productions, Andy can lend a hand through his production arm <a
+            href="www.instantmagenta.com"
+            class="text-nowrap"
+            target="_blank">Instant Magenta</a
+          >.
         </CaseCard>
       </AccordionItem>
       <AccordionItem title="Technologist">
         <CaseCard
           id="tech"
-          title=""
-          imageSrc="/public/blog-placeholder-2.jpg"
-          imageAlt="Tech Forward Collage"
+          videoSrc="/videos/Tootsies Promo v1_2_400.mp4"
           reverse
         >
           With a background in Mathematics & Computer Science, Andy has always
-          embraced the technical aspects of production. from coding custom After
-          Effects scripts to attempting niche immersive VR workflows, he enjoys
-          expanding his capabilities.
+          embraced the technical aspects of production. From coding custom After
+          Effects scripts to niche immersive workflows, he enjoys the tinkering.
         </CaseCard>
-        <CaseCard
-          id="tech"
-          title=""
-          imageSrc="/public/blog-placeholder-2.jpg"
-          imageAlt="Tech Forward Collage"
-        >
-          A constant tinkerer, Andy's breadth of experience includes traditional
-          3D tools such as Unreal Engine, Unity, Blender, and more.
+        <CaseCard id="tech" videoSrc="/videos/Head to Head_640.mp4">
+          Andy's breadth of experience includes traditional 3D tools such as
+          Unreal Engine, Unity, Blender, and more.
         </CaseCard>
-        <CaseCard
-          id="ai"
-          title=""
-          imageSrc="/public/blog-placeholder-2.jpg"
-          imageAlt="AI Collage"
-          reverse
-        >
+        <CaseCard id="ai" videoSrc="/videos/AI Sample_400.mp4" reverse>
           But Andy also knows how to grow with the times, dabbling in AI-driven
           generative workflows from platforms like Higgsfield and Kling to
           API-driven bespoke applications such as ComfyUI and Veo3.
@@ -157,14 +209,41 @@ import "../styles/FaceTracker.css";
       </AccordionItem>
       <AccordionItem title="Weirdo">
         <CaseCard
-          id="personal-projects"
-          title="Personal Projects"
-          imageSrc="/public/blog-placeholder-2.jpg"
-          imageAlt="Personal Projects Collage"
+          id="pissterine"
+          imageSrc={pissterine}
+          imageAlt="Pissterine"
+          reverse
         >
-          Having started in the comedy scene, Andy has cultivated a unique voice
-          in his personal work, always tapping into absurd humor that still
-          manages to resonate on a human level.</CaseCard
+          Andy once kickstarted a Listerine knockoff that got shutdown in
+          trademark court.<video
+            src={"/videos/pissterine.mp4"}
+            class="h-1/2"
+            autoplay
+            loop
+            muted
+            playsinline></video></CaseCard
+        >
+        <CaseCard
+          id="tootsies"
+          title="Tootsie's Video Vault"
+          imageSrc={tootsies}
+          imageAlt="Tootsie's Video Vault Collage"
+        >
+          Andy is a co-producer on annual Brooklyn film jam <a
+            href="https://tootsiesvideovault.com"
+            class="text-nowrap"
+            target="_blank">Tootsie's Video Vault</a
+          >.
+          <Image src={tootsies2} alt="Step and Repeat at Tootsies" />
+        </CaseCard>
+        <CaseCard
+          id="about"
+          imageSrc={azaleaShoot}
+          imageAlt="About Andy Collage"
+          reverse
+        >
+          Andy lives in Brooklyn with his wife and collaborator Katie Sicking
+          and their daughter Azalea.</CaseCard
         >
       </AccordionItem>
       <Footer />
@@ -175,7 +254,7 @@ import "../styles/FaceTracker.css";
 
     <style>
       .title {
-        font-size: 10vw;
+        font-size: clamp(5rem, 10vw, 15rem);
         margin-bottom: 1rem;
         font-weight: bold;
       }
@@ -188,6 +267,11 @@ import "../styles/FaceTracker.css";
         justify-content: center;
         max-width: 1280px;
         margin: 0 auto;
+      }
+
+      .rizzlevideo {
+        width: 180px;
+        height: auto;
       }
 
       /* Container sizes to SVG; face-tracker is overlaid and centered in the circle */

@@ -6,8 +6,8 @@ const { title } = Astro.props;
 ---
 
 <details class="summary-item" open>
-  <summary class="summary-title">{title}</summary>
-  <div class="summary-content mb-8">
+  <summary class="summary-title text-center md:text-left border-b-4 pt-2 md:pt-8">{title}</summary>
+  <div class="summary-content border-b-4">
     <div class="summary-inner">
       <slot />
     </div>
