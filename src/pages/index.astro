@@ -212,8 +212,8 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
 
       .caseRow {
         display: flex;
+        flex-wrap: wrap;
         gap: 16px;
-        overflow-x: auto;
         padding-bottom: 8px;
       }
 
