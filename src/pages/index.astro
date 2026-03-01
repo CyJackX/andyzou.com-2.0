@@ -84,6 +84,9 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
           }
 
           outer.className = "tile";
+          if (outer.tagName === "ARTICLE") {
+            outer.tabIndex = 0;
+          }
           outer.dataset.id = caseItem.id;
 
           if (caseItem.media.kind === "image") {
@@ -251,33 +254,51 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
         inset: 0;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background: rgba(0, 0, 0, 0.25);
+        justify-content: flex-end;
+        align-items: flex-start;
         color: white;
-        text-align: center;
-        padding: 12px;
+        text-align: left;
+        padding: 14px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.1));
         opacity: 0;
         transition: opacity 200ms ease;
       }
 
       .tile:hover .overlay,
-      .tile:focus-within .overlay {
+      .tile:focus-within .overlay,
+      .tile:focus-visible .overlay {
         opacity: 1;
       }
 
       .titleText {
         font-weight: 700;
+        line-height: 1.2;
+      }
+
+      .roles,
+      .copy {
+        margin-top: 6px;
+        opacity: 0;
+        transform: translateY(6px);
+        transition: opacity 200ms ease, transform 200ms ease;
       }
 
       .roles {
-        margin-top: 6px;
         font-size: 0.95rem;
       }
 
       .copy {
-        margin-top: 6px;
         font-size: 0.9rem;
+      }
+
+      .tile:hover .roles,
+      .tile:hover .copy,
+      .tile:focus-within .roles,
+      .tile:focus-within .copy,
+      .tile:focus-visible .roles,
+      .tile:focus-visible .copy {
+        opacity: 1;
+        transform: translateY(0);
       }
     </style>
   </body>
