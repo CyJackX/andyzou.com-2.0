@@ -35,7 +35,7 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
           <input
             id="caseSearch"
             type="search"
-            placeholder="Search title or description"
+            placeholder="Search title, roles, or description"
           />
         </label>
       </div>
@@ -62,7 +62,8 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
 
         function includesSearch(caseItem, value) {
           if (!value) return true;
-          const haystack = `${caseItem.title} ${caseItem.copy}`.toLowerCase();
+          const haystack = `${caseItem.title} ${caseItem.roles} ${caseItem.copy}`
+            .toLowerCase();
           return haystack.includes(value.toLowerCase());
         }
 
@@ -75,6 +76,12 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
           const outer = caseItem.href
             ? Object.assign(document.createElement("a"), { href: caseItem.href })
             : document.createElement("article");
+
+          if (outer.tagName === "A") {
+            outer.target = "_blank";
+            outer.rel = "noopener noreferrer";
+            outer.setAttribute("aria-label", `${caseItem.title} on YouTube`);
+          }
 
           outer.className = "tile";
           outer.dataset.id = caseItem.id;
@@ -130,7 +137,11 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
           copy.className = "copy";
           copy.textContent = caseItem.copy;
 
-          overlay.append(title, copy);
+          const roles = document.createElement("div");
+          roles.className = "roles";
+          roles.textContent = caseItem.roles;
+
+          overlay.append(title, roles, copy);
           outer.append(overlay);
 
           return outer;
@@ -253,6 +264,20 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
       .tile:hover .overlay,
       .tile:focus-within .overlay {
         opacity: 1;
+      }
+
+      .titleText {
+        font-weight: 700;
+      }
+
+      .roles {
+        margin-top: 6px;
+        font-size: 0.95rem;
+      }
+
+      .copy {
+        margin-top: 6px;
+        font-size: 0.9rem;
       }
     </style>
   </body>

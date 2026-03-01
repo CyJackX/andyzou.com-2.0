@@ -6,36 +6,226 @@ export type Media =
 export type Case = {
   id: string;
   title: string;
+  roles: string;
   copy: string;
   tags: string[];
+  youtubeId?: string;
   href?: string;
   media: Media;
 };
 
+const youtubeThumb = (youtubeId: string) => `https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg`;
+const youtubeHref = (youtubeId: string) => `https://www.youtube.com/watch?v=${youtubeId}`;
+
 export const CASES: Case[] = [
   {
-    id: "death-becomes-her",
-    title: "Death Becomes Her — Broadway BTS Promos",
-    copy: "Director | Producer | Editor",
-    tags: ["broadway", "promo"],
+    id: "rebirthing-center",
+    title: "The Rebirthing Center",
+    roles: "Writer & Director",
+    copy: "Webby-nominated short for Comedy Central Digital.",
+    tags: ["comedy-central", "original"],
+    youtubeId: "BXOaAgDnpd8",
+    href: youtubeHref("BXOaAgDnpd8"),
     media: {
       kind: "image",
-      src: "/images/dbh.jpg",
-      alt: "Death Becomes Her",
+      src: youtubeThumb("BXOaAgDnpd8"),
+      alt: "The Rebirthing Center thumbnail",
     },
   },
   {
-    id: "rizzle",
-    title: "Rizzle Asian Comedy Fest",
-    copy: "Creator | Grand Prize Winner",
-    tags: ["comedy", "festival"],
+    id: "polyamorous-romcom",
+    title: "The Polyamorous RomCom ft. Yung Gravy",
+    roles: "Writer, Director, & Editor",
+    copy: "Comedy Central Digital sketch collaboration.",
+    tags: ["comedy-central", "collab"],
+    youtubeId: "XhMz5vRlya8",
+    href: youtubeHref("XhMz5vRlya8"),
     media: {
-      kind: "strip",
-      sources: [
-        "/videos/rizzle1.mp4",
-        "/videos/rizzle2.mp4",
-        "/videos/rizzle3.mp4",
-      ],
+      kind: "image",
+      src: youtubeThumb("XhMz5vRlya8"),
+      alt: "The Polyamorous RomCom thumbnail",
+    },
+  },
+  {
+    id: "remote-control-boss",
+    title: "Remote Control Boss",
+    roles: "Writer, Director, & Editor",
+    copy: "Comedy Central Digital character-driven sketch.",
+    tags: ["comedy-central", "original"],
+    youtubeId: "2PPkDxOul_0",
+    href: youtubeHref("2PPkDxOul_0"),
+    media: {
+      kind: "image",
+      src: youtubeThumb("2PPkDxOul_0"),
+      alt: "Remote Control Boss thumbnail",
+    },
+  },
+  {
+    id: "litterbox-office",
+    title: "The Litterbox Office",
+    roles: "Writer & Director",
+    copy: "500M+ views comedy concept.",
+    tags: ["comedy-central", "viral"],
+    youtubeId: "KIdN_iYBW7A",
+    href: youtubeHref("KIdN_iYBW7A"),
+    media: {
+      kind: "image",
+      src: youtubeThumb("KIdN_iYBW7A"),
+      alt: "The Litterbox Office thumbnail",
+    },
+  },
+  {
+    id: "icontact",
+    title: "iContact ft. DeStorm",
+    roles: "Writer, Director, & Editor",
+    copy: "Comedy Central Digital collaboration.",
+    tags: ["comedy-central", "collab"],
+    youtubeId: "aQN6jBk_LWc",
+    href: youtubeHref("aQN6jBk_LWc"),
+    media: {
+      kind: "image",
+      src: youtubeThumb("aQN6jBk_LWc"),
+      alt: "iContact thumbnail",
+    },
+  },
+  {
+    id: "living-funeral-home",
+    title: "The Living Funeral Home ft. Lala Milan",
+    roles: "Writer & Director",
+    copy: "High-concept social comedy short.",
+    tags: ["comedy-central", "collab"],
+    youtubeId: "zcqkqql5VW0",
+    href: youtubeHref("zcqkqql5VW0"),
+    media: {
+      kind: "image",
+      src: youtubeThumb("zcqkqql5VW0"),
+      alt: "The Living Funeral Home thumbnail",
+    },
+  },
+  {
+    id: "teen-uncle",
+    title: "Teen Uncle ft. Adam Waheed",
+    roles: "Writer, Director, & Editor",
+    copy: "Comedy Central Digital talent collaboration.",
+    tags: ["comedy-central", "collab"],
+    youtubeId: "YUJIjQ0MytM",
+    href: youtubeHref("YUJIjQ0MytM"),
+    media: {
+      kind: "image",
+      src: youtubeThumb("YUJIjQ0MytM"),
+      alt: "Teen Uncle thumbnail",
+    },
+  },
+  {
+    id: "whameo",
+    title: "Whameo ft. Sven Johnson",
+    roles: "Writer, Director, & Editor",
+    copy: "Comedy Central Digital sketch piece.",
+    tags: ["comedy-central", "collab"],
+    youtubeId: "GBG1KLVBQPA",
+    href: youtubeHref("GBG1KLVBQPA"),
+    media: {
+      kind: "image",
+      src: youtubeThumb("GBG1KLVBQPA"),
+      alt: "Whameo thumbnail",
+    },
+  },
+  {
+    id: "take-a-deep-breath",
+    title: "Take a Deep F***ing Breath",
+    roles: "Writer & Director",
+    copy: "Comedy Central Originals short.",
+    tags: ["comedy-central", "original"],
+    youtubeId: "2Z4VgVKrveM",
+    href: youtubeHref("2Z4VgVKrveM"),
+    media: {
+      kind: "image",
+      src: youtubeThumb("2Z4VgVKrveM"),
+      alt: "Take a Deep F***ing Breath thumbnail",
+    },
+  },
+  {
+    id: "freezing-your-eggs",
+    title: "Freezing Your Eggs",
+    roles: "Writer, Director, DP, & Editor",
+    copy: "Comedy Central Originals sketch.",
+    tags: ["comedy-central", "original"],
+    youtubeId: "DJCgT1gw8nc",
+    href: youtubeHref("DJCgT1gw8nc"),
+    media: {
+      kind: "image",
+      src: youtubeThumb("DJCgT1gw8nc"),
+      alt: "Freezing Your Eggs thumbnail",
+    },
+  },
+  {
+    id: "vesting-up",
+    title: "Vesting Up",
+    roles: "Writer, Director, DP, & Editor",
+    copy: "Comedy Central Originals production.",
+    tags: ["comedy-central", "original"],
+    youtubeId: "gSojwTO5QZs",
+    href: youtubeHref("gSojwTO5QZs"),
+    media: {
+      kind: "image",
+      src: youtubeThumb("gSojwTO5QZs"),
+      alt: "Vesting Up thumbnail",
+    },
+  },
+  {
+    id: "rich-friend",
+    title: "Rich Friend ft. Anwar",
+    roles: "Director",
+    copy: "Rose Kelso music video series.",
+    tags: ["comedy-central", "music-video"],
+    youtubeId: "lQankmO_xbQ",
+    href: youtubeHref("lQankmO_xbQ"),
+    media: {
+      kind: "image",
+      src: youtubeThumb("lQankmO_xbQ"),
+      alt: "Rich Friend thumbnail",
+    },
+  },
+  {
+    id: "she-looks-like-her-dad",
+    title: "She Looks Like Her Dad ft. DeStorm",
+    roles: "Director",
+    copy: "Rose Kelso music video series.",
+    tags: ["comedy-central", "music-video"],
+    youtubeId: "oCYzAHPMTUM",
+    href: youtubeHref("oCYzAHPMTUM"),
+    media: {
+      kind: "image",
+      src: youtubeThumb("oCYzAHPMTUM"),
+      alt: "She Looks Like Her Dad thumbnail",
+    },
+  },
+  {
+    id: "staying-young-forever",
+    title: "Staying Young Forever ft. Lala Milan",
+    roles: "Director",
+    copy: "Rose Kelso music video series.",
+    tags: ["comedy-central", "music-video"],
+    youtubeId: "bFYFLfq6nZo",
+    href: youtubeHref("bFYFLfq6nZo"),
+    media: {
+      kind: "image",
+      src: youtubeThumb("bFYFLfq6nZo"),
+      alt: "Staying Young Forever thumbnail",
+    },
+  },
+  {
+    id: "nothing-gay-in-the-wild-west",
+    title: "Nothing Gay in the Wild West ft. Brooks Allison",
+    roles: "Director",
+    copy: "Rose Kelso music video series.",
+    tags: ["comedy-central", "music-video"],
+    youtubeId: "uE1Y7PHMdPc",
+    href: youtubeHref("uE1Y7PHMdPc"),
+    media: {
+      kind: "image",
+      src: youtubeThumb("uE1Y7PHMdPc"),
+      alt: "Nothing Gay in the Wild West thumbnail",
     },
   },
 ];
