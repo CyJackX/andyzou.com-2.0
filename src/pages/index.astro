@@ -213,14 +213,14 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
         max-width: 320px;
       }
 
-      .caseRow {
+      :global(.caseRow) {
         display: flex;
         flex-wrap: wrap;
         gap: 16px;
         padding-bottom: 8px;
       }
 
-      .tile {
+      :global(.tile) {
         flex: 0 0 320px;
         aspect-ratio: 16 / 9;
         position: relative;
@@ -230,73 +230,75 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
         color: inherit;
       }
 
-      .media {
+      :global(.media) {
         width: 100%;
         height: 100%;
         object-fit: cover;
         display: block;
       }
 
-      .strip {
+      :global(.strip) {
         display: flex;
         width: 100%;
         height: 100%;
       }
 
-      .stripItem {
+      :global(.stripItem) {
         width: 33.333%;
         height: 100%;
         object-fit: cover;
       }
 
-      .overlay {
+      :global(.overlay) {
         position: absolute;
         inset: 0;
+        z-index: 1;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-start;
+        justify-content: center;
+        align-items: center;
         color: white;
-        text-align: left;
-        padding: 14px;
+        text-align: center;
+        padding: 1rem;
+        pointer-events: none;
         background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.1));
         opacity: 0;
         transition: opacity 200ms ease;
       }
 
-      .tile:hover .overlay,
-      .tile:focus-within .overlay,
-      .tile:focus-visible .overlay {
+      :global(.tile:hover .overlay),
+      :global(.tile:focus-within .overlay),
+      :global(.tile:focus-visible .overlay) {
         opacity: 1;
       }
 
-      .titleText {
+      :global(.titleText) {
         font-weight: 700;
         line-height: 1.2;
       }
 
-      .roles,
-      .copy {
+      :global(.roles),
+      :global(.copy) {
         margin-top: 6px;
         opacity: 0;
         transform: translateY(6px);
         transition: opacity 200ms ease, transform 200ms ease;
       }
 
-      .roles {
+      :global(.roles) {
         font-size: 0.95rem;
       }
 
-      .copy {
+      :global(.copy) {
         font-size: 0.9rem;
       }
 
-      .tile:hover .roles,
-      .tile:hover .copy,
-      .tile:focus-within .roles,
-      .tile:focus-within .copy,
-      .tile:focus-visible .roles,
-      .tile:focus-visible .copy {
+      :global(.tile:hover .roles),
+      :global(.tile:hover .copy),
+      :global(.tile:focus-within .roles),
+      :global(.tile:focus-within .copy),
+      :global(.tile:focus-visible .roles),
+      :global(.tile:focus-visible .copy) {
         opacity: 1;
         transform: translateY(0);
       }
