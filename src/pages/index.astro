@@ -32,7 +32,7 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
 
       </div>
 
-      <div id="caseRow" class="caseRow"></div>
+      <div id="tilescontainer" class="tilescontainer"></div>
 
       <script
         type="application/json"
@@ -42,7 +42,7 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
 
       <script type="module">
         const casesEl = document.getElementById("__cases");
-        const caseRow = document.getElementById("caseRow");
+        const tilescontainer = document.getElementById("tilescontainer");
         const checkboxes = Array.from(document.querySelectorAll('input[name="tag"]'));
 
         const cases = JSON.parse(casesEl?.textContent || "[]");
@@ -139,7 +139,7 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
               intersectsTags(caseItem, state.selectedTags),
           );
 
-          caseRow.replaceChildren(...filtered.map((caseItem) => renderTile(caseItem)));
+          tilescontainer.replaceChildren(...filtered.map((caseItem) => renderTile(caseItem)));
         }
 
         checkboxes.forEach((checkbox) => {
@@ -180,13 +180,16 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
 
       .tagList {
         display: flex;
+        justify-content:center;
         flex-wrap: wrap;
         gap: 12px;
       }
 
-      :global(.caseRow) {
+      .tilescontainer {
         display: flex;
         flex-wrap: wrap;
+        justify-content:center;
+        align-items:center;
         gap: 16px;
         padding-bottom: 8px;
       }
