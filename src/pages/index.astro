@@ -126,18 +126,17 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
             subtitle.hidden = true;
           }
 
-          const copy = document.createElement("div");
-          copy.className = "copy";
-          copy.textContent = caseItem.copy || "";
-          if (!caseItem.copy) {
-            copy.hidden = true;
-          }
-
           const roles = document.createElement("div");
           roles.className = "roles";
           roles.textContent = caseItem.roles;
 
-          overlay.append(title, subtitle, roles, copy);
+          overlay.append(title, subtitle, roles);
+          if (caseItem.copy && caseItem.copy.trim().length > 0) {
+            const copy = document.createElement("div");
+            copy.className = "copy";
+            copy.textContent = caseItem.copy;
+            overlay.append(copy);
+          }
           outer.append(overlay);
 
           return outer;
