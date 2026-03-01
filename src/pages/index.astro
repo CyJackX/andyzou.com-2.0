@@ -13,7 +13,7 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <main>
+    <main class ="text-center">
       <h1 class="title">Andy Zou</h1>
       <h2>Video Director & Creative Technologist</h2>
 
@@ -30,14 +30,6 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
           </div>
         </fieldset>
 
-        <label class="searchLabel">
-          Search
-          <input
-            id="caseSearch"
-            type="search"
-            placeholder="Search title, roles, or description"
-          />
-        </label>
       </div>
 
       <div id="caseRow" class="caseRow"></div>
@@ -51,21 +43,12 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
       <script type="module">
         const casesEl = document.getElementById("__cases");
         const caseRow = document.getElementById("caseRow");
-        const search = document.getElementById("caseSearch");
         const checkboxes = Array.from(document.querySelectorAll('input[name="tag"]'));
 
         const cases = JSON.parse(casesEl?.textContent || "[]");
         const state = {
           selectedTags: new Set(),
-          search: "",
         };
-
-        function includesSearch(caseItem, value) {
-          if (!value) return true;
-          const haystack = `${caseItem.title} ${caseItem.roles} ${caseItem.copy}`
-            .toLowerCase();
-          return haystack.includes(value.toLowerCase());
-        }
 
         function intersectsTags(caseItem, selectedTags) {
           if (selectedTags.size === 0) return true;
@@ -153,17 +136,11 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
         function render() {
           const filtered = cases.filter(
             (caseItem) =>
-              intersectsTags(caseItem, state.selectedTags) &&
-              includesSearch(caseItem, state.search),
+              intersectsTags(caseItem, state.selectedTags),
           );
 
           caseRow.replaceChildren(...filtered.map((caseItem) => renderTile(caseItem)));
         }
-
-        search?.addEventListener("input", (event) => {
-          state.search = event.currentTarget.value.trim();
-          render();
-        });
 
         checkboxes.forEach((checkbox) => {
           checkbox.addEventListener("change", (event) => {
@@ -205,12 +182,6 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
         display: flex;
         flex-wrap: wrap;
         gap: 12px;
-      }
-
-      .searchLabel {
-        display: grid;
-        gap: 6px;
-        max-width: 320px;
       }
 
       :global(.caseRow) {
