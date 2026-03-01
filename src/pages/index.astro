@@ -119,15 +119,25 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
           title.className = "titleText";
           title.textContent = caseItem.title;
 
+          const subtitle = document.createElement("div");
+          subtitle.className = "subtitleText";
+          subtitle.textContent = caseItem.subtitle || "";
+          if (!caseItem.subtitle) {
+            subtitle.hidden = true;
+          }
+
           const copy = document.createElement("div");
           copy.className = "copy";
-          copy.textContent = caseItem.copy;
+          copy.textContent = caseItem.copy || "";
+          if (!caseItem.copy) {
+            copy.hidden = true;
+          }
 
           const roles = document.createElement("div");
           roles.className = "roles";
           roles.textContent = caseItem.roles;
 
-          overlay.append(title, roles, copy);
+          overlay.append(title, subtitle, roles, copy);
           outer.append(overlay);
 
           return outer;
@@ -251,12 +261,24 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
         line-height: 1.2;
       }
 
+      :global(.subtitleText) {
+        margin-top: 4px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        opacity: 0.95;
+      }
+
       :global(.roles),
+      :global(.subtitleText),
       :global(.copy) {
         margin-top: 6px;
         opacity: 0;
         transform: translateY(6px);
         transition: opacity 200ms ease, transform 200ms ease;
+      }
+
+      :global(.subtitleText) {
+        margin-top: 4px;
       }
 
       :global(.roles) {
@@ -268,10 +290,13 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
       }
 
       :global(.tile:hover .roles),
+      :global(.tile:hover .subtitleText),
       :global(.tile:hover .copy),
       :global(.tile:focus-within .roles),
+      :global(.tile:focus-within .subtitleText),
       :global(.tile:focus-within .copy),
       :global(.tile:focus-visible .roles),
+      :global(.tile:focus-visible .subtitleText),
       :global(.tile:focus-visible .copy) {
         opacity: 1;
         transform: translateY(0);

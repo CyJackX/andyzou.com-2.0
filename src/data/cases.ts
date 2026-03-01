@@ -6,8 +6,9 @@ export type Media =
 export type Case = {
   id: string;
   title: string;
+  subtitle?: string;
   roles: string;
-  copy: string;
+  copy?: string;
   tags: string[];
   youtubeId?: string;
   href?: string;
@@ -34,7 +35,8 @@ export const CASES: Case[] = [
   },
   {
     id: "polyamorous-romcom",
-    title: "The Polyamorous RomCom ft. Yung Gravy",
+    title: "The Polyamorous RomCom",
+    subtitle: "ft. Yung Gravy",
     roles: "Writer, Director, & Editor",
     copy: "Comedy Central Digital sketch collaboration.",
     tags: ["comedy-central", "collab"],
@@ -76,7 +78,8 @@ export const CASES: Case[] = [
   },
   {
     id: "icontact",
-    title: "iContact ft. DeStorm",
+    title: "iContact",
+    subtitle: "ft. DeStorm",
     roles: "Writer, Director, & Editor",
     copy: "Comedy Central Digital collaboration.",
     tags: ["comedy-central", "collab"],
@@ -90,7 +93,8 @@ export const CASES: Case[] = [
   },
   {
     id: "living-funeral-home",
-    title: "The Living Funeral Home ft. Lala Milan",
+    title: "The Living Funeral Home",
+    subtitle: "ft. Lala Milan",
     roles: "Writer & Director",
     copy: "High-concept social comedy short.",
     tags: ["comedy-central", "collab"],
@@ -104,7 +108,8 @@ export const CASES: Case[] = [
   },
   {
     id: "teen-uncle",
-    title: "Teen Uncle ft. Adam Waheed",
+    title: "Teen Uncle",
+    subtitle: "ft. Adam Waheed",
     roles: "Writer, Director, & Editor",
     copy: "Comedy Central Digital talent collaboration.",
     tags: ["comedy-central", "collab"],
@@ -118,7 +123,8 @@ export const CASES: Case[] = [
   },
   {
     id: "whameo",
-    title: "Whameo ft. Sven Johnson",
+    title: "Whameo",
+    subtitle: "ft. Sven Johnson",
     roles: "Writer, Director, & Editor",
     copy: "Comedy Central Digital sketch piece.",
     tags: ["comedy-central", "collab"],
@@ -174,7 +180,8 @@ export const CASES: Case[] = [
   },
   {
     id: "rich-friend",
-    title: "Rich Friend ft. Anwar",
+    title: "Rich Friend",
+    subtitle: "ft. Anwar",
     roles: "Director",
     copy: "Rose Kelso music video series.",
     tags: ["comedy-central", "music-video"],
@@ -188,7 +195,8 @@ export const CASES: Case[] = [
   },
   {
     id: "she-looks-like-her-dad",
-    title: "She Looks Like Her Dad ft. DeStorm",
+    title: "She Looks Like Her Dad",
+    subtitle: "ft. DeStorm",
     roles: "Director",
     copy: "Rose Kelso music video series.",
     tags: ["comedy-central", "music-video"],
@@ -202,7 +210,8 @@ export const CASES: Case[] = [
   },
   {
     id: "staying-young-forever",
-    title: "Staying Young Forever ft. Lala Milan",
+    title: "Staying Young Forever",
+    subtitle: "ft. Lala Milan",
     roles: "Director",
     copy: "Rose Kelso music video series.",
     tags: ["comedy-central", "music-video"],
@@ -216,7 +225,8 @@ export const CASES: Case[] = [
   },
   {
     id: "nothing-gay-in-the-wild-west",
-    title: "Nothing Gay in the Wild West ft. Brooks Allison",
+    title: "Nothing Gay in the Wild West",
+    subtitle: "ft. Brooks Allison",
     roles: "Director",
     copy: "Rose Kelso music video series.",
     tags: ["comedy-central", "music-video"],
@@ -258,7 +268,8 @@ export const CASES: Case[] = [
   },
   {
     id: "beauty-and-the-bowl",
-    title: "Beauty and the Bowl ft. Uncle Function",
+    title: "Beauty and the Bowl",
+    subtitle: "ft. Uncle Function",
     roles: "Director, Cinematographer, & Editor",
     copy: "Sketch comedy featured on Funny Or Die.",
     tags: ["comedy-sketches", "collab"],
