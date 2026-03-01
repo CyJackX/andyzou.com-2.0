@@ -1,20 +1,10 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Image from "astro/components/Image.astro";
 import Footer from "../components/Footer.astro";
-import AccordionItem from "../components/AccordionItem.astro";
-import CaseCard from "../components/CaseCard.astro";
-import CaseCard2 from "../components/CaseCard2.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import "../styles/FaceTracker.css";
-import blogPlaceholder2 from "../images/blog-placeholder-2.jpg";
-import azaleaShoot from "../images/AzaleaShootSelects-07.jpg";
-import polygon from "../images/polygon.png";
-import pissterine from "../images/pissterine.jpg";
-import tootsies from "../images/tootsies_06.06.25-04326-Enhanced-NR.jpg";
-import tootsies2 from "../images/tootsies_06.06.25-03807.jpg";
-import dbh from "../images/dbh.jpg";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import { CASES } from "../data/cases";
+
+const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
 ---
 
 <!doctype html>
@@ -23,322 +13,246 @@ import dbh from "../images/dbh.jpg";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <!-- <Header /> -->
     <main>
       <h1 class="title">Andy Zou</h1>
       <h2>Video Director & Creative Technologist</h2>
 
-      <!-- <div class="face-container">
-        <svg viewBox="0 0 640 640" class="circular-labels" aria-hidden="true">
-          <defs>
-            <path
-              id="circle-path-top"
-              d="M 30 320 A 290 290 0 0 1 610 320"
-              fill="none"></path>
-            <path
-              id="circle-path-bottom"
-              d="M 30 320 A 290 290 0 0 0 610 320"
-              fill="none"></path>
-          </defs>
-          <text class="circle-label">
-            <textPath
-              href="#circle-path-top"
-              startOffset="25%"
-              text-anchor="middle">Director</textPath
-            >
-          </text>
-          <text class="circle-label">
-            <textPath
-              href="#circle-path-top"
-              startOffset="75%"
-              text-anchor="middle">Creative</textPath
-            >
-          </text>
-          <text class="circle-label">
-            <textPath
-              href="#circle-path-bottom"
-              startOffset="25%"
-              text-anchor="middle">Tech Wiz</textPath
-            >
-          </text>
-          <text class="circle-label">
-            <textPath
-              href="#circle-path-bottom"
-              startOffset="75%"
-              text-anchor="middle">About</textPath
-            >
-          </text>
-        </svg>
-        <div
-          class="face-tracker"
-          id="face"
-          data-base-path="/faces/"
-          data-debug="true"
-        >
-        </div>
-      </div> -->
-
-      <AccordionItem title="Director">
-        <CaseCard
-          id="comedy-central"
-          imageSrc={blogPlaceholder2}
-          imageAlt="Comedy Central Collage"
-          reverse
-        >
-          From pacing to design, Andy’s guiding star with directing is
-          resonating with the audience. Whether it’s building on the latest
-          trends or cultural moments, he seeks to connect with the audience on a
-          human level.
-        </CaseCard>
-        <CaseCard
-          id="comedy-central"
-          title="Comedy Central Digital"
-          imageSrc={blogPlaceholder2}
-          imageAlt="Comedy Central Collage"
-        >
-          As a Social Producer on Comedy Central's Webby-winning digital team,
-          Andy spearheaded directing on multiple projects like <i>Mini-Mocks</i
-          >, music videos, and other original content collaborations with
-          notable influencers.
-        </CaseCard>
-        <CaseCard
-          id="snapchat"
-          title="Making It"
-          imageSrc={blogPlaceholder2}
-          imageAlt="Comedy Central Collage"
-          reverse
-        >
-          As Director, Cinematographer, and Editor, Andy brought an original
-          vertical series to life for Snapchat's <i>Snap Originals</i>.
-        </CaseCard>
-        <CaseCard2 imageSrc={dbh} imageAlt="Death Becomes Her" className="w-2xl">
-          <span slot="title">Death Becomes Her<br/> Broadway BTS Promos</span>
-          <span slot="copy">Director | Producer | Editor</span>
-        </CaseCard2>
-        <CaseCard2 className="w-2xl aspect-video">
-          <div slot="background" class="flex border-radius-lg">
-            <video
-              src={"/videos/rizzle1.mp4"}
-              class="rizzlevideo"
-              autoplay
-              loop
-              muted
-              playsinline></video>
-            <video
-              src={"/videos/rizzle2.mp4"}
-              class="rizzlevideo"
-              autoplay
-              loop
-              muted
-              playsinline></video>
-            <video
-              src={"/videos/rizzle3.mp4"}
-              class="rizzlevideo"
-              autoplay
-              loop
-              muted
-              playsinline></video>
+      <div class="filters" aria-label="Case filters">
+        <fieldset>
+          <legend>Filter by tag</legend>
+          <div class="tagList">
+            {allTags.map((tag) => (
+              <label>
+                <input type="checkbox" name="tag" value={tag} />
+                {tag}
+              </label>
+            ))}
           </div>
-          <span slot="title">Rizzle's <br/>Asian Comedy Fest</span>
-          <span slot="copy">$1000 Grand Prize winner for a new vertical series!</span>
-        </CaseCard2>
-        <CaseCard
-          id="other-directing"
-          title="Shorts & More"
-          imageSrc={blogPlaceholder2}
-          imageAlt="Shorts and more"
-        >
-          Andy has written, directed, and produced on a wide array of projects
-          ranging from branded content to comedy shorts, music videos, and more.
-          https://www.youtube.com/watch?v=_98xIvAvOhE
-        </CaseCard>
+        </fieldset>
 
-        <section
-          id="rizzle"
-          class={`case-card flex gap-4 md:gap-8 flex-col my-8`}
-        >
-          <div class="flex-1 flex-col justify-end my-auto">
-            <h3 class="text-center font-bold">Rizzle</h3>
-            <p class="text-center hidden md:px-24 md:block">
-              Created a series of videos for vertical platform Rizzle and won
-              $1000 in its Asian Comedy Festival Competition.
-            </p>
-          </div>
-          <div class="flex-1 flex">
-            <video
-              src={"/videos/rizzle1.mp4"}
-              class="rizzlevideo"
-              autoplay
-              loop
-              muted
-              playsinline></video>
-            <video
-              src={"/videos/rizzle2.mp4"}
-              class="rizzlevideo"
-              autoplay
-              loop
-              muted
-              playsinline></video>
-            <video
-              src={"/videos/rizzle3.mp4"}
-              class="rizzlevideo"
-              autoplay
-              loop
-              muted
-              playsinline></video>
-          </div>
+        <label class="searchLabel">
+          Search
+          <input
+            id="caseSearch"
+            type="search"
+            placeholder="Search title or description"
+          />
+        </label>
+      </div>
 
-          <p class="text-center md:px-24 md:hidden"></p>
-        </section>
-        <CaseCard
-          id="polygon"
-          title="Polygon Labs Spec Spot"
-          imageSrc={polygon}
-          imageAlt="Polygon Labs Spec Spot"
-        >
-          Pitched a flagship spot for Polygon Labs, translating his
-          understanding of web3 infrastructure into a relatable concept.
-        </CaseCard>
-        <CaseCard
-          id="instant-magenta"
-          title="Producing & Other Creative Services"
-          imageSrc={blogPlaceholder2}
-          imageAlt="Instant Magenta Collage"
-          reverse
-        >
-          From editing for Hollywood socials to full-service promos for Broadway
-          productions, Andy can lend a hand through his production arm <a
-            href="www.instantmagenta.com"
-            class="text-nowrap"
-            target="_blank">Instant Magenta</a
-          >.
-        </CaseCard>
-      </AccordionItem>
-      <AccordionItem title="Technologist">
-        <CaseCard
-          id="tech"
-          videoSrc="/videos/Tootsies Promo v1_2_400.mp4"
-          reverse
-        >
-          With a background in Mathematics & Computer Science, Andy has always
-          embraced the technical aspects of production. From coding custom After
-          Effects scripts to niche immersive workflows, he enjoys the tinkering.
-        </CaseCard>
-        <CaseCard id="tech" videoSrc="/videos/Head to Head_640.mp4">
-          Andy's breadth of experience includes traditional 3D tools such as
-          Unreal Engine, Unity, Blender, and more.
-        </CaseCard>
-        <CaseCard id="ai" videoSrc="/videos/AI Sample_400.mp4" reverse>
-          But Andy also knows how to grow with the times, dabbling in AI-driven
-          generative workflows from platforms like Higgsfield and Kling to
-          API-driven bespoke applications such as ComfyUI and Veo3.
-        </CaseCard>
-      </AccordionItem>
-      <AccordionItem title="Weirdo">
-        <CaseCard
-          id="pissterine"
-          imageSrc={pissterine}
-          imageAlt="Pissterine"
-          reverse
-        >
-          Andy once kickstarted a Listerine knockoff that got shutdown in
-          trademark court.<video
-            src={"/videos/pissterine.mp4"}
-            class="h-1/2"
-            autoplay
-            loop
-            muted
-            playsinline></video></CaseCard
-        >
-        <CaseCard
-          id="tootsies"
-          title="Tootsie's Video Vault"
-          imageSrc={tootsies}
-          imageAlt="Tootsie's Video Vault Collage"
-        >
-          Andy is a co-producer on annual Brooklyn film jam <a
-            href="https://tootsiesvideovault.com"
-            class="text-nowrap"
-            target="_blank">Tootsie's Video Vault</a
-          >.
-          <Image src={tootsies2} alt="Step and Repeat at Tootsies" />
-        </CaseCard>
-        <CaseCard
-          id="about"
-          imageSrc={azaleaShoot}
-          imageAlt="About Andy Collage"
-          reverse
-        >
-          Andy lives in Brooklyn with his wife and collaborator Katie Sicking
-          and their daughter Azalea.</CaseCard
-        >
-      </AccordionItem>
-      <Footer />
-      <script>
-        import "../face-tracker.js";
+      <div id="caseRow" class="caseRow"></div>
+
+      <script
+        type="application/json"
+        id="__cases"
+        set:html={JSON.stringify(CASES)}
+      ></script>
+
+      <script type="module">
+        const casesEl = document.getElementById("__cases");
+        const caseRow = document.getElementById("caseRow");
+        const search = document.getElementById("caseSearch");
+        const checkboxes = Array.from(document.querySelectorAll('input[name="tag"]'));
+
+        const cases = JSON.parse(casesEl?.textContent || "[]");
+        const state = {
+          selectedTags: new Set(),
+          search: "",
+        };
+
+        function includesSearch(caseItem, value) {
+          if (!value) return true;
+          const haystack = `${caseItem.title} ${caseItem.copy}`.toLowerCase();
+          return haystack.includes(value.toLowerCase());
+        }
+
+        function intersectsTags(caseItem, selectedTags) {
+          if (selectedTags.size === 0) return true;
+          return caseItem.tags.some((tag) => selectedTags.has(tag));
+        }
+
+        function renderTile(caseItem) {
+          const outer = caseItem.href
+            ? Object.assign(document.createElement("a"), { href: caseItem.href })
+            : document.createElement("article");
+
+          outer.className = "tile";
+          outer.dataset.id = caseItem.id;
+
+          if (caseItem.media.kind === "image") {
+            const img = document.createElement("img");
+            img.className = "media";
+            img.src = caseItem.media.src;
+            img.alt = caseItem.media.alt;
+            outer.append(img);
+          }
+
+          if (caseItem.media.kind === "video") {
+            const video = document.createElement("video");
+            video.className = "media";
+            video.src = caseItem.media.src;
+            video.autoplay = true;
+            video.loop = true;
+            video.muted = true;
+            video.playsInline = true;
+            if (caseItem.media.poster) {
+              video.poster = caseItem.media.poster;
+            }
+            outer.append(video);
+          }
+
+          if (caseItem.media.kind === "strip") {
+            const strip = document.createElement("div");
+            strip.className = "strip";
+
+            caseItem.media.sources.forEach((source) => {
+              const video = document.createElement("video");
+              video.className = "stripItem";
+              video.src = source;
+              video.autoplay = true;
+              video.loop = true;
+              video.muted = true;
+              video.playsInline = true;
+              strip.append(video);
+            });
+
+            outer.append(strip);
+          }
+
+          const overlay = document.createElement("div");
+          overlay.className = "overlay";
+
+          const title = document.createElement("div");
+          title.className = "titleText";
+          title.textContent = caseItem.title;
+
+          const copy = document.createElement("div");
+          copy.className = "copy";
+          copy.textContent = caseItem.copy;
+
+          overlay.append(title, copy);
+          outer.append(overlay);
+
+          return outer;
+        }
+
+        function render() {
+          const filtered = cases.filter(
+            (caseItem) =>
+              intersectsTags(caseItem, state.selectedTags) &&
+              includesSearch(caseItem, state.search),
+          );
+
+          caseRow.replaceChildren(...filtered.map((caseItem) => renderTile(caseItem)));
+        }
+
+        search?.addEventListener("input", (event) => {
+          state.search = event.currentTarget.value.trim();
+          render();
+        });
+
+        checkboxes.forEach((checkbox) => {
+          checkbox.addEventListener("change", (event) => {
+            const input = event.currentTarget;
+            if (input.checked) {
+              state.selectedTags.add(input.value);
+            } else {
+              state.selectedTags.delete(input.value);
+            }
+            render();
+          });
+        });
+
+        render();
       </script>
+      <Footer />
     </main>
 
     <style>
-      .title {
-        font-size: clamp(5rem, 10vw, 15rem);
-        margin-bottom: 1rem;
-        font-weight: bold;
-      }
-
       main {
         padding: 1em;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
         max-width: 1280px;
         margin: 0 auto;
       }
 
-      .rizzlevideo {
-        width: 33.33%;
-        height: auto;
+      .title {
+        font-size: clamp(4rem, 10vw, 8rem);
+        margin-bottom: 0.5rem;
+        font-weight: bold;
       }
 
-      /* Container sizes to SVG; face-tracker is overlaid and centered in the circle */
-      .face-container {
+      .filters {
+        display: grid;
+        gap: 12px;
+        margin: 24px 0;
+      }
+
+      .tagList {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .searchLabel {
+        display: grid;
+        gap: 6px;
+        max-width: 320px;
+      }
+
+      .caseRow {
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        padding-bottom: 8px;
+      }
+
+      .tile {
+        flex: 0 0 320px;
+        aspect-ratio: 16 / 9;
         position: relative;
-        display: none;
-        width: min(70vw, 70vh);
-        aspect-ratio: 1;
-        container-type: size;
+        overflow: hidden;
+        border-radius: 12px;
+        text-decoration: none;
+        color: inherit;
       }
 
-      .circular-labels {
+      .media {
         width: 100%;
-        height: auto;
-        fill: currentColor;
+        height: 100%;
+        object-fit: cover;
         display: block;
-        position: relative;
-        z-index: 10;
       }
 
-      .face-container .face-tracker {
+      .strip {
+        display: flex;
+        width: 100%;
+        height: 100%;
+      }
+
+      .stripItem {
+        width: 33.333%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .overlay {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 50%;
-        height: 50%;
-        border-radius: 50%;
-        min-height: 0;
-        z-index: 1;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.25);
+        color: white;
+        text-align: center;
+        padding: 12px;
+        opacity: 0;
+        transition: opacity 200ms ease;
       }
 
-      .circle-label {
-        --label-size: 2rem;
-        font-size: var(--label-size);
-        cursor: default;
-        transition: font-size 0.2s ease;
-      }
-      .circle-label:hover {
-        font-size: calc(var(--label-size) * 1.1);
+      .tile:hover .overlay,
+      .tile:focus-within .overlay {
+        opacity: 1;
       }
     </style>
   </body>
