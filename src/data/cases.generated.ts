@@ -368,5 +368,263 @@ export const CASES: Case[] = [
     "copy": "Featuring Gianmarco Soresi & Megan Sass.",
     "youtubeId": "qhXZjxXbW4s",
     "href": "https://www.youtube.com/watch?v=qhXZjxXbW4s"
+  },
+  {
+    "id": "snapchat",
+    "title": "Making It",
+    "roles": "Director, Cinematographer, & Editor",
+    "tags": [
+      "snapchat",
+      "original"
+    ],
+    "media": {
+      "kind": "image",
+      "src": "https://placehold.co/640x360",
+      "alt": "Comedy Central Collage"
+    },
+    "copy": "As Director, Cinematographer, and Editor, Andy brought an original vertical series to life for Snapchat's Snap Originals."
+  },
+  {
+    "id": "rizzle-asian-comedy-fest",
+    "title": "Rizzle's Asian Comedy Fest",
+    "roles": "Director & Editor",
+    "tags": [
+      "rizzle",
+      "award"
+    ],
+    "media": {
+      "kind": "strip",
+      "sources": [
+        "/videos/rizzle1.mp4",
+        "/videos/rizzle2.mp4",
+        "/videos/rizzle3.mp4"
+      ]
+    },
+    "copy": "$1000 Grand Prize winner for a new vertical series!"
+  },
+  {
+    "id": "architects-newspaper-interviews",
+    "title": "Architect's Newspaper",
+    "roles": "Videographer & Editor",
+    "tags": [
+      "architecture",
+      "interview-series"
+    ],
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/Bzhb1WBUNps/hqdefault.jpg",
+      "alt": "Architect's Newspaper thumbnail"
+    },
+    "subtitle": "Interview Series",
+    "copy": "Videographer and editor for interviews on new architecture projects.",
+    "youtubeId": "Bzhb1WBUNps",
+    "href": "https://www.youtube.com/watch?v=Bzhb1WBUNps"
+  },
+  {
+    "id": "barkbox-socials",
+    "title": "BarkBox Socials",
+    "roles": "DP & Editor",
+    "tags": [
+      "branded",
+      "social-video"
+    ],
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/5_Ls6uFv02c/hqdefault.jpg",
+      "alt": "BarkBox Socials thumbnail"
+    },
+    "copy": "Cinematographer and editor for social video campaigns for BarkBox.",
+    "youtubeId": "5_Ls6uFv02c",
+    "href": "https://www.youtube.com/watch?v=5_Ls6uFv02c"
+  },
+  {
+    "id": "death-becomes-her",
+    "title": "Death Becomes Her: The Musical",
+    "roles": "Director, Producer, & Editor",
+    "tags": [
+      "branded",
+      "social-campaign"
+    ],
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/gvjDOk8T9Lo/hqdefault.jpg",
+      "alt": "Death Becomes Her: The Musical thumbnail"
+    },
+    "copy": "Director, producer, and editor for the show's social campaign.",
+    "youtubeId": "gvjDOk8T9Lo",
+    "href": "https://www.youtube.com/watch?v=gvjDOk8T9Lo"
+  },
+  {
+    "id": "election-science-duvergers-law",
+    "title": "Duverger's Law",
+    "roles": "Producer, Writer, & Editor",
+    "tags": [
+      "nonprofit",
+      "explainer"
+    ],
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/HpBRGXK-QNs/hqdefault.jpg",
+      "alt": "Duverger's Law thumbnail"
+    },
+    "subtitle": "Center for Election Science",
+    "copy": "Volunteer explainer developed with Election Science experts.",
+    "youtubeId": "HpBRGXK-QNs",
+    "href": "https://www.youtube.com/watch?v=HpBRGXK-QNs"
+  },
+  {
+    "id": "illuminative-voting-campaign",
+    "title": "Illuminative Voting Campaign",
+    "roles": "Editor",
+    "tags": [
+      "nonprofit",
+      "campaign"
+    ],
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/vpQ71ynCHco/hqdefault.jpg",
+      "alt": "Illuminative Voting Campaign thumbnail"
+    },
+    "copy": "Edited campaign videos with Center for Media & Social Impact.",
+    "youtubeId": "vpQ71ynCHco",
+    "href": "https://www.youtube.com/watch?v=vpQ71ynCHco"
+  },
+  {
+    "id": "movement-royal-heart",
+    "title": "Royal Heart",
+    "roles": "Cinematographer & Editor",
+    "tags": [
+      "movement",
+      "dance"
+    ],
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/zG2amIyE1Es/hqdefault.jpg",
+      "alt": "Royal Heart thumbnail"
+    },
+    "subtitle": "Movement & Dance",
+    "copy": "Movement short choreographed by Hayden Frederick.",
+    "youtubeId": "zG2amIyE1Es",
+    "href": "https://www.youtube.com/watch?v=zG2amIyE1Es"
+  },
+  {
+    "id": "instagram-betches",
+    "title": "Instagram Betches",
+    "roles": "Director & Cinematographer",
+    "tags": [
+      "music-video",
+      "comedy"
+    ],
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/hQO_LLV9tms/hqdefault.jpg",
+      "alt": "Instagram Betches thumbnail"
+    },
+    "copy": "Winner of Best Sketch at NYC Short Comedy Film Fest 2020.",
+    "youtubeId": "hQO_LLV9tms",
+    "href": "https://www.youtube.com/watch?v=hQO_LLV9tms"
+  },
+  {
+    "id": "securocam-3000",
+    "title": "Securocam 3000",
+    "roles": "Director, Co-Writer, & Editor",
+    "tags": [
+      "webseries",
+      "comedy"
+    ],
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/_SRIskz2JOY/hqdefault.jpg",
+      "alt": "Securocam 3000 thumbnail"
+    },
+    "copy": "Co-created short web series selected by NYTVF and IFC Comedy Crib.",
+    "youtubeId": "_SRIskz2JOY",
+    "href": "https://www.youtube.com/watch?v=_SRIskz2JOY"
+  },
+  {
+    "id": "operators",
+    "title": "Operators",
+    "roles": "Director, Co-Writer, & Co-Editor",
+    "tags": [
+      "short-film",
+      "festival"
+    ],
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/aa2zI7PO-X8/hqdefault.jpg",
+      "alt": "Operators thumbnail"
+    },
+    "copy": "Nevermore Film Fest 2024 short co-created with Katie Sicking.",
+    "youtubeId": "aa2zI7PO-X8",
+    "href": "https://www.youtube.com/watch?v=aa2zI7PO-X8"
+  },
+  {
+    "id": "spoilednyc-dickpicr",
+    "title": "DickPicr",
+    "roles": "Director, Cinematographer, & Editor",
+    "tags": [
+      "web-series",
+      "comedy"
+    ],
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/eUfz8WSA5wI/hqdefault.jpg",
+      "alt": "DickPicr thumbnail"
+    },
+    "subtitle": "SpoiledNYC",
+    "copy": "Sketch from the SpoiledNYC comedy collaborations.",
+    "youtubeId": "eUfz8WSA5wI",
+    "href": "https://www.youtube.com/watch?v=eUfz8WSA5wI"
+  },
+  {
+    "id": "tech-videos-showreel",
+    "title": "Tech Videos Showreel",
+    "roles": "Director & Technologist",
+    "tags": [
+      "tech",
+      "creative-coding"
+    ],
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/bpkZSxtZd7Y/hqdefault.jpg",
+      "alt": "Tech Videos Showreel thumbnail"
+    },
+    "copy": "Experiments documenting interactive and 3D production pipelines.",
+    "youtubeId": "bpkZSxtZd7Y",
+    "href": "https://www.youtube.com/watch?v=bpkZSxtZd7Y"
+  },
+  {
+    "id": "honest-waitress",
+    "title": "The Honest Waitress",
+    "roles": "Director",
+    "tags": [
+      "webseries",
+      "comedy"
+    ],
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/zlFyjWf4hOk/hqdefault.jpg",
+      "alt": "The Honest Waitress thumbnail"
+    },
+    "copy": "Short comedy series for PitTV written by Leila Graham.",
+    "youtubeId": "zlFyjWf4hOk",
+    "href": "https://www.youtube.com/watch?v=zlFyjWf4hOk"
+  },
+  {
+    "id": "westbrook-studios",
+    "title": "Westbrook Studios",
+    "roles": "Editor",
+    "tags": [
+      "brand-studio",
+      "social-video"
+    ],
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/_NiN2zU79is/hqdefault.jpg",
+      "alt": "Westbrook Studios thumbnail"
+    },
+    "copy": "Freelance editor on social content for Westbrook Studios.",
+    "youtubeId": "_NiN2zU79is",
+    "href": "https://www.youtube.com/watch?v=_NiN2zU79is"
   }
 ];
