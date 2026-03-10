@@ -16,6 +16,24 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
   </div>
 </div>
 
+<template id="youtubeBlockedTemplate">
+  <div class="lightboxMedia lightboxErrorCard">
+    <p class="lightboxErrorText">
+      This video cannot be played on mobile due to YouTube content restrictions.
+    </p>
+    <a
+      class="lightboxErrorLink"
+      data-youtube-fallback-link
+      href="#"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+    <img src="/youtube.png" width="60px" class="m-auto">
+      Click here to watch directly in the YouTube app.
+    </a>
+  </div>
+</template>
+
 <script type="module" data-tile-selector={JSON.stringify(tileSelector)}>
   const selector = JSON.parse(
     document.currentScript?.dataset.tileSelector || "\".tile[data-lightboxable='true']\"",
@@ -23,6 +41,7 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
   const tiles = Array.from(document.querySelectorAll(selector));
   const lightbox = document.getElementById("videoLightbox");
   const lightboxContent = document.getElementById("lightboxContent");
+  const youtubeBlockedTemplate = document.getElementById("youtubeBlockedTemplate");
   const lightboxPanel = lightbox?.querySelector(".lightboxPanel");
   const lightboxBackdrop = lightbox?.querySelector(".lightboxBackdrop");
   const lightboxClose = lightbox?.querySelector(".lightboxClose");
@@ -97,25 +116,22 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
   function renderYoutubeBlockedMessage(sourceUrl, isVertical = false) {
     if (!lightboxContent) return;
     clearYoutubePlayer();
+    if (!(youtubeBlockedTemplate instanceof HTMLTemplateElement)) return;
 
-    const wrapper = document.createElement("div");
-    wrapper.className = "lightboxMedia lightboxErrorCard";
-    if (isVertical) wrapper.classList.add("isVertical");
+    const fragment = youtubeBlockedTemplate.content.cloneNode(true);
+    if (!(fragment instanceof DocumentFragment)) return;
 
-    const message = document.createElement("p");
-    message.className = "lightboxErrorText";
-    message.textContent =
-      "This video cannot be played on mobile, perhaps due to YouTube restrictions.";
+    const wrapper = fragment.querySelector(".lightboxErrorCard");
+    if (wrapper instanceof HTMLElement) {
+      wrapper.classList.toggle("isVertical", isVertical);
+    }
 
-    const link = document.createElement("a");
-    link.className = "lightboxErrorLink";
-    link.href = sourceUrl;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.textContent = "Click here to watch directly in the YouTube app.";
+    const link = fragment.querySelector("[data-youtube-fallback-link]");
+    if (link instanceof HTMLAnchorElement) {
+      link.href = sourceUrl;
+    }
 
-    wrapper.append(message, link);
-    lightboxContent.replaceChildren(wrapper);
+    lightboxContent.replaceChildren(fragment);
   }
 
   function loadYoutubeApi() {
