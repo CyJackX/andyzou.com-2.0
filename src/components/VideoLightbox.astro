@@ -49,6 +49,9 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
   const CLOSE_DURATION_MS = 260;
   const EASING = "cubic-bezier(0.22, 1, 0.36, 1)";
   const PANEL_ANIM_EASING = "ease-out";
+  const DEBUG_LIGHTBOX =
+    new URLSearchParams(window.location.search).has("debugLightbox") ||
+    window.localStorage.getItem("debugLightbox") === "1";
   let lastActiveElement = null;
   let activeTile = null;
   let isAnimating = false;
@@ -59,21 +62,125 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
     return Boolean(rect && rect.width > 0 && rect.height > 0);
   }
 
+  function rectSummary(rect) {
+    if (!rect) return null;
+    return {
+      left: Math.round(rect.left),
+      top: Math.round(rect.top),
+      width: Math.round(rect.width),
+      height: Math.round(rect.height),
+    };
+  }
+
+  function debugLog(message, payload) {
+    if (!DEBUG_LIGHTBOX) return;
+    if (payload !== undefined) {
+      console.log("[VideoLightbox]", message, payload);
+      return;
+    }
+    console.log("[VideoLightbox]", message);
+  }
+
   function createTileClone(tile, rect) {
     const clone = tile.cloneNode(true);
     clone.removeAttribute("href");
+    clone.classList.remove("lightboxSourceTileFading");
     clone.classList.add("lightboxClone");
+    clone.style.position = "fixed";
+    clone.style.margin = "0";
+    clone.style.pointerEvents = "none";
+    clone.style.overflow = "hidden";
+    clone.style.zIndex = "2147483647";
+    clone.style.display = "block";
+    clone.style.visibility = "visible";
+    clone.style.opacity = "1";
     clone.style.left = `${rect.left}px`;
     clone.style.top = `${rect.top}px`;
     clone.style.width = `${rect.width}px`;
     clone.style.height = `${rect.height}px`;
     clone.style.borderRadius = getComputedStyle(tile).borderRadius || "12px";
-    clone.querySelectorAll("video").forEach((videoEl) => {
-      videoEl.pause?.();
-      videoEl.removeAttribute("autoplay");
+    const sourceVideos = Array.from(tile.querySelectorAll("video"));
+    clone.querySelectorAll("video").forEach((cloneVideo, index) => {
+      const sourceVideo = sourceVideos[index];
+      if (!(cloneVideo instanceof HTMLVideoElement) || !(sourceVideo instanceof HTMLVideoElement)) {
+        return;
+      }
+      cloneVideo.muted = true;
+      cloneVideo.defaultMuted = true;
+      cloneVideo.playsInline = true;
+      cloneVideo.loop = sourceVideo.loop;
+      if (Number.isFinite(sourceVideo.currentTime) && sourceVideo.currentTime > 0) {
+        try {
+          cloneVideo.currentTime = sourceVideo.currentTime;
+        } catch {}
+      }
+      cloneVideo.play().catch(() => {});
     });
     document.body.append(clone);
+    if (DEBUG_LIGHTBOX) {
+      clone.style.outline = "3px solid #ff4d00";
+      clone.style.backgroundColor = "rgba(255, 77, 0, 0.12)";
+      clone.style.boxShadow = "0 0 0 2px rgba(255,255,255,0.7) inset";
+    }
+    const cloneRect = clone.getBoundingClientRect();
+    const cloneStyle = getComputedStyle(clone);
+    debugLog("clone: created", {
+      tileId: tile.dataset.id || null,
+      cloneRect: rectSummary(cloneRect),
+      cloneOpacity: cloneStyle.opacity,
+      cloneDisplay: cloneStyle.display,
+      cloneVisibility: cloneStyle.visibility,
+      cloneZIndex: cloneStyle.zIndex,
+      sourceVideoCount: sourceVideos.length,
+      sourceImageCount: tile.querySelectorAll("img").length,
+    });
     return clone;
+  }
+
+  function nextAnimationFrame() {
+    return new Promise((resolve) => {
+      requestAnimationFrame(() => resolve());
+    });
+  }
+
+  function animateCloneBetweenRects(clone, fromRect, toRect, duration, options = {}) {
+    const { fromOpacity = 1, toOpacity = 1 } = options;
+    const dx = toRect.left - fromRect.left;
+    const dy = toRect.top - fromRect.top;
+    const scaleX = toRect.width / fromRect.width;
+    const scaleY = toRect.height / fromRect.height;
+    debugLog("clone: keyframes", {
+      fromRect: rectSummary(fromRect),
+      toRect: rectSummary(toRect),
+      dx: Math.round(dx),
+      dy: Math.round(dy),
+      scaleX: Number(scaleX.toFixed(3)),
+      scaleY: Number(scaleY.toFixed(3)),
+      duration,
+    });
+
+    clone.style.transformOrigin = "top left";
+    const animation = clone.animate(
+      [
+        { transform: "translate(0px, 0px) scale(1, 1)", opacity: fromOpacity },
+        { transform: `translate(${dx}px, ${dy}px) scale(${scaleX}, ${scaleY})`, opacity: toOpacity },
+      ],
+      { duration, easing: EASING, fill: "forwards" },
+    );
+    if (DEBUG_LIGHTBOX) {
+      const midFlightTimer = window.setTimeout(() => {
+        const style = getComputedStyle(clone);
+        debugLog("clone: mid-flight", {
+          rect: rectSummary(clone.getBoundingClientRect()),
+          transform: style.transform,
+          opacity: style.opacity,
+          visibility: style.visibility,
+          zIndex: style.zIndex,
+        });
+      }, Math.max(32, Math.round(duration / 2)));
+      animation.finished.finally(() => window.clearTimeout(midFlightTimer));
+    }
+    return animation;
   }
 
   function getYoutubeId(url) {
@@ -254,13 +361,21 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
     lightbox.classList.add("isAnimating");
 
     const tile = activeTile;
+    const panelRect = lightboxPanel.getBoundingClientRect();
     const mediaEl = lightboxContent.querySelector(".lightboxMedia") || lightboxContent;
-    const fromRect = mediaEl.getBoundingClientRect();
+    const mediaRect = mediaEl.getBoundingClientRect();
+    const fromRect = isRectRenderable(panelRect) ? panelRect : mediaRect;
     const toRect = tile ? tile.getBoundingClientRect() : null;
+    debugLog("close: measured rects", {
+      fromRect: rectSummary(fromRect),
+      toRect: rectSummary(toRect),
+      usingPanelRect: isRectRenderable(panelRect),
+    });
 
     if (tile && isRectRenderable(fromRect) && isRectRenderable(toRect)) {
       tile.classList.add("lightboxSourceTileFading");
       const clone = createTileClone(tile, fromRect);
+      debugLog("close: starting clone animation");
 
       lightboxPanel.animate(
         [{ opacity: 1 }, { opacity: 0 }],
@@ -272,29 +387,16 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
         { duration: CLOSE_DURATION_MS, easing: PANEL_ANIM_EASING, fill: "forwards" },
       );
 
-      const cloneAnim = clone.animate(
-        [
-          {
-            left: `${fromRect.left}px`,
-            top: `${fromRect.top}px`,
-            width: `${fromRect.width}px`,
-            height: `${fromRect.height}px`,
-          },
-          {
-            left: `${toRect.left}px`,
-            top: `${toRect.top}px`,
-            width: `${toRect.width}px`,
-            height: `${toRect.height}px`,
-          },
-        ],
-        { duration: CLOSE_DURATION_MS, easing: EASING, fill: "forwards" },
-      );
+      const cloneAnim = animateCloneBetweenRects(clone, fromRect, toRect, CLOSE_DURATION_MS);
 
       await Promise.all([
         cloneAnim.finished.catch(() => {}),
         backdropAnim.finished.catch(() => {}),
       ]);
+      debugLog("close: clone animation complete");
       clone.remove();
+    } else {
+      debugLog("close: fallback (no geometry animation)");
     }
 
     lightbox.hidden = true;
@@ -333,6 +435,13 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
     lastActiveElement = document.activeElement;
     activeTile = tile;
     const tileRect = tile.getBoundingClientRect();
+    debugLog("open: requested", {
+      tileId: tile.dataset.id || null,
+      url,
+      isVertical,
+      tileRect: rectSummary(tileRect),
+      prefersReducedMotion: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+    });
 
     if (playerConfig.kind !== "youtube") {
       playerEl.classList.add("lightboxMediaPending");
@@ -342,6 +451,7 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
     document.body.classList.add("noScroll");
     lightboxBackdrop.style.opacity = "0";
     lightboxPanel.style.opacity = "0";
+    await nextAnimationFrame();
     const revealFallbackId = window.setTimeout(() => {
       if (!lightbox || lightbox.hidden) return;
       playerEl.classList.remove("lightboxMediaPending");
@@ -355,9 +465,18 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
       void mountYoutubePlayer(playerEl, playerConfig.sourceUrl);
     }
 
-    const targetRect = playerEl.getBoundingClientRect();
+    const panelRect = lightboxPanel.getBoundingClientRect();
+    const playerRect = playerEl.getBoundingClientRect();
+    const targetRect = isRectRenderable(panelRect) ? panelRect : playerRect;
     const canAnimate =
       isRectRenderable(tileRect) && isRectRenderable(targetRect);
+    debugLog("open: measured target", {
+      targetRect: rectSummary(targetRect),
+      playerRect: rectSummary(playerRect),
+      panelRect: rectSummary(panelRect),
+      usingPanelRect: isRectRenderable(panelRect),
+      canAnimate,
+    });
 
     if (!canAnimate) {
       window.clearTimeout(revealFallbackId);
@@ -368,11 +487,13 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
       lightboxPanel.style.opacity = "";
       isAnimating = false;
       lightboxClose.focus();
+      debugLog("open: fallback (no geometry animation)");
       return;
     }
 
     tile.classList.add("lightboxSourceTileFading");
     const clone = createTileClone(tile, tileRect);
+    debugLog("open: starting clone animation");
 
     const backdropAnim = lightboxBackdrop.animate(
       [{ opacity: 0 }, { opacity: 1 }],
@@ -388,28 +509,16 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
       },
     );
 
-    const cloneAnim = clone.animate(
-      [
-        {
-          left: `${tileRect.left}px`,
-          top: `${tileRect.top}px`,
-          width: `${tileRect.width}px`,
-          height: `${tileRect.height}px`,
-        },
-        {
-          left: `${targetRect.left}px`,
-          top: `${targetRect.top}px`,
-          width: `${targetRect.width}px`,
-          height: `${targetRect.height}px`,
-        },
-      ],
-      { duration: OPEN_DURATION_MS, easing: EASING, fill: "forwards" },
-    );
+    const cloneAnim = animateCloneBetweenRects(clone, tileRect, targetRect, OPEN_DURATION_MS, {
+      fromOpacity: 1,
+      toOpacity: 0,
+    });
 
     await Promise.all([
       cloneAnim.finished.catch(() => {}),
       backdropAnim.finished.catch(() => {}),
     ]);
+    debugLog("open: clone animation complete");
     window.clearTimeout(revealFallbackId);
 
     clone.remove();
@@ -612,6 +721,7 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
     margin: 0;
     pointer-events: none;
     overflow: hidden;
+    will-change: transform;
   }
 
   :global(.lightboxSourceTileFading) {
