@@ -1,0 +1,128 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE } from "../../consts";
+import { getSeriesById, getVideoBySlug, getVideos } from "../../lib/work";
+
+export async function getStaticPaths() {
+  return getVideos().map((video) => ({
+    params: { slug: video.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+if (!slug) {
+  throw new Error("Missing video slug.");
+}
+
+const video = getVideoBySlug(slug);
+if (!video) {
+  throw new Error(`Unknown video slug: ${slug}`);
+}
+
+const series = video.seriesId
+  ? getSeriesById(video.seriesId)
+  : undefined;
+const pageTitle = `${video.title} | ${SITE_TITLE}`;
+const sourceHref = video.sourceHref ?? video.href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={pageTitle} description={video.copy || video.roles} />
+  </head>
+  <body>
+    <main>
+      <p><a href="/">Back to home</a></p>
+      {series && <p><a href={`/series/${series.slug}/`}>View all in {series.title}</a></p>}
+      <h1>{video.title}</h1>
+      {video.subtitle && <p class="subtitle">{video.subtitle}</p>}
+      <p class="roles">{video.roles}</p>
+
+      <div class="mediaWrap">
+        {video.youtubeId ? (
+          <iframe
+            class="youtube"
+            src={`https://www.youtube.com/embed/${video.youtubeId}`}
+            title={`${video.title} video`}
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        ) : video.media.kind === "video" ? (
+          <video class="nativeVideo" src={video.media.src} controls playsinline poster={video.media.poster}></video>
+        ) : video.media.kind === "strip" ? (
+          <div class="strip">
+            {video.media.sources.map((source) => (
+              <video class="stripItem" src={source} controls playsinline></video>
+            ))}
+          </div>
+        ) : (
+          <img class="poster" src={video.media.src} alt={video.media.alt} />
+        )}
+      </div>
+
+      {video.copy && <p class="copy">{video.copy}</p>}
+      <p class="tags">{video.tags.join(" | ")}</p>
+
+      {sourceHref && (
+        <p>
+          <a href={sourceHref} target="_blank" rel="noopener noreferrer">Open source video (new tab)</a>
+        </p>
+      )}
+      <Footer />
+    </main>
+
+    <style>
+      main {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 1rem;
+      }
+
+      .subtitle {
+        margin-top: 0.25rem;
+        opacity: 0.95;
+      }
+
+      .roles {
+        margin-top: 0.25rem;
+      }
+
+      .mediaWrap {
+        margin-top: 1rem;
+      }
+
+      .youtube,
+      .nativeVideo,
+      .poster {
+        width: 100%;
+        border: 0;
+        border-radius: 12px;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+
+      .strip {
+        display: flex;
+        gap: 8px;
+      }
+
+      .stripItem {
+        width: 33.333%;
+        aspect-ratio: 9 / 16;
+      }
+
+      .copy {
+        margin-top: 1rem;
+      }
+
+      .tags {
+        margin-top: 0.75rem;
+        opacity: 0.85;
+      }
+    </style>
+  </body>
+</html>

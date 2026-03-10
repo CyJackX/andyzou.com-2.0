@@ -1,37 +1,55 @@
-id	title	subtitle	roles	copy	tags	youtubeId	href	mediaKind	mediaSrc	mediaAlt	mediaPoster	stripSources
-rebirthing-center	The Rebirthing Center		Writer & Director	Webby-nominated short for Comedy Central Digital.	comedy-central|original	BXOaAgDnpd8		image
-polyamorous-romcom	The Polyamorous RomCom	ft. Yung Gravy	Writer, Director, & Editor	Comedy Central Digital sketch collaboration.	comedy-central|collab	XhMz5vRlya8		image
-remote-control-boss	Remote Control Boss		Writer, Director, & Editor	Comedy Central Digital character-driven sketch.	comedy-central|original	2PPkDxOul_0		image
-litterbox-office	The Litterbox Office		Writer & Director	500M+ views comedy concept.	comedy-central|viral	KIdN_iYBW7A		image
-icontact	iContact	ft. DeStorm	Writer, Director, & Editor	Comedy Central Digital collaboration.	comedy-central|collab	aQN6jBk_LWc		image
-living-funeral-home	The Living Funeral Home	ft. Lala Milan	Writer & Director	High-concept social comedy short.	comedy-central|collab	zcqkqql5VW0		image
-teen-uncle	Teen Uncle	ft. Adam Waheed	Writer, Director, & Editor	Comedy Central Digital talent collaboration.	comedy-central|collab	YUJIjQ0MytM		image
-whameo	Whameo	ft. Sven Johnson	Writer, Director, & Editor	Comedy Central Digital sketch piece.	comedy-central|collab	GBG1KLVBQPA		image
-take-a-deep-breath	Take a Deep F***ing Breath		Writer & Director	Comedy Central Originals short.	comedy-central|original	2Z4VgVKrveM		image
-freezing-your-eggs	Freezing Your Eggs		Writer, Director, DP, & Editor	Comedy Central Originals sketch.	comedy-central|original	DJCgT1gw8nc		image
-vesting-up	Vesting Up		Writer, Director, DP, & Editor	Comedy Central Originals production.	comedy-central|original	gSojwTO5QZs		image
-rich-friend	Rich Friend	ft. Anwar	Director	Rose Kelso music video series.	comedy-central|music-video	lQankmO_xbQ		image
-she-looks-like-her-dad	She Looks Like Her Dad	ft. DeStorm	Director	Rose Kelso music video series.	comedy-central|music-video	oCYzAHPMTUM		image
-staying-young-forever	Staying Young Forever	ft. Lala Milan	Director	Rose Kelso music video series.	comedy-central|music-video	bFYFLfq6nZo		image
-nothing-gay-in-the-wild-west	Nothing Gay in the Wild West	ft. Brooks Allison	Director	Rose Kelso music video series.	comedy-central|music-video	uE1Y7PHMdPc		image
-andys-roadshow	Andy's Roadshow		Writer, Director, & Editor	Original sketch content.	comedy-sketches|original	iLNypL04zH0		image
-tuber	Tuber		Writer, Director, DP, & Editor	Original sketch content.	comedy-sketches|original	0U5SCBko2XM		image
-beauty-and-the-bowl	Beauty and the Bowl	ft. Uncle Function	Director, Cinematographer, & Editor	Sketch comedy featured on Funny Or Die.	comedy-sketches|collab	RhzSqWrjx7Q		image
-poly-bachelorette	Poly Bachelorette		Writer, Director, DP, & Editor	Original sketch content.	comedy-sketches|original	PEwfwxtwkWE		image
-grandmothers-announcement	Grandmother's Announcement		Director, Cinematographer, & Editor	Written by Lulu Krause.	comedy-sketches|collab	qSPdMoxsZoU		image
-settling	Settling		Co-Director, Cinematographer, & Editor	Featuring Gianmarco Soresi & Megan Sass.	comedy-sketches|collab	qhXZjxXbW4s		image
-snapchat	Making It		Director, Cinematographer, & Editor	As Director, Cinematographer, and Editor, Andy brought an original vertical series to life for Snapchat's Snap Originals.	snapchat|original			image	https://placehold.co/640x360	Comedy Central Collage		
-rizzle-asian-comedy-fest	Rizzle's Asian Comedy Fest		Director & Editor	$1000 Grand Prize winner for a new vertical series!	rizzle|award			strip				/videos/rizzle1.mp4|/videos/rizzle2.mp4|/videos/rizzle3.mp4
-architects-newspaper-interviews	Architect's Newspaper	Interview Series	Videographer & Editor	Videographer and editor for interviews on new architecture projects.	architecture|interview-series	Bzhb1WBUNps		image
-barkbox-socials	BarkBox Socials		DP & Editor	Cinematographer and editor for social video campaigns for BarkBox.	branded|social-video	5_Ls6uFv02c		image
-death-becomes-her	Death Becomes Her: The Musical		Director, Producer, & Editor	Director, producer, and editor for the show's social campaign.	branded|social-campaign	gvjDOk8T9Lo		image
-election-science-duvergers-law	Duverger's Law	Center for Election Science	Producer, Writer, & Editor	Volunteer explainer developed with Election Science experts.	nonprofit|explainer	HpBRGXK-QNs		image
-illuminative-voting-campaign	Illuminative Voting Campaign		Editor	Edited campaign videos with Center for Media & Social Impact.	nonprofit|campaign	vpQ71ynCHco		image
-movement-royal-heart	Royal Heart	Movement & Dance	Cinematographer & Editor	Movement short choreographed by Hayden Frederick.	movement|dance	zG2amIyE1Es		image
-instagram-betches	Instagram Betches		Director & Cinematographer	Winner of Best Sketch at NYC Short Comedy Film Fest 2020.	music-video|comedy	hQO_LLV9tms		image
-securocam-3000	Securocam 3000		Director, Co-Writer, & Editor	Co-created short web series selected by NYTVF and IFC Comedy Crib.	webseries|comedy	_SRIskz2JOY		image
-operators	Operators		Director, Co-Writer, & Co-Editor	Nevermore Film Fest 2024 short co-created with Katie Sicking.	short-film|festival	aa2zI7PO-X8		image
-spoilednyc-dickpicr	DickPicr	SpoiledNYC	Director, Cinematographer, & Editor	Sketch from the SpoiledNYC comedy collaborations.	web-series|comedy	eUfz8WSA5wI		image
-tech-videos-showreel	Tech Videos Showreel		Director & Technologist	Experiments documenting interactive and 3D production pipelines.	tech|creative-coding	bpkZSxtZd7Y		image
-honest-waitress	The Honest Waitress		Director	Short comedy series for PitTV written by Leila Graham.	webseries|comedy	zlFyjWf4hOk		image
-westbrook-studios	Westbrook Studios		Editor	Freelance editor on social content for Westbrook Studios.	brand-studio|social-video	_NiN2zU79is		image
+slugID	title	subtitle	seriesID	videoOrder	show	roles	copy	tags	youtubeId	href	mediaKind	mediaSrc	mediaAlt	mediaPoster	stripSources	vertical
+rebirthing-center	The Rebirthing Center	Comedy Central Digital	Comedy-central			Director | Writer	Webby-nominated short for Comedy Central Digital.		BXOaAgDnpd8		image					
+polyamorous-romcom	The Polyamorous RomCom	Comedy Central Digital ft. Yung Gravy	Comedy-central			Director | Writer | Editor			XhMz5vRlya8		image					
+remote-control-boss	Remote Control Boss	Comedy Central Digital	Comedy-central			Director | Writer | Editor			2PPkDxOul_0		image					
+litterbox-office	The Litterbox Office	Comedy Central Digital	Comedy-central			Director | Writer	7M Views!		KIdN_iYBW7A		image					
+icontact	iContact	Comedy Central Digital ft. DeStorm	Comedy-central			Director | Writer | Editor			aQN6jBk_LWc		image					
+living-funeral-home	The Living Funeral Home	Comedy Central Digital ft. Lala Milan	Comedy-central			Director | Writer | Editor			zcqkqql5VW0		image					
+teen-uncle	Teen Uncle	Comedy Central Digital ft. Adam Waheed	Comedy-central			Director | Editor			YUJIjQ0MytM		image					
+whameo	Whameo	Comedy Central Digital ft. Sven Johnson	Comedy-central			Director | Writer | Editor			GBG1KLVBQPA		image					
+take-a-deep-breath	Take a Deep F***ing Breath	Comedy Central Digital	Comedy-central			Director | Writer | Editor			2Z4VgVKrveM		image					TRUE
+freezing-your-eggs	Freezing Your Eggs	Comedy Central Digital	Comedy-central			Director | Writer | Editor					image	https://www.instagram.com/reel/Cqs1xAFpnwI				TRUE
+vesting-up	Vesting Up	Comedy Central Digital	Comedy-central			Director | Writer | Editor			DJCgT1gw8nc		image					TRUE
+rich-friend	Rich Friend	Comedy Central Digital ft. Anwar, Rose Kelso	Comedy-central			Director			gSojwTO5QZs		image					
+she-looks-like-her-dad	She Looks Like Her Dad	Comedy Central Digital ft. DeStorm, Rose Kelso	Comedy-central			Director			lQankmO_xbQ		image					
+staying-young-forever	Staying Young Forever	Comedy Central Digital ft. Lala Milan, Rose Kelso	Comedy-central			Director			oCYzAHPMTUM		image					
+nothing-gay-in-the-wild-west	Nothing Gay in the Wild West	Comedy Central Digital ft. Brooks Allison, Rose Kelso	Comedy-central			Director			bFYFLfq6nZo		image					
+andys-roadshow	Andy's Roadshow		Andys-originals			Director | Writer | Editor			iLNypL04zH0		image					
+tuber	Tuber		Andys-originals			Director | Writer | Editor			0U5SCBko2XM		image					
+beauty-and-the-bowl	Beauty and the Bowl	ft. Gianmarco Soresi, Uncle Function	Uncle-function			Director | DP | Editor	Sketch comedy featured on Funny Or Die.				image					
+poly-bachelorette	Poly Bachelorette					Director | Writer | Editor			RhzSqWrjx7Q		image					
+grandmothers-announcement	Grandmother's Announcement	ft. Natalie Walker, Lulu Krause				Director | DP | Editor			PEwfwxtwkWE		image					
+snapchat	Making It	Snap Originals ft. Dave Mizzoni				Director | DP Editor	10 episode vertical series		qSPdMoxsZoU		image	https://placehold.co/640x360	Comedy Central Collage			
+rizzle-asian-comedy-fest	Andy's Asian Afterlife	Rizzle's Asian Comedy Fest				Director | Editor	$1000 Grand Prize winner				strip				/videos/rizzle1.mp4|/videos/rizzle2.mp4|/videos/rizzle3.mp4	
+architects-newspaper-interviews	Architect's Newspaper	Interview Series			FALSE	Videographer & Editor	Videographer and editor for interviews on new architecture projects.		Bzhb1WBUNps		image					
+death-becomes-her	Death Becomes Her on Broadway	Social Promos				Director | Producer | Editor			gvjDOk8T9Lo		image					
+election-science-duvergers-law	Duverger's Law	Center for Election Science				Director | Editor	Volunteer work for voting education		HpBRGXK-QNs		image					
+instagram-betches	Instagram Betches					Director | DP	Winner of Best Sketch at NYC Short Comedy Film Fest		hQO_LLV9tms		image					
+securocam-3000	Securocam 3000	IFC Comedy Crib	Andys-originals			Director | Co-writer | Editor	Web series selected by NYTVF and IFC Comedy Crib.		_SRIskz2JOY		image					
+operators	Operators	Short Film	shorts			Director | Co-writer | Editor	Nevermore Film Fest 2024		aa2zI7PO-X8		image					
+tech-videos-showreel	Tech Videos Showreel		tech			Director & Technologist	Experiments documenting interactive and 3D production pipelines.		bpkZSxtZd7Y		image					
+honest-waitress	The Honest Waitress	PitTV				Director	Web series for PitTV		zlFyjWf4hOk		image					
+Garden-of-eden	Garden of Eden	Mark Fisher Fitness ft. Douglas Widick	tech			Director | Editor	Social Promo for local gym		_oUdAdTUk0c		image					
+European-boys	European Boys	Comedy Central Digital ft. Rose Kelso	Comedy-central			Director | Editor			uE1Y7PHMdPc 		image					
+Looking-like-a-snack	Lookin' Like a Snack	Combos ft. Douglas Widick				Director | DP	Branded spot for Combos		lMFubod8Gdc 		image					
+Jackson-pollack	Jackson Pollack	ft. Douglas Widick				Director | Editor			f53aKCMl7FQ		image					
+pissterine	pissterine	Andy's Originals	Andys-originals			Creator	A social stunt featured in trademark publications and articles				image					
+three4	three4	ft. Yael Elisheva	Music-videos			Director | DP | Editor					image					
+poor	Poor	ft. Anna Roisman	Music-videos			Director | DP			AzjRdPLgj_k		image					
+Secret-agent	Secret Agent Betrayal	Andy's Originals ft. Geil Comedy	Andys-originals			Director | Editor			kNGsC9uqwV		image					
+The-painter	The Painter	Quickiefest				Director | Editor	Winner Audience Award		WnEJ9xsAkZ0		image					
+roadshow	Andy's Roadshow	Andy's Originals				Creator			iLNypL04zH0		image					
+dinner	Meeting the Parents	ft. Megan Sass				Director | Editor			ZGDTHeyeO-w		image					
+Wonderful-life	It's a Wonderful Life	ft. Sean Ireland				Director | Editor			_98xIvAvOhE		image					
+uber	Uber	SpoiledNYC ft. Gianmarco Soresi, Megan Sass	Spoiled-nyc			Director | DP | Editor					image					
+Long-distance	Long Distance Relationships	SpoiledNYC ft. Gianmarco Soresi, Megan Sass	Spoiled-nyc			Director | DP | Editor					image					
+Apocalypse-problems	Apocalypse Problems	SpoiledNYC ft. Gianmarco Soresi, Megan Sass	Spoiled-nyc			Director | DP | Editor					image					
+interstellar	Interstellar in Real Life	PitTV	Andys-originals			Director | Writer | Editor			nl2-5DDL5nM		image					
+Mta-shames-nyc	MTA Shames NYC	SpoiledNYC ft. Gianmarco Soresi, Megan Sass	Spoiled-nyc			Director | Editor	Featured in Metro News!		qhXZjxXbW4s		image					
+settling	Settling	ft. Gianmarco Soresi, Megan Sass	Uncle-function			Director | Editor			qSPdMoxsZoU 		image					
+sqand	Sqand		Andys-originals			Director | DP | Writer | Editor			fTbRmOHJp1I		image					
+dog	The Only Dog Video You Need to Watch	ft. Lauren Ireland, Elyse Brandau				Director			tgND22y7uuA		image					
+Tell-my-wife	Tell My Wife	Short Film	shorts			Co-director			daNydp3mpI0		image					
+Pay-for-me	Pay For Me		Music-videos			Co-director | DP | Editor			hVrMjp22IM0		image					
+sugar	Sugar	Sister Sparrow	Music-videos			DP | Editor			-53w2mv_upw		image					
+Royal-heart	Royal Heart	Choreo Hayden Frederick	Music-videos			DP | Editor			zG2amIyE1Es		image					

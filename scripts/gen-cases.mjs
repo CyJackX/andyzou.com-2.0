@@ -3,14 +3,13 @@ import path from "node:path";
 
 const inputPath = path.join("src", "data", "cases.tsv");
 const outputPath = path.join("src", "data", "cases.generated.ts");
+const defaultImagePlaceholder = "https://placehold.co/640x360";
 
 const requiredHeaders = [
-  "id",
   "title",
   "subtitle",
   "roles",
   "copy",
-  "tags",
   "youtubeId",
   "href",
   "mediaKind",
@@ -29,26 +28,70 @@ function ensure(condition, message) {
   if (!condition) fail(message);
 }
 
+function parseOptionalBoolean(value, label) {
+  if (!value) return undefined;
+  if (/^(true|1|yes|y)$/i.test(value)) return true;
+  if (/^(false|0|no|n)$/i.test(value)) return false;
+  fail(`${label} must be true/false.`);
+}
+
+function parseOptionalNumber(value, label) {
+  if (!value) return undefined;
+  const parsed = Number(value);
+  ensure(Number.isFinite(parsed), `${label} must be a valid number.`);
+  return parsed;
+}
+
+function normalizeHeaderName(name) {
+  return name.trim().replace(/^\uFEFF/, "").toLowerCase();
+}
+
 const raw = fs.readFileSync(inputPath, "utf8");
 const lines = raw.split(/\r?\n/).filter((line) => line.trim().length > 0);
 
 ensure(lines.length > 1, "no data rows found.");
 
-const headers = lines[0].split("\t").map((header) => header.trim());
+const headers = lines[0].split("\t").map((header) => normalizeHeaderName(header));
 const headerIndex = Object.fromEntries(headers.map((header, index) => [header, index]));
+const aliases = {
+  id: ["id_slug", "slugid", "slug_id", "slug", "id"],
+  seriesId: ["seriesid", "series_id", "series"],
+  sourceHref: ["sourcehref", "source_href"],
+  showOnHome: ["showonhome", "show_on_home"],
+  homeOrder: ["homeorder", "home_order"],
+  videoOrder: ["videoorder", "video_order"],
+  publishedAt: ["publishedat", "published_at"],
+  vertical: ["vertical", "isvertical", "is_vertical"],
+};
 
-const missingHeaders = requiredHeaders.filter((header) => headerIndex[header] === undefined);
+const missingHeaders = requiredHeaders.filter(
+  (header) => headerIndex[normalizeHeaderName(header)] === undefined,
+);
 ensure(missingHeaders.length === 0, `missing headers: ${missingHeaders.join(", ")}`);
+ensure(
+  aliases.id.some((name) => headerIndex[name] !== undefined),
+  "missing id column: expected id_slug (or legacy id).",
+);
 
 const seenIds = new Set();
 const cases = [];
 
 for (let i = 1; i < lines.length; i += 1) {
   const lineNumber = i + 1;
-  const cells = lines[i].split("\t");
-  const get = (name) => (cells[headerIndex[name]] ?? "").trim();
+  const cells = lines[i].split("\t", -1);
+  const get = (name) => {
+    const index = headerIndex[normalizeHeaderName(name)];
+    return index === undefined ? "" : (cells[index] ?? "").trim();
+  };
+  const getAny = (names) => {
+    for (const name of names) {
+      const value = get(name);
+      if (value) return value;
+    }
+    return "";
+  };
 
-  const id = get("id");
+  const id = getAny(aliases.id);
   const title = get("title");
   const subtitle = get("subtitle");
   const roles = get("roles");
@@ -61,6 +104,26 @@ for (let i = 1; i < lines.length; i += 1) {
   const mediaAltRaw = get("mediaAlt");
   const mediaPoster = get("mediaPoster");
   const stripSourcesRaw = get("stripSources");
+  const seriesId = getAny(aliases.seriesId);
+  const sourceHref = getAny(aliases.sourceHref);
+  const show = parseOptionalBoolean(get("show"), `line ${lineNumber}: show`);
+  const showOnHome = parseOptionalBoolean(
+    getAny(aliases.showOnHome),
+    `line ${lineNumber}: showOnHome`,
+  );
+  const homeOrder = parseOptionalNumber(
+    getAny(aliases.homeOrder),
+    `line ${lineNumber}: homeOrder`,
+  );
+  const videoOrder = parseOptionalNumber(
+    getAny(aliases.videoOrder),
+    `line ${lineNumber}: videoOrder`,
+  );
+  const publishedAt = getAny(aliases.publishedAt);
+  const vertical = parseOptionalBoolean(
+    getAny(aliases.vertical),
+    `line ${lineNumber}: vertical`,
+  );
 
   ensure(id, `line ${lineNumber}: id is required.`);
   ensure(!seenIds.has(id), `line ${lineNumber}: duplicate id "${id}".`);
@@ -68,21 +131,32 @@ for (let i = 1; i < lines.length; i += 1) {
 
   ensure(title, `line ${lineNumber}: title is required.`);
   ensure(roles, `line ${lineNumber}: roles is required.`);
-  ensure(tagsRaw, `line ${lineNumber}: tags is required.`);
   ensure(mediaKind, `line ${lineNumber}: mediaKind is required.`);
+  if (youtubeId) {
+    ensure(
+      /^[A-Za-z0-9_-]{11}$/.test(youtubeId),
+      `line ${lineNumber}: youtubeId must be 11 URL-safe characters.`,
+    );
+  }
 
   const tags = tagsRaw
-    .split("|")
-    .map((tag) => tag.trim())
-    .filter(Boolean);
-  ensure(tags.length > 0, `line ${lineNumber}: tags must include at least one entry.`);
+    ? tagsRaw
+        .split("|")
+        .map((tag) => tag.trim())
+        .filter(Boolean)
+    : [];
+  if (publishedAt) {
+    ensure(
+      !Number.isNaN(Date.parse(publishedAt)),
+      `line ${lineNumber}: publishedAt must be an ISO-compatible date.`,
+    );
+  }
 
   const href = hrefRaw || (youtubeId ? `https://www.youtube.com/watch?v=${youtubeId}` : "");
 
   let media;
   if (mediaKind === "image") {
-    const src = mediaSrcRaw || (youtubeId ? `https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg` : "");
-    ensure(src, `line ${lineNumber}: mediaSrc is required for image without youtubeId.`);
+    const src = mediaSrcRaw || (youtubeId ? `https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg` : defaultImagePlaceholder);
     const alt = mediaAltRaw || `${title} thumbnail`;
     media = { kind: "image", src, alt };
   } else if (mediaKind === "video") {
@@ -108,6 +182,14 @@ for (let i = 1; i < lines.length; i += 1) {
   if (copy) entry.copy = copy;
   if (youtubeId) entry.youtubeId = youtubeId;
   if (href) entry.href = href;
+  if (seriesId) entry.seriesId = seriesId;
+  if (sourceHref) entry.sourceHref = sourceHref;
+  if (show !== undefined) entry.show = show;
+  if (showOnHome !== undefined) entry.showOnHome = showOnHome;
+  if (homeOrder !== undefined) entry.homeOrder = homeOrder;
+  if (videoOrder !== undefined) entry.videoOrder = videoOrder;
+  if (publishedAt) entry.publishedAt = publishedAt;
+  if (vertical !== undefined) entry.vertical = vertical;
 
   cases.push(entry);
 }

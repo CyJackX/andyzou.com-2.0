@@ -1,10 +1,13 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
+import VideoLightbox from "../components/VideoLightbox.astro";
+import WorkTile from "../components/WorkTile.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
-import { CASES } from "../data/cases";
+import { getHomeFeed, getHomeTags } from "../lib/work";
 
-const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
+const homeFeed = getHomeFeed();
+const allTags = getHomeTags();
 ---
 
 <!doctype html>
@@ -32,135 +35,45 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
 
       </div>
 
-      <div id="tilescontainer" class="tilescontainer"></div>
-
-      <script
-        type="application/json"
-        id="__cases"
-        set:html={JSON.stringify(CASES)}
-      ></script>
+      <div id="tilescontainer" class="tilescontainer">
+        {homeFeed.map((item) => (
+          <WorkTile
+            id={item.id}
+            type={item.type}
+            tags={item.tags}
+            title={item.title}
+            subtitle={item.subtitle}
+            roles={item.roles}
+            copy={item.copy}
+            media={item.media}
+            href={item.href}
+            lightboxable={item.type === "video" && item.href.startsWith("http")}
+            vertical={item.vertical === true}
+            ariaLabel={`${item.title} details`}
+          />
+        ))}
+      </div>
+      <VideoLightbox tileSelector="#tilescontainer .tile[data-lightboxable='true']" />
 
       <script type="module">
-        const casesEl = document.getElementById("__cases");
-        const tilescontainer = document.getElementById("tilescontainer");
         const checkboxes = Array.from(document.querySelectorAll('input[name="tag"]'));
-
-        const cases = JSON.parse(casesEl?.textContent || "[]");
-        const state = {
-          selectedTags: new Set(),
-        };
-
-        function intersectsTags(caseItem, selectedTags) {
-          if (selectedTags.size === 0) return true;
-          return caseItem.tags.some((tag) => selectedTags.has(tag));
-        }
-
-        function renderTile(caseItem) {
-          const outer = caseItem.href
-            ? Object.assign(document.createElement("a"), { href: caseItem.href })
-            : document.createElement("article");
-
-          if (outer.tagName === "A") {
-            outer.target = "_blank";
-            outer.rel = "noopener noreferrer";
-            outer.setAttribute("aria-label", `${caseItem.title} on YouTube`);
-          }
-
-          outer.className = "tile";
-          if (outer.tagName === "ARTICLE") {
-            outer.tabIndex = 0;
-          }
-          outer.dataset.id = caseItem.id;
-
-          if (caseItem.media.kind === "image") {
-            const img = document.createElement("img");
-            img.className = "media";
-            img.src = caseItem.media.src;
-            img.alt = caseItem.media.alt;
-            outer.append(img);
-          }
-
-          if (caseItem.media.kind === "video") {
-            const video = document.createElement("video");
-            video.className = "media";
-            video.src = caseItem.media.src;
-            video.autoplay = true;
-            video.loop = true;
-            video.muted = true;
-            video.playsInline = true;
-            if (caseItem.media.poster) {
-              video.poster = caseItem.media.poster;
-            }
-            outer.append(video);
-          }
-
-          if (caseItem.media.kind === "strip") {
-            const strip = document.createElement("div");
-            strip.className = "strip";
-
-            caseItem.media.sources.forEach((source) => {
-              const video = document.createElement("video");
-              video.className = "stripItem";
-              video.src = source;
-              video.autoplay = true;
-              video.loop = true;
-              video.muted = true;
-              video.playsInline = true;
-              strip.append(video);
-            });
-
-            outer.append(strip);
-          }
-
-          const overlay = document.createElement("div");
-          overlay.className = "overlay";
-
-          const title = document.createElement("div");
-          title.className = "titleText";
-          title.textContent = caseItem.title;
-
-          const subtitle = document.createElement("div");
-          subtitle.className = "subtitleText";
-          subtitle.textContent = caseItem.subtitle || "";
-          if (!caseItem.subtitle) {
-            subtitle.hidden = true;
-          }
-
-          const roles = document.createElement("div");
-          roles.className = "roles";
-          roles.textContent = caseItem.roles;
-
-          overlay.append(title, subtitle, roles);
-          if (caseItem.copy && caseItem.copy.trim().length > 0) {
-            const copy = document.createElement("div");
-            copy.className = "copy";
-            copy.textContent = caseItem.copy;
-            overlay.append(copy);
-          }
-          outer.append(overlay);
-
-          return outer;
-        }
+        const tiles = Array.from(document.querySelectorAll("#tilescontainer .tile"));
 
         function render() {
-          const filtered = cases.filter(
-            (caseItem) =>
-              intersectsTags(caseItem, state.selectedTags),
+          const selectedTags = new Set(
+            checkboxes.filter((checkbox) => checkbox.checked).map((checkbox) => checkbox.value),
           );
 
-          tilescontainer.replaceChildren(...filtered.map((caseItem) => renderTile(caseItem)));
+          tiles.forEach((tile) => {
+            const tags = (tile.dataset.tags || "").split("|").filter(Boolean);
+            const visible =
+              selectedTags.size === 0 || tags.some((tag) => selectedTags.has(tag));
+            tile.hidden = !visible;
+          });
         }
 
         checkboxes.forEach((checkbox) => {
-          checkbox.addEventListener("change", (event) => {
-            const input = event.currentTarget;
-            if (input.checked) {
-              state.selectedTags.add(input.value);
-            } else {
-              state.selectedTags.delete(input.value);
-            }
-            render();
-          });
+          checkbox.addEventListener("change", render);
         });
 
         render();
@@ -201,104 +114,6 @@ const allTags = [...new Set(CASES.flatMap((entry) => entry.tags))].sort();
         align-items:center;
         gap: 16px;
         padding-bottom: 8px;
-      }
-
-      :global(.tile) {
-        flex: 0 0 320px;
-        aspect-ratio: 16 / 9;
-        position: relative;
-        overflow: hidden;
-        border-radius: 12px;
-        text-decoration: none;
-        color: inherit;
-      }
-
-      :global(.media) {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-
-      :global(.strip) {
-        display: flex;
-        width: 100%;
-        height: 100%;
-      }
-
-      :global(.stripItem) {
-        width: 33.333%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      :global(.overlay) {
-        position: absolute;
-        inset: 0;
-        z-index: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        text-align: center;
-        padding: 1rem;
-        pointer-events: none;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.1));
-        opacity: 0;
-        transition: opacity 200ms ease;
-      }
-
-      :global(.tile:hover .overlay),
-      :global(.tile:focus-within .overlay),
-      :global(.tile:focus-visible .overlay) {
-        opacity: 1;
-      }
-
-      :global(.titleText) {
-        font-weight: 700;
-        line-height: 1.2;
-      }
-
-      :global(.subtitleText) {
-        margin-top: 4px;
-        font-weight: 600;
-        font-size: 0.95rem;
-        opacity: 0.95;
-      }
-
-      :global(.roles),
-      :global(.subtitleText),
-      :global(.copy) {
-        margin-top: 6px;
-        opacity: 0;
-        transform: translateY(6px);
-        transition: opacity 200ms ease, transform 200ms ease;
-      }
-
-      :global(.subtitleText) {
-        margin-top: 4px;
-      }
-
-      :global(.roles) {
-        font-size: 0.95rem;
-      }
-
-      :global(.copy) {
-        font-size: 0.9rem;
-      }
-
-      :global(.tile:hover .roles),
-      :global(.tile:hover .subtitleText),
-      :global(.tile:hover .copy),
-      :global(.tile:focus-within .roles),
-      :global(.tile:focus-within .subtitleText),
-      :global(.tile:focus-within .copy),
-      :global(.tile:focus-visible .roles),
-      :global(.tile:focus-visible .subtitleText),
-      :global(.tile:focus-visible .copy) {
-        opacity: 1;
-        transform: translateY(0);
       }
     </style>
   </body>

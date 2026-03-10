@@ -33,6 +33,8 @@
 		"deploy": "wrangler deploy",
 		"dev": "astro dev",
 		"gen:cases": "node scripts/gen-cases.mjs",
+		"gen:series": "node scripts/gen-series.mjs",
+		"gen:all": "npm run gen:cases && npm run gen:series && npx tsc --noEmit",
 		"preview": "astro build && wrangler dev"
 	},
 	"type": "module",

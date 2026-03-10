@@ -1,0 +1,181 @@
+---
+import type { Media } from "../data/cases";
+
+interface Props {
+  id?: string;
+  title: string;
+  subtitle?: string;
+  roles: string;
+  copy?: string;
+  tags?: string[];
+  media: Media;
+  href: string;
+  type?: "video" | "series";
+  lightboxable?: boolean;
+  vertical?: boolean;
+  ariaLabel?: string;
+  className?: string;
+}
+
+const {
+  id,
+  title,
+  subtitle,
+  roles,
+  copy,
+  tags = [],
+  media,
+  href,
+  type = "video",
+  lightboxable,
+  vertical = false,
+  ariaLabel,
+  className = "",
+} = Astro.props;
+
+const isExternal = /^https?:\/\//i.test(href);
+const resolvedLightboxable = lightboxable ?? (type === "video" && isExternal);
+---
+
+<a
+  class={`tile ${className}`.trim()}
+  href={href}
+  aria-label={ariaLabel ?? `${title} details`}
+  data-id={id}
+  data-type={type}
+  data-tags={tags.join("|")}
+  data-lightboxable={resolvedLightboxable ? "true" : undefined}
+  data-vertical={vertical ? "true" : undefined}
+>
+  {media.kind === "image" && (
+    <img class="media" src={media.src} alt={media.alt} />
+  )}
+  {media.kind === "video" && (
+    <video
+      class="media"
+      src={media.src}
+      autoplay
+      loop
+      muted
+      playsinline
+      poster={media.poster}
+    ></video>
+  )}
+  {media.kind === "strip" && (
+    <div class="strip">
+      {media.sources.map((source) => (
+        <video class="stripItem" src={source} autoplay loop muted playsinline></video>
+      ))}
+    </div>
+  )}
+
+  <div class="overlay">
+    <div class="titleText">{title}</div>
+    {subtitle && <div class="subtitleText">{subtitle}</div>}
+    <div class="roles">{roles}</div>
+    {copy && copy.trim().length > 0 && (
+      <div class="copy">{copy}</div>
+    )}
+  </div>
+</a>
+
+<style>
+  .tile {
+    flex: 1 0 320px;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .strip {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  .stripItem {
+    width: 33.333%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    pointer-events: none;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.1));
+    opacity: 0;
+    transition: opacity 200ms ease;
+  }
+
+  .tile:hover .overlay,
+  .tile:focus-within .overlay,
+  .tile:focus-visible .overlay {
+    opacity: 1;
+  }
+
+  .titleText {
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 1.2;
+  }
+
+  .subtitleText {
+    margin-top: 4px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    opacity: 0.95;
+  }
+
+  .roles,
+  .subtitleText,
+  .copy {
+    margin-top: 6px;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+
+  .subtitleText {
+    margin-top: 4px;
+  }
+
+  .roles {
+    font-size: 0.95rem;
+  }
+
+  .copy {
+    font-size: 0.9rem;
+  }
+
+  .tile:hover .roles,
+  .tile:hover .subtitleText,
+  .tile:hover .copy,
+  .tile:focus-within .roles,
+  .tile:focus-within .subtitleText,
+  .tile:focus-within .copy,
+  .tile:focus-visible .roles,
+  .tile:focus-visible .subtitleText,
+  .tile:focus-visible .copy {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
