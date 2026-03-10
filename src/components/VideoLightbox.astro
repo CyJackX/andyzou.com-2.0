@@ -45,8 +45,8 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
   const lightboxPanel = lightbox?.querySelector(".lightboxPanel");
   const lightboxBackdrop = lightbox?.querySelector(".lightboxBackdrop");
   const lightboxClose = lightbox?.querySelector(".lightboxClose");
-  const OPEN_DURATION_MS = 320;
-  const CLOSE_DURATION_MS = 260;
+  const OPEN_DURATION_MS = 500;
+  const CLOSE_DURATION_MS = 250;
   const EASING = "cubic-bezier(0.22, 1, 0.36, 1)";
   const PANEL_ANIM_EASING = "ease-out";
   const DEBUG_LIGHTBOX =
