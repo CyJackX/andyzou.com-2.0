@@ -26,7 +26,6 @@ export type HomeFeedItem = {
   subtitle?: string;
   roles: string;
   copy?: string;
-  tags: string[];
   media: Media;
   href: string;
   homeOrder: number;
@@ -113,7 +112,6 @@ function getSeriesHomeItem(series: WorkSeries): HomeFeedItem {
     subtitle: "Series",
     roles: countLabel,
     copy: series.description || "",
-    tags: series.tags,
     media: getSeriesCoverMedia(series),
     href: `/series/${series.slug}/`,
     homeOrder: series.homeOrder,
@@ -130,7 +128,6 @@ function getVideoHomeItem(video: WorkVideo): HomeFeedItem {
     subtitle: video.subtitle,
     roles: video.roles,
     copy: video.copy,
-    tags: video.tags,
     media: video.media,
     href: directHref,
     homeOrder: video.homeOrder,
@@ -146,8 +143,4 @@ export function getHomeFeed(): HomeFeedItem[] {
     .filter((video) => video.showOnHome)
     .map(getVideoHomeItem);
   return [...seriesItems, ...videoItems].sort((a, b) => a.homeOrder - b.homeOrder);
-}
-
-export function getHomeTags(): string[] {
-  return [...new Set(getHomeFeed().flatMap((item) => item.tags))].sort();
 }

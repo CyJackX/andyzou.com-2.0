@@ -7,7 +7,6 @@ interface Props {
   subtitle?: string;
   roles: string;
   copy?: string;
-  tags?: string[];
   media: Media;
   href: string;
   type?: "video" | "series";
@@ -23,7 +22,6 @@ const {
   subtitle,
   roles,
   copy,
-  tags = [],
   media,
   href,
   type = "video",
@@ -43,7 +41,6 @@ const resolvedLightboxable = lightboxable ?? (type === "video" && isExternal);
   aria-label={ariaLabel ?? `${title} details`}
   data-id={id}
   data-type={type}
-  data-tags={tags.join("|")}
   data-lightboxable={resolvedLightboxable ? "true" : undefined}
   data-vertical={vertical ? "true" : undefined}
 >

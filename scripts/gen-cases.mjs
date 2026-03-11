@@ -96,7 +96,6 @@ for (let i = 1; i < lines.length; i += 1) {
   const subtitle = get("subtitle");
   const roles = get("roles");
   const copy = get("copy");
-  const tagsRaw = get("tags");
   const youtubeId = get("youtubeId");
   const hrefRaw = get("href");
   const mediaKind = get("mediaKind");
@@ -139,12 +138,6 @@ for (let i = 1; i < lines.length; i += 1) {
     );
   }
 
-  const tags = tagsRaw
-    ? tagsRaw
-        .split("|")
-        .map((tag) => tag.trim())
-        .filter(Boolean)
-    : [];
   if (publishedAt) {
     ensure(
       !Number.isNaN(Date.parse(publishedAt)),
@@ -176,7 +169,7 @@ for (let i = 1; i < lines.length; i += 1) {
     fail(`line ${lineNumber}: unsupported mediaKind "${mediaKind}".`);
   }
 
-  const entry = { id, title, roles, tags, media };
+  const entry = { id, title, roles, media };
 
   if (subtitle) entry.subtitle = subtitle;
   if (copy) entry.copy = copy;

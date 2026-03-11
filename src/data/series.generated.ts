@@ -4,8 +4,7 @@ import type { Series } from "./series";
 export const SERIES: Series[] = [
   {
     "id": "Comedy-central",
-    "title": "ComedyCentral",
-    "tags": [],
+    "title": "Comedy Central Digital",
     "description": "Series description coming soon.",
     "show": true,
     "showOnHome": true,
@@ -14,7 +13,6 @@ export const SERIES: Series[] = [
   {
     "id": "Making-it",
     "title": "Making It",
-    "tags": [],
     "description": "Series description coming soon.",
     "show": true,
     "showOnHome": true,
@@ -23,7 +21,6 @@ export const SERIES: Series[] = [
   {
     "id": "Apocalypse-problems",
     "title": "Apocalypse Problems",
-    "tags": [],
     "description": "Series description coming soon.",
     "show": true,
     "showOnHome": true,
@@ -32,7 +29,6 @@ export const SERIES: Series[] = [
   {
     "id": "Asian-afterlife",
     "title": "Andy's Asian Afterlife",
-    "tags": [],
     "description": "Series description coming soon.",
     "show": true,
     "showOnHome": true,

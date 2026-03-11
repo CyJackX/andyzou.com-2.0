@@ -9,7 +9,6 @@ export type Case = {
   subtitle?: string;
   roles: string;
   copy?: string;
-  tags: string[];
   youtubeId?: string;
   href?: string;
   seriesId?: string;

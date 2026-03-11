@@ -209,8 +209,34 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
     return /\.(mp4|webm|ogg)(?:[?#].*)?$/i.test(url);
   }
 
+  function getInstagramEmbed(url) {
+    try {
+      const parsed = new URL(url, window.location.origin);
+      const host = parsed.hostname.replace(/^www\./, "").replace(/^m\./, "");
+      const isInstagramHost =
+        host === "instagram.com" || host.endsWith(".instagram.com") || host === "instagr.am";
+      if (!isInstagramHost) return null;
+
+      const segments = parsed.pathname.split("/").filter(Boolean);
+      if (segments.length < 2) return null;
+
+      const kind = segments[0];
+      const shortcode = segments[1];
+      if (!shortcode) return null;
+      if (!["p", "reel", "tv"].includes(kind)) return null;
+
+      return {
+        kind,
+        shortcode,
+        isVertical: kind === "reel",
+        embedUrl: `https://www.instagram.com/${kind}/${shortcode}/embed/`,
+      };
+    } catch {}
+    return null;
+  }
+
   function canBuildPlayer(url) {
-    return Boolean(getYoutubeId(url)) || isNativeVideoUrl(url);
+    return Boolean(getYoutubeId(url)) || Boolean(getInstagramEmbed(url)) || isNativeVideoUrl(url);
   }
 
   function clearYoutubePlayer() {
@@ -329,6 +355,27 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
         kind: "youtube",
         sourceUrl: url,
         youtubeId,
+        isVertical,
+        element: iframe,
+      };
+    }
+
+    const instagram = getInstagramEmbed(url);
+    if (instagram) {
+      const iframe = document.createElement("iframe");
+      iframe.className = "lightboxMedia";
+      if (isVertical || instagram.isVertical) iframe.classList.add("isVertical");
+      iframe.src = instagram.embedUrl;
+      iframe.title = "Instagram post";
+      iframe.loading = "lazy";
+      iframe.allow = "autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share";
+      iframe.referrerPolicy = "strict-origin-when-cross-origin";
+      iframe.allowFullscreen = true;
+      return {
+        kind: "instagram",
+        sourceUrl: url,
+        shortcode: instagram.shortcode,
+        isVertical: isVertical || instagram.isVertical,
         element: iframe,
       };
     }
@@ -345,6 +392,7 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
       return {
         kind: "native",
         sourceUrl: url,
+        isVertical,
         element: video,
       };
     }
@@ -428,17 +476,19 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
     const playerConfig = buildPlayer(url, isVertical);
     if (!playerConfig) return;
     const playerEl = playerConfig.element;
+    const shouldUseVertical = playerConfig.isVertical === true;
     isAnimating = true;
     lightbox.classList.add("isAnimating");
-    lightboxPanel.classList.toggle("isVertical", isVertical);
+    lightboxPanel.classList.toggle("isVertical", shouldUseVertical);
 
     lastActiveElement = document.activeElement;
     activeTile = tile;
     const tileRect = tile.getBoundingClientRect();
     debugLog("open: requested", {
       tileId: tile.dataset.id || null,
+      kind: playerConfig.kind,
       url,
-      isVertical,
+      isVertical: shouldUseVertical,
       tileRect: rectSummary(tileRect),
       prefersReducedMotion: window.matchMedia("(prefers-reduced-motion: reduce)").matches,
     });

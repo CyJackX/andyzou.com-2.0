@@ -1,13 +1,13 @@
 ---
+import AccordionItem from "../components/AccordionItem.astro";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import VideoLightbox from "../components/VideoLightbox.astro";
 import WorkTile from "../components/WorkTile.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
-import { getHomeFeed, getHomeTags } from "../lib/work";
+import { getHomeFeed } from "../lib/work";
 
 const homeFeed = getHomeFeed();
-const allTags = getHomeTags();
 ---
 
 <!doctype html>
@@ -19,28 +19,21 @@ const allTags = getHomeTags();
     <main class ="text-center">
       <h1 class="title">Andy Zou</h1>
       <h2>Video Director & Creative Technologist</h2>
-
-      <div class="filters" aria-label="Case filters">
-        <fieldset>
-          <legend>Filter by tag</legend>
-          <div class="tagList">
-            {allTags.map((tag) => (
-              <label>
-                <input type="checkbox" name="tag" value={tag} />
-                {tag}
-              </label>
-            ))}
-          </div>
-        </fieldset>
-
-      </div>
+      <AccordionItem title="Director">
+      </AccordionItem>
+      <AccordionItem title="Technologist">
+      </AccordionItem>
+      <AccordionItem title="Weirdo">
+      </AccordionItem>
+      <AccordionItem title="About">
+      </AccordionItem>
+      
 
       <div id="tilescontainer" class="tilescontainer">
         {homeFeed.map((item) => (
           <WorkTile
             id={item.id}
             type={item.type}
-            tags={item.tags}
             title={item.title}
             subtitle={item.subtitle}
             roles={item.roles}
@@ -54,30 +47,6 @@ const allTags = getHomeTags();
         ))}
       </div>
       <VideoLightbox tileSelector="#tilescontainer .tile[data-lightboxable='true']" />
-
-      <script type="module">
-        const checkboxes = Array.from(document.querySelectorAll('input[name="tag"]'));
-        const tiles = Array.from(document.querySelectorAll("#tilescontainer .tile"));
-
-        function render() {
-          const selectedTags = new Set(
-            checkboxes.filter((checkbox) => checkbox.checked).map((checkbox) => checkbox.value),
-          );
-
-          tiles.forEach((tile) => {
-            const tags = (tile.dataset.tags || "").split("|").filter(Boolean);
-            const visible =
-              selectedTags.size === 0 || tags.some((tag) => selectedTags.has(tag));
-            tile.hidden = !visible;
-          });
-        }
-
-        checkboxes.forEach((checkbox) => {
-          checkbox.addEventListener("change", render);
-        });
-
-        render();
-      </script>
       <Footer />
     </main>
 
@@ -92,19 +61,6 @@ const allTags = getHomeTags();
         font-size: clamp(4rem, 10vw, 8rem);
         margin-bottom: 0.5rem;
         font-weight: bold;
-      }
-
-      .filters {
-        display: grid;
-        gap: 12px;
-        margin: 24px 0;
-      }
-
-      .tagList {
-        display: flex;
-        justify-content:center;
-        flex-wrap: wrap;
-        gap: 12px;
       }
 
       .tilescontainer {

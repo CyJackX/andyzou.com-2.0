@@ -95,7 +95,6 @@ for (let i = 1; i < lines.length; i += 1) {
   }
 
   const description = get("description") || "Series description coming soon.";
-  const tagsRaw = get("tags");
   const coverCaseId = getAny(aliases.coverCaseId);
   const show = parseOptionalBoolean(get("show"), `line ${lineNumber}: show`);
   const showOnHome = parseOptionalBoolean(
@@ -108,14 +107,7 @@ for (let i = 1; i < lines.length; i += 1) {
   );
 
   seenIds.add(id);
-  const tags = tagsRaw
-    ? tagsRaw
-        .split("|")
-        .map((tag) => tag.trim())
-        .filter(Boolean)
-    : [];
-
-  const entry = { id, title, tags };
+  const entry = { id, title };
   entry.description = description;
   if (coverCaseId) entry.coverCaseId = coverCaseId;
   entry.show = show ?? true;

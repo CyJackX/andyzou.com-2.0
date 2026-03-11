@@ -6,7 +6,6 @@ export const CASES: Case[] = [
     "id": "rebirthing-center",
     "title": "The Rebirthing Center",
     "roles": "Director | Writer",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/BXOaAgDnpd8/hqdefault.jpg",
@@ -22,7 +21,6 @@ export const CASES: Case[] = [
     "id": "polyamorous-romcom",
     "title": "The Polyamorous RomCom",
     "roles": "Director | Writer | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/XhMz5vRlya8/hqdefault.jpg",
@@ -37,7 +35,6 @@ export const CASES: Case[] = [
     "id": "remote-control-boss",
     "title": "Remote Control Boss",
     "roles": "Director | Writer | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/2PPkDxOul_0/hqdefault.jpg",
@@ -52,7 +49,6 @@ export const CASES: Case[] = [
     "id": "litterbox-office",
     "title": "The Litterbox Office",
     "roles": "Director | Writer",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/KIdN_iYBW7A/hqdefault.jpg",
@@ -68,7 +64,6 @@ export const CASES: Case[] = [
     "id": "icontact",
     "title": "iContact",
     "roles": "Director | Writer | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/aQN6jBk_LWc/hqdefault.jpg",
@@ -83,7 +78,6 @@ export const CASES: Case[] = [
     "id": "living-funeral-home",
     "title": "The Living Funeral Home",
     "roles": "Director | Writer | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/zcqkqql5VW0/hqdefault.jpg",
@@ -98,7 +92,6 @@ export const CASES: Case[] = [
     "id": "teen-uncle",
     "title": "Teen Uncle",
     "roles": "Director | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/YUJIjQ0MytM/hqdefault.jpg",
@@ -113,7 +106,6 @@ export const CASES: Case[] = [
     "id": "whameo",
     "title": "Whameo",
     "roles": "Director | Writer | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/GBG1KLVBQPA/hqdefault.jpg",
@@ -128,10 +120,9 @@ export const CASES: Case[] = [
     "id": "take-a-deep-breath",
     "title": "Take a Deep F***ing Breath",
     "roles": "Director | Writer | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/2Z4VgVKrveM/hqdefault.jpg",
+      "src": "/breathe.jpg",
       "alt": "Take a Deep F***ing Breath thumbnail"
     },
     "subtitle": "Comedy Central Digital",
@@ -144,13 +135,13 @@ export const CASES: Case[] = [
     "id": "freezing-your-eggs",
     "title": "Freezing Your Eggs",
     "roles": "Director | Writer | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
-      "src": "https://www.instagram.com/reel/Cqs1xAFpnwI",
+      "src": "/cadbury.jpg",
       "alt": "Freezing Your Eggs thumbnail"
     },
     "subtitle": "Comedy Central Digital",
+    "href": "https://www.instagram.com/reel/Cqs1xAFpnwI",
     "seriesId": "Comedy-central",
     "vertical": true
   },
@@ -158,7 +149,6 @@ export const CASES: Case[] = [
     "id": "vesting-up",
     "title": "Vesting Up",
     "roles": "Director | Writer | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/DJCgT1gw8nc/hqdefault.jpg",
@@ -174,7 +164,6 @@ export const CASES: Case[] = [
     "id": "rich-friend",
     "title": "Rich Friend",
     "roles": "Director",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/gSojwTO5QZs/hqdefault.jpg",
@@ -189,7 +178,6 @@ export const CASES: Case[] = [
     "id": "she-looks-like-her-dad",
     "title": "She Looks Like Her Dad",
     "roles": "Director",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/lQankmO_xbQ/hqdefault.jpg",
@@ -204,7 +192,6 @@ export const CASES: Case[] = [
     "id": "staying-young-forever",
     "title": "Staying Young Forever",
     "roles": "Director",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/oCYzAHPMTUM/hqdefault.jpg",
@@ -219,7 +206,6 @@ export const CASES: Case[] = [
     "id": "nothing-gay-in-the-wild-west",
     "title": "Nothing Gay in the Wild West",
     "roles": "Director",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/bFYFLfq6nZo/hqdefault.jpg",
@@ -231,38 +217,9 @@ export const CASES: Case[] = [
     "seriesId": "Comedy-central"
   },
   {
-    "id": "andys-roadshow",
-    "title": "Andy's Roadshow",
-    "roles": "Director | Writer | Editor",
-    "tags": [],
-    "media": {
-      "kind": "image",
-      "src": "https://i.ytimg.com/vi/iLNypL04zH0/hqdefault.jpg",
-      "alt": "Andy's Roadshow thumbnail"
-    },
-    "youtubeId": "iLNypL04zH0",
-    "href": "https://www.youtube.com/watch?v=iLNypL04zH0",
-    "seriesId": "Andys-originals"
-  },
-  {
-    "id": "tuber",
-    "title": "Tuber",
-    "roles": "Director | Writer | Editor",
-    "tags": [],
-    "media": {
-      "kind": "image",
-      "src": "https://i.ytimg.com/vi/0U5SCBko2XM/hqdefault.jpg",
-      "alt": "Tuber thumbnail"
-    },
-    "youtubeId": "0U5SCBko2XM",
-    "href": "https://www.youtube.com/watch?v=0U5SCBko2XM",
-    "seriesId": "Andys-originals"
-  },
-  {
     "id": "beauty-and-the-bowl",
     "title": "Beauty and the Bowl",
     "roles": "Director | DP | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/nRWyNY1xmto/hqdefault.jpg",
@@ -275,52 +232,23 @@ export const CASES: Case[] = [
     "seriesId": "Uncle-function"
   },
   {
-    "id": "poly-bachelorette",
-    "title": "Poly Bachelorette",
-    "roles": "Director | Writer | Editor",
-    "tags": [],
+    "id": "European-boys",
+    "title": "European Boys",
+    "roles": "Director | Editor",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/RhzSqWrjx7Q/hqdefault.jpg",
-      "alt": "Poly Bachelorette thumbnail"
+      "src": "https://i.ytimg.com/vi/uE1Y7PHMdPc/hqdefault.jpg",
+      "alt": "European Boys thumbnail"
     },
-    "youtubeId": "RhzSqWrjx7Q",
-    "href": "https://www.youtube.com/watch?v=RhzSqWrjx7Q"
-  },
-  {
-    "id": "grandmothers-announcement",
-    "title": "Grandmother's Announcement",
-    "roles": "Director | DP | Editor",
-    "tags": [],
-    "media": {
-      "kind": "image",
-      "src": "https://i.ytimg.com/vi/PEwfwxtwkWE/hqdefault.jpg",
-      "alt": "Grandmother's Announcement thumbnail"
-    },
-    "subtitle": "ft. Natalie Walker, Lulu Krause",
-    "youtubeId": "PEwfwxtwkWE",
-    "href": "https://www.youtube.com/watch?v=PEwfwxtwkWE"
-  },
-  {
-    "id": "snapchat",
-    "title": "Making It",
-    "roles": "Director | DP Editor",
-    "tags": [],
-    "media": {
-      "kind": "image",
-      "src": "https://placehold.co/640x360",
-      "alt": "Comedy Central Collage"
-    },
-    "subtitle": "Snap Originals ft. Dave Mizzoni",
-    "copy": "10 episode vertical series",
-    "youtubeId": "qSPdMoxsZoU",
-    "href": "https://www.youtube.com/watch?v=qSPdMoxsZoU"
+    "subtitle": "Comedy Central Digital ft. Rose Kelso",
+    "youtubeId": "uE1Y7PHMdPc",
+    "href": "https://www.youtube.com/watch?v=uE1Y7PHMdPc",
+    "seriesId": "Comedy-central"
   },
   {
     "id": "rizzle-asian-comedy-fest",
     "title": "Andy's Asian Afterlife",
     "roles": "Director | Editor",
-    "tags": [],
     "media": {
       "kind": "strip",
       "sources": [
@@ -333,26 +261,9 @@ export const CASES: Case[] = [
     "copy": "$1000 Grand Prize winner"
   },
   {
-    "id": "architects-newspaper-interviews",
-    "title": "Architect's Newspaper",
-    "roles": "Videographer & Editor",
-    "tags": [],
-    "media": {
-      "kind": "image",
-      "src": "https://i.ytimg.com/vi/Bzhb1WBUNps/hqdefault.jpg",
-      "alt": "Architect's Newspaper thumbnail"
-    },
-    "subtitle": "Interview Series",
-    "copy": "Videographer and editor for interviews on new architecture projects.",
-    "youtubeId": "Bzhb1WBUNps",
-    "href": "https://www.youtube.com/watch?v=Bzhb1WBUNps",
-    "show": false
-  },
-  {
     "id": "death-becomes-her",
     "title": "Death Becomes Her on Broadway",
     "roles": "Director | Producer | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/gvjDOk8T9Lo/hqdefault.jpg",
@@ -363,10 +274,52 @@ export const CASES: Case[] = [
     "href": "https://www.youtube.com/watch?v=gvjDOk8T9Lo"
   },
   {
+    "id": "Looking-like-a-snack",
+    "title": "Lookin' Like a Snack",
+    "roles": "Director | DP",
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/lMFubod8Gdc/hqdefault.jpg",
+      "alt": "Lookin' Like a Snack thumbnail"
+    },
+    "subtitle": "Combos ft. Akilah Hughes",
+    "copy": "Branded spot for Combos",
+    "youtubeId": "lMFubod8Gdc",
+    "href": "https://www.youtube.com/watch?v=lMFubod8Gdc"
+  },
+  {
+    "id": "tech-videos-showreel",
+    "title": "Tech Videos Showreel",
+    "roles": "Director & Technologist",
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/bpkZSxtZd7Y/hqdefault.jpg",
+      "alt": "Tech Videos Showreel thumbnail"
+    },
+    "copy": "Experiments documenting interactive and 3D production pipelines.",
+    "youtubeId": "bpkZSxtZd7Y",
+    "href": "https://www.youtube.com/watch?v=bpkZSxtZd7Y",
+    "seriesId": "tech"
+  },
+  {
+    "id": "Garden-of-eden",
+    "title": "Garden of Eden",
+    "roles": "Director | Editor",
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/_oUdAdTUk0c/hqdefault.jpg",
+      "alt": "Garden of Eden thumbnail"
+    },
+    "subtitle": "Mark Fisher Fitness ft. Douglas Widick",
+    "copy": "Social Promo for local gym",
+    "youtubeId": "_oUdAdTUk0c",
+    "href": "https://www.youtube.com/watch?v=_oUdAdTUk0c",
+    "seriesId": "tech"
+  },
+  {
     "id": "election-science-duvergers-law",
     "title": "Duverger's Law",
     "roles": "Director | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/HpBRGXK-QNs/hqdefault.jpg",
@@ -381,7 +334,6 @@ export const CASES: Case[] = [
     "id": "instagram-betches",
     "title": "Instagram Betches",
     "roles": "Director | DP",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/hQO_LLV9tms/hqdefault.jpg",
@@ -392,10 +344,89 @@ export const CASES: Case[] = [
     "href": "https://www.youtube.com/watch?v=hQO_LLV9tms"
   },
   {
+    "id": "honest-waitress",
+    "title": "The Honest Waitress",
+    "roles": "Director",
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/zlFyjWf4hOk/hqdefault.jpg",
+      "alt": "The Honest Waitress thumbnail"
+    },
+    "subtitle": "PitTV",
+    "copy": "Web series for PitTV",
+    "youtubeId": "zlFyjWf4hOk",
+    "href": "https://www.youtube.com/watch?v=zlFyjWf4hOk"
+  },
+  {
+    "id": "sqand",
+    "title": "Sqand",
+    "roles": "Director | DP | Writer | Editor",
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/fTbRmOHJp1I/hqdefault.jpg",
+      "alt": "Sqand thumbnail"
+    },
+    "youtubeId": "fTbRmOHJp1I",
+    "href": "https://www.youtube.com/watch?v=fTbRmOHJp1I",
+    "seriesId": "Andys-originals"
+  },
+  {
+    "id": "Jackson-pollack",
+    "title": "Jackson Pollack",
+    "roles": "Director | Editor",
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/f53aKCMl7FQ/hqdefault.jpg",
+      "alt": "Jackson Pollack thumbnail"
+    },
+    "subtitle": "ft. Douglas Widick",
+    "youtubeId": "f53aKCMl7FQ",
+    "href": "https://www.youtube.com/watch?v=f53aKCMl7FQ"
+  },
+  {
+    "id": "three4",
+    "title": "three4",
+    "roles": "Director | DP | Editor",
+    "media": {
+      "kind": "image",
+      "src": "https://placehold.co/640x360",
+      "alt": "three4 thumbnail"
+    },
+    "subtitle": "ft. Yael Elisheva",
+    "seriesId": "Music-videos",
+    "show": false
+  },
+  {
+    "id": "poor",
+    "title": "Poor",
+    "roles": "Director | DP",
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/AzjRdPLgj_k/hqdefault.jpg",
+      "alt": "Poor thumbnail"
+    },
+    "subtitle": "ft. Anna Roisman",
+    "youtubeId": "AzjRdPLgj_k",
+    "href": "https://www.youtube.com/watch?v=AzjRdPLgj_k",
+    "seriesId": "Music-videos"
+  },
+  {
+    "id": "andys-roadshow",
+    "title": "Andy's Roadshow",
+    "roles": "Director | Writer | Editor",
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/iLNypL04zH0/hqdefault.jpg",
+      "alt": "Andy's Roadshow thumbnail"
+    },
+    "youtubeId": "iLNypL04zH0",
+    "href": "https://www.youtube.com/watch?v=iLNypL04zH0",
+    "seriesId": "Andys-originals"
+  },
+  {
     "id": "securocam-3000",
     "title": "Securocam 3000",
     "roles": "Director | Co-writer | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/_SRIskz2JOY/hqdefault.jpg",
@@ -408,256 +439,48 @@ export const CASES: Case[] = [
     "seriesId": "Andys-originals"
   },
   {
-    "id": "operators",
-    "title": "Operators",
-    "roles": "Director | Co-writer | Editor",
-    "tags": [],
+    "id": "poly-bachelorette",
+    "title": "Poly Bachelorette",
+    "roles": "Director | Writer | Editor",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/aa2zI7PO-X8/hqdefault.jpg",
-      "alt": "Operators thumbnail"
+      "src": "https://i.ytimg.com/vi/RhzSqWrjx7Q/hqdefault.jpg",
+      "alt": "Poly Bachelorette thumbnail"
     },
-    "subtitle": "Short Film",
-    "copy": "Nevermore Film Fest 2024",
-    "youtubeId": "aa2zI7PO-X8",
-    "href": "https://www.youtube.com/watch?v=aa2zI7PO-X8",
-    "seriesId": "shorts"
+    "youtubeId": "RhzSqWrjx7Q",
+    "href": "https://www.youtube.com/watch?v=RhzSqWrjx7Q"
   },
   {
-    "id": "tech-videos-showreel",
-    "title": "Tech Videos Showreel",
-    "roles": "Director & Technologist",
-    "tags": [],
-    "media": {
-      "kind": "image",
-      "src": "https://i.ytimg.com/vi/bpkZSxtZd7Y/hqdefault.jpg",
-      "alt": "Tech Videos Showreel thumbnail"
-    },
-    "copy": "Experiments documenting interactive and 3D production pipelines.",
-    "youtubeId": "bpkZSxtZd7Y",
-    "href": "https://www.youtube.com/watch?v=bpkZSxtZd7Y",
-    "seriesId": "tech"
-  },
-  {
-    "id": "honest-waitress",
-    "title": "The Honest Waitress",
-    "roles": "Director",
-    "tags": [],
-    "media": {
-      "kind": "image",
-      "src": "https://i.ytimg.com/vi/zlFyjWf4hOk/hqdefault.jpg",
-      "alt": "The Honest Waitress thumbnail"
-    },
-    "subtitle": "PitTV",
-    "copy": "Web series for PitTV",
-    "youtubeId": "zlFyjWf4hOk",
-    "href": "https://www.youtube.com/watch?v=zlFyjWf4hOk"
-  },
-  {
-    "id": "Garden-of-eden",
-    "title": "Garden of Eden",
-    "roles": "Director | Editor",
-    "tags": [],
-    "media": {
-      "kind": "image",
-      "src": "https://i.ytimg.com/vi/_oUdAdTUk0c/hqdefault.jpg",
-      "alt": "Garden of Eden thumbnail"
-    },
-    "subtitle": "Mark Fisher Fitness ft. Douglas Widick",
-    "copy": "Social Promo for local gym",
-    "youtubeId": "_oUdAdTUk0c",
-    "href": "https://www.youtube.com/watch?v=_oUdAdTUk0c",
-    "seriesId": "tech"
-  },
-  {
-    "id": "European-boys",
-    "title": "European Boys",
-    "roles": "Director | Editor",
-    "tags": [],
-    "media": {
-      "kind": "image",
-      "src": "https://i.ytimg.com/vi/uE1Y7PHMdPc/hqdefault.jpg",
-      "alt": "European Boys thumbnail"
-    },
-    "subtitle": "Comedy Central Digital ft. Rose Kelso",
-    "youtubeId": "uE1Y7PHMdPc",
-    "href": "https://www.youtube.com/watch?v=uE1Y7PHMdPc",
-    "seriesId": "Comedy-central"
-  },
-  {
-    "id": "Looking-like-a-snack",
-    "title": "Lookin' Like a Snack",
-    "roles": "Director | DP",
-    "tags": [],
-    "media": {
-      "kind": "image",
-      "src": "https://i.ytimg.com/vi/lMFubod8Gdc/hqdefault.jpg",
-      "alt": "Lookin' Like a Snack thumbnail"
-    },
-    "subtitle": "Combos ft. Douglas Widick",
-    "copy": "Branded spot for Combos",
-    "youtubeId": "lMFubod8Gdc",
-    "href": "https://www.youtube.com/watch?v=lMFubod8Gdc"
-  },
-  {
-    "id": "Jackson-pollack",
-    "title": "Jackson Pollack",
-    "roles": "Director | Editor",
-    "tags": [],
-    "media": {
-      "kind": "image",
-      "src": "https://i.ytimg.com/vi/f53aKCMl7FQ/hqdefault.jpg",
-      "alt": "Jackson Pollack thumbnail"
-    },
-    "subtitle": "ft. Douglas Widick",
-    "youtubeId": "f53aKCMl7FQ",
-    "href": "https://www.youtube.com/watch?v=f53aKCMl7FQ"
-  },
-  {
-    "id": "pissterine",
-    "title": "pissterine",
-    "roles": "Creator",
-    "tags": [],
-    "media": {
-      "kind": "image",
-      "src": "https://placehold.co/640x360",
-      "alt": "pissterine thumbnail"
-    },
-    "subtitle": "Andy's Originals",
-    "copy": "A social stunt featured in trademark publications and articles",
-    "seriesId": "Andys-originals"
-  },
-  {
-    "id": "three4",
-    "title": "three4",
+    "id": "grandmothers-announcement",
+    "title": "Grandmother's Announcement",
     "roles": "Director | DP | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
-      "src": "https://placehold.co/640x360",
-      "alt": "three4 thumbnail"
+      "src": "https://i.ytimg.com/vi/PEwfwxtwkWE/hqdefault.jpg",
+      "alt": "Grandmother's Announcement thumbnail"
     },
-    "subtitle": "ft. Yael Elisheva",
-    "seriesId": "Music-videos"
+    "subtitle": "ft. Natalie Walker, Lulu Krause",
+    "youtubeId": "PEwfwxtwkWE",
+    "href": "https://www.youtube.com/watch?v=PEwfwxtwkWE"
   },
   {
-    "id": "poor",
-    "title": "Poor",
-    "roles": "Director | DP",
-    "tags": [],
-    "media": {
-      "kind": "image",
-      "src": "https://i.ytimg.com/vi/AzjRdPLgj_k/hqdefault.jpg",
-      "alt": "Poor thumbnail"
-    },
-    "subtitle": "ft. Anna Roisman",
-    "youtubeId": "AzjRdPLgj_k",
-    "href": "https://www.youtube.com/watch?v=AzjRdPLgj_k",
-    "seriesId": "Music-videos"
-  },
-  {
-    "id": "Secret-agent",
-    "title": "Secret Agent Betrayal",
+    "id": "settling",
+    "title": "Settling",
     "roles": "Director | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/kNGsC9uqwVs/hqdefault.jpg",
-      "alt": "Secret Agent Betrayal thumbnail"
+      "src": "https://i.ytimg.com/vi/qSPdMoxsZoU/hqdefault.jpg",
+      "alt": "Settling thumbnail"
     },
-    "subtitle": "Andy's Originals ft. Geil Comedy",
-    "youtubeId": "kNGsC9uqwVs",
-    "href": "https://www.youtube.com/watch?v=kNGsC9uqwVs",
-    "seriesId": "Andys-originals"
-  },
-  {
-    "id": "The-painter",
-    "title": "The Painter",
-    "roles": "Director | Editor",
-    "tags": [],
-    "media": {
-      "kind": "image",
-      "src": "https://i.ytimg.com/vi/WnEJ9xsAkZ0/hqdefault.jpg",
-      "alt": "The Painter thumbnail"
-    },
-    "subtitle": "Quickiefest",
-    "copy": "Winner Audience Award",
-    "youtubeId": "WnEJ9xsAkZ0",
-    "href": "https://www.youtube.com/watch?v=WnEJ9xsAkZ0"
-  },
-  {
-    "id": "roadshow",
-    "title": "Andy's Roadshow",
-    "roles": "Creator",
-    "tags": [],
-    "media": {
-      "kind": "image",
-      "src": "https://i.ytimg.com/vi/iLNypL04zH0/hqdefault.jpg",
-      "alt": "Andy's Roadshow thumbnail"
-    },
-    "subtitle": "Andy's Originals",
-    "youtubeId": "iLNypL04zH0",
-    "href": "https://www.youtube.com/watch?v=iLNypL04zH0"
-  },
-  {
-    "id": "dinner",
-    "title": "Meeting the Parents",
-    "roles": "Director | Editor",
-    "tags": [],
-    "media": {
-      "kind": "image",
-      "src": "https://i.ytimg.com/vi/ZGDTHeyeO-w/hqdefault.jpg",
-      "alt": "Meeting the Parents thumbnail"
-    },
-    "subtitle": "ft. Megan Sass",
-    "youtubeId": "ZGDTHeyeO-w",
-    "href": "https://www.youtube.com/watch?v=ZGDTHeyeO-w"
-  },
-  {
-    "id": "Wonderful-life",
-    "title": "It's a Wonderful Life",
-    "roles": "Director | Editor",
-    "tags": [],
-    "media": {
-      "kind": "image",
-      "src": "https://i.ytimg.com/vi/_98xIvAvOhE/hqdefault.jpg",
-      "alt": "It's a Wonderful Life thumbnail"
-    },
-    "subtitle": "ft. Sean Ireland",
-    "youtubeId": "_98xIvAvOhE",
-    "href": "https://www.youtube.com/watch?v=_98xIvAvOhE"
-  },
-  {
-    "id": "uber",
-    "title": "Uber",
-    "roles": "Director | DP | Editor",
-    "tags": [],
-    "media": {
-      "kind": "image",
-      "src": "https://placehold.co/640x360",
-      "alt": "Uber thumbnail"
-    },
-    "subtitle": "SpoiledNYC ft. Gianmarco Soresi, Megan Sass",
-    "seriesId": "Spoiled-nyc"
-  },
-  {
-    "id": "Long-distance",
-    "title": "Long Distance Relationships",
-    "roles": "Director | DP | Editor",
-    "tags": [],
-    "media": {
-      "kind": "image",
-      "src": "https://placehold.co/640x360",
-      "alt": "Long Distance Relationships thumbnail"
-    },
-    "subtitle": "SpoiledNYC ft. Gianmarco Soresi, Megan Sass",
-    "seriesId": "Spoiled-nyc"
+    "subtitle": "ft. Gianmarco Soresi, Megan Sass",
+    "youtubeId": "qSPdMoxsZoU",
+    "href": "https://www.youtube.com/watch?v=qSPdMoxsZoU",
+    "seriesId": "Uncle-function"
   },
   {
     "id": "interstellar",
     "title": "Interstellar in Real Life",
     "roles": "Director | Writer | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/nl2-5DDL5nM/hqdefault.jpg",
@@ -672,7 +495,6 @@ export const CASES: Case[] = [
     "id": "Mta-shames-nyc",
     "title": "MTA Shames NYC",
     "roles": "Director | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/qhXZjxXbW4s/hqdefault.jpg",
@@ -685,39 +507,9 @@ export const CASES: Case[] = [
     "seriesId": "Spoiled-nyc"
   },
   {
-    "id": "settling",
-    "title": "Settling",
-    "roles": "Director | Editor",
-    "tags": [],
-    "media": {
-      "kind": "image",
-      "src": "https://i.ytimg.com/vi/qSPdMoxsZoU/hqdefault.jpg",
-      "alt": "Settling thumbnail"
-    },
-    "subtitle": "ft. Gianmarco Soresi, Megan Sass",
-    "youtubeId": "qSPdMoxsZoU",
-    "href": "https://www.youtube.com/watch?v=qSPdMoxsZoU",
-    "seriesId": "Uncle-function"
-  },
-  {
-    "id": "sqand",
-    "title": "Sqand",
-    "roles": "Director | DP | Writer | Editor",
-    "tags": [],
-    "media": {
-      "kind": "image",
-      "src": "https://i.ytimg.com/vi/fTbRmOHJp1I/hqdefault.jpg",
-      "alt": "Sqand thumbnail"
-    },
-    "youtubeId": "fTbRmOHJp1I",
-    "href": "https://www.youtube.com/watch?v=fTbRmOHJp1I",
-    "seriesId": "Andys-originals"
-  },
-  {
     "id": "dog",
     "title": "The Only Dog Video You Need to Watch",
     "roles": "Director",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/tgND22y7uuA/hqdefault.jpg",
@@ -728,10 +520,91 @@ export const CASES: Case[] = [
     "href": "https://www.youtube.com/watch?v=tgND22y7uuA"
   },
   {
+    "id": "Pay-for-me",
+    "title": "Pay For Me",
+    "roles": "Co-director | DP | Editor",
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/hVrMjp22IM0/hqdefault.jpg",
+      "alt": "Pay For Me thumbnail"
+    },
+    "youtubeId": "hVrMjp22IM0",
+    "href": "https://www.youtube.com/watch?v=hVrMjp22IM0",
+    "seriesId": "Music-videos"
+  },
+  {
+    "id": "tuber",
+    "title": "Tuber",
+    "roles": "Director | Writer | Editor",
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/0U5SCBko2XM/hqdefault.jpg",
+      "alt": "Tuber thumbnail"
+    },
+    "youtubeId": "0U5SCBko2XM",
+    "href": "https://www.youtube.com/watch?v=0U5SCBko2XM",
+    "seriesId": "Andys-originals"
+  },
+  {
+    "id": "pissterine",
+    "title": "Pissterine",
+    "roles": "Creator",
+    "media": {
+      "kind": "image",
+      "src": "/pissterine.jpg",
+      "alt": "Pissterine thumbnail"
+    },
+    "subtitle": "Andy's Originals",
+    "copy": "A social stunt featured in trademark publications and articles",
+    "href": "https://www.kickstarter.com/projects/andyzou/pissterine-a-genuine-novelty-mouthwash",
+    "seriesId": "Andys-originals"
+  },
+  {
+    "id": "Secret-agent",
+    "title": "Secret Agent Betrayal",
+    "roles": "Director | Editor",
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/kNGsC9uqwVs/hqdefault.jpg",
+      "alt": "Secret Agent Betrayal thumbnail"
+    },
+    "subtitle": "Andy's Originals ft. Geil Comedy",
+    "youtubeId": "kNGsC9uqwVs",
+    "href": "https://www.youtube.com/watch?v=kNGsC9uqwVs",
+    "seriesId": "Andys-originals"
+  },
+  {
+    "id": "dinner",
+    "title": "Meeting the Parents",
+    "roles": "Director | Editor",
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/ZGDTHeyeO-w/hqdefault.jpg",
+      "alt": "Meeting the Parents thumbnail"
+    },
+    "subtitle": "ft. Megan Sass",
+    "youtubeId": "ZGDTHeyeO-w",
+    "href": "https://www.youtube.com/watch?v=ZGDTHeyeO-w"
+  },
+  {
+    "id": "operators",
+    "title": "Operators",
+    "roles": "Director | Co-writer | Editor",
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/aa2zI7PO-X8/hqdefault.jpg",
+      "alt": "Operators thumbnail"
+    },
+    "subtitle": "Short Film",
+    "copy": "Nevermore Film Fest 2024",
+    "youtubeId": "aa2zI7PO-X8",
+    "href": "https://www.youtube.com/watch?v=aa2zI7PO-X8",
+    "seriesId": "shorts"
+  },
+  {
     "id": "Tell-my-wife",
     "title": "Tell My Wife",
     "roles": "Co-director",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/daNydp3mpI0/hqdefault.jpg",
@@ -743,24 +616,62 @@ export const CASES: Case[] = [
     "seriesId": "shorts"
   },
   {
-    "id": "Pay-for-me",
-    "title": "Pay For Me",
-    "roles": "Co-director | DP | Editor",
-    "tags": [],
+    "id": "The-painter",
+    "title": "The Painter",
+    "roles": "Director | Editor",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/hVrMjp22IM0/hqdefault.jpg",
-      "alt": "Pay For Me thumbnail"
+      "src": "https://i.ytimg.com/vi/WnEJ9xsAkZ0/hqdefault.jpg",
+      "alt": "The Painter thumbnail"
     },
-    "youtubeId": "hVrMjp22IM0",
-    "href": "https://www.youtube.com/watch?v=hVrMjp22IM0",
-    "seriesId": "Music-videos"
+    "subtitle": "Quickiefest",
+    "copy": "Winner Audience Award",
+    "youtubeId": "WnEJ9xsAkZ0",
+    "href": "https://www.youtube.com/watch?v=WnEJ9xsAkZ0"
+  },
+  {
+    "id": "Wonderful-life",
+    "title": "It's a Wonderful Life",
+    "roles": "Director | Editor",
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/_98xIvAvOhE/hqdefault.jpg",
+      "alt": "It's a Wonderful Life thumbnail"
+    },
+    "subtitle": "ft. Sean Ireland",
+    "youtubeId": "_98xIvAvOhE",
+    "href": "https://www.youtube.com/watch?v=_98xIvAvOhE"
+  },
+  {
+    "id": "uber",
+    "title": "Uber",
+    "roles": "Director | DP | Editor",
+    "media": {
+      "kind": "image",
+      "src": "https://placehold.co/640x360",
+      "alt": "Uber thumbnail"
+    },
+    "subtitle": "SpoiledNYC ft. Gianmarco Soresi, Megan Sass",
+    "seriesId": "Spoiled-nyc",
+    "show": false
+  },
+  {
+    "id": "Long-distance",
+    "title": "Long Distance Relationships",
+    "roles": "Director | DP | Editor",
+    "media": {
+      "kind": "image",
+      "src": "https://placehold.co/640x360",
+      "alt": "Long Distance Relationships thumbnail"
+    },
+    "subtitle": "SpoiledNYC ft. Gianmarco Soresi, Megan Sass",
+    "seriesId": "Spoiled-nyc",
+    "show": false
   },
   {
     "id": "sugar",
     "title": "Sugar",
     "roles": "DP | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/-53w2mv_upw/hqdefault.jpg",
@@ -775,7 +686,6 @@ export const CASES: Case[] = [
     "id": "Royal-heart",
     "title": "Royal Heart",
     "roles": "DP | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/zG2amIyE1Es/hqdefault.jpg",
@@ -790,7 +700,6 @@ export const CASES: Case[] = [
     "id": "Apocalypse-1",
     "title": "Apocalypse Problems 1",
     "roles": "Director | DP | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/X-u9YpCOkk4/hqdefault.jpg",
@@ -799,14 +708,12 @@ export const CASES: Case[] = [
     "subtitle": "SpoiledNYC ft. Gianmarco Soresi, Megan Sass",
     "youtubeId": "X-u9YpCOkk4",
     "href": "https://www.youtube.com/watch?v=X-u9YpCOkk4",
-    "seriesId": "Apocalypse-problems",
-    "show": false
+    "seriesId": "Apocalypse-problems"
   },
   {
     "id": "Apocalypse-gluten",
     "title": "Apocalypse Problems 2 - Gluten",
     "roles": "Director | DP | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/klRZB8Q87oY/hqdefault.jpg",
@@ -815,14 +722,12 @@ export const CASES: Case[] = [
     "subtitle": "SpoiledNYC ft. Gianmarco Soresi, Megan Sass",
     "youtubeId": "klRZB8Q87oY",
     "href": "https://www.youtube.com/watch?v=klRZB8Q87oY",
-    "seriesId": "Apocalypse-problems",
-    "show": false
+    "seriesId": "Apocalypse-problems"
   },
   {
     "id": "Apocalypse-milk",
     "title": "Apocalypse Problems 3 - Milk",
     "roles": "Director | DP | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/yeie8hpMldw/hqdefault.jpg",
@@ -831,14 +736,12 @@ export const CASES: Case[] = [
     "subtitle": "SpoiledNYC ft. Gianmarco Soresi, Megan Sass",
     "youtubeId": "yeie8hpMldw",
     "href": "https://www.youtube.com/watch?v=yeie8hpMldw",
-    "seriesId": "Apocalypse-problems",
-    "show": false
+    "seriesId": "Apocalypse-problems"
   },
   {
     "id": "Making-it-1",
     "title": "Making It Episode 1",
     "roles": "Director | DP | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/dwXaeTYc3Tg/hqdefault.jpg",
@@ -847,14 +750,12 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "dwXaeTYc3Tg",
     "href": "https://www.youtube.com/watch?v=dwXaeTYc3Tg",
-    "seriesId": "Making-it",
-    "show": false
+    "seriesId": "Making-it"
   },
   {
     "id": "Making-it-2",
     "title": "Making It Episode 2",
     "roles": "Director | DP | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/bewb5mvMt2I/hqdefault.jpg",
@@ -863,14 +764,12 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "bewb5mvMt2I",
     "href": "https://www.youtube.com/watch?v=bewb5mvMt2I",
-    "seriesId": "Making-it",
-    "show": false
+    "seriesId": "Making-it"
   },
   {
     "id": "Making-it-3",
     "title": "Making It Episode 3",
     "roles": "Director | DP | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/8Y7yt1P1gDc/hqdefault.jpg",
@@ -879,14 +778,12 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "8Y7yt1P1gDc",
     "href": "https://www.youtube.com/watch?v=8Y7yt1P1gDc",
-    "seriesId": "Making-it",
-    "show": false
+    "seriesId": "Making-it"
   },
   {
     "id": "Making-it-4",
     "title": "Making It Episode 4",
     "roles": "Director | DP | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/MufrKX9LY_Q/hqdefault.jpg",
@@ -895,14 +792,12 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "MufrKX9LY_Q",
     "href": "https://www.youtube.com/watch?v=MufrKX9LY_Q",
-    "seriesId": "Making-it",
-    "show": false
+    "seriesId": "Making-it"
   },
   {
     "id": "Making-it-5",
     "title": "Making It Episode 5",
     "roles": "Director | DP | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/OomH2JjVwrw/hqdefault.jpg",
@@ -911,14 +806,12 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "OomH2JjVwrw",
     "href": "https://www.youtube.com/watch?v=OomH2JjVwrw",
-    "seriesId": "Making-it",
-    "show": false
+    "seriesId": "Making-it"
   },
   {
     "id": "Making-it-6",
     "title": "Making It Episode 6",
     "roles": "Director | DP | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/Y3335Qn42qI/hqdefault.jpg",
@@ -927,14 +820,12 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "Y3335Qn42qI",
     "href": "https://www.youtube.com/watch?v=Y3335Qn42qI",
-    "seriesId": "Making-it",
-    "show": false
+    "seriesId": "Making-it"
   },
   {
     "id": "Making-it-7",
     "title": "Making It Episode 7",
     "roles": "Director | DP | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/wtLmfuCHG2A/hqdefault.jpg",
@@ -943,14 +834,12 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "wtLmfuCHG2A",
     "href": "https://www.youtube.com/watch?v=wtLmfuCHG2A",
-    "seriesId": "Making-it",
-    "show": false
+    "seriesId": "Making-it"
   },
   {
     "id": "Making-it-8",
     "title": "Making It Episode 8",
     "roles": "Director | DP | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/S1L7zvRjuoM/hqdefault.jpg",
@@ -959,14 +848,12 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "S1L7zvRjuoM",
     "href": "https://www.youtube.com/watch?v=S1L7zvRjuoM",
-    "seriesId": "Making-it",
-    "show": false
+    "seriesId": "Making-it"
   },
   {
     "id": "Making-it-9",
     "title": "Making It Episode 9",
     "roles": "Director | DP | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/kZTRyPCdhes/hqdefault.jpg",
@@ -975,14 +862,12 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "kZTRyPCdhes",
     "href": "https://www.youtube.com/watch?v=kZTRyPCdhes",
-    "seriesId": "Making-it",
-    "show": false
+    "seriesId": "Making-it"
   },
   {
     "id": "Making-it-10",
     "title": "Making It Episode 10",
     "roles": "Director | DP | Editor",
-    "tags": [],
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/AROtp_lq240/hqdefault.jpg",
@@ -991,7 +876,21 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "AROtp_lq240",
     "href": "https://www.youtube.com/watch?v=AROtp_lq240",
-    "seriesId": "Making-it",
+    "seriesId": "Making-it"
+  },
+  {
+    "id": "architects-newspaper-interviews",
+    "title": "Architect's Newspaper",
+    "roles": "Videographer & Editor",
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/Bzhb1WBUNps/hqdefault.jpg",
+      "alt": "Architect's Newspaper thumbnail"
+    },
+    "subtitle": "Interview Series",
+    "copy": "Videographer and editor for interviews on new architecture projects.",
+    "youtubeId": "Bzhb1WBUNps",
+    "href": "https://www.youtube.com/watch?v=Bzhb1WBUNps",
     "show": false
   }
 ];
