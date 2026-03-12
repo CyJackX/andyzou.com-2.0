@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 interface Props {
   id: string;
   title?: string;
-  imageSrc?: ImageMetadata;
+  imageSrc?: ImageMetadata | string;
   imageAlt?: string;
   videoSrc?: string;
   reverse?: boolean;
@@ -29,12 +29,24 @@ const { id, title, imageSrc, imageAlt, videoSrc, reverse = false } = Astro.props
       playsinline
     />
   ) : imageSrc && (
-    <Image
-      src={imageSrc}
-      alt={imageAlt ?? ""}
-      width={640}
-      class="card-hero flex-1 min-w-0 w-full h-auto object-cover self-center aspect-video object-top"
-    />
+    typeof imageSrc === "string" ? (
+      <img
+        src={imageSrc}
+        alt={imageAlt ?? ""}
+        width="640"
+        height="360"
+        loading="lazy"
+        decoding="async"
+        class="card-hero flex-1 min-w-0 w-full h-auto object-cover self-center aspect-video object-top"
+      />
+    ) : (
+      <Image
+        src={imageSrc}
+        alt={imageAlt ?? ""}
+        width={640}
+        class="card-hero flex-1 min-w-0 w-full h-auto object-cover self-center aspect-video object-top"
+      />
+    )
   )}
   <p class="text-center md:px-24 md:hidden">
       <slot />

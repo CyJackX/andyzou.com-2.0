@@ -45,7 +45,7 @@ const resolvedLightboxable = lightboxable ?? (type === "video" && isExternal);
   data-vertical={vertical ? "true" : undefined}
 >
   {media.kind === "image" && (
-    <img class="media" src={media.src} alt={media.alt} />
+    <img class="media" src={media.src} alt={media.alt} loading="lazy"/>
   )}
   {media.kind === "video" && (
     <video
