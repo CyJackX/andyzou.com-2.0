@@ -1,0 +1,37 @@
+---
+import WorkTile from "./WorkTile.astro";
+import { getSeriesTiles, hasSeries } from "../lib/work";
+
+interface Props {
+  seriesId: string;
+  className?: string;
+  lightboxable?: boolean;
+}
+
+const { seriesId, className, lightboxable } = Astro.props;
+
+if (!hasSeries(seriesId)) {
+  throw new Error(`WorkTilesBySeries: unknown series id "${seriesId}".`);
+}
+
+const tiles = getSeriesTiles(seriesId);
+---
+
+{
+  tiles.map((tile) => (
+    <WorkTile
+      id={tile.id}
+      type={tile.type}
+      title={tile.title}
+      subtitle={tile.subtitle}
+      roles={tile.roles}
+      copy={tile.copy}
+      media={tile.media}
+      href={tile.href}
+      vertical={tile.vertical === true}
+      lightboxable={lightboxable}
+      ariaLabel={`${tile.title} details`}
+      className={className}
+    />
+  ))
+}

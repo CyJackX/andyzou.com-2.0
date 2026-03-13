@@ -1,79 +1,40 @@
 import { CASES } from "../data/cases";
 import type { Case, Media } from "../data/cases";
-import { SERIES } from "../data/series";
-import type { Series } from "../data/series";
 
 export type WorkVideo = Case & {
   slug: string;
   seriesId?: string;
-  showOnHome: boolean;
-  homeOrder: number;
   videoOrder: number;
   sourceHref?: string;
 };
 
-export type WorkSeries = Series & {
-  slug: string;
-  showOnHome: boolean;
-  homeOrder: number;
-};
-
-export type HomeFeedItem = {
-  type: "series" | "video";
+export type WorkTileData = {
+  type: "video";
   id: string;
-  slug: string;
   title: string;
   subtitle?: string;
   roles: string;
   copy?: string;
   media: Media;
   href: string;
-  homeOrder: number;
   vertical?: boolean;
-};
-
-const DEFAULT_PLACEHOLDER_MEDIA: Media = {
-  kind: "image",
-  src: "https://placehold.co/640x360",
-  alt: "Placeholder thumbnail",
 };
 
 const VIDEOS: WorkVideo[] = CASES.map((entry, index) => ({
   ...entry,
   slug: entry.id,
-  showOnHome: entry.showOnHome ?? true,
-  homeOrder: entry.homeOrder ?? 1000 + index,
   videoOrder: entry.videoOrder ?? index,
   sourceHref: entry.sourceHref ?? entry.href,
 }));
 
-const SERIES_NORMALIZED: WorkSeries[] = SERIES.map((series, index) => ({
-    ...series,
-    slug: series.id,
-    showOnHome: series.showOnHome ?? true,
-    homeOrder: series.homeOrder ?? index,
-  }))
-  .filter((series) => VIDEOS.some((video) => video.seriesId === series.id))
-  .sort((a, b) => a.homeOrder - b.homeOrder);
+const SERIES_IDS = Array.from(
+  new Set(
+    VIDEOS.flatMap((video) => (video.seriesId ? [video.seriesId] : [])),
+  ),
+);
 
-const SERIES_WITH_VIDEOS = SERIES_NORMALIZED.filter((series) =>
-  VIDEOS.some((video) => video.seriesId === series.id),
-).sort((a, b) => a.homeOrder - b.homeOrder);
-
-export function getSeries(): WorkSeries[] {
-  return SERIES_WITH_VIDEOS;
-}
-
-export function getVideos(): WorkVideo[] {
-  return [...VIDEOS].sort((a, b) => a.homeOrder - b.homeOrder);
-}
-
-export function getSeriesBySlug(slug: string): WorkSeries | undefined {
-  return SERIES_WITH_VIDEOS.find((series) => series.slug === slug);
-}
-
-export function getSeriesById(id: string): WorkSeries | undefined {
-  return SERIES_WITH_VIDEOS.find((series) => series.id === id);
+export function getSeriesIds(): string[] {
+  return [...SERIES_IDS];
 }
 
 export function getVideoById(id: string): WorkVideo | undefined {
@@ -90,54 +51,48 @@ export function getVideosBySeries(seriesId: string): WorkVideo[] {
   );
 }
 
-function getSeriesCoverMedia(series: WorkSeries): Media {
-  const seriesVideos = getVideosBySeries(series.id);
-  const preferred = series.coverCaseId
-    ? VIDEOS.find((video) => video.id === series.coverCaseId)
-    : undefined;
-  return preferred?.media ?? seriesVideos[0]?.media ?? DEFAULT_PLACEHOLDER_MEDIA;
+function getVideoHref(video: WorkVideo): string {
+  return video.sourceHref ?? video.href ?? `/video/${video.slug}/`;
 }
 
-function getSeriesHomeItem(series: WorkSeries): HomeFeedItem {
-  const videos = getVideosBySeries(series.id);
-  const countLabel = `${videos.length} video${videos.length === 1 ? "" : "s"}`;
-  return {
-    type: "series",
-    id: series.id,
-    slug: series.slug,
-    title: series.title,
-    subtitle: "Series",
-    roles: countLabel,
-    copy: series.description || "",
-    media: getSeriesCoverMedia(series),
-    href: `/series/${series.slug}/`,
-    homeOrder: series.homeOrder,
-  };
+export function getSeriesTitle(seriesId: string): string {
+  return seriesId
+    .split("-")
+    .filter(Boolean)
+    .map((part) => part.replace(/_/g, " "))
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" ");
 }
 
-function getVideoHomeItem(video: WorkVideo): HomeFeedItem {
-  const directHref = video.sourceHref ?? video.href ?? `/video/${video.slug}/`;
+export function getVideoTileData(
+  video: WorkVideo,
+  hrefOverride?: string,
+): WorkTileData {
   return {
     type: "video",
     id: video.id,
-    slug: video.slug,
     title: video.title,
     subtitle: video.subtitle,
     roles: video.roles,
     copy: video.copy,
     media: video.media,
-    href: directHref,
-    homeOrder: video.homeOrder,
+    href: hrefOverride ?? getVideoHref(video),
     vertical: video.vertical,
   };
 }
 
-export function getHomeFeed(): HomeFeedItem[] {
-  const seriesItems = getSeries()
-    .filter((series) => series.showOnHome)
-    .map(getSeriesHomeItem);
-  const videoItems = getVideos()
-    .filter((video) => video.showOnHome)
-    .map(getVideoHomeItem);
-  return [...seriesItems, ...videoItems].sort((a, b) => a.homeOrder - b.homeOrder);
+export function getWorkTileDataById(
+  id: string,
+  hrefOverride?: string,
+): WorkTileData | undefined {
+  const video = getVideoById(id);
+  return video ? getVideoTileData(video, hrefOverride) : undefined;
+}
+
+export function getSeriesTiles(seriesId: string): WorkTileData[] {
+  return getVideosBySeries(seriesId).map((video) => getVideoTileData(video));
+}
+
+export function hasSeries(seriesId: string): boolean {
+  return SERIES_IDS.includes(seriesId);
 }

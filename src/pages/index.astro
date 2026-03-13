@@ -3,25 +3,20 @@ import AccordionItem from "../components/AccordionItem.astro";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import VideoLightbox from "../components/VideoLightbox.astro";
-import WorkTile from "../components/WorkTile.astro";
 import WorkTilebyId from "../components/WorkTileByID.astro";
+import WorkTilesBySeries from "../components/WorkTilesBySeries.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
-import { getHomeFeed } from "../lib/work";
 import CaseCard from "../components/CaseCard.astro";
-import CaseCard2 from "../components/CaseCard2.astro";
 import blogPlaceholder2 from "../images/blog-placeholder-2.jpg";
 import azaleaShoot from "../images/AzaleaShootSelects-07.jpg";
-import polygon from "../images/polygon.png";
 import pissterine from "../images/pissterine.jpg";
 import tootsies from "../images/tootsies_06.06.25-04326-Enhanced-NR.jpg";
-import tootsies2 from "../images/tootsies_06.06.25-03807.jpg";
 import dbh from "../images/dbh.jpg";
-import makingit from "../images/makingit.jpg";
 import originals from "../images/originals.jpg";
 
 import Image from "astro/components/Image.astro";
 
-const homeFeed = getHomeFeed();
+import Titleheader from "../components/Header.astro";
 ---
 
 <!doctype html>
@@ -30,32 +25,44 @@ const homeFeed = getHomeFeed();
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
+    <Titleheader />
     <main class="text-center">
-      <h1 class="title">Andy Zou</h1>
-      <h2>Video Director & Creative Technologist</h2>
+      <VideoLightbox
+        tileSelector="#tilescontainer .tile[data-lightboxable='true']"
+      />
       <AccordionItem title="Director">
         <div
           class="flex-col md:flex-row md:items-start justify-center items-center flex gap-8 flex-wrap p-8"
         >
-          <h2 class="w-full">Featured Projects</h2>
+          <h2 class="section-title">Featured Series</h2>
           <div class="hero-tile">
-            <Image class="hero-image" src={originals} width="640" height="360" alt="Making It" />
+            <Image
+              class="hero-image"
+              src={originals}
+              width="640"
+              height="360"
+              alt="Making It"
+            />
             <div>
               <h3 class="hero-title">Comedy Central Digital</h3>
               <h4 class="hero-subtitle">Director | Producer | Editor</h4>
               <p class="series-copy">
-                As a Social Producer at Comedy Central's Webby-winning digital
-                team, Andy directed, produced, and edited multiple series like <i
-                  >Mini-Mocks</i
-                >, music videos, and other original content collaborations with
-                notable influencers.
+                At Comedy Central's Webby-winning Digital team, Andy directed &
+                produced multiple series like <i>Mini-Mocks</i>, music videos,
+                and other content collabs with notable influencers.
               </p>
             </div>
           </div>
           <div class="hero-tile">
-            <Image class="hero-image" src={makingit} width="640" height="360" alt="Making It" />
+            <video
+              src="/videos/makingit.mp4"
+              autoplay
+              loop
+              muted
+              playsinline
+              class="hero-image"></video>
             <div>
-              <h3 class="hero-title">Snap Originals</h3>
+              <h3 class="hero-title">Making It - Snap Originals</h3>
               <h4 class="hero-subtitle">Director | DP | Editor</h4>
               <p class="series-copy">
                 As Director, Cinematographer, and Editor, Andy brought an
@@ -66,23 +73,46 @@ const homeFeed = getHomeFeed();
             </div>
           </div>
           <div class="hero-tile">
-            <Image class="hero-image" src={dbh} width="640" height="360" alt="Making It" />
+            <Image
+              class="hero-image"
+              src={dbh}
+              width="640"
+              height="360"
+              alt="Making It"
+            />
             <div>
               <h3 class="hero-title">Death Becomes Her on Broadway</h3>
               <h4 class="hero-subtitle">Director | Producer | Editor</h4>
               <p class="series-copy">
                 Directed & Produced a series of promotional BTS interviews for
-                Broadway's <i>Death Becomes Her.</i>.
+                Broadway's <i class="text-nowrap">Death Becomes Her.</i>
               </p>
             </div>
           </div>
           <div class="hero-tile">
-            <Image class="hero-image"
-              src="https://i.ytimg.com/vi/_SRIskz2JOY/hqdefault.jpg"
-              width="640"
-              height="360"
-              alt="securocam 3000"
-            />
+            <div class="flex border-radius-lg">
+              <video
+                src={"/videos/rizzle3.mp4"}
+                class="rizzlevideo"
+                autoplay
+                loop
+                muted
+                playsinline></video>
+              <video
+                src={"/videos/rizzle1.mp4"}
+                class="rizzlevideo"
+                autoplay
+                loop
+                muted
+                playsinline></video>
+              <video
+                src={"/videos/rizzle2.mp4"}
+                class="rizzlevideo"
+                autoplay
+                loop
+                muted
+                playsinline></video>
+            </div>
             <div>
               <h3 class="hero-title">Andy's Asian Afterlife</h3>
               <h4 class="hero-subtitle">Creator</h4>
@@ -92,7 +122,8 @@ const homeFeed = getHomeFeed();
             </div>
           </div>
           <div class="hero-tile">
-            <Image class="hero-image"
+            <Image
+              class="hero-image"
               src="https://i.ytimg.com/vi/_SRIskz2JOY/hqdefault.jpg"
               width="640"
               height="360"
@@ -108,7 +139,8 @@ const homeFeed = getHomeFeed();
             </div>
           </div>
           <div class="hero-tile">
-            <Image class="hero-image"
+            <Image
+              class="hero-image"
               src="https://i.ytimg.com/vi/klRZB8Q87oY/hqdefault.jpg"
               width="640"
               height="360"
@@ -118,50 +150,28 @@ const homeFeed = getHomeFeed();
               <h3 class="hero-title">Apocalypse Problems</h3>
               <h4 class="hero-subtitle">Director | DP | Editor</h4>
               <p class="series-copy">
-                A short series featured on SpoiledNYC ft. Gianmarco Soresi & Megan Sass.
+                A short series featured on SpoiledNYC ft. Gianmarco Soresi &
+                Megan Sass.
               </p>
             </div>
           </div>
         </div>
-        <h2>Other shorts, sketches, and projects</h2>
+        <h2 class="section-title">Branded Content</h2>
         <div id="tilescontainer" class="tilescontainer">
-          {
-            homeFeed.map((item) => (
-              <WorkTile
-                id={item.id}
-                type={item.type}
-                title={item.title}
-                subtitle={item.subtitle}
-                roles={item.roles}
-                copy={item.copy}
-                media={item.media}
-                href={item.href}
-                lightboxable={
-                  item.type === "video" && item.href.startsWith("http")
-                }
-                vertical={item.vertical === true}
-                ariaLabel={`${item.title} details`}
-              />
-            ))
-          }
+          <WorkTilesBySeries seriesId="branded-content" />
         </div>
-        <VideoLightbox
-          tileSelector="#tilescontainer .tile[data-lightboxable='true']"
-        />
-        <CaseCard
-          id="instant-magenta"
-          title="Producing & Other Creative Services"
-          imageSrc={blogPlaceholder2}
-          imageAlt="Instant Magenta Collage"
-          reverse
-        >
-          From editing for Hollywood socials to full-service promos for Broadway
-          productions, Andy can lend a hand through his production arm <a
-            href="www.instantmagenta.com"
-            class="text-nowrap"
-            target="_blank">Instant Magenta</a
-          >.
-        </CaseCard>
+        <h2 class="section-title">Comedy Music Videos</h2>
+        <div id="tilescontainer" class="tilescontainer">
+          <WorkTilesBySeries seriesId="music-videos" />
+        </div>
+        <h2 class="section-title">Short Films</h2>
+        <div id="tilescontainer" class="tilescontainer">
+          <WorkTilesBySeries seriesId="shorts" />
+        </div>
+        <h2 class="section-title">Other Shorts & Sketches</h2>
+        <div id="tilescontainer" class="tilescontainer">
+          <WorkTilesBySeries seriesId="home" />
+        </div>
       </AccordionItem>
       <AccordionItem title="Technologist">
         <CaseCard
@@ -218,7 +228,7 @@ const homeFeed = getHomeFeed();
               </p>
             </div>
           </a>
-          <h2 class="w-full mt-8">Timeless Fan Favorites</h2>
+          <h2 class="section-title">Timeless Fan Favorites</h2>
           <WorkTilebyId id="tuber" />
           <WorkTilebyId id="andys-roadshow" />
           <div class="hero-tile">
@@ -243,6 +253,11 @@ const homeFeed = getHomeFeed();
       <Footer />
 
       <style>
+        .section-title {
+          width: 100%;
+          margin-top: 0.5em;
+        }
+
         .hero-tile {
           position: relative;
           isolation: isolate;
@@ -250,7 +265,7 @@ const homeFeed = getHomeFeed();
           flex-direction: column;
           align-items: center;
           gap: 1em;
-          flex: 1 1 360px;
+          flex: 0 1 360px;
           cursor: pointer;
           border-radius: 12px;
           align-self: stretch;
@@ -285,6 +300,10 @@ const homeFeed = getHomeFeed();
           border-radius: 12px;
         }
 
+        .rizzlevideo {
+          width: 33%;
+        }
+
         .hero-title {
           font-size: 2.4rem;
           font-weight: bold;
@@ -301,12 +320,6 @@ const homeFeed = getHomeFeed();
           padding: 1em;
           max-width: 1280px;
           margin: 0 auto;
-        }
-
-        .title {
-          font-size: clamp(4rem, 10vw, 8rem);
-          margin-bottom: 0.5rem;
-          font-weight: bold;
         }
 
         .tilescontainer {

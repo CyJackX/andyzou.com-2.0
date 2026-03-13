@@ -1,69 +1,79 @@
-slugID	title	subtitle	seriesID	videoOrder	showOnHome	roles	copy	youtubeId	href	mediaKind	mediaSrc	mediaAlt	mediaPoster	stripSources	vertical
-rebirthing-center	The Rebirthing Center	Comedy Central Digital	Comedy-central		FALSE	Director | Writer	Webby-nominated short for Comedy Central Digital.	BXOaAgDnpd8		image					
-polyamorous-romcom	The Polyamorous RomCom	Comedy Central Digital ft. Yung Gravy	Comedy-central		FALSE	Director | Writer | Editor		XhMz5vRlya8		image					
-remote-control-boss	Remote Control Boss	Comedy Central Digital	Comedy-central		FALSE	Director | Writer | Editor		2PPkDxOul_0		image					
-litterbox-office	The Litterbox Office	Comedy Central Digital	Comedy-central		FALSE	Director | Writer	7M Views!	KIdN_iYBW7A		image					
-icontact	iContact	Comedy Central Digital ft. DeStorm	Comedy-central		FALSE	Director | Writer | Editor		aQN6jBk_LWc		image					
-living-funeral-home	The Living Funeral Home	Comedy Central Digital ft. Lala Milan	Comedy-central		FALSE	Director | Writer | Editor		zcqkqql5VW0		image					
-teen-uncle	Teen Uncle	Comedy Central Digital ft. Adam Waheed	Comedy-central		FALSE	Director | Editor		YUJIjQ0MytM		image					
-whameo	Whameo	Comedy Central Digital ft. Sven Johnson	Comedy-central		FALSE	Director | Writer | Editor		GBG1KLVBQPA		image					
-take-a-deep-breath	Take a Deep F***ing Breath	Comedy Central Digital	Comedy-central		FALSE	Director | Writer | Editor		2Z4VgVKrveM		image	/breathe.jpg				TRUE
-freezing-your-eggs	Freezing Your Eggs	Comedy Central Digital	Comedy-central		FALSE	Director | Writer | Editor			https://www.instagram.com/reel/Cqs1xAFpnwI	image	/cadbury.jpg				TRUE
-vesting-up	Vesting Up	Comedy Central Digital	Comedy-central		FALSE	Director | Writer | Editor		DJCgT1gw8nc		image					TRUE
-rich-friend	Rich Friend	Comedy Central Digital ft. Anwar, Rose Kelso	Comedy-central		FALSE	Director		gSojwTO5QZs		image					
-she-looks-like-her-dad	She Looks Like Her Dad	Comedy Central Digital ft. DeStorm, Rose Kelso	Comedy-central		FALSE	Director		lQankmO_xbQ		image					
-staying-young-forever	Staying Young Forever	Comedy Central Digital ft. Lala Milan, Rose Kelso	Comedy-central		FALSE	Director		oCYzAHPMTUM		image					
-nothing-gay-in-the-wild-west	Nothing Gay in the Wild West	Comedy Central Digital ft. Brooks Allison, Rose Kelso	Comedy-central		FALSE	Director		bFYFLfq6nZo		image					
-European-boys	European Boys	Comedy Central Digital ft. Rose Kelso	Comedy-central		FALSE	Director | Editor		uE1Y7PHMdPc 		image					
-beauty-and-the-bowl	Beauty and the Bowl	ft. Gianmarco Soresi, Uncle Function	Uncle-function			Director | DP | Editor	Sketch comedy featured on Funny Or Die.	nRWyNY1xmto		image					
-settling	Settling	ft. Gianmarco Soresi, Megan Sass	Uncle-function			Director | Editor		qSPdMoxsZoU 		image					
-Mta-shames-nyc	MTA Shames NYC	SpoiledNYC ft. Gianmarco Soresi, Megan Sass	Spoiled-nyc			Director | Editor	Featured in Metro News!	qhXZjxXbW4s		image					
-															
-rizzle-asian-comedy-fest	Andy's Asian Afterlife	Rizzle's Asian Comedy Fest			FALSE	Director | Editor	$1000 Grand Prize winner			strip				/videos/rizzle1.mp4|/videos/rizzle2.mp4|/videos/rizzle3.mp4	
-															
-death-becomes-her	Death Becomes Her on Broadway	Social Promos			FALSE	Director | Producer | Editor		gvjDOk8T9Lo		image					
-Looking-like-a-snack	Lookin' Like a Snack	Combos ft. Akilah Hughes				Director | DP	Branded spot for Combos	lMFubod8Gdc 		image					
-															
-tech-videos-showreel	Tech Videos Showreel		tech			Director & Technologist	Experiments documenting interactive and 3D production pipelines.	bpkZSxtZd7Y		image					
-Garden-of-eden	Garden of Eden	Mark Fisher Fitness ft. Douglas Widick	tech			Director | Editor	Social Promo for local gym	_oUdAdTUk0c		image					
-election-science-duvergers-law	Duverger's Law	Center for Election Science				Director | Editor	Volunteer work for voting education	HpBRGXK-QNs		image					
-instagram-betches	Instagram Betches					Director | DP	Winner of Best Sketch at NYC Short Comedy Film Fest	hQO_LLV9tms		image					
-honest-waitress	The Honest Waitress	PitTV				Director	Web series for PitTV	zlFyjWf4hOk		image					
-sqand	Sqand		Andys-originals			Director | DP | Writer | Editor		fTbRmOHJp1I		image					
-Jackson-pollack	Jackson Pollack	ft. Douglas Widick				Director | Editor		f53aKCMl7FQ		image					
-three4	three4	ft. Yael Elisheva	Music-videos		FALSE	Director | DP | Editor				image					
-poor	Poor	ft. Anna Roisman	Music-videos			Director | DP		AzjRdPLgj_k		image					
-andys-roadshow	Andy's Roadshow		Andys-originals			Director | Writer | Editor		iLNypL04zH0		image					
-securocam-3000	Securocam 3000	IFC Comedy Crib	Andys-originals		FALSE	Director | Co-writer | Editor	Web series selected by NYTVF and IFC Comedy Crib.	_SRIskz2JOY		image					
-poly-bachelorette	Poly Bachelorette					Director | Writer | Editor		RhzSqWrjx7Q		image					
-grandmothers-announcement	Grandmother's Announcement	ft. Natalie Walker, Lulu Krause				Director | DP | Editor		PEwfwxtwkWE		image					
-interstellar	Interstellar in Real Life	PitTV	Andys-originals			Director | Writer | Editor		nl2-5DDL5nM		image					
-dog	The Only Dog Video You Need to Watch	ft. Lauren Ireland, Elyse Brandau				Director		tgND22y7uuA		image					
-Pay-for-me	Pay For Me		Music-videos			Co-director | DP | Editor		hVrMjp22IM0		image					
-tuber	Tuber		Andys-originals		FALSE	Director | Writer | Editor		0U5SCBko2XM		image					
-pissterine	Pissterine	Andy's Originals	Andys-originals		FALSE	Creator	A social stunt featured in trademark publications and articles		https://www.kickstarter.com/projects/andyzou/pissterine-a-genuine-novelty-mouthwash	image	/pissterine.jpg				
-Secret-agent	Secret Agent Betrayal	Andy's Originals ft. Geil Comedy	Andys-originals		FALSE	Director | Editor		kNGsC9uqwVs		image					
-dinner	Meeting the Parents	ft. Megan Sass				Director | Editor		ZGDTHeyeO-w		image					
-operators	Operators	Short Film	shorts			Director | Co-writer | Editor	Nevermore Film Fest 2024	aa2zI7PO-X8		image					
-Tell-my-wife	Tell My Wife	Short Film	shorts			Co-director		daNydp3mpI0		image					
-The-painter	The Painter	Quickiefest				Director | Editor	Winner Audience Award	WnEJ9xsAkZ0		image					
-															
-Wonderful-life	It's a Wonderful Life	ft. Sean Ireland				Director | Editor		_98xIvAvOhE		image					
-uber	Uber	SpoiledNYC ft. Gianmarco Soresi, Megan Sass	Spoiled-nyc		FALSE	Director | DP | Editor				image					
-Long-distance	Long Distance Relationships	SpoiledNYC ft. Gianmarco Soresi, Megan Sass	Spoiled-nyc		FALSE	Director | DP | Editor				image					
-sugar	Sugar	Sister Sparrow	Music-videos			DP | Editor		-53w2mv_upw		image					
-Royal-heart	Royal Heart	Choreo Hayden Frederick	Music-videos			DP | Editor		zG2amIyE1Es		image					
-Apocalypse-1	Apocalypse Problems 1	SpoiledNYC ft. Gianmarco Soresi, Megan Sass	Apocalypse-problems		FALSE	Director | DP | Editor		X-u9YpCOkk4		image					
-Apocalypse-gluten	Apocalypse Problems 2 - Gluten	SpoiledNYC ft. Gianmarco Soresi, Megan Sass	Apocalypse-problems		FALSE	Director | DP | Editor		klRZB8Q87oY		image					
-Apocalypse-milk	Apocalypse Problems 3 - Milk	SpoiledNYC ft. Gianmarco Soresi, Megan Sass	Apocalypse-problems		FALSE	Director | DP | Editor		yeie8hpMldw		image					
-Making-it-1	Making It Episode 1	Snap Originals ft. Dave Mizzoni	Making-it		FALSE	Director | DP | Editor		dwXaeTYc3Tg 		image					
-Making-it-2	Making It Episode 2	Snap Originals ft. Dave Mizzoni	Making-it		FALSE	Director | DP | Editor		bewb5mvMt2I 		image					
-Making-it-3	Making It Episode 3	Snap Originals ft. Dave Mizzoni	Making-it		FALSE	Director | DP | Editor		8Y7yt1P1gDc 		image					
-Making-it-4	Making It Episode 4	Snap Originals ft. Dave Mizzoni	Making-it		FALSE	Director | DP | Editor		MufrKX9LY_Q 		image					
-Making-it-5	Making It Episode 5	Snap Originals ft. Dave Mizzoni	Making-it		FALSE	Director | DP | Editor		OomH2JjVwrw 		image					
-Making-it-6	Making It Episode 6	Snap Originals ft. Dave Mizzoni	Making-it		FALSE	Director | DP | Editor		Y3335Qn42qI 		image					
-Making-it-7	Making It Episode 7	Snap Originals ft. Dave Mizzoni	Making-it		FALSE	Director | DP | Editor		wtLmfuCHG2A 		image					
-Making-it-8	Making It Episode 8	Snap Originals ft. Dave Mizzoni	Making-it		FALSE	Director | DP | Editor		S1L7zvRjuoM 		image					
-Making-it-9	Making It Episode 9	Snap Originals ft. Dave Mizzoni	Making-it		FALSE	Director | DP | Editor		kZTRyPCdhes 		image					
-Making-it-10	Making It Episode 10	Snap Originals ft. Dave Mizzoni	Making-it		FALSE	Director | DP | Editor		AROtp_lq240 		image					
-architects-newspaper-interviews	Architect's Newspaper	Interview Series			FALSE	Videographer & Editor	Videographer and editor for interviews on new architecture projects.	Bzhb1WBUNps		image					
+slugID	title	subtitle	roles	seriesID	videoOrder	copy	youtubeId	href	mediaKind	mediaSrc	mediaAlt	mediaPoster	stripSources	vertical
+tech-videos-showreel	Tech Videos Showreel		Director & Technologist	tech		Experiments documenting interactive and 3D production pipelines.	bpkZSxtZd7Y		image					
+Garden-of-eden	Garden of Eden	Mark Fisher Fitness ft. Douglas Widick	Director | Editor	branded-content		Social Promo for local gym	_oUdAdTUk0c		image					TRUE
+uber	Uber	SpoiledNYC ft. Gianmarco Soresi, Megan Sass	Director | DP | Editor						image					
+Long-distance	Long Distance Relationships	SpoiledNYC ft. Gianmarco Soresi, Megan Sass	Director | DP | Editor						image					
+beauty-and-the-bowl	Beauty and the Bowl	ft. Gianmarco Soresi, Uncle Function	Director | DP | Editor	sketch		Sketch comedy featured on Funny Or Die.	nRWyNY1xmto		image					
+settling	Settling	ft. Gianmarco Soresi, Megan Sass	Director | Editor	sketch			qSPdMoxsZoU 		image					
+Mta-shames-nyc	MTA Shames NYC	SpoiledNYC ft. Gianmarco Soresi, Megan Sass	Director | Editor	sketch		Featured in Metro News!	qhXZjxXbW4s		image	/mta.jpg				
+operators	Operators	Short Film	Director | Co-writer | Editor	shorts		Nevermore Film Fest 2024	aa2zI7PO-X8		image					
+Tell-my-wife	Tell My Wife	Short Film	Co-director	shorts			daNydp3mpI0		image					
+three4	three4	ft. Yael Elisheva	Director | DP | Editor						image					
+poor	Poor	ft. Anna Roisman	Director | DP	music-videos	1		AzjRdPLgj_k		image					
+Pay-for-me	Pay For Me		Co-director | DP | Editor	music-videos	2		hVrMjp22IM0		image					
+sugar	Sugar	Sister Sparrow	DP | Editor				-53w2mv_upw		image					
+Royal-heart	Royal Heart	Choreo Hayden Frederick	DP | Editor				zG2amIyE1Es		image					
+instagram-betches	Instagram Betches		Director | DP	music-videos	3	Winner of Best Sketch at NYC Short Comedy Film Fest	hQO_LLV9tms		image					
+Making-it-1	Making It Episode 1	Snap Originals ft. Dave Mizzoni	Director | DP | Editor	Making-it	1		dwXaeTYc3Tg 		image					
+Making-it-2	Making It Episode 2	Snap Originals ft. Dave Mizzoni	Director | DP | Editor	Making-it	2		bewb5mvMt2I 		image					
+Making-it-3	Making It Episode 3	Snap Originals ft. Dave Mizzoni	Director | DP | Editor	Making-it	3		8Y7yt1P1gDc 		image					
+Making-it-4	Making It Episode 4	Snap Originals ft. Dave Mizzoni	Director | DP | Editor	Making-it	4		MufrKX9LY_Q 		image					
+Making-it-5	Making It Episode 5	Snap Originals ft. Dave Mizzoni	Director | DP | Editor	Making-it	5		OomH2JjVwrw 		image					
+Making-it-6	Making It Episode 6	Snap Originals ft. Dave Mizzoni	Director | DP | Editor	Making-it	6		Y3335Qn42qI 		image					
+Making-it-7	Making It Episode 7	Snap Originals ft. Dave Mizzoni	Director | DP | Editor	Making-it	7		wtLmfuCHG2A 		image					
+Making-it-8	Making It Episode 8	Snap Originals ft. Dave Mizzoni	Director | DP | Editor	Making-it	8		S1L7zvRjuoM 		image					
+Making-it-9	Making It Episode 9	Snap Originals ft. Dave Mizzoni	Director | DP | Editor	Making-it	9		kZTRyPCdhes 		image					
+Making-it-10	Making It Episode 10	Snap Originals ft. Dave Mizzoni	Director | DP | Editor	Making-it	10		AROtp_lq240 		image					
+Honest-waitress-1	The Honest Waitress: Ignored	PitTV ft. Leila Graham	Director | Editor	Honest-waitress	1		zlFyjWf4hOk 		image					
+Honest-waitress-2	The Honest Waitress: Lemons	PitTV ft. Leila Graham	Director | Editor	Honest-waitress	2		0SX0n9FG_GY 		image					
+Honest-waitress-3	The Honest Waitress: Soda	PitTV ft. Leila Graham	Director | Editor	Honest-waitress	3		Gk7n1WSpxXg 		image					
+Honest-waitress-4	The Honest Waitress: Euope	PitTV ft. Leila Graham	Director | Editor	Honest-waitress	4		2z09RB3wsGk 		image					
+Honest-waitress-5	The Honest Waitress: Menu	PitTV ft. Leila Graham	Director | Editor	Honest-waitress	5		FUto6VeJfbI 		image					
+Looking-like-a-snack	Lookin' Like a Snack	Combos ft. Akilah Hughes	Director | DP	branded-content		Branded spot for Combos	lMFubod8Gdc 		image					
+election-science-duvergers-law	Duverger's Law	Center for Election Science	Director | Editor	branded-content		Volunteer work for election non-profit ElectionScience.org!	HpBRGXK-QNs		image					
+honest-waitress	The Honest Waitress	PitTV	Director	home		Web series for PitTV	zlFyjWf4hOk		image					
+Jackson-pollack	Jackson Pollack	ft. Douglas Widick	Director | Editor				f53aKCMl7FQ		image					
+poly-bachelorette	Poly Bachelorette		Director | Writer | Editor	home			RhzSqWrjx7Q		image					
+grandmothers-announcement	Grandmother's Announcement	ft. Natalie Walker, Lulu Krause	Director | DP | Editor	home			PEwfwxtwkWE		image					
+dog	The Only Dog Video You Need to Watch	ft. Lauren Ireland, Elyse Brandau	Director	home			tgND22y7uuA		image					
+dinner	Meeting the Parents	ft. Megan Sass	Director | Editor	home			ZGDTHeyeO-w		image					
+The-painter	The Painter	Quickiefest	Director | Editor	home		Winner Audience Award	WnEJ9xsAkZ0		image					
+Wonderful-life	It's a Wonderful Life	ft. Sean Ireland	Director | Editor	home			_98xIvAvOhE		image					
+cocaine	Cocaine PSA	ft. Bridgette Everett, Arthur Meyer, Joel Kim Booster	Director | Editor	home			5n_Zl5bhUhU		image					
+architects-newspaper-interviews	Architect's Newspaper	Interview Series	Videographer & Editor			Videographer and editor for interviews on new architecture projects.	Bzhb1WBUNps		image					
+rebirthing-center	The Rebirthing Center	Comedy Central Digital	Director | Writer	Comedy-central		Webby-nominated short for Comedy Central Digital.	BXOaAgDnpd8		image					
+polyamorous-romcom	The Polyamorous RomCom	Comedy Central Digital ft. Yung Gravy	Director | Writer | Editor	Comedy-central			XhMz5vRlya8		image					
+remote-control-boss	Remote Control Boss	Comedy Central Digital	Director | Writer | Editor	Comedy-central			2PPkDxOul_0		image					
+litterbox-office	The Litterbox Office	Comedy Central Digital	Director | Writer	Comedy-central		7M Views!	KIdN_iYBW7A		image					
+icontact	iContact	Comedy Central Digital ft. DeStorm	Director | Writer | Editor	Comedy-central			aQN6jBk_LWc		image					
+living-funeral-home	The Living Funeral Home	Comedy Central Digital ft. Lala Milan	Director | Writer | Editor	Comedy-central			zcqkqql5VW0		image					
+teen-uncle	Teen Uncle	Comedy Central Digital ft. Adam Waheed	Director | Editor	Comedy-central			YUJIjQ0MytM		image					
+whameo	Whameo	Comedy Central Digital ft. Sven Johnson	Director | Writer | Editor	Comedy-central			GBG1KLVBQPA		image					
+take-a-deep-breath	Take a Deep F***ing Breath	Comedy Central Digital	Director | Writer | Editor	Comedy-central			2Z4VgVKrveM		image	/breathe.jpg				TRUE
+freezing-your-eggs	Freezing Your Eggs	Comedy Central Digital	Director | Writer | Editor	Comedy-central				https://www.instagram.com/reel/Cqs1xAFpnwI	image	/cadbury.jpg				TRUE
+vesting-up	Vesting Up	Comedy Central Digital	Director | Writer | Editor	Comedy-central			DJCgT1gw8nc		image					TRUE
+rich-friend	Rich Friend	Comedy Central Digital ft. Anwar, Rose Kelso	Director	Comedy-central			gSojwTO5QZs		image					
+she-looks-like-her-dad	She Looks Like Her Dad	Comedy Central Digital ft. DeStorm, Rose Kelso	Director	Comedy-central			lQankmO_xbQ		image					
+staying-young-forever	Staying Young Forever	Comedy Central Digital ft. Lala Milan, Rose Kelso	Director	Comedy-central			oCYzAHPMTUM		image					
+nothing-gay-in-the-wild-west	Nothing Gay in the Wild West	Comedy Central Digital ft. Brooks Allison, Rose Kelso	Director	Comedy-central			bFYFLfq6nZo		image					
+European-boys	European Boys	Comedy Central Digital ft. Rose Kelso	Director | Editor	Comedy-central			uE1Y7PHMdPc 		image					
+Apocalypse-1	Apocalypse Problems 1	SpoiledNYC ft. Gianmarco Soresi, Megan Sass	Director | DP | Editor	Apocalypse-problems			X-u9YpCOkk4		image					
+Apocalypse-gluten	Apocalypse Problems 2 - Gluten	SpoiledNYC ft. Gianmarco Soresi, Megan Sass	Director | DP | Editor	Apocalypse-problems			klRZB8Q87oY		image					
+Apocalypse-milk	Apocalypse Problems 3 - Milk	SpoiledNYC ft. Gianmarco Soresi, Megan Sass	Director | DP | Editor	Apocalypse-problems			yeie8hpMldw		image					
+sqand	Sqand		Director | DP | Writer | Editor	shorts			fTbRmOHJp1I		image					
+andys-roadshow	Andy's Roadshow		Director | Writer | Editor	Andys-originals			iLNypL04zH0		image					
+securocam-3000	Securocam 3000	IFC Comedy Crib	Director | Co-writer | Editor	Andys-originals		Web series selected by NYTVF and IFC Comedy Crib.	_SRIskz2JOY		image					
+interstellar	Interstellar in Real Life	PitTV	Director | Writer | Editor	Andys-originals			nl2-5DDL5nM		image					
+tuber	Tuber		Director | Writer | Editor	Andys-originals			0U5SCBko2XM		image					
+pissterine	Pissterine	Andy's Originals	Creator	Andys-originals		A social stunt featured in trademark publications and articles		https://www.kickstarter.com/projects/andyzou/pissterine-a-genuine-novelty-mouthwash	image	/pissterine.jpg				
+Secret-agent	Secret Agent Betrayal	Andy's Originals ft. Geil Comedy	Director | Editor	Andys-originals			kNGsC9uqwVs		image					
+Rizzle-1	Andy's Asian Afterlife Ep. 1	Rizzle's Asian Comedy Fest	Creator	asian-afterlife	1		iZDqZ6Bq1yI 		image					TRUE
+Rizzle-2	Andy's Asian Afterlife Ep. 2	Rizzle's Asian Comedy Fest	Creator	asian-afterlife	2		taRJ5K7Emdo 		image					TRUE
+Rizzle-3	Andy's Asian Afterlife Ep. 3	Rizzle's Asian Comedy Fest	Creator	asian-afterlife	3		HxXucJ6rFQA 		image					TRUE
+Dbh-1	DBH - Rolling in the Aisles		Editor	death-becomes-her	1		8QGYE_5nfQM		image					
+Dbh-2	DBH - Best Friends		Editor	death-becomes-her	2		IBTQMTwN7vc		image					
+Dbh-3	Now a Musical? Ep. 1	ft. Noel Carey & Julia Mattison	Director | Producer | Editor	death-becomes-her	3		gvjDOk8T9Lo		image					
+Dbh-4	Now a Musical? Ep. 2	ft. Noel Carey & Julia Mattison	Director | Producer | Editor	death-becomes-her	4		aLHsoQG-jEg		image					
+Dbh-5	Now a Musical? Ep. 3	ft. Noel Carey & Julia Mattison	Director | Producer | Editor	death-becomes-her	5		j9SF9ys4IhA		image					
+Dbh-6	Ask Marco Ep. 1	ft. Marco Pennette	Director | Producer | Editor	death-becomes-her	6		p0EQcb7oays		image					
+Dbh-7	Ask Marco Ep. 2	ft. Marco Pennette	Director | Producer | Editor	death-becomes-her	7		go1LBg6iEew		image					
