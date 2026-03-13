@@ -4,6 +4,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import VideoLightbox from "../components/VideoLightbox.astro";
 import WorkTile from "../components/WorkTile.astro";
+import WorkTilebyId from "../components/WorkTileByID.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import { getHomeFeed } from "../lib/work";
 import CaseCard from "../components/CaseCard.astro";
@@ -36,11 +37,12 @@ const homeFeed = getHomeFeed();
         <div
           class="flex-col md:flex-row md:items-start justify-center items-center flex gap-8 flex-wrap p-8"
         >
+          <h2 class="w-full">Featured Projects</h2>
           <div class="hero-tile">
-            <Image src={originals} width="640" height="360" alt="Making It" />
+            <Image class="hero-image" src={originals} width="640" height="360" alt="Making It" />
             <div>
-              <h3>Comedy Central Digital</h3>
-              <h4>Director | Producer | Editor</h4>
+              <h3 class="hero-title">Comedy Central Digital</h3>
+              <h4 class="hero-subtitle">Director | Producer | Editor</h4>
               <p class="series-copy">
                 As a Social Producer at Comedy Central's Webby-winning digital
                 team, Andy directed, produced, and edited multiple series like <i
@@ -51,10 +53,10 @@ const homeFeed = getHomeFeed();
             </div>
           </div>
           <div class="hero-tile">
-            <Image src={makingit} width="640" height="360" alt="Making It" />
+            <Image class="hero-image" src={makingit} width="640" height="360" alt="Making It" />
             <div>
-              <h3>Snap Originals</h3>
-              <h4>Director | DP | Editor</h4>
+              <h3 class="hero-title">Snap Originals</h3>
+              <h4 class="hero-subtitle">Director | DP | Editor</h4>
               <p class="series-copy">
                 As Director, Cinematographer, and Editor, Andy brought an
                 original vertical series to life for Snapchat's <i
@@ -64,25 +66,88 @@ const homeFeed = getHomeFeed();
             </div>
           </div>
           <div class="hero-tile">
-            <Image src={dbh} width="640" height="360" alt="Making It" />
+            <Image class="hero-image" src={dbh} width="640" height="360" alt="Making It" />
             <div>
-              <h3>Death Becomes Her on Broadway</h3>
-              <h4>Director | Producer | Editor</h4>
+              <h3 class="hero-title">Death Becomes Her on Broadway</h3>
+              <h4 class="hero-subtitle">Director | Producer | Editor</h4>
               <p class="series-copy">
-                Directed & Produced a series of promotional BTS interviews for Broadway's <i>Death Becomes Her.</i>.
+                Directed & Produced a series of promotional BTS interviews for
+                Broadway's <i>Death Becomes Her.</i>.
+              </p>
+            </div>
+          </div>
+          <div class="hero-tile">
+            <Image class="hero-image"
+              src="https://i.ytimg.com/vi/_SRIskz2JOY/hqdefault.jpg"
+              width="640"
+              height="360"
+              alt="securocam 3000"
+            />
+            <div>
+              <h3 class="hero-title">Andy's Asian Afterlife</h3>
+              <h4 class="hero-subtitle">Creator</h4>
+              <p class="series-copy">
+                1000$ grand prize winner of Rizzle's Asian Comedy Fest.
+              </p>
+            </div>
+          </div>
+          <div class="hero-tile">
+            <Image class="hero-image"
+              src="https://i.ytimg.com/vi/_SRIskz2JOY/hqdefault.jpg"
+              width="640"
+              height="360"
+              alt="securocam 3000"
+            />
+            <div>
+              <h3 class="hero-title">Securocam 3000</h3>
+              <h4 class="hero-subtitle">Co-Creator | Editor</h4>
+              <p class="series-copy">
+                A short series featured at New York Television Festival and
+                hosted on IFC Comedy Crib.
+              </p>
+            </div>
+          </div>
+          <div class="hero-tile">
+            <Image class="hero-image"
+              src="https://i.ytimg.com/vi/klRZB8Q87oY/hqdefault.jpg"
+              width="640"
+              height="360"
+              alt="Apocalypse Problems"
+            />
+            <div>
+              <h3 class="hero-title">Apocalypse Problems</h3>
+              <h4 class="hero-subtitle">Director | DP | Editor</h4>
+              <p class="series-copy">
+                A short series featured on SpoiledNYC ft. Gianmarco Soresi & Megan Sass.
               </p>
             </div>
           </div>
         </div>
-        <CaseCard
-          id="polygon"
-          title="Polygon Labs Spec Spot"
-          imageSrc={polygon}
-          imageAlt="Polygon Labs Spec Spot"
-        >
-          Pitched a flagship spot for Polygon Labs, translating his
-          understanding of web3 infrastructure into a relatable concept.
-        </CaseCard>
+        <h2>Other shorts, sketches, and projects</h2>
+        <div id="tilescontainer" class="tilescontainer">
+          {
+            homeFeed.map((item) => (
+              <WorkTile
+                id={item.id}
+                type={item.type}
+                title={item.title}
+                subtitle={item.subtitle}
+                roles={item.roles}
+                copy={item.copy}
+                media={item.media}
+                href={item.href}
+                lightboxable={
+                  item.type === "video" && item.href.startsWith("http")
+                }
+                vertical={item.vertical === true}
+                ariaLabel={`${item.title} details`}
+              />
+            ))
+          }
+        </div>
+        <VideoLightbox
+          tileSelector="#tilescontainer .tile[data-lightboxable='true']"
+        />
         <CaseCard
           id="instant-magenta"
           title="Producing & Other Creative Services"
@@ -119,136 +184,140 @@ const homeFeed = getHomeFeed();
         </CaseCard>
       </AccordionItem>
       <AccordionItem title="Weirdo">
-        <CaseCard
-          id="pissterine"
-          imageSrc={pissterine}
-          imageAlt="Pissterine"
-          reverse
-        >
-          Andy once kickstarted a Listerine knockoff that got shutdown in
-          trademark court.<video
-            src={"/videos/pissterine.mp4"}
-            class="h-1/2"
-            autoplay
-            loop
-            muted
-            playsinline></video></CaseCard
-        >
-        <CaseCard
-          id="tootsies"
-          title="Tootsie's Video Vault"
-          imageSrc={tootsies}
-          imageAlt="Tootsie's Video Vault Collage"
-        >
-          Andy is a co-producer on annual Brooklyn film jam <a
+        <div class="flex flex-row gap-8 p-8 flex-wrap justify-center">
+          <a
+            class="hero-tile"
+            href="https://www.kickstarter.com/projects/andyzou/pissterine-a-genuine-novelty-mouthwash"
+          >
+            <Image src={pissterine} width="640" height="360" alt="Making It" />
+            <div>
+              <h3 class="hero-title">Pissterine</h3>
+              <p class="series-copy">
+                Andy once kickstarted a Listerine knockoff that got shutdown in
+                trademark court.
+              </p>
+            </div>
+          </a>
+          <a
+            class="hero-tile"
             href="https://tootsiesvideovault.com"
-            class="text-nowrap"
-            target="_blank">Tootsie's Video Vault</a
-          >.
-          <Image
-            src={tootsies2}
-            alt="Step and Repeat at Tootsies"
-            width="360"
-          />
-        </CaseCard>
-        <CaseCard
-          id="about"
-          imageSrc={azaleaShoot}
-          imageAlt="About Andy Collage"
-          reverse
-        >
-          Andy lives in Brooklyn with his wife and collaborator Katie Sicking
-          and their daughter Azalea.</CaseCard
-        >
+            target="_blank"
+          >
+            <Image
+              src={tootsies}
+              width="640"
+              height="360"
+              alt="Making It"
+              class="aspect-video object-cover"
+            />
+            <div>
+              <h3 class="hero-title">Tootsies Video Vault</h3>
+              <p class="series-copy">
+                Andy is a co-producer on annual Brooklyn film jam
+                www.TootsiesVideoVault.com.
+              </p>
+            </div>
+          </a>
+          <h2 class="w-full mt-8">Timeless Fan Favorites</h2>
+          <WorkTilebyId id="tuber" />
+          <WorkTilebyId id="andys-roadshow" />
+          <div class="hero-tile">
+            <Image
+              src={azaleaShoot}
+              width="640"
+              height="360"
+              alt="Making It"
+              class="aspect-video object-cover object-top"
+            />
+            <div>
+              <h3 class="hero-title"></h3>
+              <p class="series-copy">
+                Andy lives in Brooklyn with his wife and collaborator Katie
+                Sicking and their daughter Azalea.
+              </p>
+            </div>
+          </div>
+        </div>
       </AccordionItem>
 
-      <div id="tilescontainer" class="tilescontainer">
-        {
-          homeFeed.map((item) => (
-            <WorkTile
-              id={item.id}
-              type={item.type}
-              title={item.title}
-              subtitle={item.subtitle}
-              roles={item.roles}
-              copy={item.copy}
-              media={item.media}
-              href={item.href}
-              lightboxable={
-                item.type === "video" && item.href.startsWith("http")
-              }
-              vertical={item.vertical === true}
-              ariaLabel={`${item.title} details`}
-            />
-          ))
-        }
-      </div>
-      <VideoLightbox
-        tileSelector="#tilescontainer .tile[data-lightboxable='true']"
-      />
       <Footer />
+
+      <style>
+        .hero-tile {
+          position: relative;
+          isolation: isolate;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1em;
+          flex: 1 1 360px;
+          cursor: pointer;
+          border-radius: 12px;
+          align-self: stretch;
+          text-decoration: none;
+          color: white;
+        }
+
+        .hero-tile::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          border-radius: inherit;
+          background-color: rgba(255, 255, 255, 0.08);
+          opacity: 0;
+          transition: opacity 160ms ease;
+          pointer-events: none;
+          z-index: 2;
+        }
+
+        .hero-tile:hover::after {
+          opacity: 1;
+        }
+
+        .hero-tile > * {
+          position: relative;
+          z-index: 1;
+        }
+
+        .hero-image {
+          aspect-ratio: 16/9;
+          object-fit: cover;
+          border-radius: 12px;
+        }
+
+        .hero-title {
+          font-size: 2.4rem;
+          font-weight: bold;
+        }
+        .hero-subtitle {
+          font-size: 2rem;
+        }
+        .series-copy {
+          margin-top: 0.5em;
+          padding: 0 2em;
+        }
+
+        main {
+          padding: 1em;
+          max-width: 1280px;
+          margin: 0 auto;
+        }
+
+        .title {
+          font-size: clamp(4rem, 10vw, 8rem);
+          margin-bottom: 0.5rem;
+          font-weight: bold;
+        }
+
+        .tilescontainer {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          gap: 16px;
+          padding-bottom: 8px;
+        }
+      </style>
     </main>
-
-    <style>
-      .hero-tile {
-        position: relative;
-        isolation: isolate;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1em;
-        max-width: 600px;
-        flex: 1 0 400px;
-        cursor: pointer;
-        border-radius: 12px;
-        align-self:stretch;
-      }
-
-      .hero-tile::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-        background-color: rgba(255, 255, 255, 0.08);
-        opacity: 0;
-        transition: opacity 160ms ease;
-        pointer-events: none;
-        z-index: 2;
-      }
-
-      .hero-tile:hover::after {
-        opacity: 1;
-      }
-
-      .hero-tile > * {
-        position: relative;
-        z-index: 1;
-      }
-
-      .series-copy {
-        padding: 0 2em;
-      }
-
-      main {
-        padding: 1em;
-        max-width: 1280px;
-        margin: 0 auto;
-      }
-
-      .title {
-        font-size: clamp(4rem, 10vw, 8rem);
-        margin-bottom: 0.5rem;
-        font-weight: bold;
-      }
-
-      .tilescontainer {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 16px;
-        padding-bottom: 8px;
-      }
-    </style>
   </body>
 </html>

@@ -38,10 +38,6 @@ const DEFAULT_PLACEHOLDER_MEDIA: Media = {
   alt: "Placeholder thumbnail",
 };
 
-function isVisible(show?: boolean) {
-  return show !== false;
-}
-
 const VIDEOS: WorkVideo[] = CASES.map((entry, index) => ({
   ...entry,
   slug: entry.id,
@@ -49,12 +45,9 @@ const VIDEOS: WorkVideo[] = CASES.map((entry, index) => ({
   homeOrder: entry.homeOrder ?? 1000 + index,
   videoOrder: entry.videoOrder ?? index,
   sourceHref: entry.sourceHref ?? entry.href,
-})).filter((video) => isVisible(video.show));
+}));
 
-const SERIES_NORMALIZED: WorkSeries[] = SERIES.filter((series) =>
-  isVisible(series.show),
-)
-  .map((series, index) => ({
+const SERIES_NORMALIZED: WorkSeries[] = SERIES.map((series, index) => ({
     ...series,
     slug: series.id,
     showOnHome: series.showOnHome ?? true,
@@ -81,6 +74,10 @@ export function getSeriesBySlug(slug: string): WorkSeries | undefined {
 
 export function getSeriesById(id: string): WorkSeries | undefined {
   return SERIES_WITH_VIDEOS.find((series) => series.id === id);
+}
+
+export function getVideoById(id: string): WorkVideo | undefined {
+  return VIDEOS.find((video) => video.id === id);
 }
 
 export function getVideoBySlug(slug: string): WorkVideo | undefined {

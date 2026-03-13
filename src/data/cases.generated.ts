@@ -15,7 +15,8 @@ export const CASES: Case[] = [
     "copy": "Webby-nominated short for Comedy Central Digital.",
     "youtubeId": "BXOaAgDnpd8",
     "href": "https://www.youtube.com/watch?v=BXOaAgDnpd8",
-    "seriesId": "Comedy-central"
+    "seriesId": "Comedy-central",
+    "showOnHome": false
   },
   {
     "id": "polyamorous-romcom",
@@ -29,7 +30,8 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital ft. Yung Gravy",
     "youtubeId": "XhMz5vRlya8",
     "href": "https://www.youtube.com/watch?v=XhMz5vRlya8",
-    "seriesId": "Comedy-central"
+    "seriesId": "Comedy-central",
+    "showOnHome": false
   },
   {
     "id": "remote-control-boss",
@@ -43,7 +45,8 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital",
     "youtubeId": "2PPkDxOul_0",
     "href": "https://www.youtube.com/watch?v=2PPkDxOul_0",
-    "seriesId": "Comedy-central"
+    "seriesId": "Comedy-central",
+    "showOnHome": false
   },
   {
     "id": "litterbox-office",
@@ -58,7 +61,8 @@ export const CASES: Case[] = [
     "copy": "7M Views!",
     "youtubeId": "KIdN_iYBW7A",
     "href": "https://www.youtube.com/watch?v=KIdN_iYBW7A",
-    "seriesId": "Comedy-central"
+    "seriesId": "Comedy-central",
+    "showOnHome": false
   },
   {
     "id": "icontact",
@@ -72,7 +76,8 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital ft. DeStorm",
     "youtubeId": "aQN6jBk_LWc",
     "href": "https://www.youtube.com/watch?v=aQN6jBk_LWc",
-    "seriesId": "Comedy-central"
+    "seriesId": "Comedy-central",
+    "showOnHome": false
   },
   {
     "id": "living-funeral-home",
@@ -86,7 +91,8 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital ft. Lala Milan",
     "youtubeId": "zcqkqql5VW0",
     "href": "https://www.youtube.com/watch?v=zcqkqql5VW0",
-    "seriesId": "Comedy-central"
+    "seriesId": "Comedy-central",
+    "showOnHome": false
   },
   {
     "id": "teen-uncle",
@@ -100,7 +106,8 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital ft. Adam Waheed",
     "youtubeId": "YUJIjQ0MytM",
     "href": "https://www.youtube.com/watch?v=YUJIjQ0MytM",
-    "seriesId": "Comedy-central"
+    "seriesId": "Comedy-central",
+    "showOnHome": false
   },
   {
     "id": "whameo",
@@ -114,7 +121,8 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital ft. Sven Johnson",
     "youtubeId": "GBG1KLVBQPA",
     "href": "https://www.youtube.com/watch?v=GBG1KLVBQPA",
-    "seriesId": "Comedy-central"
+    "seriesId": "Comedy-central",
+    "showOnHome": false
   },
   {
     "id": "take-a-deep-breath",
@@ -129,6 +137,7 @@ export const CASES: Case[] = [
     "youtubeId": "2Z4VgVKrveM",
     "href": "https://www.youtube.com/watch?v=2Z4VgVKrveM",
     "seriesId": "Comedy-central",
+    "showOnHome": false,
     "vertical": true
   },
   {
@@ -143,6 +152,7 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital",
     "href": "https://www.instagram.com/reel/Cqs1xAFpnwI",
     "seriesId": "Comedy-central",
+    "showOnHome": false,
     "vertical": true
   },
   {
@@ -158,6 +168,7 @@ export const CASES: Case[] = [
     "youtubeId": "DJCgT1gw8nc",
     "href": "https://www.youtube.com/watch?v=DJCgT1gw8nc",
     "seriesId": "Comedy-central",
+    "showOnHome": false,
     "vertical": true
   },
   {
@@ -172,7 +183,8 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital ft. Anwar, Rose Kelso",
     "youtubeId": "gSojwTO5QZs",
     "href": "https://www.youtube.com/watch?v=gSojwTO5QZs",
-    "seriesId": "Comedy-central"
+    "seriesId": "Comedy-central",
+    "showOnHome": false
   },
   {
     "id": "she-looks-like-her-dad",
@@ -186,7 +198,8 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital ft. DeStorm, Rose Kelso",
     "youtubeId": "lQankmO_xbQ",
     "href": "https://www.youtube.com/watch?v=lQankmO_xbQ",
-    "seriesId": "Comedy-central"
+    "seriesId": "Comedy-central",
+    "showOnHome": false
   },
   {
     "id": "staying-young-forever",
@@ -200,7 +213,8 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital ft. Lala Milan, Rose Kelso",
     "youtubeId": "oCYzAHPMTUM",
     "href": "https://www.youtube.com/watch?v=oCYzAHPMTUM",
-    "seriesId": "Comedy-central"
+    "seriesId": "Comedy-central",
+    "showOnHome": false
   },
   {
     "id": "nothing-gay-in-the-wild-west",
@@ -214,7 +228,23 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital ft. Brooks Allison, Rose Kelso",
     "youtubeId": "bFYFLfq6nZo",
     "href": "https://www.youtube.com/watch?v=bFYFLfq6nZo",
-    "seriesId": "Comedy-central"
+    "seriesId": "Comedy-central",
+    "showOnHome": false
+  },
+  {
+    "id": "European-boys",
+    "title": "European Boys",
+    "roles": "Director | Editor",
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/uE1Y7PHMdPc/hqdefault.jpg",
+      "alt": "European Boys thumbnail"
+    },
+    "subtitle": "Comedy Central Digital ft. Rose Kelso",
+    "youtubeId": "uE1Y7PHMdPc",
+    "href": "https://www.youtube.com/watch?v=uE1Y7PHMdPc",
+    "seriesId": "Comedy-central",
+    "showOnHome": false
   },
   {
     "id": "beauty-and-the-bowl",
@@ -232,18 +262,33 @@ export const CASES: Case[] = [
     "seriesId": "Uncle-function"
   },
   {
-    "id": "European-boys",
-    "title": "European Boys",
+    "id": "settling",
+    "title": "Settling",
     "roles": "Director | Editor",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/uE1Y7PHMdPc/hqdefault.jpg",
-      "alt": "European Boys thumbnail"
+      "src": "https://i.ytimg.com/vi/qSPdMoxsZoU/hqdefault.jpg",
+      "alt": "Settling thumbnail"
     },
-    "subtitle": "Comedy Central Digital ft. Rose Kelso",
-    "youtubeId": "uE1Y7PHMdPc",
-    "href": "https://www.youtube.com/watch?v=uE1Y7PHMdPc",
-    "seriesId": "Comedy-central"
+    "subtitle": "ft. Gianmarco Soresi, Megan Sass",
+    "youtubeId": "qSPdMoxsZoU",
+    "href": "https://www.youtube.com/watch?v=qSPdMoxsZoU",
+    "seriesId": "Uncle-function"
+  },
+  {
+    "id": "Mta-shames-nyc",
+    "title": "MTA Shames NYC",
+    "roles": "Director | Editor",
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/qhXZjxXbW4s/hqdefault.jpg",
+      "alt": "MTA Shames NYC thumbnail"
+    },
+    "subtitle": "SpoiledNYC ft. Gianmarco Soresi, Megan Sass",
+    "copy": "Featured in Metro News!",
+    "youtubeId": "qhXZjxXbW4s",
+    "href": "https://www.youtube.com/watch?v=qhXZjxXbW4s",
+    "seriesId": "Spoiled-nyc"
   },
   {
     "id": "rizzle-asian-comedy-fest",
@@ -258,7 +303,8 @@ export const CASES: Case[] = [
       ]
     },
     "subtitle": "Rizzle's Asian Comedy Fest",
-    "copy": "$1000 Grand Prize winner"
+    "copy": "$1000 Grand Prize winner",
+    "showOnHome": false
   },
   {
     "id": "death-becomes-her",
@@ -271,7 +317,8 @@ export const CASES: Case[] = [
     },
     "subtitle": "Social Promos",
     "youtubeId": "gvjDOk8T9Lo",
-    "href": "https://www.youtube.com/watch?v=gvjDOk8T9Lo"
+    "href": "https://www.youtube.com/watch?v=gvjDOk8T9Lo",
+    "showOnHome": false
   },
   {
     "id": "Looking-like-a-snack",
@@ -394,7 +441,7 @@ export const CASES: Case[] = [
     },
     "subtitle": "ft. Yael Elisheva",
     "seriesId": "Music-videos",
-    "show": false
+    "showOnHome": false
   },
   {
     "id": "poor",
@@ -436,7 +483,8 @@ export const CASES: Case[] = [
     "copy": "Web series selected by NYTVF and IFC Comedy Crib.",
     "youtubeId": "_SRIskz2JOY",
     "href": "https://www.youtube.com/watch?v=_SRIskz2JOY",
-    "seriesId": "Andys-originals"
+    "seriesId": "Andys-originals",
+    "showOnHome": false
   },
   {
     "id": "poly-bachelorette",
@@ -464,20 +512,6 @@ export const CASES: Case[] = [
     "href": "https://www.youtube.com/watch?v=PEwfwxtwkWE"
   },
   {
-    "id": "settling",
-    "title": "Settling",
-    "roles": "Director | Editor",
-    "media": {
-      "kind": "image",
-      "src": "https://i.ytimg.com/vi/qSPdMoxsZoU/hqdefault.jpg",
-      "alt": "Settling thumbnail"
-    },
-    "subtitle": "ft. Gianmarco Soresi, Megan Sass",
-    "youtubeId": "qSPdMoxsZoU",
-    "href": "https://www.youtube.com/watch?v=qSPdMoxsZoU",
-    "seriesId": "Uncle-function"
-  },
-  {
     "id": "interstellar",
     "title": "Interstellar in Real Life",
     "roles": "Director | Writer | Editor",
@@ -490,21 +524,6 @@ export const CASES: Case[] = [
     "youtubeId": "nl2-5DDL5nM",
     "href": "https://www.youtube.com/watch?v=nl2-5DDL5nM",
     "seriesId": "Andys-originals"
-  },
-  {
-    "id": "Mta-shames-nyc",
-    "title": "MTA Shames NYC",
-    "roles": "Director | Editor",
-    "media": {
-      "kind": "image",
-      "src": "https://i.ytimg.com/vi/qhXZjxXbW4s/hqdefault.jpg",
-      "alt": "MTA Shames NYC thumbnail"
-    },
-    "subtitle": "SpoiledNYC ft. Gianmarco Soresi, Megan Sass",
-    "copy": "Featured in Metro News!",
-    "youtubeId": "qhXZjxXbW4s",
-    "href": "https://www.youtube.com/watch?v=qhXZjxXbW4s",
-    "seriesId": "Spoiled-nyc"
   },
   {
     "id": "dog",
@@ -543,7 +562,8 @@ export const CASES: Case[] = [
     },
     "youtubeId": "0U5SCBko2XM",
     "href": "https://www.youtube.com/watch?v=0U5SCBko2XM",
-    "seriesId": "Andys-originals"
+    "seriesId": "Andys-originals",
+    "showOnHome": false
   },
   {
     "id": "pissterine",
@@ -557,7 +577,8 @@ export const CASES: Case[] = [
     "subtitle": "Andy's Originals",
     "copy": "A social stunt featured in trademark publications and articles",
     "href": "https://www.kickstarter.com/projects/andyzou/pissterine-a-genuine-novelty-mouthwash",
-    "seriesId": "Andys-originals"
+    "seriesId": "Andys-originals",
+    "showOnHome": false
   },
   {
     "id": "Secret-agent",
@@ -571,7 +592,8 @@ export const CASES: Case[] = [
     "subtitle": "Andy's Originals ft. Geil Comedy",
     "youtubeId": "kNGsC9uqwVs",
     "href": "https://www.youtube.com/watch?v=kNGsC9uqwVs",
-    "seriesId": "Andys-originals"
+    "seriesId": "Andys-originals",
+    "showOnHome": false
   },
   {
     "id": "dinner",
@@ -653,7 +675,7 @@ export const CASES: Case[] = [
     },
     "subtitle": "SpoiledNYC ft. Gianmarco Soresi, Megan Sass",
     "seriesId": "Spoiled-nyc",
-    "show": false
+    "showOnHome": false
   },
   {
     "id": "Long-distance",
@@ -666,7 +688,7 @@ export const CASES: Case[] = [
     },
     "subtitle": "SpoiledNYC ft. Gianmarco Soresi, Megan Sass",
     "seriesId": "Spoiled-nyc",
-    "show": false
+    "showOnHome": false
   },
   {
     "id": "sugar",
@@ -708,7 +730,8 @@ export const CASES: Case[] = [
     "subtitle": "SpoiledNYC ft. Gianmarco Soresi, Megan Sass",
     "youtubeId": "X-u9YpCOkk4",
     "href": "https://www.youtube.com/watch?v=X-u9YpCOkk4",
-    "seriesId": "Apocalypse-problems"
+    "seriesId": "Apocalypse-problems",
+    "showOnHome": false
   },
   {
     "id": "Apocalypse-gluten",
@@ -722,7 +745,8 @@ export const CASES: Case[] = [
     "subtitle": "SpoiledNYC ft. Gianmarco Soresi, Megan Sass",
     "youtubeId": "klRZB8Q87oY",
     "href": "https://www.youtube.com/watch?v=klRZB8Q87oY",
-    "seriesId": "Apocalypse-problems"
+    "seriesId": "Apocalypse-problems",
+    "showOnHome": false
   },
   {
     "id": "Apocalypse-milk",
@@ -736,7 +760,8 @@ export const CASES: Case[] = [
     "subtitle": "SpoiledNYC ft. Gianmarco Soresi, Megan Sass",
     "youtubeId": "yeie8hpMldw",
     "href": "https://www.youtube.com/watch?v=yeie8hpMldw",
-    "seriesId": "Apocalypse-problems"
+    "seriesId": "Apocalypse-problems",
+    "showOnHome": false
   },
   {
     "id": "Making-it-1",
@@ -750,7 +775,8 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "dwXaeTYc3Tg",
     "href": "https://www.youtube.com/watch?v=dwXaeTYc3Tg",
-    "seriesId": "Making-it"
+    "seriesId": "Making-it",
+    "showOnHome": false
   },
   {
     "id": "Making-it-2",
@@ -764,7 +790,8 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "bewb5mvMt2I",
     "href": "https://www.youtube.com/watch?v=bewb5mvMt2I",
-    "seriesId": "Making-it"
+    "seriesId": "Making-it",
+    "showOnHome": false
   },
   {
     "id": "Making-it-3",
@@ -778,7 +805,8 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "8Y7yt1P1gDc",
     "href": "https://www.youtube.com/watch?v=8Y7yt1P1gDc",
-    "seriesId": "Making-it"
+    "seriesId": "Making-it",
+    "showOnHome": false
   },
   {
     "id": "Making-it-4",
@@ -792,7 +820,8 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "MufrKX9LY_Q",
     "href": "https://www.youtube.com/watch?v=MufrKX9LY_Q",
-    "seriesId": "Making-it"
+    "seriesId": "Making-it",
+    "showOnHome": false
   },
   {
     "id": "Making-it-5",
@@ -806,7 +835,8 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "OomH2JjVwrw",
     "href": "https://www.youtube.com/watch?v=OomH2JjVwrw",
-    "seriesId": "Making-it"
+    "seriesId": "Making-it",
+    "showOnHome": false
   },
   {
     "id": "Making-it-6",
@@ -820,7 +850,8 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "Y3335Qn42qI",
     "href": "https://www.youtube.com/watch?v=Y3335Qn42qI",
-    "seriesId": "Making-it"
+    "seriesId": "Making-it",
+    "showOnHome": false
   },
   {
     "id": "Making-it-7",
@@ -834,7 +865,8 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "wtLmfuCHG2A",
     "href": "https://www.youtube.com/watch?v=wtLmfuCHG2A",
-    "seriesId": "Making-it"
+    "seriesId": "Making-it",
+    "showOnHome": false
   },
   {
     "id": "Making-it-8",
@@ -848,7 +880,8 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "S1L7zvRjuoM",
     "href": "https://www.youtube.com/watch?v=S1L7zvRjuoM",
-    "seriesId": "Making-it"
+    "seriesId": "Making-it",
+    "showOnHome": false
   },
   {
     "id": "Making-it-9",
@@ -862,7 +895,8 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "kZTRyPCdhes",
     "href": "https://www.youtube.com/watch?v=kZTRyPCdhes",
-    "seriesId": "Making-it"
+    "seriesId": "Making-it",
+    "showOnHome": false
   },
   {
     "id": "Making-it-10",
@@ -876,7 +910,8 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "AROtp_lq240",
     "href": "https://www.youtube.com/watch?v=AROtp_lq240",
-    "seriesId": "Making-it"
+    "seriesId": "Making-it",
+    "showOnHome": false
   },
   {
     "id": "architects-newspaper-interviews",
@@ -891,6 +926,6 @@ export const CASES: Case[] = [
     "copy": "Videographer and editor for interviews on new architecture projects.",
     "youtubeId": "Bzhb1WBUNps",
     "href": "https://www.youtube.com/watch?v=Bzhb1WBUNps",
-    "show": false
+    "showOnHome": false
   }
 ];

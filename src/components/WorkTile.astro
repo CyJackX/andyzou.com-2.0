@@ -44,35 +44,46 @@ const resolvedLightboxable = lightboxable ?? (type === "video" && isExternal);
   data-lightboxable={resolvedLightboxable ? "true" : undefined}
   data-vertical={vertical ? "true" : undefined}
 >
-  {media.kind === "image" && (
-    <img class="media" src={media.src} alt={media.alt} loading="lazy"/>
-  )}
-  {media.kind === "video" && (
-    <video
-      class="media"
-      src={media.src}
-      autoplay
-      loop
-      muted
-      playsinline
-      poster={media.poster}
-    ></video>
-  )}
-  {media.kind === "strip" && (
-    <div class="strip">
-      {media.sources.map((source) => (
-        <video class="stripItem" src={source} autoplay loop muted playsinline></video>
-      ))}
-    </div>
-  )}
+  {
+    media.kind === "image" && (
+      <img class="media" src={media.src} alt={media.alt} loading="lazy" />
+    )
+  }
+  {
+    media.kind === "video" && (
+      <video
+        class="media"
+        src={media.src}
+        autoplay
+        loop
+        muted
+        playsinline
+        poster={media.poster}
+      />
+    )
+  }
+  {
+    media.kind === "strip" && (
+      <div class="strip">
+        {media.sources.map((source) => (
+          <video
+            class="stripItem"
+            src={source}
+            autoplay
+            loop
+            muted
+            playsinline
+          />
+        ))}
+      </div>
+    )
+  }
 
   <div class="overlay">
     <div class="titleText">{title}</div>
     {subtitle && <div class="subtitleText">{subtitle}</div>}
     <div class="roles">{roles}</div>
-    {copy && copy.trim().length > 0 && (
-      <div class="copy">{copy}</div>
-    )}
+    {copy && copy.trim().length > 0 && <div class="copy">{copy}</div>}
   </div>
 </a>
 
@@ -118,7 +129,11 @@ const resolvedLightboxable = lightboxable ?? (type === "video" && isExternal);
     text-align: center;
     padding: 1rem;
     pointer-events: none;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.1));
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0.5)
+    );
     opacity: 0;
     transition: opacity 200ms ease;
   }
@@ -130,39 +145,36 @@ const resolvedLightboxable = lightboxable ?? (type === "video" && isExternal);
   }
 
   .titleText {
-    font-weight: 700;
-    font-size: 2.4rem;
+    font-weight: 600;
+    font-size: 3rem;
     line-height: 1.2;
   }
 
   .subtitleText {
-    margin-top: 4px;
     font-weight: 600;
-    font-size: 0.95rem;
-    opacity: 0.95;
+  }
+  
+  .titleText {
+    transform: translateY(-10px);
   }
 
   .roles,
   .subtitleText,
   .copy {
-    margin-top: 6px;
-    opacity: 0;
-    transform: translateY(6px);
-    transition: opacity 200ms ease, transform 200ms ease;
+    transform: translateY(10px);
   }
 
-  .subtitleText {
-    margin-top: 4px;
-  }
-
-  .roles {
-    font-size: 0.95rem;
-  }
-
+  .titleText,
+  .roles,
+  .subtitleText,
   .copy {
-    font-size: 0.9rem;
+    opacity: 0;
+    transition:
+      opacity 200ms ease,
+      transform 200ms ease;
   }
 
+  .tile:hover .titleText,
   .tile:hover .roles,
   .tile:hover .subtitleText,
   .tile:hover .copy,

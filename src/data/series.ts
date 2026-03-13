@@ -3,7 +3,6 @@ export type Series = {
   title: string;
   description?: string;
   coverCaseId?: string;
-  show?: boolean;
   showOnHome?: boolean;
   homeOrder?: number;
 };

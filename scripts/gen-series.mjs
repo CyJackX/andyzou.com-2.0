@@ -50,7 +50,7 @@ const headerIndex = Object.fromEntries(headers.map((header, index) => [header, i
 const aliases = {
   id: ["id_slug", "slugid", "slug_id", "slug", "id"],
   coverCaseId: ["covercaseid", "cover_case_id", "coverid"],
-  showOnHome: ["showonhome", "show_on_home"],
+  showOnHome: ["showonhome", "show_on_home", "show"],
   homeOrder: ["homeorder", "home_order"],
 };
 
@@ -96,7 +96,6 @@ for (let i = 1; i < lines.length; i += 1) {
 
   const description = get("description") || "Series description coming soon.";
   const coverCaseId = getAny(aliases.coverCaseId);
-  const show = parseOptionalBoolean(get("show"), `line ${lineNumber}: show`);
   const showOnHome = parseOptionalBoolean(
     getAny(aliases.showOnHome),
     `line ${lineNumber}: showOnHome`,
@@ -110,7 +109,6 @@ for (let i = 1; i < lines.length; i += 1) {
   const entry = { id, title };
   entry.description = description;
   if (coverCaseId) entry.coverCaseId = coverCaseId;
-  entry.show = show ?? true;
   entry.showOnHome = showOnHome ?? true;
   entry.homeOrder = homeOrder ?? fallbackNumber;
 

@@ -13,7 +13,6 @@ export type Case = {
   href?: string;
   seriesId?: string;
   sourceHref?: string;
-  show?: boolean;
   showOnHome?: boolean;
   homeOrder?: number;
   videoOrder?: number;

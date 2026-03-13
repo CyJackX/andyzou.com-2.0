@@ -57,7 +57,7 @@ const aliases = {
   id: ["id_slug", "slugid", "slug_id", "slug", "id"],
   seriesId: ["seriesid", "series_id", "series"],
   sourceHref: ["sourcehref", "source_href"],
-  showOnHome: ["showonhome", "show_on_home"],
+  showOnHome: ["showonhome", "show_on_home", "show"],
   homeOrder: ["homeorder", "home_order"],
   videoOrder: ["videoorder", "video_order"],
   publishedAt: ["publishedat", "published_at"],
@@ -105,7 +105,6 @@ for (let i = 1; i < lines.length; i += 1) {
   const stripSourcesRaw = get("stripSources");
   const seriesId = getAny(aliases.seriesId);
   const sourceHref = getAny(aliases.sourceHref);
-  const show = parseOptionalBoolean(get("show"), `line ${lineNumber}: show`);
   const showOnHome = parseOptionalBoolean(
     getAny(aliases.showOnHome),
     `line ${lineNumber}: showOnHome`,
@@ -177,7 +176,6 @@ for (let i = 1; i < lines.length; i += 1) {
   if (href) entry.href = href;
   if (seriesId) entry.seriesId = seriesId;
   if (sourceHref) entry.sourceHref = sourceHref;
-  if (show !== undefined) entry.show = show;
   if (showOnHome !== undefined) entry.showOnHome = showOnHome;
   if (homeOrder !== undefined) entry.homeOrder = homeOrder;
   if (videoOrder !== undefined) entry.videoOrder = videoOrder;

@@ -6,7 +6,6 @@ export const SERIES: Series[] = [
     "id": "Comedy-central",
     "title": "Comedy Central Digital",
     "description": "Series description coming soon.",
-    "show": true,
     "showOnHome": true,
     "homeOrder": 1
   },
@@ -14,7 +13,6 @@ export const SERIES: Series[] = [
     "id": "Making-it",
     "title": "Making It",
     "description": "Series description coming soon.",
-    "show": true,
     "showOnHome": true,
     "homeOrder": 2
   },
@@ -22,7 +20,6 @@ export const SERIES: Series[] = [
     "id": "Apocalypse-problems",
     "title": "Apocalypse Problems",
     "description": "Series description coming soon.",
-    "show": true,
     "showOnHome": true,
     "homeOrder": 3
   },
@@ -30,7 +27,6 @@ export const SERIES: Series[] = [
     "id": "Asian-afterlife",
     "title": "Andy's Asian Afterlife",
     "description": "Series description coming soon.",
-    "show": true,
     "showOnHome": true,
     "homeOrder": 4
   }

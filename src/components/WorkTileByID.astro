@@ -1,0 +1,127 @@
+---
+import WorkTile from "./WorkTile.astro";
+import type { Media } from "../data/cases";
+import { getSeriesById, getVideoById, getVideosBySeries } from "../lib/work";
+
+interface Props {
+  id: string;
+  type?: "video" | "series";
+  href?: string;
+  lightboxable?: boolean;
+  ariaLabel?: string;
+  className?: string;
+}
+
+const {
+  id,
+  type,
+  href: hrefOverride,
+  lightboxable,
+  ariaLabel,
+  className,
+} = Astro.props;
+
+const DEFAULT_PLACEHOLDER_MEDIA: Media = {
+  kind: "image",
+  src: "https://placehold.co/640x360",
+  alt: "Placeholder thumbnail",
+};
+
+function resolveSeriesCoverMedia(
+  seriesVideos: ReturnType<typeof getVideosBySeries>,
+  coverCaseId?: string,
+): Media {
+  const preferred = coverCaseId
+    ? seriesVideos.find((video) => video.id === coverCaseId)
+    : undefined;
+  return preferred?.media ?? seriesVideos[0]?.media ?? DEFAULT_PLACEHOLDER_MEDIA;
+}
+
+const video = type !== "series" ? getVideoById(id) : undefined;
+const series = !video && type !== "video" ? getSeriesById(id) : undefined;
+
+if (!video && !series) {
+  const target = type ? ` (${type})` : "";
+  throw new Error(`WorkTileByID: unknown id "${id}"${target}.`);
+}
+
+type Tile =
+  | {
+      kind: "video";
+      id: string;
+      title: string;
+      subtitle?: string;
+      roles: string;
+      copy?: string;
+      media: Media;
+      href: string;
+      vertical: boolean;
+    }
+  | {
+      kind: "series";
+      id: string;
+      title: string;
+      subtitle: string;
+      roles: string;
+      copy: string;
+      media: Media;
+      href: string;
+      vertical: false;
+    };
+
+let tile: Tile;
+
+if (video) {
+  tile = {
+    kind: "video",
+    id: video.id,
+    title: video.title,
+    subtitle: video.subtitle,
+    roles: video.roles,
+    copy: video.copy,
+    media: video.media,
+    href:
+      hrefOverride ??
+      video.sourceHref ??
+      video.href ??
+      `/video/${video.slug}/`,
+    vertical: video.vertical === true,
+  };
+} else {
+  if (!series) {
+    throw new Error(`WorkTileByID: expected series for id "${id}".`);
+  }
+
+  const seriesVideos = getVideosBySeries(series.id);
+  const countLabel = `${seriesVideos.length} video${
+    seriesVideos.length === 1 ? "" : "s"
+  }`;
+
+  tile = {
+    kind: "series",
+    id: series.id,
+    title: series.title,
+    subtitle: "Series",
+    roles: countLabel,
+    copy: series.description || "",
+    media: resolveSeriesCoverMedia(seriesVideos, series.coverCaseId),
+    href: hrefOverride ?? `/series/${series.slug}/`,
+    vertical: false,
+  };
+}
+---
+
+<WorkTile
+  id={tile.id}
+  type={tile.kind}
+  title={tile.title}
+  subtitle={tile.subtitle}
+  roles={tile.roles}
+  copy={tile.copy}
+  media={tile.media}
+  href={tile.href}
+  vertical={tile.vertical}
+  lightboxable={lightboxable}
+  ariaLabel={ariaLabel}
+  className={className}
+/>
