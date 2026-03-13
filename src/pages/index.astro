@@ -6,6 +6,19 @@ import VideoLightbox from "../components/VideoLightbox.astro";
 import WorkTile from "../components/WorkTile.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import { getHomeFeed } from "../lib/work";
+import CaseCard from "../components/CaseCard.astro";
+import CaseCard2 from "../components/CaseCard2.astro";
+import blogPlaceholder2 from "../images/blog-placeholder-2.jpg";
+import azaleaShoot from "../images/AzaleaShootSelects-07.jpg";
+import polygon from "../images/polygon.png";
+import pissterine from "../images/pissterine.jpg";
+import tootsies from "../images/tootsies_06.06.25-04326-Enhanced-NR.jpg";
+import tootsies2 from "../images/tootsies_06.06.25-03807.jpg";
+import dbh from "../images/dbh.jpg";
+import makingit from "../images/makingit.jpg";
+import originals from "../images/originals.jpg";
+
+import Image from "astro/components/Image.astro";
 
 const homeFeed = getHomeFeed();
 ---
@@ -16,41 +29,206 @@ const homeFeed = getHomeFeed();
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <main class ="text-center">
+    <main class="text-center">
       <h1 class="title">Andy Zou</h1>
       <h2>Video Director & Creative Technologist</h2>
       <AccordionItem title="Director">
+        <div
+          class="flex-col md:flex-row md:items-start justify-center items-center flex gap-8 flex-wrap p-8"
+        >
+          <div class="hero-tile">
+            <Image src={originals} width="640" height="360" alt="Making It" />
+            <div>
+              <h3>Comedy Central Digital</h3>
+              <h4>Director | Producer | Editor</h4>
+              <p class="series-copy">
+                As a Social Producer at Comedy Central's Webby-winning digital
+                team, Andy directed, produced, and edited multiple series like <i
+                  >Mini-Mocks</i
+                >, music videos, and other original content collaborations with
+                notable influencers.
+              </p>
+            </div>
+          </div>
+          <div class="hero-tile">
+            <Image src={makingit} width="640" height="360" alt="Making It" />
+            <div>
+              <h3>Snap Originals</h3>
+              <h4>Director | DP | Editor</h4>
+              <p class="series-copy">
+                As Director, Cinematographer, and Editor, Andy brought an
+                original vertical series to life for Snapchat's <i
+                  >Snap Originals</i
+                >.
+              </p>
+            </div>
+          </div>
+          <div class="hero-tile">
+            <Image src={dbh} width="640" height="360" alt="Making It" />
+            <div>
+              <h3>Death Becomes Her on Broadway</h3>
+              <h4>Director | Producer | Editor</h4>
+              <p class="series-copy">
+                Directed & Produced a series of promotional BTS interviews for Broadway's <i>Death Becomes Her.</i>.
+              </p>
+            </div>
+          </div>
+        </div>
+        <CaseCard
+          id="polygon"
+          title="Polygon Labs Spec Spot"
+          imageSrc={polygon}
+          imageAlt="Polygon Labs Spec Spot"
+        >
+          Pitched a flagship spot for Polygon Labs, translating his
+          understanding of web3 infrastructure into a relatable concept.
+        </CaseCard>
+        <CaseCard
+          id="instant-magenta"
+          title="Producing & Other Creative Services"
+          imageSrc={blogPlaceholder2}
+          imageAlt="Instant Magenta Collage"
+          reverse
+        >
+          From editing for Hollywood socials to full-service promos for Broadway
+          productions, Andy can lend a hand through his production arm <a
+            href="www.instantmagenta.com"
+            class="text-nowrap"
+            target="_blank">Instant Magenta</a
+          >.
+        </CaseCard>
       </AccordionItem>
       <AccordionItem title="Technologist">
+        <CaseCard
+          id="tech"
+          videoSrc="/videos/Tootsies Promo v1_2_400.mp4"
+          reverse
+        >
+          With a background in Mathematics & Computer Science, Andy has always
+          embraced the technical aspects of production. From coding custom After
+          Effects scripts to niche immersive workflows, he enjoys the tinkering.
+        </CaseCard>
+        <CaseCard id="tech" videoSrc="/videos/Head to Head_640.mp4">
+          Andy's breadth of experience includes traditional 3D tools such as
+          Unreal Engine, Unity, Blender, and more.
+        </CaseCard>
+        <CaseCard id="ai" videoSrc="/videos/AI Sample_400.mp4" reverse>
+          But Andy also knows how to grow with the times, dabbling in AI-driven
+          generative workflows from platforms like Higgsfield and Kling to
+          API-driven bespoke applications such as ComfyUI and Veo3.
+        </CaseCard>
       </AccordionItem>
       <AccordionItem title="Weirdo">
+        <CaseCard
+          id="pissterine"
+          imageSrc={pissterine}
+          imageAlt="Pissterine"
+          reverse
+        >
+          Andy once kickstarted a Listerine knockoff that got shutdown in
+          trademark court.<video
+            src={"/videos/pissterine.mp4"}
+            class="h-1/2"
+            autoplay
+            loop
+            muted
+            playsinline></video></CaseCard
+        >
+        <CaseCard
+          id="tootsies"
+          title="Tootsie's Video Vault"
+          imageSrc={tootsies}
+          imageAlt="Tootsie's Video Vault Collage"
+        >
+          Andy is a co-producer on annual Brooklyn film jam <a
+            href="https://tootsiesvideovault.com"
+            class="text-nowrap"
+            target="_blank">Tootsie's Video Vault</a
+          >.
+          <Image
+            src={tootsies2}
+            alt="Step and Repeat at Tootsies"
+            width="360"
+          />
+        </CaseCard>
+        <CaseCard
+          id="about"
+          imageSrc={azaleaShoot}
+          imageAlt="About Andy Collage"
+          reverse
+        >
+          Andy lives in Brooklyn with his wife and collaborator Katie Sicking
+          and their daughter Azalea.</CaseCard
+        >
       </AccordionItem>
-      <AccordionItem title="About">
-      </AccordionItem>
-      
 
       <div id="tilescontainer" class="tilescontainer">
-        {homeFeed.map((item) => (
-          <WorkTile
-            id={item.id}
-            type={item.type}
-            title={item.title}
-            subtitle={item.subtitle}
-            roles={item.roles}
-            copy={item.copy}
-            media={item.media}
-            href={item.href}
-            lightboxable={item.type === "video" && item.href.startsWith("http")}
-            vertical={item.vertical === true}
-            ariaLabel={`${item.title} details`}
-          />
-        ))}
+        {
+          homeFeed.map((item) => (
+            <WorkTile
+              id={item.id}
+              type={item.type}
+              title={item.title}
+              subtitle={item.subtitle}
+              roles={item.roles}
+              copy={item.copy}
+              media={item.media}
+              href={item.href}
+              lightboxable={
+                item.type === "video" && item.href.startsWith("http")
+              }
+              vertical={item.vertical === true}
+              ariaLabel={`${item.title} details`}
+            />
+          ))
+        }
       </div>
-      <VideoLightbox tileSelector="#tilescontainer .tile[data-lightboxable='true']" />
+      <VideoLightbox
+        tileSelector="#tilescontainer .tile[data-lightboxable='true']"
+      />
       <Footer />
     </main>
 
     <style>
+      .hero-tile {
+        position: relative;
+        isolation: isolate;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+        max-width: 600px;
+        flex: 1 0 400px;
+        cursor: pointer;
+        border-radius: 12px;
+        align-self:stretch;
+      }
+
+      .hero-tile::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background-color: rgba(255, 255, 255, 0.08);
+        opacity: 0;
+        transition: opacity 160ms ease;
+        pointer-events: none;
+        z-index: 2;
+      }
+
+      .hero-tile:hover::after {
+        opacity: 1;
+      }
+
+      .hero-tile > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .series-copy {
+        padding: 0 2em;
+      }
+
       main {
         padding: 1em;
         max-width: 1280px;
@@ -66,8 +244,8 @@ const homeFeed = getHomeFeed();
       .tilescontainer {
         display: flex;
         flex-wrap: wrap;
-        justify-content:center;
-        align-items:center;
+        justify-content: center;
+        align-items: center;
         gap: 16px;
         padding-bottom: 8px;
       }
