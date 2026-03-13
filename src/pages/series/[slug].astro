@@ -4,8 +4,13 @@ import Footer from "../../components/Footer.astro";
 import VideoLightbox from "../../components/VideoLightbox.astro";
 import WorkTilesBySeries from "../../components/WorkTilesBySeries.astro";
 import { SITE_TITLE } from "../../consts";
-import { getSeriesIds, getSeriesTitle, getVideosBySeries, hasSeries } from "../../lib/work";
-import Titleheader from "../../components/Header.astro"
+import {
+  getSeriesIds,
+  getSeriesTitle,
+  getVideosBySeries,
+  hasSeries,
+} from "../../lib/work";
+import Titleheader from "../../components/Header.astro";
 
 export async function getStaticPaths() {
   return getSeriesIds().map((seriesId) => ({
@@ -36,9 +41,9 @@ const pageTitle = `${seriesTitle} | ${SITE_TITLE}`;
   <body>
     <Titleheader />
 
-    <main>
+    <main class="text-center">
       <p><a href="/">Back to home</a></p>
-      <h1>{seriesTitle}</h1>
+      <h2>{seriesTitle}</h2>
       <p>{videos.length} video{videos.length === 1 ? "" : "s"}</p>
 
       <div class="tiles">

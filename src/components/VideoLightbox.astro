@@ -6,7 +6,12 @@ interface Props {
 const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
 ---
 
-<div id="videoLightbox" class="lightbox" hidden>
+<div
+  id="videoLightbox"
+  class="lightbox"
+  data-tile-selector={tileSelector}
+  hidden
+>
   <div class="lightboxBackdrop" data-close-lightbox></div>
   <div class="lightboxPanel" role="dialog" aria-modal="true" aria-label="Video player">
     <button class="lightboxClose" type="button" data-close-lightbox aria-label="Close video">
@@ -34,12 +39,12 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
   </div>
 </template>
 
-<script type="module" data-tile-selector={JSON.stringify(tileSelector)}>
-  const selector = JSON.parse(
-    document.currentScript?.dataset.tileSelector || "\".tile[data-lightboxable='true']\"",
-  );
-  const tiles = Array.from(document.querySelectorAll(selector));
+<script type="module">
   const lightbox = document.getElementById("videoLightbox");
+  const selector =
+    lightbox?.getAttribute("data-tile-selector") ||
+    ".tile[data-lightboxable='true']";
+  const tiles = Array.from(document.querySelectorAll(selector));
   const lightboxContent = document.getElementById("lightboxContent");
   const youtubeBlockedTemplate = document.getElementById("youtubeBlockedTemplate");
   const lightboxPanel = lightbox?.querySelector(".lightboxPanel");

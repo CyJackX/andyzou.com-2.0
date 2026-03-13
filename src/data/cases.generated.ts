@@ -220,7 +220,7 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "dwXaeTYc3Tg",
     "href": "https://www.youtube.com/watch?v=dwXaeTYc3Tg",
-    "seriesId": "Making-it",
+    "seriesId": "making-it",
     "videoOrder": 1
   },
   {
@@ -235,7 +235,7 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "bewb5mvMt2I",
     "href": "https://www.youtube.com/watch?v=bewb5mvMt2I",
-    "seriesId": "Making-it",
+    "seriesId": "making-it",
     "videoOrder": 2
   },
   {
@@ -250,7 +250,7 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "8Y7yt1P1gDc",
     "href": "https://www.youtube.com/watch?v=8Y7yt1P1gDc",
-    "seriesId": "Making-it",
+    "seriesId": "making-it",
     "videoOrder": 3
   },
   {
@@ -265,7 +265,7 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "MufrKX9LY_Q",
     "href": "https://www.youtube.com/watch?v=MufrKX9LY_Q",
-    "seriesId": "Making-it",
+    "seriesId": "making-it",
     "videoOrder": 4
   },
   {
@@ -280,7 +280,7 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "OomH2JjVwrw",
     "href": "https://www.youtube.com/watch?v=OomH2JjVwrw",
-    "seriesId": "Making-it",
+    "seriesId": "making-it",
     "videoOrder": 5
   },
   {
@@ -295,7 +295,7 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "Y3335Qn42qI",
     "href": "https://www.youtube.com/watch?v=Y3335Qn42qI",
-    "seriesId": "Making-it",
+    "seriesId": "making-it",
     "videoOrder": 6
   },
   {
@@ -310,7 +310,7 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "wtLmfuCHG2A",
     "href": "https://www.youtube.com/watch?v=wtLmfuCHG2A",
-    "seriesId": "Making-it",
+    "seriesId": "making-it",
     "videoOrder": 7
   },
   {
@@ -325,7 +325,7 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "S1L7zvRjuoM",
     "href": "https://www.youtube.com/watch?v=S1L7zvRjuoM",
-    "seriesId": "Making-it",
+    "seriesId": "making-it",
     "videoOrder": 8
   },
   {
@@ -340,7 +340,7 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "kZTRyPCdhes",
     "href": "https://www.youtube.com/watch?v=kZTRyPCdhes",
-    "seriesId": "Making-it",
+    "seriesId": "making-it",
     "videoOrder": 9
   },
   {
@@ -355,7 +355,7 @@ export const CASES: Case[] = [
     "subtitle": "Snap Originals ft. Dave Mizzoni",
     "youtubeId": "AROtp_lq240",
     "href": "https://www.youtube.com/watch?v=AROtp_lq240",
-    "seriesId": "Making-it",
+    "seriesId": "making-it",
     "videoOrder": 10
   },
   {
@@ -370,7 +370,7 @@ export const CASES: Case[] = [
     "subtitle": "PitTV ft. Leila Graham",
     "youtubeId": "zlFyjWf4hOk",
     "href": "https://www.youtube.com/watch?v=zlFyjWf4hOk",
-    "seriesId": "Honest-waitress",
+    "seriesId": "the-honest-waitress",
     "videoOrder": 1
   },
   {
@@ -385,7 +385,7 @@ export const CASES: Case[] = [
     "subtitle": "PitTV ft. Leila Graham",
     "youtubeId": "0SX0n9FG_GY",
     "href": "https://www.youtube.com/watch?v=0SX0n9FG_GY",
-    "seriesId": "Honest-waitress",
+    "seriesId": "the-honest-waitress",
     "videoOrder": 2
   },
   {
@@ -400,7 +400,7 @@ export const CASES: Case[] = [
     "subtitle": "PitTV ft. Leila Graham",
     "youtubeId": "Gk7n1WSpxXg",
     "href": "https://www.youtube.com/watch?v=Gk7n1WSpxXg",
-    "seriesId": "Honest-waitress",
+    "seriesId": "the-honest-waitress",
     "videoOrder": 3
   },
   {
@@ -415,7 +415,7 @@ export const CASES: Case[] = [
     "subtitle": "PitTV ft. Leila Graham",
     "youtubeId": "2z09RB3wsGk",
     "href": "https://www.youtube.com/watch?v=2z09RB3wsGk",
-    "seriesId": "Honest-waitress",
+    "seriesId": "the-honest-waitress",
     "videoOrder": 4
   },
   {
@@ -430,7 +430,7 @@ export const CASES: Case[] = [
     "subtitle": "PitTV ft. Leila Graham",
     "youtubeId": "FUto6VeJfbI",
     "href": "https://www.youtube.com/watch?v=FUto6VeJfbI",
-    "seriesId": "Honest-waitress",
+    "seriesId": "the-honest-waitress",
     "videoOrder": 5
   },
   {
@@ -616,7 +616,7 @@ export const CASES: Case[] = [
     "copy": "Webby-nominated short for Comedy Central Digital.",
     "youtubeId": "BXOaAgDnpd8",
     "href": "https://www.youtube.com/watch?v=BXOaAgDnpd8",
-    "seriesId": "Comedy-central"
+    "seriesId": "comedy-central"
   },
   {
     "id": "polyamorous-romcom",
@@ -630,7 +630,7 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital ft. Yung Gravy",
     "youtubeId": "XhMz5vRlya8",
     "href": "https://www.youtube.com/watch?v=XhMz5vRlya8",
-    "seriesId": "Comedy-central"
+    "seriesId": "comedy-central"
   },
   {
     "id": "remote-control-boss",
@@ -644,7 +644,7 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital",
     "youtubeId": "2PPkDxOul_0",
     "href": "https://www.youtube.com/watch?v=2PPkDxOul_0",
-    "seriesId": "Comedy-central"
+    "seriesId": "comedy-central"
   },
   {
     "id": "litterbox-office",
@@ -659,7 +659,7 @@ export const CASES: Case[] = [
     "copy": "7M Views!",
     "youtubeId": "KIdN_iYBW7A",
     "href": "https://www.youtube.com/watch?v=KIdN_iYBW7A",
-    "seriesId": "Comedy-central"
+    "seriesId": "comedy-central"
   },
   {
     "id": "icontact",
@@ -673,7 +673,7 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital ft. DeStorm",
     "youtubeId": "aQN6jBk_LWc",
     "href": "https://www.youtube.com/watch?v=aQN6jBk_LWc",
-    "seriesId": "Comedy-central"
+    "seriesId": "comedy-central"
   },
   {
     "id": "living-funeral-home",
@@ -687,7 +687,7 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital ft. Lala Milan",
     "youtubeId": "zcqkqql5VW0",
     "href": "https://www.youtube.com/watch?v=zcqkqql5VW0",
-    "seriesId": "Comedy-central"
+    "seriesId": "comedy-central"
   },
   {
     "id": "teen-uncle",
@@ -701,7 +701,7 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital ft. Adam Waheed",
     "youtubeId": "YUJIjQ0MytM",
     "href": "https://www.youtube.com/watch?v=YUJIjQ0MytM",
-    "seriesId": "Comedy-central"
+    "seriesId": "comedy-central"
   },
   {
     "id": "whameo",
@@ -715,7 +715,7 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital ft. Sven Johnson",
     "youtubeId": "GBG1KLVBQPA",
     "href": "https://www.youtube.com/watch?v=GBG1KLVBQPA",
-    "seriesId": "Comedy-central"
+    "seriesId": "comedy-central"
   },
   {
     "id": "take-a-deep-breath",
@@ -729,7 +729,7 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital",
     "youtubeId": "2Z4VgVKrveM",
     "href": "https://www.youtube.com/watch?v=2Z4VgVKrveM",
-    "seriesId": "Comedy-central",
+    "seriesId": "comedy-central",
     "vertical": true
   },
   {
@@ -743,7 +743,7 @@ export const CASES: Case[] = [
     },
     "subtitle": "Comedy Central Digital",
     "href": "https://www.instagram.com/reel/Cqs1xAFpnwI",
-    "seriesId": "Comedy-central",
+    "seriesId": "comedy-central",
     "vertical": true
   },
   {
@@ -758,7 +758,7 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital",
     "youtubeId": "DJCgT1gw8nc",
     "href": "https://www.youtube.com/watch?v=DJCgT1gw8nc",
-    "seriesId": "Comedy-central",
+    "seriesId": "comedy-central",
     "vertical": true
   },
   {
@@ -773,7 +773,7 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital ft. Anwar, Rose Kelso",
     "youtubeId": "gSojwTO5QZs",
     "href": "https://www.youtube.com/watch?v=gSojwTO5QZs",
-    "seriesId": "Comedy-central"
+    "seriesId": "comedy-central"
   },
   {
     "id": "she-looks-like-her-dad",
@@ -787,7 +787,7 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital ft. DeStorm, Rose Kelso",
     "youtubeId": "lQankmO_xbQ",
     "href": "https://www.youtube.com/watch?v=lQankmO_xbQ",
-    "seriesId": "Comedy-central"
+    "seriesId": "comedy-central"
   },
   {
     "id": "staying-young-forever",
@@ -801,7 +801,7 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital ft. Lala Milan, Rose Kelso",
     "youtubeId": "oCYzAHPMTUM",
     "href": "https://www.youtube.com/watch?v=oCYzAHPMTUM",
-    "seriesId": "Comedy-central"
+    "seriesId": "comedy-central"
   },
   {
     "id": "nothing-gay-in-the-wild-west",
@@ -815,7 +815,7 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital ft. Brooks Allison, Rose Kelso",
     "youtubeId": "bFYFLfq6nZo",
     "href": "https://www.youtube.com/watch?v=bFYFLfq6nZo",
-    "seriesId": "Comedy-central"
+    "seriesId": "comedy-central"
   },
   {
     "id": "European-boys",
@@ -829,7 +829,7 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital ft. Rose Kelso",
     "youtubeId": "uE1Y7PHMdPc",
     "href": "https://www.youtube.com/watch?v=uE1Y7PHMdPc",
-    "seriesId": "Comedy-central"
+    "seriesId": "comedy-central"
   },
   {
     "id": "Apocalypse-1",
@@ -843,7 +843,7 @@ export const CASES: Case[] = [
     "subtitle": "SpoiledNYC ft. Gianmarco Soresi, Megan Sass",
     "youtubeId": "X-u9YpCOkk4",
     "href": "https://www.youtube.com/watch?v=X-u9YpCOkk4",
-    "seriesId": "Apocalypse-problems"
+    "seriesId": "apocalypse-problems"
   },
   {
     "id": "Apocalypse-gluten",
@@ -857,7 +857,7 @@ export const CASES: Case[] = [
     "subtitle": "SpoiledNYC ft. Gianmarco Soresi, Megan Sass",
     "youtubeId": "klRZB8Q87oY",
     "href": "https://www.youtube.com/watch?v=klRZB8Q87oY",
-    "seriesId": "Apocalypse-problems"
+    "seriesId": "apocalypse-problems"
   },
   {
     "id": "Apocalypse-milk",
@@ -871,7 +871,7 @@ export const CASES: Case[] = [
     "subtitle": "SpoiledNYC ft. Gianmarco Soresi, Megan Sass",
     "youtubeId": "yeie8hpMldw",
     "href": "https://www.youtube.com/watch?v=yeie8hpMldw",
-    "seriesId": "Apocalypse-problems"
+    "seriesId": "apocalypse-problems"
   },
   {
     "id": "sqand",
@@ -897,7 +897,7 @@ export const CASES: Case[] = [
     },
     "youtubeId": "iLNypL04zH0",
     "href": "https://www.youtube.com/watch?v=iLNypL04zH0",
-    "seriesId": "Andys-originals"
+    "seriesId": "andys-originals"
   },
   {
     "id": "securocam-3000",
@@ -912,7 +912,7 @@ export const CASES: Case[] = [
     "copy": "Web series selected by NYTVF and IFC Comedy Crib.",
     "youtubeId": "_SRIskz2JOY",
     "href": "https://www.youtube.com/watch?v=_SRIskz2JOY",
-    "seriesId": "Andys-originals"
+    "seriesId": "andys-originals"
   },
   {
     "id": "interstellar",
@@ -926,7 +926,7 @@ export const CASES: Case[] = [
     "subtitle": "PitTV",
     "youtubeId": "nl2-5DDL5nM",
     "href": "https://www.youtube.com/watch?v=nl2-5DDL5nM",
-    "seriesId": "Andys-originals"
+    "seriesId": "andys-originals"
   },
   {
     "id": "tuber",
@@ -939,7 +939,7 @@ export const CASES: Case[] = [
     },
     "youtubeId": "0U5SCBko2XM",
     "href": "https://www.youtube.com/watch?v=0U5SCBko2XM",
-    "seriesId": "Andys-originals"
+    "seriesId": "andys-originals"
   },
   {
     "id": "pissterine",
@@ -953,7 +953,7 @@ export const CASES: Case[] = [
     "subtitle": "Andy's Originals",
     "copy": "A social stunt featured in trademark publications and articles",
     "href": "https://www.kickstarter.com/projects/andyzou/pissterine-a-genuine-novelty-mouthwash",
-    "seriesId": "Andys-originals"
+    "seriesId": "andys-originals"
   },
   {
     "id": "Secret-agent",
@@ -967,7 +967,7 @@ export const CASES: Case[] = [
     "subtitle": "Andy's Originals ft. Geil Comedy",
     "youtubeId": "kNGsC9uqwVs",
     "href": "https://www.youtube.com/watch?v=kNGsC9uqwVs",
-    "seriesId": "Andys-originals"
+    "seriesId": "andys-originals"
   },
   {
     "id": "Rizzle-1",

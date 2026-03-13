@@ -28,14 +28,14 @@ import Titleheader from "../components/Header.astro";
     <Titleheader />
     <main class="text-center">
       <VideoLightbox
-        tileSelector="#tilescontainer .tile[data-lightboxable='true']"
+        tileSelector="#tilescontainer .tile[data-lightboxable='true'], .hero-tile[data-lightboxable='true']"
       />
       <AccordionItem title="Director">
         <div
           class="flex-col md:flex-row md:items-start justify-center items-center flex gap-8 flex-wrap p-8"
         >
-          <h2 class="section-title">Featured Series</h2>
-          <div class="hero-tile">
+          <h2 class="section-title">Series</h2>
+          <a class="hero-tile" href="/series/comedy-central">
             <Image
               class="hero-image"
               src={originals}
@@ -52,8 +52,8 @@ import Titleheader from "../components/Header.astro";
                 and other content collabs with notable influencers.
               </p>
             </div>
-          </div>
-          <div class="hero-tile">
+          </a>
+          <a class="hero-tile" href="/series/making-it">
             <video
               src="/videos/makingit.mp4"
               autoplay
@@ -71,8 +71,8 @@ import Titleheader from "../components/Header.astro";
                 >.
               </p>
             </div>
-          </div>
-          <div class="hero-tile">
+          </a>
+          <a class="hero-tile" href="/series/death-becomes-her">
             <Image
               class="hero-image"
               src={dbh}
@@ -88,8 +88,8 @@ import Titleheader from "../components/Header.astro";
                 Broadway's <i class="text-nowrap">Death Becomes Her.</i>
               </p>
             </div>
-          </div>
-          <div class="hero-tile">
+          </a>
+          <a class="hero-tile" href="/series/asian-afterlife">
             <div class="flex border-radius-lg">
               <video
                 src={"/videos/rizzle3.mp4"}
@@ -120,8 +120,12 @@ import Titleheader from "../components/Header.astro";
                 1000$ grand prize winner of Rizzle's Asian Comedy Fest.
               </p>
             </div>
-          </div>
-          <div class="hero-tile">
+          </a>
+          <a
+            class="hero-tile"
+            href="https://www.youtube.com/watch?v=_SRIskz2JOY"
+            data-lightboxable="true"
+          >
             <Image
               class="hero-image"
               src="https://i.ytimg.com/vi/_SRIskz2JOY/hqdefault.jpg"
@@ -137,8 +141,8 @@ import Titleheader from "../components/Header.astro";
                 hosted on IFC Comedy Crib.
               </p>
             </div>
-          </div>
-          <div class="hero-tile">
+          </a>
+          <a class="hero-tile" href="/series/apocalypse-problems">
             <Image
               class="hero-image"
               src="https://i.ytimg.com/vi/klRZB8Q87oY/hqdefault.jpg"
@@ -154,7 +158,24 @@ import Titleheader from "../components/Header.astro";
                 Megan Sass.
               </p>
             </div>
-          </div>
+          </a>
+          <a class="hero-tile" href="/series/apocalypse-problems">
+            <Image
+              class="hero-image"
+              src="https://i.ytimg.com/vi/klRZB8Q87oY/hqdefault.jpg"
+              width="640"
+              height="360"
+              alt="Apocalypse Problems"
+            />
+            <div>
+              <h3 class="hero-title">Apocalypse Problems</h3>
+              <h4 class="hero-subtitle">Director | DP | Editor</h4>
+              <p class="series-copy">
+                A short series featured on SpoiledNYC ft. Gianmarco Soresi &
+                Megan Sass.
+              </p>
+            </div>
+          </a>
         </div>
         <h2 class="section-title">Branded Content</h2>
         <div id="tilescontainer" class="tilescontainer">
