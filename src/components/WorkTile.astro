@@ -5,7 +5,7 @@ interface Props {
   id?: string;
   title: string;
   subtitle?: string;
-  roles: string;
+  roles?: string;
   copy?: string;
   media: Media;
   href: string;
@@ -82,7 +82,7 @@ const resolvedLightboxable = lightboxable ?? (type === "video" && isExternal);
   <div class="overlay">
     <div class="titleText">{title}</div>
     {subtitle && <div class="subtitleText">{subtitle}</div>}
-    <div class="roles">{roles}</div>
+    {roles && <div class="roles">{roles}</div>}
     {copy && copy.trim().length > 0 && <div class="copy">{copy}</div>}
   </div>
 </a>

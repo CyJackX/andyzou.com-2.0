@@ -7,7 +7,7 @@ export type Case = {
   id: string;
   title: string;
   subtitle?: string;
-  roles: string;
+  roles?: string;
   copy?: string;
   youtubeId?: string;
   href?: string;

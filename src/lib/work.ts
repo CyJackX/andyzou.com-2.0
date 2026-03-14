@@ -13,7 +13,7 @@ export type WorkTileData = {
   id: string;
   title: string;
   subtitle?: string;
-  roles: string;
+  roles?: string;
   copy?: string;
   media: Media;
   href: string;

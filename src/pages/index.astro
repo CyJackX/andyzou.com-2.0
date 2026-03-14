@@ -17,6 +17,8 @@ import originals from "../images/originals.jpg";
 import Image from "astro/components/Image.astro";
 
 import Titleheader from "../components/Header.astro";
+import WorkTile from "../components/WorkTile.astro";
+import WorkTileByID from "../components/WorkTileByID.astro";
 ---
 
 <!doctype html>
@@ -28,170 +30,25 @@ import Titleheader from "../components/Header.astro";
     <Titleheader />
     <main class="text-center">
       <VideoLightbox
-        tileSelector="#tilescontainer .tile[data-lightboxable='true'], .hero-tile[data-lightboxable='true']"
+        tileSelector=".tile[data-lightboxable='true'], .hero-tile[data-lightboxable='true']"
       />
       <AccordionItem title="Director">
-        <div
-          class="flex-col md:flex-row md:items-start justify-center items-center flex gap-8 flex-wrap p-8"
-        >
+        <div id="tilescontainer" class="tilescontainer">
+          <h2 class="section-title">Directing Reel</h2>
+          <WorkTileByID id="directing-reel" />
           <h2 class="section-title">Series</h2>
-          <a class="hero-tile" href="/series/comedy-central">
-            <Image
-              class="hero-image"
-              src={originals}
-              width="640"
-              height="360"
-              alt="Making It"
-            />
-            <div>
-              <h3 class="hero-title">Comedy Central Digital</h3>
-              <h4 class="hero-subtitle">Director | Producer | Editor</h4>
-              <p class="series-copy">
-                At Comedy Central's Webby-winning Digital team, Andy directed &
-                produced multiple series like <i>Mini-Mocks</i>, music videos,
-                and other content collabs with notable influencers.
-              </p>
-            </div>
-          </a>
-          <a class="hero-tile" href="/series/making-it">
-            <video
-              src="/videos/makingit.mp4"
-              autoplay
-              loop
-              muted
-              playsinline
-              class="hero-image"></video>
-            <div>
-              <h3 class="hero-title">Making It - Snap Originals</h3>
-              <h4 class="hero-subtitle">Director | DP | Editor</h4>
-              <p class="series-copy">
-                As Director, Cinematographer, and Editor, Andy brought an
-                original vertical series to life for Snapchat's <i
-                  >Snap Originals</i
-                >.
-              </p>
-            </div>
-          </a>
-          <a class="hero-tile" href="/series/death-becomes-her">
-            <Image
-              class="hero-image"
-              src={dbh}
-              width="640"
-              height="360"
-              alt="Making It"
-            />
-            <div>
-              <h3 class="hero-title">Death Becomes Her on Broadway</h3>
-              <h4 class="hero-subtitle">Director | Producer | Editor</h4>
-              <p class="series-copy">
-                Directed & Produced a series of promotional BTS interviews for
-                Broadway's <i class="text-nowrap">Death Becomes Her.</i>
-              </p>
-            </div>
-          </a>
-          <a class="hero-tile" href="/series/asian-afterlife">
-            <div class="flex border-radius-lg">
-              <video
-                src={"/videos/rizzle3.mp4"}
-                class="rizzlevideo"
-                autoplay
-                loop
-                muted
-                playsinline></video>
-              <video
-                src={"/videos/rizzle1.mp4"}
-                class="rizzlevideo"
-                autoplay
-                loop
-                muted
-                playsinline></video>
-              <video
-                src={"/videos/rizzle2.mp4"}
-                class="rizzlevideo"
-                autoplay
-                loop
-                muted
-                playsinline></video>
-            </div>
-            <div>
-              <h3 class="hero-title">Andy's Asian Afterlife</h3>
-              <h4 class="hero-subtitle">Creator</h4>
-              <p class="series-copy">
-                1000$ grand prize winner of Rizzle's Asian Comedy Fest.
-              </p>
-            </div>
-          </a>
-          <a
-            class="hero-tile"
-            href="https://www.youtube.com/watch?v=_SRIskz2JOY"
-            data-lightboxable="true"
-          >
-            <Image
-              class="hero-image"
-              src="https://i.ytimg.com/vi/_SRIskz2JOY/hqdefault.jpg"
-              width="640"
-              height="360"
-              alt="securocam 3000"
-            />
-            <div>
-              <h3 class="hero-title">Securocam 3000</h3>
-              <h4 class="hero-subtitle">Co-Creator | Editor</h4>
-              <p class="series-copy">
-                A short series featured at New York Television Festival and
-                hosted on IFC Comedy Crib.
-              </p>
-            </div>
-          </a>
-          <a class="hero-tile" href="/series/apocalypse-problems">
-            <Image
-              class="hero-image"
-              src="https://i.ytimg.com/vi/klRZB8Q87oY/hqdefault.jpg"
-              width="640"
-              height="360"
-              alt="Apocalypse Problems"
-            />
-            <div>
-              <h3 class="hero-title">Apocalypse Problems</h3>
-              <h4 class="hero-subtitle">Director | DP | Editor</h4>
-              <p class="series-copy">
-                A short series featured on SpoiledNYC ft. Gianmarco Soresi &
-                Megan Sass.
-              </p>
-            </div>
-          </a>
-          <a class="hero-tile" href="/series/apocalypse-problems">
-            <Image
-              class="hero-image"
-              src="https://i.ytimg.com/vi/klRZB8Q87oY/hqdefault.jpg"
-              width="640"
-              height="360"
-              alt="Apocalypse Problems"
-            />
-            <div>
-              <h3 class="hero-title">Apocalypse Problems</h3>
-              <h4 class="hero-subtitle">Director | DP | Editor</h4>
-              <p class="series-copy">
-                A short series featured on SpoiledNYC ft. Gianmarco Soresi &
-                Megan Sass.
-              </p>
-            </div>
-          </a>
-        </div>
-        <h2 class="section-title">Branded Content</h2>
-        <div id="tilescontainer" class="tilescontainer">
-          <WorkTilesBySeries seriesId="branded-content" />
-        </div>
-        <h2 class="section-title">Comedy Music Videos</h2>
-        <div id="tilescontainer" class="tilescontainer">
-          <WorkTilesBySeries seriesId="music-videos" />
-        </div>
-        <h2 class="section-title">Short Films</h2>
-        <div id="tilescontainer" class="tilescontainer">
-          <WorkTilesBySeries seriesId="shorts" />
-        </div>
-        <h2 class="section-title">Other Shorts & Sketches</h2>
-        <div id="tilescontainer" class="tilescontainer">
-          <WorkTilesBySeries seriesId="home" />
+          <WorkTilesBySeries seriesId="series" className="tile-series" />
+          <h2 class="section-title">Branded Content</h2>
+          <WorkTilesBySeries
+            seriesId="branded-content"
+            className="tile-series"
+          />
+          <h2 class="section-title">Comedy Music Videos</h2>
+          <WorkTilesBySeries seriesId="music-videos" className="tile-series" />
+          <h2 class="section-title">Short Films</h2>
+          <WorkTilesBySeries seriesId="shorts" className="tile-series" />
+          <h2 class="section-title">Other Sketches</h2>
+          <WorkTilesBySeries seriesId="sketch" className="tile-series" />
         </div>
       </AccordionItem>
       <AccordionItem title="Technologist">
@@ -219,6 +76,7 @@ import Titleheader from "../components/Header.astro";
           <a
             class="hero-tile"
             href="https://www.kickstarter.com/projects/andyzou/pissterine-a-genuine-novelty-mouthwash"
+            target="_blank"
           >
             <Image src={pissterine} width="640" height="360" alt="Making It" />
             <div>
@@ -250,108 +108,118 @@ import Titleheader from "../components/Header.astro";
             </div>
           </a>
           <h2 class="section-title">Timeless Fan Favorites</h2>
-          <WorkTilebyId id="tuber" />
-          <WorkTilebyId id="andys-roadshow" />
-          <div class="hero-tile">
-            <Image
-              src={azaleaShoot}
-              width="640"
-              height="360"
-              alt="Making It"
-              class="aspect-video object-cover object-top"
-            />
-            <div>
-              <h3 class="hero-title"></h3>
-              <p class="series-copy">
-                Andy lives in Brooklyn with his wife and collaborator Katie
-                Sicking and their daughter Azalea.
-              </p>
-            </div>
+          <WorkTilebyId id="tuber" className="tile-series" />
+          <WorkTilebyId id="andys-roadshow" className="tile-series" />
+          <br class="w-full" />
+        </div>
+        <div class="hero-tile">
+          <Image
+            src={azaleaShoot}
+            width="640"
+            height="360"
+            alt="Making It"
+            class="aspect-video object-cover object-top"
+            loading="lazy"
+          />
+          <div>
+            <h3 class="hero-title"></h3>
+            <p class="series-copy">
+              Andy lives in Brooklyn with his wife and collaborator Katie
+              Sicking and their daughter Azalea.
+            </p>
           </div>
         </div>
       </AccordionItem>
-
-      <Footer />
-
-      <style>
-        .section-title {
-          width: 100%;
-          margin-top: 0.5em;
-        }
-
-        .hero-tile {
-          position: relative;
-          isolation: isolate;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 1em;
-          flex: 0 1 360px;
-          cursor: pointer;
-          border-radius: 12px;
-          align-self: stretch;
-          text-decoration: none;
-          color: white;
-        }
-
-        .hero-tile::after {
-          content: "";
-          position: absolute;
-          inset: 0;
-          border-radius: inherit;
-          background-color: rgba(255, 255, 255, 0.08);
-          opacity: 0;
-          transition: opacity 160ms ease;
-          pointer-events: none;
-          z-index: 2;
-        }
-
-        .hero-tile:hover::after {
-          opacity: 1;
-        }
-
-        .hero-tile > * {
-          position: relative;
-          z-index: 1;
-        }
-
-        .hero-image {
-          aspect-ratio: 16/9;
-          object-fit: cover;
-          border-radius: 12px;
-        }
-
-        .rizzlevideo {
-          width: 33%;
-        }
-
-        .hero-title {
-          font-size: 2.4rem;
-          font-weight: bold;
-        }
-        .hero-subtitle {
-          font-size: 2rem;
-        }
-        .series-copy {
-          margin-top: 0.5em;
-          padding: 0 2em;
-        }
-
-        main {
-          padding: 1em;
-          max-width: 1280px;
-          margin: 0 auto;
-        }
-
-        .tilescontainer {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          align-items: center;
-          gap: 16px;
-          padding-bottom: 8px;
-        }
-      </style>
     </main>
+
+    <Footer />
+
+    <style>
+      .section-title {
+        width: 100%;
+        margin-top: 0.5em;
+      }
+
+      .hero-tile {
+        position: relative;
+        isolation: isolate;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+        flex: 0 1 360px;
+        cursor: pointer;
+        border-radius: 12px;
+        align-self: stretch;
+        text-decoration: none;
+        color: white;
+      }
+
+      .hero-tile::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background-color: rgba(255, 255, 255, 0.08);
+        opacity: 0;
+        transition: opacity 160ms ease;
+        pointer-events: none;
+        z-index: 2;
+      }
+
+      .hero-tile:hover::after {
+        opacity: 1;
+      }
+
+      .hero-tile > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-image {
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+
+      .rizzlevideo {
+        width: 33%;
+      }
+
+      .hero-title {
+        font-size: 2.4rem;
+        font-weight: bold;
+      }
+      .hero-subtitle {
+        font-size: 2rem;
+        display: none;
+      }
+      .series-copy {
+        margin-top: 0.5em;
+        padding: 0 2em;
+        display: none;
+      }
+
+      main {
+        padding: 1em;
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+
+      .tilescontainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        padding-bottom: 8px;
+      }
+
+      :global(.tile[data-id="directing-reel"]) {
+        flex: 1 1 360px;
+        width: 100%;
+        max-width: 720px;
+      }
+    </style>
   </body>
 </html>

@@ -8,7 +8,6 @@ const defaultImagePlaceholder = "https://placehold.co/640x360";
 const requiredHeaders = [
   "title",
   "subtitle",
-  "roles",
   "copy",
   "youtubeId",
   "href",
@@ -118,7 +117,6 @@ for (let i = 1; i < lines.length; i += 1) {
   seenIds.add(id);
 
   ensure(title, `line ${lineNumber}: title is required.`);
-  ensure(roles, `line ${lineNumber}: roles is required.`);
   ensure(mediaKind, `line ${lineNumber}: mediaKind is required.`);
   if (youtubeId) {
     ensure(
@@ -158,9 +156,10 @@ for (let i = 1; i < lines.length; i += 1) {
     fail(`line ${lineNumber}: unsupported mediaKind "${mediaKind}".`);
   }
 
-  const entry = { id, title, roles, media };
+  const entry = { id, title, media };
 
   if (subtitle) entry.subtitle = subtitle;
+  if (roles) entry.roles = roles;
   if (copy) entry.copy = copy;
   if (youtubeId) entry.youtubeId = youtubeId;
   if (href) entry.href = href;
