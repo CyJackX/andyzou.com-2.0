@@ -8,6 +8,7 @@ interface Props {
   lightboxable?: boolean;
   ariaLabel?: string;
   className?: string;
+  target?: HTMLAnchorElement["target"];
 }
 
 const {
@@ -16,6 +17,7 @@ const {
   lightboxable,
   ariaLabel,
   className,
+  target,
 } = Astro.props;
 
 const tile = getWorkTileDataById(id, hrefOverride);
@@ -38,4 +40,5 @@ if (!tile) {
   lightboxable={lightboxable}
   ariaLabel={ariaLabel}
   className={className}
+  target={target}
 />

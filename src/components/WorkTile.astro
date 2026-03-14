@@ -14,6 +14,7 @@ interface Props {
   vertical?: boolean;
   ariaLabel?: string;
   className?: string;
+  target?: HTMLAnchorElement["target"];
 }
 
 const {
@@ -29,17 +30,26 @@ const {
   vertical = false,
   ariaLabel,
   className = "",
+  target,
 } = Astro.props;
 
 const isExternal = /^https?:\/\//i.test(href);
 const resolvedLightboxable = lightboxable ?? (type === "video" && isExternal);
+const resolvedTarget = target ?? (isExternal ? "_blank" : undefined);
+const resolvedRel = resolvedTarget === "_blank" ? "noopener noreferrer" : undefined;
 ---
 
 <a
   class={`tile ${className}`.trim()}
   href={href}
   aria-label={ariaLabel ?? `${title} details`}
+  target={resolvedTarget}
+  rel={resolvedRel}
   data-id={id}
+  data-title={title}
+  data-subtitle={subtitle}
+  data-roles={roles}
+  data-copy={copy}
   data-type={type}
   data-lightboxable={resolvedLightboxable ? "true" : undefined}
   data-vertical={vertical ? "true" : undefined}
@@ -147,7 +157,6 @@ const resolvedLightboxable = lightboxable ?? (type === "video" && isExternal);
   .titleText {
     font-weight: 600;
     font-size: 3rem;
-    line-height: 1.2;
   }
 
   .subtitleText {
@@ -158,6 +167,9 @@ const resolvedLightboxable = lightboxable ?? (type === "video" && isExternal);
     transform: translateY(-10px);
   }
 
+  .copy {
+    margin-top: 0.5em;
+  }
   .roles,
   .subtitleText,
   .copy {

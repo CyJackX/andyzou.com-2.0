@@ -5,6 +5,10 @@ const inputPath = path.join("src", "data", "cases.tsv");
 const outputPath = path.join("src", "data", "cases.generated.ts");
 const defaultImagePlaceholder = "https://placehold.co/640x360";
 
+function getYoutubeThumbnailUrl(youtubeId) {
+  return `https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg`;
+}
+
 const requiredHeaders = [
   "title",
   "subtitle",
@@ -136,14 +140,15 @@ for (let i = 1; i < lines.length; i += 1) {
 
   let media;
   if (mediaKind === "image") {
-    const src = mediaSrcRaw || (youtubeId ? `https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg` : defaultImagePlaceholder);
+    const src = mediaSrcRaw || (youtubeId ? getYoutubeThumbnailUrl(youtubeId) : defaultImagePlaceholder);
     const alt = mediaAltRaw || `${title} thumbnail`;
     media = { kind: "image", src, alt };
   } else if (mediaKind === "video") {
     ensure(mediaSrcRaw, `line ${lineNumber}: mediaSrc is required for video.`);
     media = { kind: "video", src: mediaSrcRaw };
-    if (mediaPoster) {
-      media.poster = mediaPoster;
+    const poster = mediaPoster || (youtubeId ? getYoutubeThumbnailUrl(youtubeId) : "");
+    if (poster) {
+      media.poster = poster;
     }
   } else if (mediaKind === "strip") {
     const sources = stripSourcesRaw

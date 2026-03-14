@@ -18,6 +18,7 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
       <span class="srOnly">Close</span>
     </button>
     <div id="lightboxContent"></div>
+    <div id="lightboxDetails" class="lightboxDetails" hidden></div>
   </div>
 </div>
 
@@ -46,6 +47,7 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
     ".tile[data-lightboxable='true']";
   const tiles = Array.from(document.querySelectorAll(selector));
   const lightboxContent = document.getElementById("lightboxContent");
+  const lightboxDetails = document.getElementById("lightboxDetails");
   const youtubeBlockedTemplate = document.getElementById("youtubeBlockedTemplate");
   const lightboxPanel = lightbox?.querySelector(".lightboxPanel");
   const lightboxBackdrop = lightbox?.querySelector(".lightboxBackdrop");
@@ -251,6 +253,59 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
     activeYoutubePlayer = null;
   }
 
+  function setLightboxDetails(tile) {
+    if (!(lightboxDetails instanceof HTMLElement)) return;
+    if (!(tile instanceof HTMLElement)) {
+      lightboxDetails.replaceChildren();
+      lightboxDetails.hidden = true;
+      return;
+    }
+
+    const title = tile.dataset.title?.trim() || "";
+    const subtitle = tile.dataset.subtitle?.trim() || "";
+    const roles = tile.dataset.roles?.trim() || "";
+    const copy = tile.dataset.copy?.trim() || "";
+
+    if (!title && !subtitle && !roles && !copy) {
+      lightboxDetails.replaceChildren();
+      lightboxDetails.hidden = true;
+      return;
+    }
+
+    const fragment = document.createDocumentFragment();
+
+    if (title) {
+      const titleEl = document.createElement("h3");
+      titleEl.className = "lightboxTitle";
+      titleEl.textContent = title;
+      fragment.append(titleEl);
+    }
+
+    if (subtitle) {
+      const subtitleEl = document.createElement("p");
+      subtitleEl.className = "lightboxSubtitle";
+      subtitleEl.textContent = subtitle;
+      fragment.append(subtitleEl);
+    }
+
+    if (roles) {
+      const rolesEl = document.createElement("p");
+      rolesEl.className = "lightboxRoles";
+      rolesEl.textContent = roles;
+      fragment.append(rolesEl);
+    }
+
+    if (copy) {
+      const copyEl = document.createElement("p");
+      copyEl.className = "lightboxCopy";
+      copyEl.textContent = copy;
+      fragment.append(copyEl);
+    }
+
+    lightboxDetails.replaceChildren(fragment);
+    lightboxDetails.hidden = false;
+  }
+
   function renderYoutubeBlockedMessage(sourceUrl, isVertical = false) {
     if (!lightboxContent) return;
     clearYoutubePlayer();
@@ -414,15 +469,13 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
     lightbox.classList.add("isAnimating");
 
     const tile = activeTile;
-    const panelRect = lightboxPanel.getBoundingClientRect();
     const mediaEl = lightboxContent.querySelector(".lightboxMedia") || lightboxContent;
     const mediaRect = mediaEl.getBoundingClientRect();
-    const fromRect = isRectRenderable(panelRect) ? panelRect : mediaRect;
+    const fromRect = mediaRect;
     const toRect = tile ? tile.getBoundingClientRect() : null;
     debugLog("close: measured rects", {
       fromRect: rectSummary(fromRect),
       toRect: rectSummary(toRect),
-      usingPanelRect: isRectRenderable(panelRect),
     });
 
     if (tile && isRectRenderable(fromRect) && isRectRenderable(toRect)) {
@@ -459,6 +512,7 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
     lightboxBackdrop.style.opacity = "";
     clearYoutubePlayer();
     lightboxContent.replaceChildren();
+    setLightboxDetails(null);
     document.body.classList.remove("noScroll");
     if (lastActiveElement && typeof lastActiveElement.focus === "function") {
       lastActiveElement.focus();
@@ -502,6 +556,7 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
       playerEl.classList.add("lightboxMediaPending");
     }
     lightboxContent.replaceChildren(playerEl);
+    setLightboxDetails(tile);
     lightbox.hidden = false;
     document.body.classList.add("noScroll");
     lightboxBackdrop.style.opacity = "0";
@@ -520,16 +575,13 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
       void mountYoutubePlayer(playerEl, playerConfig.sourceUrl);
     }
 
-    const panelRect = lightboxPanel.getBoundingClientRect();
     const playerRect = playerEl.getBoundingClientRect();
-    const targetRect = isRectRenderable(panelRect) ? panelRect : playerRect;
+    const targetRect = playerRect;
     const canAnimate =
       isRectRenderable(tileRect) && isRectRenderable(targetRect);
     debugLog("open: measured target", {
       targetRect: rectSummary(targetRect),
       playerRect: rectSummary(playerRect),
-      panelRect: rectSummary(panelRect),
-      usingPanelRect: isRectRenderable(panelRect),
       canAnimate,
     });
 
@@ -719,6 +771,43 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
 
   :global(#lightboxContent) {
     width: 100%;
+  }
+
+  .lightboxDetails {
+    margin-top: 1rem;
+    padding: 0 0.25rem;
+    color: white;
+    text-align: center;
+  }
+
+  .lightboxTitle,
+  .lightboxSubtitle,
+  .lightboxRoles,
+  .lightboxCopy {
+    margin: 0;
+  }
+
+  .lightboxTitle {
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .lightboxSubtitle,
+  .lightboxRoles {
+    margin-top: 0.4rem;
+    opacity: 0.9;
+  }
+
+  .lightboxSubtitle {
+    font-weight: 600;
+  }
+
+  .lightboxCopy {
+    max-width: 72ch;
+    margin: 0.85rem auto 0;
+    line-height: 1.45;
+    opacity: 0.95;
   }
 
   :global(.lightboxMedia) {
