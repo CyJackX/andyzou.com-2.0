@@ -10,7 +10,6 @@ function getYoutubeThumbnailUrl(youtubeId) {
 }
 
 const requiredHeaders = [
-  "title",
   "subtitle",
   "copy",
   "youtubeId",
@@ -120,7 +119,6 @@ for (let i = 1; i < lines.length; i += 1) {
   ensure(!seenIds.has(id), `line ${lineNumber}: duplicate id "${id}".`);
   seenIds.add(id);
 
-  ensure(title, `line ${lineNumber}: title is required.`);
   ensure(mediaKind, `line ${lineNumber}: mediaKind is required.`);
   if (youtubeId) {
     ensure(
@@ -141,7 +139,8 @@ for (let i = 1; i < lines.length; i += 1) {
   let media;
   if (mediaKind === "image") {
     const src = mediaSrcRaw || (youtubeId ? getYoutubeThumbnailUrl(youtubeId) : defaultImagePlaceholder);
-    const alt = mediaAltRaw || `${title} thumbnail`;
+    const altBase = title || subtitle || id;
+    const alt = mediaAltRaw || `${altBase} thumbnail`;
     media = { kind: "image", src, alt };
   } else if (mediaKind === "video") {
     ensure(mediaSrcRaw, `line ${lineNumber}: mediaSrc is required for video.`);
@@ -161,8 +160,9 @@ for (let i = 1; i < lines.length; i += 1) {
     fail(`line ${lineNumber}: unsupported mediaKind "${mediaKind}".`);
   }
 
-  const entry = { id, title, media };
+  const entry = { id, media };
 
+  if (title) entry.title = title;
   if (subtitle) entry.subtitle = subtitle;
   if (roles) entry.roles = roles;
   if (copy) entry.copy = copy;

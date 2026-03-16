@@ -3,7 +3,7 @@ import type { Media } from "../data/cases";
 
 interface Props {
   id?: string;
-  title: string;
+  title?: string;
   subtitle?: string;
   roles?: string;
   copy?: string;
@@ -37,19 +37,24 @@ const isExternal = /^https?:\/\//i.test(href);
 const resolvedLightboxable = lightboxable ?? (type === "video" && isExternal);
 const resolvedTarget = target ?? (isExternal ? "_blank" : undefined);
 const resolvedRel = resolvedTarget === "_blank" ? "noopener noreferrer" : undefined;
+const displayTitle = title?.trim() || undefined;
+const displaySubtitle = subtitle?.trim() || undefined;
+const displayRoles = roles?.trim() || undefined;
+const displayCopy = copy?.trim() || undefined;
+const defaultAriaLabelBase = displayTitle || displaySubtitle || id || "Work item";
 ---
 
 <a
   class={`tile ${className}`.trim()}
   href={href}
-  aria-label={ariaLabel ?? `${title} details`}
+  aria-label={ariaLabel ?? `${defaultAriaLabelBase} details`}
   target={resolvedTarget}
   rel={resolvedRel}
   data-id={id}
-  data-title={title}
-  data-subtitle={subtitle}
-  data-roles={roles}
-  data-copy={copy}
+  data-title={displayTitle}
+  data-subtitle={displaySubtitle}
+  data-roles={displayRoles}
+  data-copy={displayCopy}
   data-type={type}
   data-lightboxable={resolvedLightboxable ? "true" : undefined}
   data-vertical={vertical ? "true" : undefined}
@@ -90,10 +95,10 @@ const resolvedRel = resolvedTarget === "_blank" ? "noopener noreferrer" : undefi
   }
 
   <div class="overlay">
-    <div class="titleText">{title}</div>
-    {subtitle && <div class="subtitleText">{subtitle}</div>}
-    {roles && <div class="roles">{roles}</div>}
-    {copy && copy.trim().length > 0 && <div class="copy">{copy}</div>}
+    {displayTitle && <div class="titleText">{displayTitle}</div>}
+    {displaySubtitle && <div class="subtitleText">{displaySubtitle}</div>}
+    {displayRoles && <div class="roles">{displayRoles}</div>}
+    {displayCopy && <div class="copy">{displayCopy}</div>}
   </div>
 </a>
 
