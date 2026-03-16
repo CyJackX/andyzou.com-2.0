@@ -99,7 +99,8 @@ const resolvedRel = resolvedTarget === "_blank" ? "noopener noreferrer" : undefi
 
 <style>
   .tile {
-    flex: 0 1 360px;
+    display: block;
+    flex: 1 1 360px;
     aspect-ratio: 16 / 9;
     position: relative;
     overflow: hidden;
@@ -157,6 +158,8 @@ const resolvedRel = resolvedTarget === "_blank" ? "noopener noreferrer" : undefi
   .titleText {
     font-weight: 600;
     font-size: 3rem;
+    line-height: 1;
+    margin-bottom: .25em;
   }
 
   .subtitleText {
@@ -167,9 +170,6 @@ const resolvedRel = resolvedTarget === "_blank" ? "noopener noreferrer" : undefi
     transform: translateY(-10px);
   }
 
-  .copy {
-    margin-top: 0.5em;
-  }
   .roles,
   .subtitleText,
   .copy {
