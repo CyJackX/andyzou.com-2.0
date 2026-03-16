@@ -7,17 +7,11 @@ import WorkTilebyId from "../components/WorkTileByID.astro";
 import WorkTilesBySeries from "../components/WorkTilesBySeries.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import CaseCard from "../components/CaseCard.astro";
-import blogPlaceholder2 from "../images/blog-placeholder-2.jpg";
 import azaleaShoot from "../images/AzaleaShootSelects-07.jpg";
 import pissterine from "../images/pissterine.jpg";
 import tootsies from "../images/tootsies_06.06.25-04326-Enhanced-NR.jpg";
-import dbh from "../images/dbh.jpg";
-import originals from "../images/originals.jpg";
-
 import Image from "astro/components/Image.astro";
-
 import Titleheader from "../components/Header.astro";
-import WorkTile from "../components/WorkTile.astro";
 import WorkTileByID from "../components/WorkTileByID.astro";
 ---
 
@@ -34,9 +28,8 @@ import WorkTileByID from "../components/WorkTileByID.astro";
       />
       <AccordionItem title="Director">
         <div id="tilescontainer" class="tilescontainer">
-          <h2 class="section-title">Directing Reel</h2>
           <WorkTileByID id="directing-reel" />
-          <h2 class="section-title">Series</h2>
+          <h2 class="section-title">Scripted Digital Series</h2>
           <WorkTilesBySeries seriesId="series" className="tile-series" />
           <h2 class="section-title">Branded Content</h2>
           <WorkTilesBySeries
@@ -47,85 +40,43 @@ import WorkTileByID from "../components/WorkTileByID.astro";
           <WorkTilesBySeries seriesId="music-videos" className="tile-series" />
           <h2 class="section-title">Short Films</h2>
           <WorkTilesBySeries seriesId="shorts" className="tile-series" />
-          <h2 class="section-title">Other Sketches</h2>
-          <WorkTilesBySeries seriesId="sketch" className="tile-series" />
-        </div>
-      </AccordionItem>
-      <AccordionItem title="Technologist">
-        <CaseCard
-          id="tech"
-          videoSrc="/videos/Tootsies Promo v1_2_400.mp4"
-          reverse
-        >
-          With a background in Mathematics & Computer Science, Andy has always
-          embraced the technical aspects of production. From coding custom After
-          Effects scripts to niche immersive workflows, he enjoys the tinkering.
-        </CaseCard>
-        <CaseCard id="tech" videoSrc="/videos/Head to Head_640.mp4">
-          Andy's breadth of experience includes traditional 3D tools such as
-          Unreal Engine, Unity, Blender, and more.
-        </CaseCard>
-        <CaseCard id="ai" videoSrc="/videos/AI Sample_400.mp4" reverse>
-          But Andy also knows how to grow with the times, dabbling in AI-driven
-          generative workflows from platforms like Higgsfield and Kling to
-          API-driven bespoke applications such as ComfyUI and Veo3.
-        </CaseCard>
-      </AccordionItem>
-      <AccordionItem title="Weirdo">
-        <div class="flex flex-row gap-8 p-8 flex-wrap justify-center">
-          <a
-            class="hero-tile"
-            href="https://www.kickstarter.com/projects/andyzou/pissterine-a-genuine-novelty-mouthwash"
-            target="_blank"
-          >
-            <Image src={pissterine} width="640" height="360" alt="Making It" />
-            <div>
-              <h3 class="hero-title">Pissterine</h3>
-              <p class="series-copy">
-                Andy once kickstarted a Listerine knockoff that got shutdown in
-                trademark court.
-              </p>
-            </div>
-          </a>
-          <a
-            class="hero-tile"
-            href="https://tootsiesvideovault.com"
-            target="_blank"
-          >
-            <Image
-              src={tootsies}
-              width="640"
-              height="360"
-              alt="Making It"
-              class="aspect-video object-cover"
-            />
-            <div>
-              <h3 class="hero-title">Tootsies Video Vault</h3>
-              <p class="series-copy">
-                Andy is a co-producer on annual Brooklyn film jam
-                www.TootsiesVideoVault.com.
-              </p>
-            </div>
-          </a>
           <h2 class="section-title">Timeless Fan Favorites</h2>
           <WorkTilebyId id="tuber" className="tile-series" />
           <WorkTilebyId id="andys-roadshow" className="tile-series" />
-          <br class="w-full" />
-        </div>
-        <div class="hero-tile">
-          <Image
-            src={azaleaShoot}
-            width="640"
-            height="360"
-            alt="Making It"
-            class="aspect-video object-cover object-top"
-            loading="lazy"
+          <WorkTilebyId
+            id="pissterine"
+            className="tile-series"
+            target="_blank"
           />
-          <div>
-            <h3 class="hero-title"></h3>
-            <p class="series-copy">
+          <h2 class="section-title">Sketch Comedy</h2>
+          <WorkTilesBySeries seriesId="sketch" className="tile-series" />
+        </div>
+      </AccordionItem>
+      <AccordionItem title="Technologist" />
+      <p>Andy is no stranger to technology from 3d to genAI, he loves to tinker.</p>
+      <div id="tilescontainer" class="tilescontainer">
+        <WorkTilesBySeries seriesId="tech" className="tile-series" />
+      </div>
+      <AccordionItem title="Weirdo">
+        <div class="flex items-start justify-center mt-8">
+          <div class="grow shrink basis-[360px]">
+            <Image
+              src={azaleaShoot}
+              width="1280"
+              height="720"
+              alt="Making It"
+              class="aspect-video object-cover w-full object-top rounded-lg"
+              loading="lazy"
+            />
+            <p class="px-8 m-8">
               Andy lives in Brooklyn with his wife and collaborator Katie
               Sicking and their daughter Azalea.
+            </p>
+          </div>
+          <div class="grow shrink basis-[360px]">
+            <WorkTilebyId id="tootsies" target="_blank" /><p class="px-8 m-8">
+              He's also a co-producer on annual short film festival Tootsie's
+              Video Vault.
             </p>
           </div>
         </div>
@@ -138,66 +89,8 @@ import WorkTileByID from "../components/WorkTileByID.astro";
       .section-title {
         width: 100%;
         margin-top: 0.5em;
-      }
-
-      .hero-tile {
-        position: relative;
-        isolation: isolate;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1em;
-        flex: 0 1 360px;
-        cursor: pointer;
-        border-radius: 12px;
-        align-self: stretch;
-        text-decoration: none;
-        color: white;
-      }
-
-      .hero-tile::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-        background-color: rgba(255, 255, 255, 0.08);
-        opacity: 0;
-        transition: opacity 160ms ease;
-        pointer-events: none;
-        z-index: 2;
-      }
-
-      .hero-tile:hover::after {
-        opacity: 1;
-      }
-
-      .hero-tile > * {
-        position: relative;
-        z-index: 1;
-      }
-
-      .hero-image {
-        aspect-ratio: 16/9;
-        object-fit: cover;
-        border-radius: 12px;
-      }
-
-      .rizzlevideo {
-        width: 33%;
-      }
-
-      .hero-title {
-        font-size: 2.4rem;
-        font-weight: bold;
-      }
-      .hero-subtitle {
-        font-size: 2rem;
-        display: none;
-      }
-      .series-copy {
-        margin-top: 0.5em;
-        padding: 0 2em;
-        display: none;
+        text-align: left;
+        border-bottom: 2px solid white;
       }
 
       main {
@@ -209,16 +102,16 @@ import WorkTileByID from "../components/WorkTileByID.astro";
       .tilescontainer {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: left;
         align-items: center;
         gap: 16px;
-        padding-bottom: 8px;
       }
 
       :global(.tile[data-id="directing-reel"]) {
         flex: 1 1 360px;
         width: 100%;
         max-width: 720px;
+        margin: 0 auto;
       }
     </style>
   </body>

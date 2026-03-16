@@ -45,14 +45,6 @@ body {
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	font-size: 1.6rem;
-	line-height: 1.3;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
 	line-height: 1.2;
 }
 h1 {

@@ -11,7 +11,7 @@ export type WorkVideo = Case & {
 export type WorkTileData = {
   type: "video";
   id: string;
-  title: string;
+  title?: string;
   subtitle?: string;
   roles?: string;
   copy?: string;

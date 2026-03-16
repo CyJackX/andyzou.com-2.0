@@ -5,7 +5,7 @@ export type Media =
 
 export type Case = {
   id: string;
-  title: string;
+  title?: string;
   subtitle?: string;
   roles?: string;
   copy?: string;
