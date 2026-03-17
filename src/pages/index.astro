@@ -10,6 +10,7 @@ import CaseCard from "../components/CaseCard.astro";
 import azaleaShoot from "../images/AzaleaShootSelects-07.jpg";
 import pissterine from "../images/pissterine.jpg";
 import tootsies from "../images/tootsies_06.06.25-04326-Enhanced-NR.jpg";
+import mirum from "../images/mirum vr.jpg";
 import Image from "astro/components/Image.astro";
 import Titleheader from "../components/Header.astro";
 import WorkTileByID from "../components/WorkTileByID.astro";
@@ -26,21 +27,50 @@ import WorkTileByID from "../components/WorkTileByID.astro";
       <VideoLightbox
         tileSelector=".tile[data-lightboxable='true'], .hero-tile[data-lightboxable='true']"
       />
-      <AccordionItem title="Director">
+      <!-- <div id="tilescontainer" class="tilescontainer">
+        <WorkTileByID id="directing-reel" />
+      </div> -->
+      <details>
+        <summary><h2 class="section-title">Scripted Digital Series</h2></summary
+        >
         <div id="tilescontainer" class="tilescontainer">
-          <WorkTileByID id="directing-reel" />
-          <h2 class="section-title">Scripted Digital Series</h2>
           <WorkTilesBySeries seriesId="series" className="tile-series" />
-          <h2 class="section-title">Branded Content</h2>
+        </div>
+      </details>
+
+      <details>
+        <summary><h2 class="section-title">Branded Content</h2></summary>
+        <div id="tilescontainer" class="tilescontainer">
           <WorkTilesBySeries
             seriesId="branded-content"
             className="tile-series"
           />
-          <h2 class="section-title">Comedy Music Videos</h2>
+        </div>
+      </details>
+
+      <details>
+        <summary><h2 class="section-title">Sketch Comedy</h2></summary>
+        <div id="tilescontainer" class="tilescontainer">
+          <WorkTilesBySeries seriesId="sketch" className="tile-series" />
+        </div>
+      </details>
+
+      <details>
+        <summary><h2 class="section-title">Comedy Music Videos</h2></summary>
+        <div id="tilescontainer" class="tilescontainer">
           <WorkTilesBySeries seriesId="music-videos" className="tile-series" />
-          <h2 class="section-title">Short Films</h2>
+        </div>
+      </details>
+
+      <details>
+        <summary><h2 class="section-title">Short Films</h2></summary>
+        <div id="tilescontainer" class="tilescontainer">
           <WorkTilesBySeries seriesId="shorts" className="tile-series" />
-          <h2 class="section-title">Timeless Fan Favorites</h2>
+        </div>
+      </details>
+      <details>
+        <summary><h2 class="section-title">Timeless Fan Favorites</h2></summary
+        ><div id="tilescontainer" class="tilescontainer">
           <WorkTilebyId id="tuber" className="tile-series" />
           <WorkTilebyId id="andys-roadshow" className="tile-series" />
           <WorkTilebyId
@@ -48,17 +78,44 @@ import WorkTileByID from "../components/WorkTileByID.astro";
             className="tile-series"
             target="_blank"
           />
-          <h2 class="section-title">Sketch Comedy</h2>
-          <WorkTilesBySeries seriesId="sketch" className="tile-series" />
         </div>
-      </AccordionItem>
-      <AccordionItem title="Technologist" />
-      <p>Andy is no stranger to technology from 3d to genAI, he loves to tinker.</p>
-      <div id="tilescontainer" class="tilescontainer">
-        <WorkTilesBySeries seriesId="tech" className="tile-series" />
-      </div>
-      <AccordionItem title="Weirdo">
-        <div class="flex items-start justify-center mt-8">
+      </details>
+
+      <details>
+        <summary><h2 class="section-title">Technologist</h2></summary>
+        <div id="tilescontainer" class="tilescontainer">
+          <p class="text-5xl text-left">
+            From After Effects compositing to experience with VR streaming, 3D
+            engines, genAI, and more, Andy has a wide range of technical skills
+            that he applies to his work as a director and an editor.
+          </p>
+          <WorkTilesBySeries seriesId="tech" className="tile-series" />
+          <video
+            src="/videos/tootsiespromo.mp4"
+            muted
+            loop
+            autoplay
+            class="tile"></video>
+          <!-- <Image src={mirum} height="360" alt="Mirum VR BTS" class="tile" /> -->
+          <video
+            src="/videos/Head to Head_640.mp4"
+            muted
+            loop
+            autoplay
+            class="tile"></video>
+        </div>
+      </details>
+
+      <details>
+        <summary><h2 class="section-title">Unscripted Editor</h2></summary>
+        <div id="tilescontainer" class="tilescontainer">
+          <WorkTilesBySeries seriesId="editing" className="tile-series" />
+        </div>
+      </details>
+
+      <details>
+        <summary><h2 class="section-title">Weirdo</h2></summary>
+        <div id="tilescontainer" class="tilescontainer">
           <div class="grow shrink basis-[360px]">
             <Image
               src={azaleaShoot}
@@ -80,39 +137,89 @@ import WorkTileByID from "../components/WorkTileByID.astro";
             </p>
           </div>
         </div>
-      </AccordionItem>
+      </details>
     </main>
+  </body><Footer />
 
-    <Footer />
+  <style>
+    :root {
+      interpolate-size: allow-keywords;
+    }
 
-    <style>
-      .section-title {
-        width: 100%;
-        margin-top: 0.5em;
-        text-align: left;
-        border-bottom: 2px solid white;
-      }
+    details {
+      position: relative;
+      overflow: hidden;
+    }
 
-      main {
-        padding: 1em;
-        max-width: 1280px;
-        margin: 0 auto;
-      }
+    details::after {
+      position: absolute;
+      content: "";
+      inset: 0;
+      pointer-events: none;
+      border-bottom: 3px solid white;
+    }
 
-      .tilescontainer {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: left;
-        align-items: center;
-        gap: 16px;
-      }
+    details::details-content {
+      block-size: 0;
+      transition:
+        block-size 0.5s,
+        content-visibility 0.5s;
+      transition-behavior: allow-discrete;
+    }
 
-      :global(.tile[data-id="directing-reel"]) {
-        flex: 1 1 360px;
-        width: 100%;
-        max-width: 720px;
-        margin: 0 auto;
-      }
-    </style>
-  </body>
+    details:open::details-content {
+      block-size: auto;
+    }
+
+    .section-title {
+      border-bottom: 3px solid white;
+      width: 100%;
+      text-align: left;
+      font-size: clamp(4rem, 8cqw, 10rem);
+      line-height: 1;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+      list-style: none;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .section-title:hover {
+      background-color: white;
+      color: black;
+    }
+
+    main {
+      padding: 1em;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .tilescontainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: left;
+      align-items: center;
+      gap: 16px;
+
+      padding: 1em 0;
+    }
+
+    :global(.tile[data-id="directing-reel"]) {
+      flex: 1 1 360px;
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .tile {
+      display: block;
+      flex: 1 1 360px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
 </html>
