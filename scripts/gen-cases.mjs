@@ -3,10 +3,89 @@ import path from "node:path";
 
 const inputPath = path.join("src", "data", "cases.tsv");
 const outputPath = path.join("src", "data", "cases.generated.ts");
+const thumbPosterDirName = "thumbposters";
+const thumbPosterDirPath = path.join("public", thumbPosterDirName);
 const defaultImagePlaceholder = "https://placehold.co/640x360";
+const youtubeThumbnailHosts = new Set(["i.ytimg.com", "img.youtube.com"]);
+const cachedYoutubeThumbnailPaths = new Map();
 
 function getYoutubeThumbnailUrl(youtubeId) {
   return `https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg`;
+}
+
+function isYoutubeThumbnailUrl(value) {
+  if (!value) return false;
+
+  try {
+    const url = new URL(value);
+    return youtubeThumbnailHosts.has(url.hostname.replace(/^www\./, ""));
+  } catch {
+    return false;
+  }
+}
+
+function sanitizeFilenamePart(value) {
+  return value.replace(/[^A-Za-z0-9._-]+/g, "-").replace(/-+/g, "-");
+}
+
+function getThumbPosterLocation(sourceUrl, fallbackId) {
+  const url = new URL(sourceUrl);
+  const pathSegments = url.pathname.split("/").filter(Boolean);
+  const basename = path.posix.basename(url.pathname);
+  const extension = path.posix.extname(basename) || ".jpg";
+  const basenameWithoutExtension = basename.slice(0, basename.length - extension.length) || "thumbnail";
+  const youtubeId =
+    pathSegments[pathSegments.indexOf("vi") + 1] ||
+    pathSegments[pathSegments.indexOf("vi_webp") + 1] ||
+    fallbackId ||
+    "youtube";
+  const filename = `${sanitizeFilenamePart(youtubeId)}-${sanitizeFilenamePart(basenameWithoutExtension)}${extension}`;
+
+  return {
+    diskPath: path.join(thumbPosterDirPath, filename),
+    publicPath: `/${thumbPosterDirName}/${filename}`,
+  };
+}
+
+async function cacheYoutubeThumbnail(sourceUrl, fallbackId, label) {
+  if (!isYoutubeThumbnailUrl(sourceUrl)) {
+    return sourceUrl;
+  }
+
+  const existing = cachedYoutubeThumbnailPaths.get(sourceUrl);
+  if (existing) {
+    return existing;
+  }
+
+  const { diskPath, publicPath } = getThumbPosterLocation(sourceUrl, fallbackId);
+  if (fs.existsSync(diskPath)) {
+    cachedYoutubeThumbnailPaths.set(sourceUrl, publicPath);
+    return publicPath;
+  }
+
+  fs.mkdirSync(thumbPosterDirPath, { recursive: true });
+
+  try {
+    const response = await fetch(sourceUrl);
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    const buffer = Buffer.from(await response.arrayBuffer());
+    fs.writeFileSync(diskPath, buffer);
+    cachedYoutubeThumbnailPaths.set(sourceUrl, publicPath);
+    console.log(`Cached ${label}: ${publicPath}`);
+    return publicPath;
+  } catch (error) {
+    console.warn(`Failed to cache ${label} from ${sourceUrl}: ${error.message}`);
+    cachedYoutubeThumbnailPaths.set(sourceUrl, sourceUrl);
+    return sourceUrl;
+  }
+}
+
+async function resolveThumbnailAsset(sourceUrl, fallbackYoutubeId, label) {
+  if (!sourceUrl) return "";
+  return cacheYoutubeThumbnail(sourceUrl, fallbackYoutubeId, label);
 }
 
 const requiredHeaders = [
@@ -138,14 +217,23 @@ for (let i = 1; i < lines.length; i += 1) {
 
   let media;
   if (mediaKind === "image") {
-    const src = mediaSrcRaw || (youtubeId ? getYoutubeThumbnailUrl(youtubeId) : defaultImagePlaceholder);
+    const defaultSrc = youtubeId ? getYoutubeThumbnailUrl(youtubeId) : defaultImagePlaceholder;
+    const src = await resolveThumbnailAsset(
+      mediaSrcRaw || defaultSrc,
+      youtubeId || id,
+      `image thumbnail for ${id}`,
+    );
     const altBase = title || subtitle || id;
     const alt = mediaAltRaw || `${altBase} thumbnail`;
     media = { kind: "image", src, alt };
   } else if (mediaKind === "video") {
     ensure(mediaSrcRaw, `line ${lineNumber}: mediaSrc is required for video.`);
     media = { kind: "video", src: mediaSrcRaw };
-    const poster = mediaPoster || (youtubeId ? getYoutubeThumbnailUrl(youtubeId) : "");
+    const poster = await resolveThumbnailAsset(
+      mediaPoster || (youtubeId ? getYoutubeThumbnailUrl(youtubeId) : ""),
+      youtubeId || id,
+      `video poster for ${id}`,
+    );
     if (poster) {
       media.poster = poster;
     }

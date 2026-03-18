@@ -7,7 +7,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "video",
       "src": "/videos/roadshow.mp4",
-      "poster": "https://i.ytimg.com/vi/iLNypL04zH0/hqdefault.jpg"
+      "poster": "/thumbposters/iLNypL04zH0-hqdefault.jpg"
     },
     "title": "Andy's Roadshow",
     "roles": "Director | Writer | Editor",
@@ -20,7 +20,7 @@ export const CASES: Case[] = [
     "id": "interstellar",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/nl2-5DDL5nM/hqdefault.jpg",
+      "src": "/thumbposters/nl2-5DDL5nM-hqdefault.jpg",
       "alt": "Interstellar in Real Life thumbnail"
     },
     "title": "Interstellar in Real Life",
@@ -34,7 +34,7 @@ export const CASES: Case[] = [
     "id": "securocam-3000",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/_SRIskz2JOY/hqdefault.jpg",
+      "src": "/thumbposters/_SRIskz2JOY-hqdefault.jpg",
       "alt": "Securocam 3000 thumbnail"
     },
     "title": "Securocam 3000",
@@ -50,7 +50,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "video",
       "src": "/videos/tuber.mp4",
-      "poster": "https://i.ytimg.com/vi/0U5SCBko2XM/hqdefault.jpg"
+      "poster": "/thumbposters/0U5SCBko2XM-hqdefault.jpg"
     },
     "title": "Tuber",
     "roles": "Director | Writer | Editor",
@@ -63,7 +63,7 @@ export const CASES: Case[] = [
     "id": "Apocalypse-1",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/X-u9YpCOkk4/hqdefault.jpg",
+      "src": "/thumbposters/X-u9YpCOkk4-hqdefault.jpg",
       "alt": "Apocalypse Problems 1 thumbnail"
     },
     "title": "Apocalypse Problems 1",
@@ -78,7 +78,7 @@ export const CASES: Case[] = [
     "id": "Apocalypse-gluten",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/klRZB8Q87oY/hqdefault.jpg",
+      "src": "/thumbposters/klRZB8Q87oY-hqdefault.jpg",
       "alt": "Apocalypse Problems 2 - Gluten thumbnail"
     },
     "title": "Apocalypse Problems 2 - Gluten",
@@ -93,7 +93,7 @@ export const CASES: Case[] = [
     "id": "Apocalypse-milk",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/yeie8hpMldw/hqdefault.jpg",
+      "src": "/thumbposters/yeie8hpMldw-hqdefault.jpg",
       "alt": "Apocalypse Problems 3 - Milk thumbnail"
     },
     "title": "Apocalypse Problems 3 - Milk",
@@ -108,7 +108,7 @@ export const CASES: Case[] = [
     "id": "Rizzle-1",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/iZDqZ6Bq1yI/hqdefault.jpg",
+      "src": "/thumbposters/iZDqZ6Bq1yI-hqdefault.jpg",
       "alt": "Andy's Asian Afterlife Ep. 1 thumbnail"
     },
     "title": "Andy's Asian Afterlife Ep. 1",
@@ -124,7 +124,7 @@ export const CASES: Case[] = [
     "id": "Rizzle-2",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/taRJ5K7Emdo/hqdefault.jpg",
+      "src": "/thumbposters/taRJ5K7Emdo-hqdefault.jpg",
       "alt": "Andy's Asian Afterlife Ep. 2 thumbnail"
     },
     "title": "Andy's Asian Afterlife Ep. 2",
@@ -140,7 +140,7 @@ export const CASES: Case[] = [
     "id": "Rizzle-3",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/HxXucJ6rFQA/hqdefault.jpg",
+      "src": "/thumbposters/HxXucJ6rFQA-hqdefault.jpg",
       "alt": "Andy's Asian Afterlife Ep. 3 thumbnail"
     },
     "title": "Andy's Asian Afterlife Ep. 3",
@@ -170,7 +170,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "video",
       "src": "/videos/garden-of-eden.mp4",
-      "poster": "https://i.ytimg.com/vi/_oUdAdTUk0c/hqdefault.jpg"
+      "poster": "/thumbposters/_oUdAdTUk0c-hqdefault.jpg"
     },
     "title": "Mark Fisher Fitness",
     "subtitle": "Garden of Eden ft. Douglas Widick",
@@ -187,7 +187,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "video",
       "src": "/videos/looking-like-a-snack.mp4",
-      "poster": "https://i.ytimg.com/vi/lMFubod8Gdc/hqdefault.jpg"
+      "poster": "/thumbposters/lMFubod8Gdc-hqdefault.jpg"
     },
     "title": "Combos",
     "subtitle": "Lookin' Like a Snack ft. Akilah Hughes",
@@ -202,7 +202,7 @@ export const CASES: Case[] = [
     "id": "European-boys",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/uE1Y7PHMdPc/hqdefault.jpg",
+      "src": "/thumbposters/uE1Y7PHMdPc-hqdefault.jpg",
       "alt": "European Boys thumbnail"
     },
     "title": "European Boys",
@@ -232,7 +232,7 @@ export const CASES: Case[] = [
     "id": "icontact",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/aQN6jBk_LWc/hqdefault.jpg",
+      "src": "/thumbposters/aQN6jBk_LWc-hqdefault.jpg",
       "alt": "iContact thumbnail"
     },
     "title": "iContact",
@@ -247,7 +247,7 @@ export const CASES: Case[] = [
     "id": "litterbox-office",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/KIdN_iYBW7A/hqdefault.jpg",
+      "src": "/thumbposters/KIdN_iYBW7A-hqdefault.jpg",
       "alt": "The Litterbox Office thumbnail"
     },
     "title": "The Litterbox Office",
@@ -263,7 +263,7 @@ export const CASES: Case[] = [
     "id": "living-funeral-home",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/zcqkqql5VW0/hqdefault.jpg",
+      "src": "/thumbposters/zcqkqql5VW0-hqdefault.jpg",
       "alt": "The Living Funeral Home thumbnail"
     },
     "title": "The Living Funeral Home",
@@ -278,7 +278,7 @@ export const CASES: Case[] = [
     "id": "nothing-gay-in-the-wild-west",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/bFYFLfq6nZo/hqdefault.jpg",
+      "src": "/thumbposters/bFYFLfq6nZo-hqdefault.jpg",
       "alt": "Nothing Gay in the Wild West thumbnail"
     },
     "title": "Nothing Gay in the Wild West",
@@ -293,7 +293,7 @@ export const CASES: Case[] = [
     "id": "polyamorous-romcom",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/XhMz5vRlya8/hqdefault.jpg",
+      "src": "/thumbposters/XhMz5vRlya8-hqdefault.jpg",
       "alt": "The Polyamorous RomCom thumbnail"
     },
     "title": "The Polyamorous RomCom",
@@ -308,7 +308,7 @@ export const CASES: Case[] = [
     "id": "rebirthing-center",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/BXOaAgDnpd8/hqdefault.jpg",
+      "src": "/thumbposters/BXOaAgDnpd8-hqdefault.jpg",
       "alt": "The Rebirthing Center thumbnail"
     },
     "title": "The Rebirthing Center",
@@ -324,7 +324,7 @@ export const CASES: Case[] = [
     "id": "remote-control-boss",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/2PPkDxOul_0/hqdefault.jpg",
+      "src": "/thumbposters/2PPkDxOul_0-hqdefault.jpg",
       "alt": "Remote Control Boss thumbnail"
     },
     "title": "Remote Control Boss",
@@ -339,7 +339,7 @@ export const CASES: Case[] = [
     "id": "rich-friend",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/gSojwTO5QZs/hqdefault.jpg",
+      "src": "/thumbposters/gSojwTO5QZs-hqdefault.jpg",
       "alt": "Rich Friend thumbnail"
     },
     "title": "Rich Friend",
@@ -354,7 +354,7 @@ export const CASES: Case[] = [
     "id": "she-looks-like-her-dad",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/lQankmO_xbQ/hqdefault.jpg",
+      "src": "/thumbposters/lQankmO_xbQ-hqdefault.jpg",
       "alt": "She Looks Like Her Dad thumbnail"
     },
     "title": "She Looks Like Her Dad",
@@ -369,7 +369,7 @@ export const CASES: Case[] = [
     "id": "staying-young-forever",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/oCYzAHPMTUM/hqdefault.jpg",
+      "src": "/thumbposters/oCYzAHPMTUM-hqdefault.jpg",
       "alt": "Staying Young Forever thumbnail"
     },
     "title": "Staying Young Forever",
@@ -400,7 +400,7 @@ export const CASES: Case[] = [
     "id": "teen-uncle",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/YUJIjQ0MytM/hqdefault.jpg",
+      "src": "/thumbposters/YUJIjQ0MytM-hqdefault.jpg",
       "alt": "Teen Uncle thumbnail"
     },
     "title": "Teen Uncle",
@@ -415,7 +415,7 @@ export const CASES: Case[] = [
     "id": "vesting-up",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/DJCgT1gw8nc/hqdefault.jpg",
+      "src": "/thumbposters/DJCgT1gw8nc-hqdefault.jpg",
       "alt": "Vesting Up thumbnail"
     },
     "title": "Vesting Up",
@@ -431,7 +431,7 @@ export const CASES: Case[] = [
     "id": "whameo",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/GBG1KLVBQPA/hqdefault.jpg",
+      "src": "/thumbposters/GBG1KLVBQPA-hqdefault.jpg",
       "alt": "Whameo thumbnail"
     },
     "title": "Whameo",
@@ -446,7 +446,7 @@ export const CASES: Case[] = [
     "id": "Dbh-1",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/8QGYE_5nfQM/hqdefault.jpg",
+      "src": "/thumbposters/8QGYE_5nfQM-hqdefault.jpg",
       "alt": "Rolling in the Aisles thumbnail"
     },
     "title": "Rolling in the Aisles",
@@ -460,7 +460,7 @@ export const CASES: Case[] = [
     "id": "Dbh-2",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/IBTQMTwN7vc/hqdefault.jpg",
+      "src": "/thumbposters/IBTQMTwN7vc-hqdefault.jpg",
       "alt": "Best Friends thumbnail"
     },
     "title": "Best Friends",
@@ -474,7 +474,7 @@ export const CASES: Case[] = [
     "id": "Dbh-3",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/gvjDOk8T9Lo/hqdefault.jpg",
+      "src": "/thumbposters/gvjDOk8T9Lo-hqdefault.jpg",
       "alt": "Now a Musical? Ep. 1 thumbnail"
     },
     "title": "Now a Musical? Ep. 1",
@@ -489,7 +489,7 @@ export const CASES: Case[] = [
     "id": "Dbh-4",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/aLHsoQG-jEg/hqdefault.jpg",
+      "src": "/thumbposters/aLHsoQG-jEg-hqdefault.jpg",
       "alt": "Now a Musical? Ep. 2 thumbnail"
     },
     "title": "Now a Musical? Ep. 2",
@@ -504,7 +504,7 @@ export const CASES: Case[] = [
     "id": "Dbh-5",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/j9SF9ys4IhA/hqdefault.jpg",
+      "src": "/thumbposters/j9SF9ys4IhA-hqdefault.jpg",
       "alt": "Now a Musical? Ep. 3 thumbnail"
     },
     "title": "Now a Musical? Ep. 3",
@@ -519,7 +519,7 @@ export const CASES: Case[] = [
     "id": "Dbh-6",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/p0EQcb7oays/hqdefault.jpg",
+      "src": "/thumbposters/p0EQcb7oays-hqdefault.jpg",
       "alt": "Ask Marco Ep. 1 thumbnail"
     },
     "title": "Ask Marco Ep. 1",
@@ -534,7 +534,7 @@ export const CASES: Case[] = [
     "id": "Dbh-7",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/go1LBg6iEew/hqdefault.jpg",
+      "src": "/thumbposters/go1LBg6iEew-hqdefault.jpg",
       "alt": "Ask Marco Ep. 2 thumbnail"
     },
     "title": "Ask Marco Ep. 2",
@@ -564,7 +564,7 @@ export const CASES: Case[] = [
     "id": "will-smith2",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/WCnB9UlEVR8/hqdefault.jpg",
+      "src": "/thumbposters/WCnB9UlEVR8-hqdefault.jpg",
       "alt": "Will Smith at Grammy's thumbnail"
     },
     "title": "Will Smith at Grammy's",
@@ -579,7 +579,7 @@ export const CASES: Case[] = [
     "id": "barstool",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/uYB3IziD3Ls/hqdefault.jpg",
+      "src": "/thumbposters/uYB3IziD3Ls-hqdefault.jpg",
       "alt": "Barstool Survivor thumbnail"
     },
     "title": "Barstool Survivor",
@@ -593,7 +593,7 @@ export const CASES: Case[] = [
     "id": "monkey",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/h-bsM5kzFSA/hqdefault.jpg",
+      "src": "/thumbposters/h-bsM5kzFSA-hqdefault.jpg",
       "alt": "Better Man: Regent Street BTS thumbnail"
     },
     "title": "Better Man: Regent Street BTS",
@@ -606,7 +606,7 @@ export const CASES: Case[] = [
     "id": "babes",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/IhhD8l476-I/hqdefault.jpg",
+      "src": "/thumbposters/IhhD8l476-I-hqdefault.jpg",
       "alt": "Babes thumbnail"
     },
     "title": "Babes",
@@ -620,7 +620,7 @@ export const CASES: Case[] = [
     "id": "immaculate",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/yShigrHv-4g/hqdefault.jpg",
+      "src": "/thumbposters/yShigrHv-4g-hqdefault.jpg",
       "alt": "Immaculate thumbnail"
     },
     "title": "Immaculate",
@@ -634,7 +634,7 @@ export const CASES: Case[] = [
     "id": "Making-it-1",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/dwXaeTYc3Tg/hqdefault.jpg",
+      "src": "/thumbposters/dwXaeTYc3Tg-hqdefault.jpg",
       "alt": "Making It Episode 1 thumbnail"
     },
     "title": "Making It Episode 1",
@@ -650,7 +650,7 @@ export const CASES: Case[] = [
     "id": "Making-it-10",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/AROtp_lq240/hqdefault.jpg",
+      "src": "/thumbposters/AROtp_lq240-hqdefault.jpg",
       "alt": "Making It Episode 10 thumbnail"
     },
     "title": "Making It Episode 10",
@@ -666,7 +666,7 @@ export const CASES: Case[] = [
     "id": "Making-it-2",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/bewb5mvMt2I/hqdefault.jpg",
+      "src": "/thumbposters/bewb5mvMt2I-hqdefault.jpg",
       "alt": "Making It Episode 2 thumbnail"
     },
     "title": "Making It Episode 2",
@@ -682,7 +682,7 @@ export const CASES: Case[] = [
     "id": "Making-it-3",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/8Y7yt1P1gDc/hqdefault.jpg",
+      "src": "/thumbposters/8Y7yt1P1gDc-hqdefault.jpg",
       "alt": "Making It Episode 3 thumbnail"
     },
     "title": "Making It Episode 3",
@@ -698,7 +698,7 @@ export const CASES: Case[] = [
     "id": "Making-it-4",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/MufrKX9LY_Q/hqdefault.jpg",
+      "src": "/thumbposters/MufrKX9LY_Q-hqdefault.jpg",
       "alt": "Making It Episode 4 thumbnail"
     },
     "title": "Making It Episode 4",
@@ -714,7 +714,7 @@ export const CASES: Case[] = [
     "id": "Making-it-5",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/OomH2JjVwrw/hqdefault.jpg",
+      "src": "/thumbposters/OomH2JjVwrw-hqdefault.jpg",
       "alt": "Making It Episode 5 thumbnail"
     },
     "title": "Making It Episode 5",
@@ -730,7 +730,7 @@ export const CASES: Case[] = [
     "id": "Making-it-6",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/Y3335Qn42qI/hqdefault.jpg",
+      "src": "/thumbposters/Y3335Qn42qI-hqdefault.jpg",
       "alt": "Making It Episode 6 thumbnail"
     },
     "title": "Making It Episode 6",
@@ -746,7 +746,7 @@ export const CASES: Case[] = [
     "id": "Making-it-7",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/wtLmfuCHG2A/hqdefault.jpg",
+      "src": "/thumbposters/wtLmfuCHG2A-hqdefault.jpg",
       "alt": "Making It Episode 7 thumbnail"
     },
     "title": "Making It Episode 7",
@@ -762,7 +762,7 @@ export const CASES: Case[] = [
     "id": "Making-it-8",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/S1L7zvRjuoM/hqdefault.jpg",
+      "src": "/thumbposters/S1L7zvRjuoM-hqdefault.jpg",
       "alt": "Making It Episode 8 thumbnail"
     },
     "title": "Making It Episode 8",
@@ -778,7 +778,7 @@ export const CASES: Case[] = [
     "id": "Making-it-9",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/kZTRyPCdhes/hqdefault.jpg",
+      "src": "/thumbposters/kZTRyPCdhes-hqdefault.jpg",
       "alt": "Making It Episode 9 thumbnail"
     },
     "title": "Making It Episode 9",
@@ -795,7 +795,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "video",
       "src": "/videos/instagram_betches.mp4",
-      "poster": "https://i.ytimg.com/vi/hQO_LLV9tms/hqdefault.jpg"
+      "poster": "/thumbposters/hQO_LLV9tms-hqdefault.jpg"
     },
     "title": "Instagram Betches",
     "roles": "Director | DP",
@@ -810,7 +810,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "video",
       "src": "/videos/payforme.mp4",
-      "poster": "https://i.ytimg.com/vi/hVrMjp22IM0/hqdefault.jpg"
+      "poster": "/thumbposters/hVrMjp22IM0-hqdefault.jpg"
     },
     "title": "Pay For Me",
     "roles": "Co-director | DP | Editor",
@@ -824,7 +824,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "video",
       "src": "/videos/poor.mp4",
-      "poster": "https://i.ytimg.com/vi/AzjRdPLgj_k/hqdefault.jpg"
+      "poster": "/thumbposters/AzjRdPLgj_k-hqdefault.jpg"
     },
     "title": "Poor",
     "subtitle": "ft. Anna Roisman",
@@ -912,7 +912,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "video",
       "src": "/videos/securocam.mp4",
-      "poster": "https://i.ytimg.com/vi/_SRIskz2JOY/hqdefault.jpg"
+      "poster": "/thumbposters/_SRIskz2JOY-hqdefault.jpg"
     },
     "title": "Securocam 3000",
     "subtitle": "NYTVF & IFC Comedy Crib",
@@ -928,7 +928,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "video",
       "src": "/videos/Operators.mp4",
-      "poster": "https://i.ytimg.com/vi/aa2zI7PO-X8/hqdefault.jpg"
+      "poster": "/thumbposters/aa2zI7PO-X8-hqdefault.jpg"
     },
     "title": "Operators",
     "subtitle": "Nevermore Film Fest 2024",
@@ -943,7 +943,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "video",
       "src": "/videos/sqand.mp4",
-      "poster": "https://i.ytimg.com/vi/fTbRmOHJp1I/hqdefault.jpg"
+      "poster": "/thumbposters/fTbRmOHJp1I-hqdefault.jpg"
     },
     "title": "Sqand",
     "roles": "Director | DP | Writer | Editor",
@@ -957,7 +957,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "video",
       "src": "/videos/Tell_My_Wife.mp4",
-      "poster": "https://i.ytimg.com/vi/daNydp3mpI0/hqdefault.jpg"
+      "poster": "/thumbposters/daNydp3mpI0-hqdefault.jpg"
     },
     "title": "Tell My Wife",
     "subtitle": "Big Apple Film Fest 2023",
@@ -972,7 +972,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "video",
       "src": "/videos/alexa.mp4",
-      "poster": "https://i.ytimg.com/vi/dQtJTZeBWUQ/hqdefault.jpg"
+      "poster": "/thumbposters/dQtJTZeBWUQ-hqdefault.jpg"
     },
     "title": "Ask Alexa",
     "subtitle": "ft. Anna Roisman & Lane Kwederis",
@@ -987,7 +987,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "video",
       "src": "/videos/beautyandthebowl.mp4",
-      "poster": "https://i.ytimg.com/vi/nRWyNY1xmto/hqdefault.jpg"
+      "poster": "/thumbposters/nRWyNY1xmto-hqdefault.jpg"
     },
     "title": "Beauty and the Bowl",
     "subtitle": "ft. Gianmarco Soresi & Uncle Function",
@@ -1003,7 +1003,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "video",
       "src": "/videos/cocaine.mp4",
-      "poster": "https://i.ytimg.com/vi/5n_Zl5bhUhU/hqdefault.jpg"
+      "poster": "/thumbposters/5n_Zl5bhUhU-hqdefault.jpg"
     },
     "title": "Cocaine PSA",
     "subtitle": "ft. Bridgette Everett, Arthur Meyer, Joel Kim Booster",
@@ -1017,7 +1017,7 @@ export const CASES: Case[] = [
     "id": "dinner",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/ZGDTHeyeO-w/hqdefault.jpg",
+      "src": "/thumbposters/ZGDTHeyeO-w-hqdefault.jpg",
       "alt": "Meeting the Parents thumbnail"
     },
     "title": "Meeting the Parents",
@@ -1033,7 +1033,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "video",
       "src": "/videos/dogs.mp4",
-      "poster": "https://i.ytimg.com/vi/tgND22y7uuA/hqdefault.jpg"
+      "poster": "/thumbposters/tgND22y7uuA-hqdefault.jpg"
     },
     "title": "The Only Dog Video You Need to Watch",
     "subtitle": "Funny or Die",
@@ -1049,7 +1049,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "video",
       "src": "/videos/grandma.mp4",
-      "poster": "https://i.ytimg.com/vi/PEwfwxtwkWE/hqdefault.jpg"
+      "poster": "/thumbposters/PEwfwxtwkWE-hqdefault.jpg"
     },
     "title": "Grandmother's Announcement",
     "subtitle": "ft. Natalie Walker & Lulu Krause",
@@ -1080,7 +1080,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "video",
       "src": "/videos/poly.mp4",
-      "poster": "https://i.ytimg.com/vi/RhzSqWrjx7Q/hqdefault.jpg"
+      "poster": "/thumbposters/RhzSqWrjx7Q-hqdefault.jpg"
     },
     "title": "Poly Bachelorette",
     "roles": "Director | DP | Co-Writer | Editor",
@@ -1094,7 +1094,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "video",
       "src": "videos/secretagent.mp4",
-      "poster": "https://i.ytimg.com/vi/kNGsC9uqwVs/hqdefault.jpg"
+      "poster": "/thumbposters/kNGsC9uqwVs-hqdefault.jpg"
     },
     "title": "Secret Agent Betrayal",
     "subtitle": "Andy's Originals ft. Geil Comedy",
@@ -1108,7 +1108,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "video",
       "src": "/videos/settling.mp4",
-      "poster": "https://i.ytimg.com/vi/qSPdMoxsZoU/hqdefault.jpg"
+      "poster": "/thumbposters/qSPdMoxsZoU-hqdefault.jpg"
     },
     "title": "Settling",
     "subtitle": "ft. Gianmarco Soresi & Megan Sass",
@@ -1123,7 +1123,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "video",
       "src": "/videos/painter.mp4",
-      "poster": "https://i.ytimg.com/vi/WnEJ9xsAkZ0/hqdefault.jpg"
+      "poster": "/thumbposters/WnEJ9xsAkZ0-hqdefault.jpg"
     },
     "title": "The Painter",
     "subtitle": "Quickiefest",
@@ -1139,7 +1139,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "video",
       "src": "/videos/mff.mp4",
-      "poster": "https://i.ytimg.com/vi/bpkZSxtZd7Y/hqdefault.jpg"
+      "poster": "/thumbposters/bpkZSxtZd7Y-hqdefault.jpg"
     },
     "title": "Making Of Garden of Eden",
     "copy": "Devlog of using Blender, Wonder Dynamics, Unreal Engine to design a 3D scene",
@@ -1152,7 +1152,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "video",
       "src": "/videos/intercepts.mp4",
-      "poster": "https://i.ytimg.com/vi/MpUUsDDE1sI/hqdefault.jpg"
+      "poster": "/thumbposters/MpUUsDDE1sI-hqdefault.jpg"
     },
     "title": "Projectile Intercept Math",
     "copy": "Devlog of explaining projectile intercept math",
@@ -1165,7 +1165,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "video",
       "src": "/videos/unreal.mp4",
-      "poster": "https://i.ytimg.com/vi/c22gpypHv2k/hqdefault.jpg"
+      "poster": "/thumbposters/c22gpypHv2k-hqdefault.jpg"
     },
     "title": "Unreal Engine Devlog",
     "copy": "Devlog of Unreal Engine AI mechanics",
@@ -1177,7 +1177,7 @@ export const CASES: Case[] = [
     "id": "Honest-waitress-1",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/zlFyjWf4hOk/hqdefault.jpg",
+      "src": "/thumbposters/zlFyjWf4hOk-hqdefault.jpg",
       "alt": "The Honest Waitress: Ignored thumbnail"
     },
     "title": "The Honest Waitress: Ignored",
@@ -1192,7 +1192,7 @@ export const CASES: Case[] = [
     "id": "Honest-waitress-2",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/0SX0n9FG_GY/hqdefault.jpg",
+      "src": "/thumbposters/0SX0n9FG_GY-hqdefault.jpg",
       "alt": "The Honest Waitress: Lemons thumbnail"
     },
     "title": "The Honest Waitress: Lemons",
@@ -1207,7 +1207,7 @@ export const CASES: Case[] = [
     "id": "Honest-waitress-3",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/Gk7n1WSpxXg/hqdefault.jpg",
+      "src": "/thumbposters/Gk7n1WSpxXg-hqdefault.jpg",
       "alt": "The Honest Waitress: Soda thumbnail"
     },
     "title": "The Honest Waitress: Soda",
@@ -1222,7 +1222,7 @@ export const CASES: Case[] = [
     "id": "Honest-waitress-4",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/2z09RB3wsGk/hqdefault.jpg",
+      "src": "/thumbposters/2z09RB3wsGk-hqdefault.jpg",
       "alt": "The Honest Waitress: Euope thumbnail"
     },
     "title": "The Honest Waitress: Euope",
@@ -1237,7 +1237,7 @@ export const CASES: Case[] = [
     "id": "Honest-waitress-5",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/FUto6VeJfbI/hqdefault.jpg",
+      "src": "/thumbposters/FUto6VeJfbI-hqdefault.jpg",
       "alt": "The Honest Waitress: Menu thumbnail"
     },
     "title": "The Honest Waitress: Menu",
@@ -1252,7 +1252,7 @@ export const CASES: Case[] = [
     "id": "election-science-duvergers-law",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/HpBRGXK-QNs/hqdefault.jpg",
+      "src": "/thumbposters/HpBRGXK-QNs-hqdefault.jpg",
       "alt": "Duverger's Law thumbnail"
     },
     "title": "Duverger's Law",
@@ -1266,7 +1266,7 @@ export const CASES: Case[] = [
     "id": "architects-newspaper-interviews",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/Bzhb1WBUNps/hqdefault.jpg",
+      "src": "/thumbposters/Bzhb1WBUNps-hqdefault.jpg",
       "alt": "Architect's Newspaper thumbnail"
     },
     "title": "Architect's Newspaper",
@@ -1280,7 +1280,7 @@ export const CASES: Case[] = [
     "id": "directing-reel",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/bmKPJLfm4lk/maxresdefault.jpg",
+      "src": "/thumbposters/bmKPJLfm4lk-maxresdefault.jpg",
       "alt": "Andy Zou's Comedy Directing Reel thumbnail"
     },
     "title": "Andy Zou's Comedy Directing Reel",
@@ -1291,7 +1291,7 @@ export const CASES: Case[] = [
     "id": "Jackson-pollack",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/f53aKCMl7FQ/hqdefault.jpg",
+      "src": "/thumbposters/f53aKCMl7FQ-hqdefault.jpg",
       "alt": "Jackson Pollack thumbnail"
     },
     "title": "Jackson Pollack",
@@ -1327,7 +1327,7 @@ export const CASES: Case[] = [
     "id": "Royal-heart",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/zG2amIyE1Es/hqdefault.jpg",
+      "src": "/thumbposters/zG2amIyE1Es-hqdefault.jpg",
       "alt": "Royal Heart thumbnail"
     },
     "title": "Royal Heart",
@@ -1340,7 +1340,7 @@ export const CASES: Case[] = [
     "id": "sugar",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/-53w2mv_upw/hqdefault.jpg",
+      "src": "/thumbposters/-53w2mv_upw-hqdefault.jpg",
       "alt": "Sugar thumbnail"
     },
     "title": "Sugar",
@@ -1384,7 +1384,7 @@ export const CASES: Case[] = [
     "id": "Wonderful-life",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/_98xIvAvOhE/hqdefault.jpg",
+      "src": "/thumbposters/_98xIvAvOhE-hqdefault.jpg",
       "alt": "It's a Wonderful Life thumbnail"
     },
     "title": "It's a Wonderful Life",
