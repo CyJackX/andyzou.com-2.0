@@ -6,8 +6,8 @@ import WorkTilesBySeries from "../../components/WorkTilesBySeries.astro";
 import { SITE_TITLE } from "../../consts";
 import {
   getSeriesIds,
+  getSeriesMeta,
   getSeriesTitle,
-  getVideosBySeries,
   hasSeries,
 } from "../../lib/work";
 import Titleheader from "../../components/Header.astro";
@@ -28,44 +28,74 @@ if (!hasSeries(slug)) {
 }
 
 const seriesId = slug;
+const seriesMeta = getSeriesMeta(seriesId);
 const seriesTitle = getSeriesTitle(seriesId);
-const videos = getVideosBySeries(seriesId);
+const seriesCopy = seriesMeta?.copy;
 const pageTitle = `${seriesTitle} | ${SITE_TITLE}`;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={pageTitle} description={`${seriesTitle} video series`} />
+    <BaseHead
+      title={pageTitle}
+      description={seriesCopy ?? `${seriesTitle} video series`}
+    />
   </head>
   <body>
-    <Titleheader />
+    <main class="text-left">
+      <Titleheader />
+      <div class="header-container">
+        <a href="/" class="backlink z-10" data-series-back-link>Back Home</a>
+        <h2 class="bigtitle">{seriesTitle}</h2>
+        {seriesCopy && <p class="series-copy">{seriesCopy}</p>}
+      </div>
 
-    <main class="text-center">
-      <p><a href="/">Back to home</a></p>
-      <h2>{seriesTitle}</h2>
-
-      <div class="tiles">
+      <div class="tilescontainer">
         <WorkTilesBySeries seriesId={seriesId} />
       </div>
       <VideoLightbox tileSelector=".tiles .tile[data-lightboxable='true']" />
       <Footer />
     </main>
+    <script>
+      import { initSeriesBackLink } from "../../scripts/seriesBackLink";
 
-    <style>
-      main {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 1rem;
-      }
-
-      .tiles {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px;
-        padding-top: 12px;
-      }
-    </style>
+      initSeriesBackLink();
+    </script>
   </body>
 </html>
+
+<style>
+  .backlink {
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+  }
+
+  .bigtitle {
+    border-bottom: 0.5cqw solid white;
+  }
+  .backlink:hover {
+    text-decoration: underline;
+  }
+
+  .header-container {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .header-container h2 {
+    margin: 0;
+  }
+
+  .series-copy {
+    margin: 0;
+    font-size: 3rem;
+    line-height: 1.3;
+  }
+
+  .tilescontainer {
+    padding: 0;
+  }
+</style>

@@ -36,12 +36,14 @@ const {
 const isExternal = /^https?:\/\//i.test(href);
 const resolvedLightboxable = lightboxable ?? (type === "video" && isExternal);
 const resolvedTarget = target ?? (isExternal ? "_blank" : undefined);
-const resolvedRel = resolvedTarget === "_blank" ? "noopener noreferrer" : undefined;
+const resolvedRel =
+  resolvedTarget === "_blank" ? "noopener noreferrer" : undefined;
 const displayTitle = title?.trim() || undefined;
 const displaySubtitle = subtitle?.trim() || undefined;
 const displayRoles = roles?.trim() || undefined;
 const displayCopy = copy?.trim() || undefined;
-const defaultAriaLabelBase = displayTitle || displaySubtitle || id || "Work item";
+const defaultAriaLabelBase =
+  displayTitle || displaySubtitle || id || "Work item";
 ---
 
 <a
@@ -98,21 +100,19 @@ const defaultAriaLabelBase = displayTitle || displaySubtitle || id || "Work item
     {displayTitle && <div class="titleText">{displayTitle}</div>}
     {displaySubtitle && <div class="subtitleText">{displaySubtitle}</div>}
     {displayRoles && <div class="roles">{displayRoles}</div>}
-    {displayCopy && <div class="copy">{displayCopy}</div>}
+
+    {
+      displayCopy && (
+        <>
+          <hr class="w-1/2" />
+          <div class="copy">{displayCopy}</div>
+        </>
+      )
+    }
   </div>
 </a>
 
 <style>
-  .tile {
-    display: block;
-    flex: 1 1 360px;
-    aspect-ratio: 16 / 9;
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-    text-decoration: none;
-    color: inherit;
-  }
 
   .media {
     width: 100%;
@@ -141,15 +141,12 @@ const defaultAriaLabelBase = displayTitle || displaySubtitle || id || "Work item
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: .25em;
     color: white;
     text-align: center;
     padding: 1rem;
     pointer-events: none;
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 1),
-      rgba(0, 0, 0, 0.5)
-    );
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5));
     opacity: 0;
     transition: opacity 200ms ease;
   }
@@ -164,13 +161,12 @@ const defaultAriaLabelBase = displayTitle || displaySubtitle || id || "Work item
     font-weight: 600;
     font-size: 3rem;
     line-height: 1;
-    margin-bottom: .25em;
   }
 
   .subtitleText {
-    font-weight: 600;
+    font-weight: 500;
   }
-  
+
   .titleText {
     transform: translateY(-10px);
   }

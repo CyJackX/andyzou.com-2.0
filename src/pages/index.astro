@@ -1,18 +1,15 @@
 ---
-import AccordionItem from "../components/AccordionItem.astro";
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import VideoLightbox from "../components/VideoLightbox.astro";
 import WorkTilebyId from "../components/WorkTileByID.astro";
 import WorkTilesBySeries from "../components/WorkTilesBySeries.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
-import CaseCard from "../components/CaseCard.astro";
 import azaleaShoot from "../images/AzaleaShootSelects-07.jpg";
 import pissterine from "../images/pissterine.jpg";
 import tootsies from "../images/tootsies_06.06.25-04326-Enhanced-NR.jpg";
 import mirum from "../images/mirum vr.jpg";
 import Image from "astro/components/Image.astro";
-import Titleheader from "../components/Header.astro";
 import WorkTileByID from "../components/WorkTileByID.astro";
 ---
 
@@ -22,101 +19,137 @@ import WorkTileByID from "../components/WorkTileByID.astro";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <Titleheader />
     <main class="text-center">
       <VideoLightbox
         tileSelector=".tile[data-lightboxable='true'], .hero-tile[data-lightboxable='true']"
       />
-      <!-- <div id="tilescontainer" class="tilescontainer">
+      <!-- <ol class="tilescontainer">
         <WorkTileByID id="directing-reel" />
       </div> -->
-      <details>
-        <summary><h2 class="section-title">Scripted Digital Series</h2></summary
-        >
-        <div id="tilescontainer" class="tilescontainer">
-          <WorkTilesBySeries seriesId="series" className="tile-series" />
-        </div>
+      <details name="close-together" open>
+        <summary class="header section-title">
+          <h1 class="bigtitle">Andy Zou</h1>
+          <video src="videos/Comp 1.mp4" muted loop autoplay />
+          <p class="subtitle">
+            <span>Director & Creative</span>
+            <span>Andy@AndyZou.com</span>
+          </p>
+        </summary>
+        <p class="text-5xl text-left py-8">
+          Andy Zou is a director and creative based in Brooklyn. With a
+          background in comedy and a passion for storytelling, he has directed a
+          wide range of projects, from scripted digital series to branded
+          content, music videos, and more. His work is known for its humor,
+          heart, and visual flair.
+        </p>
+        <div></div>
       </details>
 
-      <details>
-        <summary><h2 class="section-title">Branded Content</h2></summary>
-        <div id="tilescontainer" class="tilescontainer">
+      <details name="close-together">
+        <summary
+          ><h2 class="section-title bigtitle">
+            Scripted Digital Series
+          </h2></summary
+        >
+        <ol class="tilescontainer">
+          <WorkTilesBySeries seriesId="series" className="tile-series" />
+        </ol>
+      </details>
+
+      <details name="close-together">
+        <summary
+          ><h2 class="section-title bigtitle">Branded Content</h2></summary
+        >
+        <ol class="tilescontainer">
           <WorkTilesBySeries
             seriesId="branded-content"
             className="tile-series"
           />
-        </div>
+        </ol>
       </details>
 
-      <details>
-        <summary><h2 class="section-title">Sketch Comedy</h2></summary>
-        <div id="tilescontainer" class="tilescontainer">
+      <details name="close-together">
+        <summary><h2 class="section-title bigtitle">Sketch Comedy</h2></summary>
+        <ol class="tilescontainer">
           <WorkTilesBySeries seriesId="sketch" className="tile-series" />
-        </div>
+        </ol>
       </details>
 
-      <details>
-        <summary><h2 class="section-title">Comedy Music Videos</h2></summary>
-        <div id="tilescontainer" class="tilescontainer">
+      <details name="close-together">
+        <summary><h2 class="section-title bigtitle">Music Videos</h2></summary>
+        <ol class="tilescontainer">
           <WorkTilesBySeries seriesId="music-videos" className="tile-series" />
-        </div>
+        </ol>
       </details>
 
-      <details>
-        <summary><h2 class="section-title">Short Films</h2></summary>
-        <div id="tilescontainer" class="tilescontainer">
+      <details name="close-together">
+        <summary><h2 class="section-title bigtitle">Short Films</h2></summary>
+        <ol class="tilescontainer">
           <WorkTilesBySeries seriesId="shorts" className="tile-series" />
-        </div>
+        </ol>
       </details>
-      <details>
-        <summary><h2 class="section-title">Timeless Fan Favorites</h2></summary
-        ><div id="tilescontainer" class="tilescontainer">
-          <WorkTilebyId id="tuber" className="tile-series" />
-          <WorkTilebyId id="andys-roadshow" className="tile-series" />
-          <WorkTilebyId
-            id="pissterine"
-            className="tile-series"
-            target="_blank"
-          />
-        </div>
+      <details name="close-together">
+        <summary
+          ><h2 class="section-title bigtitle">
+            Timeless Fan Favorites
+          </h2></summary
+        ><ol class="tilescontainer">
+          <li><WorkTilebyId id="tuber" className="tile-series" /></li>
+          <li><WorkTilebyId id="andys-roadshow" className="tile-series" /></li>
+          <li>
+            <WorkTilebyId
+              id="pissterine"
+              className="tile-series"
+              target="_blank"
+            />
+          </li>
+        </ol>
       </details>
 
-      <details>
-        <summary><h2 class="section-title">Technologist</h2></summary>
-        <div id="tilescontainer" class="tilescontainer">
-          <p class="text-5xl text-left">
-            From After Effects compositing to experience with VR streaming, 3D
-            engines, genAI, and more, Andy has a wide range of technical skills
-            that he applies to his work as a director and an editor.
-          </p>
+      <details name="close-together">
+        <summary><h2 class="section-title bigtitle">Technologist</h2></summary>
+        <ol class="tilescontainer">
+          <li>
+            <p class="text-4xl text-left p-4">
+              From After Effects compositing to experience with VR streaming, 3D
+              engines, genAI, and more, Andy has a wide range of technical
+              skills that he applies to his work as a director and an editor.
+            </p>
+          </li>
           <WorkTilesBySeries seriesId="tech" className="tile-series" />
-          <video
-            src="/videos/tootsiespromo.mp4"
-            muted
-            loop
-            autoplay
-            class="tile"></video>
+          <li>
+            <video
+              src="/videos/tootsiespromo.mp4"
+              muted
+              loop
+              autoplay
+              class="tile"></video>
+          </li>
           <!-- <Image src={mirum} height="360" alt="Mirum VR BTS" class="tile" /> -->
-          <video
-            src="/videos/Head to Head_640.mp4"
-            muted
-            loop
-            autoplay
-            class="tile"></video>
-        </div>
+          <li>
+            <video
+              src="/videos/Head to Head_640.mp4"
+              muted
+              loop
+              autoplay
+              class="tile"></video>
+          </li>
+        </ol>
       </details>
 
-      <details>
-        <summary><h2 class="section-title">Unscripted Editor</h2></summary>
-        <div id="tilescontainer" class="tilescontainer">
+      <details name="close-together">
+        <summary
+          ><h2 class="section-title bigtitle">Unscripted Editor</h2></summary
+        >
+        <ol class="tilescontainer">
           <WorkTilesBySeries seriesId="editing" className="tile-series" />
-        </div>
+        </ol>
       </details>
 
-      <details>
-        <summary><h2 class="section-title">Weirdo</h2></summary>
-        <div id="tilescontainer" class="tilescontainer">
-          <div class="grow shrink basis-[360px]">
+      <details name="close-together">
+        <summary><h2 class="section-title bigtitle">Weirdo</h2></summary>
+        <ol class="tilescontainer">
+          <li>
             <Image
               src={azaleaShoot}
               width="1280"
@@ -129,14 +162,19 @@ import WorkTileByID from "../components/WorkTileByID.astro";
               Andy lives in Brooklyn with his wife and collaborator Katie
               Sicking and their daughter Azalea.
             </p>
-          </div>
-          <div class="grow shrink basis-[360px]">
+          </li>
+          <li>
             <WorkTilebyId id="tootsies" target="_blank" /><p class="px-8 m-8">
-              He's also a co-producer on annual short film festival Tootsie's
-              Video Vault.
+              He's also a co-producer on annual short film festival <a
+                class="text-nowrap"
+                href="https://www.tootsiesvideovault.com"
+                target="_blank"
+              >
+                Tootsie's Video Vault!</a
+              >
             </p>
-          </div>
-        </div>
+          </li>
+        </ol>
       </details>
     </main>
   </body><Footer />
@@ -156,7 +194,7 @@ import WorkTileByID from "../components/WorkTileByID.astro";
       content: "";
       inset: 0;
       pointer-events: none;
-      border-bottom: 3px solid white;
+      border-bottom: 0.5cqw solid white;
     }
 
     details::details-content {
@@ -170,18 +208,18 @@ import WorkTileByID from "../components/WorkTileByID.astro";
     details:open::details-content {
       block-size: auto;
     }
+    summary {
+      width: 100%;
+      list-style: none;
+    }
 
     .section-title {
-      border-bottom: 3px solid white;
+      border-bottom: 0.5cqw solid white;
       width: 100%;
       text-align: left;
-      font-size: clamp(4rem, 8cqw, 10rem);
-      line-height: 1;
       font-weight: bold;
       cursor: pointer;
       user-select: none;
-      list-style: none;
-      transition: all 0.3s ease-in-out;
     }
 
     .section-title:hover {
@@ -189,37 +227,22 @@ import WorkTileByID from "../components/WorkTileByID.astro";
       color: black;
     }
 
-    main {
-      padding: 1em;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .tilescontainer {
+    .header {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: left;
-      align-items: center;
-      gap: 16px;
-
-      padding: 1em 0;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: end;
     }
 
-    :global(.tile[data-id="directing-reel"]) {
-      flex: 1 1 360px;
-      width: 100%;
-      max-width: 720px;
-      margin: 0 auto;
-    }
+    .subtitle {
+      font-size: 3cqw;
+      line-height: 1.25;
+      display: flex;
+      flex-direction: column;
 
-    .tile {
-      display: block;
-      flex: 1 1 360px;
-      position: relative;
-      overflow: hidden;
-      border-radius: 12px;
-      text-decoration: none;
-      color: inherit;
+      text-align: justify;
+      text-justify: inter-word;
+      text-align-last: justify;
     }
   </style>
 </html>

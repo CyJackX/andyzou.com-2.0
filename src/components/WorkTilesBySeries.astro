@@ -20,19 +20,21 @@ const tiles = getSeriesTiles(seriesId);
 
 {
   tiles.map((tile) => (
-    <WorkTile
-      id={tile.id}
-      type={tile.type}
-      title={tile.title}
-      subtitle={tile.subtitle}
-      roles={tile.roles}
-      copy={tile.copy}
-      media={tile.media}
-      href={tile.href}
-      vertical={tile.vertical === true}
-      lightboxable={lightboxable}
-      className={className}
-      target={target}
-    />
+    <li>
+      <WorkTile
+        id={tile.id}
+        type={tile.type}
+        title={tile.title}
+        subtitle={tile.subtitle}
+        roles={tile.roles}
+        copy={tile.copy}
+        media={tile.media}
+        href={tile.href}
+        vertical={tile.vertical === true}
+        lightboxable={lightboxable}
+        className={className}
+        target={target}
+      />
+    </li>
   ))
 }
