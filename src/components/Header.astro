@@ -4,14 +4,26 @@ import { SITE_TITLE } from "../consts";
 ---
 
 <header class="text-left">
-	<h1 class="title">Andy Zou</h1>
-	<h2>Video Director & Creative Technologist</h2>
-	<p>Andy@AndyZou.com</p>
+	<h1 class="bigtitle">Andy Zou</h1>
+	<p class="subtitle">
+		Director & Creative
+		<br />Andy@AndyZou.com
+	</p>
 </header>
 <style>
-	.title {
-		font-size: clamp(4rem, 10vw, 8rem);
-		margin-bottom: 0.5rem;
-		font-weight: bold;
+	header {
+		max-width: 1280px;
+		margin: 0 auto;
+		width: 100%;
+		border-bottom: 0.5cqw solid white;
+		display:flex;
+		justify-content: space-between;
+		align-items: end;
+	}
+
+	.subtitle {
+		font-size: 3cqw;
+		line-height: 1.25;
+		text-align:right;
 	}
 </style>

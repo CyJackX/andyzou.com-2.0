@@ -13,7 +13,8 @@ export const CASES: Case[] = [
     "roles": "Director | Writer | Editor",
     "youtubeId": "iLNypL04zH0",
     "href": "https://www.youtube.com/watch?v=iLNypL04zH0",
-    "seriesId": "andys-originals"
+    "seriesId": "favorites",
+    "videoOrder": 2
   },
   {
     "id": "interstellar",
@@ -55,7 +56,8 @@ export const CASES: Case[] = [
     "roles": "Director | Writer | Editor",
     "youtubeId": "0U5SCBko2XM",
     "href": "https://www.youtube.com/watch?v=0U5SCBko2XM",
-    "seriesId": "andys-originals"
+    "seriesId": "favorites",
+    "videoOrder": 1
   },
   {
     "id": "Apocalypse-1",
@@ -157,7 +159,7 @@ export const CASES: Case[] = [
       "src": "/videos/dbh.mp4"
     },
     "title": "Death Becomes Her",
-    "subtitle": "RPM Agency",
+    "subtitle": "RPM",
     "copy": "A series of BTS Social Promos for Broadway's Death Becomes Her.",
     "href": "series/death-becomes-her",
     "seriesId": "branded-content",
@@ -208,7 +210,7 @@ export const CASES: Case[] = [
     "roles": "Director | Editor",
     "youtubeId": "uE1Y7PHMdPc",
     "href": "https://www.youtube.com/watch?v=uE1Y7PHMdPc",
-    "seriesId": "comedy-central",
+    "seriesId": "comedy-central-originals",
     "videoOrder": 16
   },
   {
@@ -222,7 +224,7 @@ export const CASES: Case[] = [
     "subtitle": "Comedy Central Digital",
     "roles": "Director | Writer | Editor",
     "href": "https://www.instagram.com/reel/Cqs1xAFpnwI",
-    "seriesId": "comedy-central",
+    "seriesId": "comedy-central-originals",
     "videoOrder": 10,
     "vertical": true
   },
@@ -238,7 +240,7 @@ export const CASES: Case[] = [
     "roles": "Director | Writer | Editor",
     "youtubeId": "aQN6jBk_LWc",
     "href": "https://www.youtube.com/watch?v=aQN6jBk_LWc",
-    "seriesId": "comedy-central",
+    "seriesId": "comedy-central-originals",
     "videoOrder": 6
   },
   {
@@ -254,7 +256,7 @@ export const CASES: Case[] = [
     "copy": "7M Views!",
     "youtubeId": "KIdN_iYBW7A",
     "href": "https://www.youtube.com/watch?v=KIdN_iYBW7A",
-    "seriesId": "comedy-central",
+    "seriesId": "comedy-central-originals",
     "videoOrder": 4
   },
   {
@@ -269,7 +271,7 @@ export const CASES: Case[] = [
     "roles": "Director | Writer | Editor",
     "youtubeId": "zcqkqql5VW0",
     "href": "https://www.youtube.com/watch?v=zcqkqql5VW0",
-    "seriesId": "comedy-central",
+    "seriesId": "comedy-central-originals",
     "videoOrder": 5
   },
   {
@@ -284,7 +286,7 @@ export const CASES: Case[] = [
     "roles": "Director",
     "youtubeId": "bFYFLfq6nZo",
     "href": "https://www.youtube.com/watch?v=bFYFLfq6nZo",
-    "seriesId": "comedy-central",
+    "seriesId": "comedy-central-originals",
     "videoOrder": 15
   },
   {
@@ -299,7 +301,7 @@ export const CASES: Case[] = [
     "roles": "Director | Writer | Editor",
     "youtubeId": "XhMz5vRlya8",
     "href": "https://www.youtube.com/watch?v=XhMz5vRlya8",
-    "seriesId": "comedy-central",
+    "seriesId": "comedy-central-originals",
     "videoOrder": 2
   },
   {
@@ -315,7 +317,7 @@ export const CASES: Case[] = [
     "copy": "Webby-nominated short for Comedy Central Digital.",
     "youtubeId": "BXOaAgDnpd8",
     "href": "https://www.youtube.com/watch?v=BXOaAgDnpd8",
-    "seriesId": "comedy-central",
+    "seriesId": "comedy-central-originals",
     "videoOrder": 1
   },
   {
@@ -330,7 +332,7 @@ export const CASES: Case[] = [
     "roles": "Director | Writer | Editor",
     "youtubeId": "2PPkDxOul_0",
     "href": "https://www.youtube.com/watch?v=2PPkDxOul_0",
-    "seriesId": "comedy-central",
+    "seriesId": "comedy-central-originals",
     "videoOrder": 3
   },
   {
@@ -345,7 +347,7 @@ export const CASES: Case[] = [
     "roles": "Director",
     "youtubeId": "gSojwTO5QZs",
     "href": "https://www.youtube.com/watch?v=gSojwTO5QZs",
-    "seriesId": "comedy-central",
+    "seriesId": "comedy-central-originals",
     "videoOrder": 12
   },
   {
@@ -360,7 +362,7 @@ export const CASES: Case[] = [
     "roles": "Director",
     "youtubeId": "lQankmO_xbQ",
     "href": "https://www.youtube.com/watch?v=lQankmO_xbQ",
-    "seriesId": "comedy-central",
+    "seriesId": "comedy-central-originals",
     "videoOrder": 13
   },
   {
@@ -375,7 +377,7 @@ export const CASES: Case[] = [
     "roles": "Director",
     "youtubeId": "oCYzAHPMTUM",
     "href": "https://www.youtube.com/watch?v=oCYzAHPMTUM",
-    "seriesId": "comedy-central",
+    "seriesId": "comedy-central-originals",
     "videoOrder": 14
   },
   {
@@ -390,7 +392,7 @@ export const CASES: Case[] = [
     "roles": "Director | Writer | Editor",
     "youtubeId": "2Z4VgVKrveM",
     "href": "https://www.youtube.com/watch?v=2Z4VgVKrveM",
-    "seriesId": "comedy-central",
+    "seriesId": "comedy-central-originals",
     "videoOrder": 9,
     "vertical": true
   },
@@ -406,7 +408,7 @@ export const CASES: Case[] = [
     "roles": "Director | Editor",
     "youtubeId": "YUJIjQ0MytM",
     "href": "https://www.youtube.com/watch?v=YUJIjQ0MytM",
-    "seriesId": "comedy-central",
+    "seriesId": "comedy-central-originals",
     "videoOrder": 7
   },
   {
@@ -421,7 +423,7 @@ export const CASES: Case[] = [
     "roles": "Director | Writer | Editor",
     "youtubeId": "DJCgT1gw8nc",
     "href": "https://www.youtube.com/watch?v=DJCgT1gw8nc",
-    "seriesId": "comedy-central",
+    "seriesId": "comedy-central-originals",
     "videoOrder": 11,
     "vertical": true
   },
@@ -437,7 +439,7 @@ export const CASES: Case[] = [
     "roles": "Director | Writer | Editor",
     "youtubeId": "GBG1KLVBQPA",
     "href": "https://www.youtube.com/watch?v=GBG1KLVBQPA",
-    "seriesId": "comedy-central",
+    "seriesId": "comedy-central-originals",
     "videoOrder": 8
   },
   {
@@ -445,9 +447,9 @@ export const CASES: Case[] = [
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/8QGYE_5nfQM/hqdefault.jpg",
-      "alt": "DBH - Rolling in the Aisles thumbnail"
+      "alt": "Rolling in the Aisles thumbnail"
     },
-    "title": "DBH - Rolling in the Aisles",
+    "title": "Rolling in the Aisles",
     "roles": "Editor",
     "youtubeId": "8QGYE_5nfQM",
     "href": "https://www.youtube.com/watch?v=8QGYE_5nfQM",
@@ -459,9 +461,9 @@ export const CASES: Case[] = [
     "media": {
       "kind": "image",
       "src": "https://i.ytimg.com/vi/IBTQMTwN7vc/hqdefault.jpg",
-      "alt": "DBH - Best Friends thumbnail"
+      "alt": "Best Friends thumbnail"
     },
-    "title": "DBH - Best Friends",
+    "title": "Best Friends",
     "roles": "Editor",
     "youtubeId": "IBTQMTwN7vc",
     "href": "https://www.youtube.com/watch?v=IBTQMTwN7vc",
@@ -544,19 +546,89 @@ export const CASES: Case[] = [
     "videoOrder": 7
   },
   {
-    "id": "election-science-duvergers-law",
+    "id": "will-smith",
     "media": {
       "kind": "image",
-      "src": "https://i.ytimg.com/vi/HpBRGXK-QNs/hqdefault.jpg",
-      "alt": "Duverger's Law thumbnail"
+      "src": "/Will Smith Compliment.jpg",
+      "alt": "Will Smith in Riyadh thumbnail"
     },
-    "title": "Duverger's Law",
-    "subtitle": "Center for Election Science",
-    "roles": "Director | Editor",
-    "copy": "Volunteer work for election non-profit ElectionScience.org!",
-    "youtubeId": "HpBRGXK-QNs",
-    "href": "https://www.youtube.com/watch?v=HpBRGXK-QNs",
-    "seriesId": "home"
+    "title": "Will Smith in Riyadh",
+    "subtitle": "Westbrook Studios",
+    "roles": "Editor",
+    "copy": "Will Smith performing in Riyadh at Soundstorm 2023",
+    "youtubeId": "_NiN2zU79is",
+    "href": "https://www.youtube.com/watch?v=_NiN2zU79is",
+    "seriesId": "editing"
+  },
+  {
+    "id": "will-smith2",
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/WCnB9UlEVR8/hqdefault.jpg",
+      "alt": "Will Smith at Grammy's thumbnail"
+    },
+    "title": "Will Smith at Grammy's",
+    "subtitle": "Westbrook Studios",
+    "roles": "Editor",
+    "copy": "A GRAMMY Salute To 50 Years Of Hip-Hop",
+    "youtubeId": "WCnB9UlEVR8",
+    "href": "https://www.youtube.com/watch?v=WCnB9UlEVR8",
+    "seriesId": "editing"
+  },
+  {
+    "id": "barstool",
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/uYB3IziD3Ls/hqdefault.jpg",
+      "alt": "Barstool Survivor thumbnail"
+    },
+    "title": "Barstool Survivor",
+    "subtitle": "Barstool Sports",
+    "roles": "Editor",
+    "youtubeId": "uYB3IziD3Ls",
+    "href": "https://www.youtube.com/watch?v=uYB3IziD3Ls",
+    "seriesId": "editing"
+  },
+  {
+    "id": "monkey",
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/h-bsM5kzFSA/hqdefault.jpg",
+      "alt": "Better Man: Regent Street BTS thumbnail"
+    },
+    "title": "Better Man: Regent Street BTS",
+    "roles": "Editor",
+    "youtubeId": "h-bsM5kzFSA",
+    "href": "https://www.youtube.com/watch?v=h-bsM5kzFSA",
+    "seriesId": "editing"
+  },
+  {
+    "id": "babes",
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/IhhD8l476-I/hqdefault.jpg",
+      "alt": "Babes thumbnail"
+    },
+    "title": "Babes",
+    "subtitle": "Social Promos",
+    "roles": "Editor",
+    "youtubeId": "IhhD8l476-I",
+    "href": "https://www.youtube.com/watch?v=IhhD8l476-I",
+    "seriesId": "editing"
+  },
+  {
+    "id": "immaculate",
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/yShigrHv-4g/hqdefault.jpg",
+      "alt": "Immaculate thumbnail"
+    },
+    "title": "Immaculate",
+    "subtitle": "Social Promos",
+    "roles": "Editor",
+    "youtubeId": "yShigrHv-4g",
+    "href": "https://www.youtube.com/watch?v=yShigrHv-4g",
+    "seriesId": "editing"
   },
   {
     "id": "Making-it-1",
@@ -770,6 +842,8 @@ export const CASES: Case[] = [
     },
     "title": "Apocalypse Problems",
     "subtitle": "SpoiledNYC ft. Gianmarco Soresi & Megan Sass",
+    "roles": "Director | DP | Editor",
+    "copy": "A comedic webseries for SpoiledNYC.",
     "href": "series/apocalypse-problems",
     "seriesId": "series",
     "videoOrder": 6
@@ -786,6 +860,7 @@ export const CASES: Case[] = [
     },
     "title": "Andy's Asian Afterlife",
     "subtitle": "Rizzle's Asian Comedy Fest",
+    "roles": "Creator",
     "copy": "1000$ grand prize winner of Rizzle's Asian Comedy Fest.",
     "href": "series/asian-afterlife",
     "seriesId": "series",
@@ -798,8 +873,9 @@ export const CASES: Case[] = [
       "src": "/videos/comedycentral.mp4"
     },
     "title": "Comedy Central Originals",
-    "copy": "At Comedy Central's Webby-winning Digital team, Andy directed & produced multiple series like Mini-Mocks, music videos, and other content collabs with notable influencers.",
-    "href": "series/comedy-central",
+    "roles": "Director | Writer | Editor",
+    "copy": "At Comedy Central's Webby-winning Digital team, Andy directed, wrote, & produced Mini-Mocks, music videos, and content collabs with notable influencers.",
+    "href": "series/comedy-central-originals",
     "seriesId": "series",
     "videoOrder": 1
   },
@@ -811,6 +887,8 @@ export const CASES: Case[] = [
     },
     "title": "The Honest Waitress",
     "subtitle": "PitTV",
+    "roles": "Director",
+    "copy": "A comedic webseries for PitTV.",
     "href": "series/the-honest-waitress",
     "seriesId": "series",
     "videoOrder": 7
@@ -823,6 +901,8 @@ export const CASES: Case[] = [
     },
     "title": "Making It",
     "subtitle": "Snap Originals ft. Dave Mizzoni",
+    "roles": "Director | DP | Editor",
+    "copy": "A vertical series for Snapchat's Snap Originals.",
     "href": "series/making-it",
     "seriesId": "series",
     "videoOrder": 2
@@ -836,6 +916,8 @@ export const CASES: Case[] = [
     },
     "title": "Securocam 3000",
     "subtitle": "NYTVF & IFC Comedy Crib",
+    "roles": "Co-director | Co-writer | Editor",
+    "copy": "A short webseries featured at NYTVF and hosted on IFC's Comedy Crib!",
     "youtubeId": "_SRIskz2JOY",
     "href": "https://www.youtube.com/watch?v=_SRIskz2JOY",
     "seriesId": "series",
@@ -849,9 +931,8 @@ export const CASES: Case[] = [
       "poster": "https://i.ytimg.com/vi/aa2zI7PO-X8/hqdefault.jpg"
     },
     "title": "Operators",
-    "subtitle": "Short Film",
+    "subtitle": "Nevermore Film Fest 2024",
     "roles": "Director | Co-writer | Editor",
-    "copy": "Nevermore Film Fest 2024",
     "youtubeId": "aa2zI7PO-X8",
     "href": "https://www.youtube.com/watch?v=aa2zI7PO-X8",
     "seriesId": "shorts",
@@ -879,7 +960,7 @@ export const CASES: Case[] = [
       "poster": "https://i.ytimg.com/vi/daNydp3mpI0/hqdefault.jpg"
     },
     "title": "Tell My Wife",
-    "subtitle": "Short Film",
+    "subtitle": "Big Apple Film Fest 2023",
     "roles": "Co-director | Co-writer | Editor",
     "youtubeId": "daNydp3mpI0",
     "href": "https://www.youtube.com/watch?v=daNydp3mpI0",
@@ -940,8 +1021,8 @@ export const CASES: Case[] = [
       "alt": "Meeting the Parents thumbnail"
     },
     "title": "Meeting the Parents",
-    "subtitle": "ft. Megan Sass",
-    "roles": "Director | Editor",
+    "subtitle": "ft. Megan Sass, Jerah Milligan",
+    "roles": "Director | DP | Editor",
     "youtubeId": "ZGDTHeyeO-w",
     "href": "https://www.youtube.com/watch?v=ZGDTHeyeO-w",
     "seriesId": "sketch",
@@ -1002,7 +1083,7 @@ export const CASES: Case[] = [
       "poster": "https://i.ytimg.com/vi/RhzSqWrjx7Q/hqdefault.jpg"
     },
     "title": "Poly Bachelorette",
-    "roles": "Director | Writer | Editor",
+    "roles": "Director | DP | Co-Writer | Editor",
     "youtubeId": "RhzSqWrjx7Q",
     "href": "https://www.youtube.com/watch?v=RhzSqWrjx7Q",
     "seriesId": "sketch",
@@ -1056,12 +1137,40 @@ export const CASES: Case[] = [
   {
     "id": "tech-videos-showreel",
     "media": {
-      "kind": "image",
-      "src": "https://i.ytimg.com/vi/bpkZSxtZd7Y/hqdefault.jpg",
-      "alt": "tech-videos-showreel thumbnail"
+      "kind": "video",
+      "src": "/videos/mff.mp4",
+      "poster": "https://i.ytimg.com/vi/bpkZSxtZd7Y/hqdefault.jpg"
     },
+    "title": "Making Of Garden of Eden",
+    "copy": "Devlog of using Blender, Wonder Dynamics, Unreal Engine to design a 3D scene",
     "youtubeId": "bpkZSxtZd7Y",
     "href": "https://www.youtube.com/watch?v=bpkZSxtZd7Y",
+    "seriesId": "tech"
+  },
+  {
+    "id": "projectiles",
+    "media": {
+      "kind": "video",
+      "src": "/videos/intercepts.mp4",
+      "poster": "https://i.ytimg.com/vi/MpUUsDDE1sI/hqdefault.jpg"
+    },
+    "title": "Projectile Intercept Math",
+    "copy": "Devlog of explaining projectile intercept math",
+    "youtubeId": "MpUUsDDE1sI",
+    "href": "https://www.youtube.com/watch?v=MpUUsDDE1sI",
+    "seriesId": "tech"
+  },
+  {
+    "id": "unreal",
+    "media": {
+      "kind": "video",
+      "src": "/videos/unreal.mp4",
+      "poster": "https://i.ytimg.com/vi/c22gpypHv2k/hqdefault.jpg"
+    },
+    "title": "Unreal Engine Devlog",
+    "copy": "Devlog of Unreal Engine AI mechanics",
+    "youtubeId": "c22gpypHv2k",
+    "href": "https://www.youtube.com/watch?v=c22gpypHv2k",
     "seriesId": "tech"
   },
   {
@@ -1140,6 +1249,20 @@ export const CASES: Case[] = [
     "videoOrder": 5
   },
   {
+    "id": "election-science-duvergers-law",
+    "media": {
+      "kind": "image",
+      "src": "https://i.ytimg.com/vi/HpBRGXK-QNs/hqdefault.jpg",
+      "alt": "Duverger's Law thumbnail"
+    },
+    "title": "Duverger's Law",
+    "subtitle": "Center for Election Science",
+    "roles": "Director | Editor",
+    "copy": "Volunteer work for election non-profit ElectionScience.org!",
+    "youtubeId": "HpBRGXK-QNs",
+    "href": "https://www.youtube.com/watch?v=HpBRGXK-QNs"
+  },
+  {
     "id": "architects-newspaper-interviews",
     "media": {
       "kind": "image",
@@ -1196,7 +1319,9 @@ export const CASES: Case[] = [
     },
     "title": "Pissterine",
     "copy": "Andy once kickstarted a Listerine knockoff that got shutdown in trademark court.",
-    "href": "https://www.kickstarter.com/projects/andyzou/pissterine-a-genuine-novelty-mouthwash"
+    "href": "https://www.kickstarter.com/projects/andyzou/pissterine-a-genuine-novelty-mouthwash",
+    "seriesId": "favorites",
+    "videoOrder": 3
   },
   {
     "id": "Royal-heart",
@@ -1267,27 +1392,5 @@ export const CASES: Case[] = [
     "youtubeId": "_98xIvAvOhE",
     "href": "https://www.youtube.com/watch?v=_98xIvAvOhE",
     "videoOrder": 9
-  },
-  {
-    "id": "projectiles",
-    "media": {
-      "kind": "image",
-      "src": "https://i.ytimg.com/vi/MpUUsDDE1sI/hqdefault.jpg",
-      "alt": "projectiles thumbnail"
-    },
-    "youtubeId": "MpUUsDDE1sI",
-    "href": "https://www.youtube.com/watch?v=MpUUsDDE1sI",
-    "seriesId": "tech"
-  },
-  {
-    "id": "unreal",
-    "media": {
-      "kind": "image",
-      "src": "https://i.ytimg.com/vi/c22gpypHv2k/hqdefault.jpg",
-      "alt": "unreal thumbnail"
-    },
-    "youtubeId": "c22gpypHv2k",
-    "href": "https://www.youtube.com/watch?v=c22gpypHv2k",
-    "seriesId": "tech"
   }
 ];

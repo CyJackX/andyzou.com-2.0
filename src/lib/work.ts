@@ -1,5 +1,7 @@
 import { CASES } from "../data/cases";
 import type { Case, Media } from "../data/cases";
+import { SERIES_META } from "../data/seriesMeta";
+import type { SeriesMeta } from "../data/seriesMeta";
 
 export type WorkVideo = Case & {
   slug: string;
@@ -55,13 +57,21 @@ function getVideoHref(video: WorkVideo): string {
   return video.sourceHref ?? video.href ?? `/video/${video.slug}/`;
 }
 
-export function getSeriesTitle(seriesId: string): string {
+function formatSeriesId(seriesId: string): string {
   return seriesId
     .split("-")
     .filter(Boolean)
     .map((part) => part.replace(/_/g, " "))
     .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
     .join(" ");
+}
+
+export function getSeriesMeta(seriesId: string): SeriesMeta | undefined {
+  return SERIES_META[seriesId];
+}
+
+export function getSeriesTitle(seriesId: string): string {
+  return getSeriesMeta(seriesId)?.title ?? formatSeriesId(seriesId);
 }
 
 export function getVideoTileData(
