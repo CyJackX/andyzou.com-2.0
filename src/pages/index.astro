@@ -29,7 +29,8 @@ import WorkTileByID from "../components/WorkTileByID.astro";
       <details name="close-together" open>
         <summary class="header section-title">
           <h1 class="bigtitle">Andy Zou</h1>
-          <video src="videos/Comp 1.mp4" muted loop autoplay />
+          <video src="videos/Comp 1.mp4" muted loop autoplay playsinline
+          ></video>
           <p class="subtitle">
             <span>Director & Creative</span>
             <span>Andy@AndyZou.com</span>
@@ -123,6 +124,7 @@ import WorkTileByID from "../components/WorkTileByID.astro";
               muted
               loop
               autoplay
+              playsinline
               class="tile"></video>
           </li>
           <!-- <Image src={mirum} height="360" alt="Mirum VR BTS" class="tile" /> -->
@@ -132,6 +134,7 @@ import WorkTileByID from "../components/WorkTileByID.astro";
               muted
               loop
               autoplay
+              playsinline
               class="tile"></video>
           </li>
         </ol>
@@ -246,4 +249,3 @@ import WorkTileByID from "../components/WorkTileByID.astro";
     }
   </style>
 </html>
-
