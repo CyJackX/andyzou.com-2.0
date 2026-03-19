@@ -217,7 +217,7 @@ export const CASES: Case[] = [
     "id": "freezing-your-eggs",
     "media": {
       "kind": "image",
-      "src": "/cadbury.jpg",
+      "src": "/thumbposters/cadbury.jpg",
       "alt": "Freezing Your Eggs thumbnail"
     },
     "title": "Freezing Your Eggs",
@@ -384,7 +384,7 @@ export const CASES: Case[] = [
     "id": "take-a-deep-breath",
     "media": {
       "kind": "image",
-      "src": "/breathe.jpg",
+      "src": "/thumbposters/breathe.jpg",
       "alt": "Take a Deep F***ing Breath thumbnail"
     },
     "title": "Take a Deep F***ing Breath",
@@ -549,7 +549,7 @@ export const CASES: Case[] = [
     "id": "will-smith",
     "media": {
       "kind": "image",
-      "src": "/Will Smith Compliment.jpg",
+      "src": "/thumbposters/Will Smith Compliment.jpg",
       "alt": "Will Smith in Riyadh thumbnail"
     },
     "title": "Will Smith in Riyadh",
@@ -1064,7 +1064,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "video",
       "src": "/videos/mta.mp4",
-      "poster": "/mta.jpg"
+      "poster": "/thumbposters/mta.jpg"
     },
     "title": "MTA Shames NYC",
     "subtitle": "SpoiledNYC ft. Gianmarco Soresi & Megan Sass",
