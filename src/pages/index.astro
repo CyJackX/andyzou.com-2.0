@@ -6,11 +6,28 @@ import WorkTilebyId from "../components/WorkTileByID.astro";
 import WorkTilesBySeries from "../components/WorkTilesBySeries.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import azaleaShoot from "../images/AzaleaShootSelects-07.jpg";
-import pissterine from "../images/pissterine.jpg";
-import tootsies from "../images/tootsies_06.06.25-04326-Enhanced-NR.jpg";
-import mirum from "../images/mirum vr.jpg";
 import { Image } from "astro:assets";
-import WorkTileByID from "../components/WorkTileByID.astro";
+import type { ImageMetadata } from "astro";
+
+function formatGalleryAlt(filePath: string) {
+  const filename = filePath.split("/").pop()?.replace(/\.[^.]+$/, "") ?? "Andy photo";
+
+  return filename.replace(/[-_]+/g, " ").replace(/\s+/g, " ").trim();
+}
+
+const andyGalleryImages = Object.entries(
+  import.meta.glob<{ default: ImageMetadata }>(
+    "../images/andy/*.{jpg,jpeg,png,webp,avif}",
+    { eager: true },
+  ),
+)
+  .map(([filePath, module]) => ({
+    alt: formatGalleryAlt(filePath),
+    src: module.default,
+  }))
+  .sort((a, b) =>
+    a.alt.localeCompare(b.alt, undefined, { numeric: true, sensitivity: "base" }),
+  );
 ---
 
 <!doctype html>
@@ -21,12 +38,12 @@ import WorkTileByID from "../components/WorkTileByID.astro";
   <body>
     <main class="text-center">
       <VideoLightbox
-        tileSelector=".tile[data-lightboxable='true'], .hero-tile[data-lightboxable='true']"
+        tileSelector="[data-lightboxable='true']"
       />
       <!-- <ol class="tilescontainer">
         <WorkTileByID id="directing-reel" />
       </div> -->
-      <details name="close-together" open>
+      <details open>
         <summary class="header section-title">
           <h1 class="bigtitle">Andy Zou</h1>
           <video
@@ -41,67 +58,63 @@ import WorkTileByID from "../components/WorkTileByID.astro";
             <span>Andy@AndyZou.com</span>
           </p>
         </summary>
-        <p class="text-5xl text-left py-8">
-          Andy Zou is a director and creative based in Brooklyn. With a
-          background in comedy and a passion for storytelling, he has directed a
-          wide range of projects, from scripted digital series to branded
-          content, music videos, and more. His work is known for its humor,
-          heart, and visual flair.
+        <p class="text-3xl md:text-5xl text-left my-8">
+          Andy Zou has been hands-on as a director throughout his career.  As a creative producer, cinematographer, and editor, Andy has a holistic perspective of content creation that translates to smooth productions from script to screen.  From pop culture to classic tropes, Andy strives to center the audience experience and find the kernel of relatability in everything he makes.
         </p>
-        <div></div>
+        <ol class="flex flex-wrap gap-8 items-center justify-center my-8">
+          {
+            andyGalleryImages.map((image) => (
+              <li>
+                <a
+                  href={image.src.src}
+                  class="gallery-lightbox"
+                  data-lightboxable="true"
+                  data-title={image.alt}
+                  aria-label={`${image.alt} full image`}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    height="640"
+                    loading="lazy"
+                    class="h-60 w-auto md:h-100 gallery-photo"
+                  />
+                </a>
+              </li>
+            ))
+          }
+        </ol>
       </details>
+      <details>
+        <summary><h2 class="section-title bigtitle">Director</h2></summary>
 
-      <details name="close-together">
-        <summary
-          ><h2 class="section-title bigtitle">
-            Scripted Digital Series
-          </h2></summary
-        >
+        <h2 class="section-title subsection">Scripted Digital Series</h2>
         <ol class="tilescontainer">
           <WorkTilesBySeries seriesId="series" className="tile-series" />
         </ol>
-      </details>
 
-      <details name="close-together">
-        <summary
-          ><h2 class="section-title bigtitle">Branded Content</h2></summary
-        >
+        <h2 class="section-title subsection">Branded Content</h2>
         <ol class="tilescontainer">
           <WorkTilesBySeries
             seriesId="branded-content"
             className="tile-series"
           />
-        </ol>
-      </details>
-
-      <details name="close-together">
-        <summary><h2 class="section-title bigtitle">Sketch Comedy</h2></summary>
+        </ol><h2 class="section-title subsection">Sketches & Shorts</h2>
         <ol class="tilescontainer">
           <WorkTilesBySeries seriesId="sketch" className="tile-series" />
+          <WorkTilesBySeries seriesId="shorts" className="tile-series" />
         </ol>
-      </details>
-
-      <details name="close-together">
-        <summary><h2 class="section-title bigtitle">Music Videos</h2></summary>
+        <h2 class="section-title subsection">Music Videos</h2>
         <ol class="tilescontainer">
           <WorkTilesBySeries seriesId="music-videos" className="tile-series" />
         </ol>
-      </details>
-
-      <details name="close-together">
-        <summary><h2 class="section-title bigtitle">Short Films</h2></summary>
-        <ol class="tilescontainer">
-          <WorkTilesBySeries seriesId="shorts" className="tile-series" />
-        </ol>
-      </details>
-      <details name="close-together">
-        <summary
-          ><h2 class="section-title bigtitle">
-            Timeless Fan Favorites
-          </h2></summary
-        ><ol class="tilescontainer">
+        <h2 class="section-title subsection">Andy's Favorites</h2><ol
+          class="tilescontainer"
+        >
           <li><WorkTilebyId id="tuber" className="tile-series" /></li>
-          <li><WorkTilebyId id="andys-roadshow" className="tile-series" /></li>
+          <li>
+            <WorkTilebyId id="andys-roadshow" className="tile-series" />
+          </li>
           <li>
             <WorkTilebyId
               id="pissterine"
@@ -111,8 +124,7 @@ import WorkTileByID from "../components/WorkTileByID.astro";
           </li>
         </ol>
       </details>
-
-      <details name="close-together">
+      <details>
         <summary><h2 class="section-title bigtitle">Creative</h2></summary><ol
           class="tilescontainer"
         >
@@ -122,7 +134,7 @@ import WorkTileByID from "../components/WorkTileByID.astro";
         </ol>
       </details>
 
-      <details name="close-together">
+      <details>
         <summary><h2 class="section-title bigtitle">Technologist</h2></summary>
         <ol class="tilescontainer">
           <li>
@@ -154,17 +166,17 @@ import WorkTileByID from "../components/WorkTileByID.astro";
           </li>
         </ol>
       </details>
-
-      <details name="close-together">
+<!-- 
+      <details>
         <summary
           ><h2 class="section-title bigtitle">Unscripted Editor</h2></summary
         >
         <ol class="tilescontainer">
           <WorkTilesBySeries seriesId="editing" className="tile-series" />
         </ol>
-      </details>
+      </details> -->
 
-      <details name="close-together">
+      <details>
         <summary><h2 class="section-title bigtitle">Weirdo</h2></summary>
         <ol class="tilescontainer">
           <li>
@@ -244,9 +256,20 @@ import WorkTileByID from "../components/WorkTileByID.astro";
       background-color: white;
       color: black;
     }
-    
+
     .section-title:hover .header-video {
-      display:none;
+      display: none;
+    }
+
+    .gallery-lightbox {
+      display: block;
+      border-radius: 12px;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .gallery-photo {
+      display: block;
     }
 
     .header {

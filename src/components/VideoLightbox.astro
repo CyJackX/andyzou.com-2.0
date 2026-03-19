@@ -54,6 +54,7 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
   const lightboxClose = lightbox?.querySelector(".lightboxClose");
   const OPEN_DURATION_MS = 500;
   const CLOSE_DURATION_MS = 250;
+  const IMAGE_FADE_DURATION_MS = 180;
   const EASING = "cubic-bezier(0.22, 1, 0.36, 1)";
   const PANEL_ANIM_EASING = "ease-out";
   const DEBUG_LIGHTBOX =
@@ -150,6 +151,27 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
     });
   }
 
+  function waitForImageReady(image) {
+    if (!(image instanceof HTMLImageElement)) {
+      return Promise.resolve();
+    }
+
+    if (image.complete && image.naturalWidth > 0) {
+      return Promise.resolve();
+    }
+
+    return new Promise((resolve) => {
+      const finish = () => {
+        image.removeEventListener("load", finish);
+        image.removeEventListener("error", finish);
+        resolve();
+      };
+
+      image.addEventListener("load", finish, { once: true });
+      image.addEventListener("error", finish, { once: true });
+    });
+  }
+
   function animateCloneBetweenRects(clone, fromRect, toRect, duration, options = {}) {
     const { fromOpacity = 1, toOpacity = 1 } = options;
     const dx = toRect.left - fromRect.left;
@@ -212,9 +234,13 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
     return "";
   }
 
-  function isNativeVideoUrl(url) {
-    return /\.(mp4|webm|ogg)(?:[?#].*)?$/i.test(url);
-  }
+function isNativeVideoUrl(url) {
+  return /\.(mp4|webm|ogg)(?:[?#].*)?$/i.test(url);
+}
+
+function isImageUrl(url) {
+  return /\.(avif|gif|jpe?g|png|svg|webp)(?:[?#].*)?$/i.test(url);
+}
 
   function getInstagramEmbed(url) {
     try {
@@ -243,7 +269,12 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
   }
 
   function canBuildPlayer(url) {
-    return Boolean(getYoutubeId(url)) || Boolean(getInstagramEmbed(url)) || isNativeVideoUrl(url);
+    return (
+      Boolean(getYoutubeId(url)) ||
+      Boolean(getInstagramEmbed(url)) ||
+      isNativeVideoUrl(url) ||
+      isImageUrl(url)
+    );
   }
 
   function clearYoutubePlayer() {
@@ -398,7 +429,7 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
     } catch {}
   }
 
-  function buildPlayer(url, isVertical = false) {
+  function buildPlayer(url, isVertical = false, alt = "Image") {
     const youtubeId = getYoutubeId(url);
     if (youtubeId) {
       const iframe = document.createElement("iframe");
@@ -457,6 +488,20 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
       };
     }
 
+    if (isImageUrl(url)) {
+      const image = document.createElement("img");
+      image.className = "lightboxMedia lightboxImage";
+      image.src = url;
+      image.alt = alt;
+      image.decoding = "async";
+      return {
+        kind: "image",
+        sourceUrl: url,
+        isVertical: false,
+        element: image,
+      };
+    }
+
     return null;
   }
 
@@ -473,12 +518,29 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
     const mediaRect = mediaEl.getBoundingClientRect();
     const fromRect = mediaRect;
     const toRect = tile ? tile.getBoundingClientRect() : null;
+    const isImageLightbox = lightboxPanel.classList.contains("isImage");
     debugLog("close: measured rects", {
       fromRect: rectSummary(fromRect),
       toRect: rectSummary(toRect),
+      isImageLightbox,
     });
 
-    if (tile && isRectRenderable(fromRect) && isRectRenderable(toRect)) {
+    if (isImageLightbox) {
+      const panelAnim = lightboxPanel.animate(
+        [{ opacity: 1 }, { opacity: 0 }],
+        { duration: IMAGE_FADE_DURATION_MS, easing: PANEL_ANIM_EASING, fill: "forwards" },
+      );
+
+      const backdropAnim = lightboxBackdrop.animate(
+        [{ opacity: 1 }, { opacity: 0 }],
+        { duration: IMAGE_FADE_DURATION_MS, easing: PANEL_ANIM_EASING, fill: "forwards" },
+      );
+
+      await Promise.all([
+        panelAnim.finished.catch(() => {}),
+        backdropAnim.finished.catch(() => {}),
+      ]);
+    } else if (tile && isRectRenderable(fromRect) && isRectRenderable(toRect)) {
       tile.classList.add("lightboxSourceTileFading");
       const clone = createTileClone(tile, fromRect);
       debugLog("close: starting clone animation");
@@ -508,6 +570,7 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
     lightbox.hidden = true;
     lightbox.classList.remove("isAnimating");
     lightboxPanel.classList.remove("isVertical");
+    lightboxPanel.classList.remove("isImage");
     lightboxPanel.style.opacity = "";
     lightboxBackdrop.style.opacity = "";
     clearYoutubePlayer();
@@ -532,13 +595,19 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
     if (isAnimating || !lightbox.hidden) return;
     const url = tile.getAttribute("href") || "";
     const isVertical = tile.dataset.vertical === "true";
-    const playerConfig = buildPlayer(url, isVertical);
+    const tileImage = tile.querySelector("img");
+    const alt =
+      tileImage instanceof HTMLImageElement
+        ? tileImage.alt || tile.dataset.title?.trim() || "Image"
+        : tile.dataset.title?.trim() || "Image";
+    const playerConfig = buildPlayer(url, isVertical, alt);
     if (!playerConfig) return;
     const playerEl = playerConfig.element;
     const shouldUseVertical = playerConfig.isVertical === true;
     isAnimating = true;
     lightbox.classList.add("isAnimating");
     lightboxPanel.classList.toggle("isVertical", shouldUseVertical);
+    lightboxPanel.classList.toggle("isImage", playerConfig.kind === "image");
 
     lastActiveElement = document.activeElement;
     activeTile = tile;
@@ -561,7 +630,34 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
     document.body.classList.add("noScroll");
     lightboxBackdrop.style.opacity = "0";
     lightboxPanel.style.opacity = "0";
+    if (playerConfig.kind === "image") {
+      await waitForImageReady(playerEl);
+    }
     await nextAnimationFrame();
+    if (playerConfig.kind === "image") {
+      const panelAnim = lightboxPanel.animate(
+        [{ opacity: 0 }, { opacity: 1 }],
+        { duration: IMAGE_FADE_DURATION_MS, easing: PANEL_ANIM_EASING, fill: "forwards" },
+      );
+      const backdropAnim = lightboxBackdrop.animate(
+        [{ opacity: 0 }, { opacity: 1 }],
+        { duration: IMAGE_FADE_DURATION_MS, easing: PANEL_ANIM_EASING, fill: "forwards" },
+      );
+
+      await Promise.all([
+        panelAnim.finished.catch(() => {}),
+        backdropAnim.finished.catch(() => {}),
+      ]);
+
+      playerEl.classList.remove("lightboxMediaPending");
+      lightbox.classList.remove("isAnimating");
+      lightboxBackdrop.style.opacity = "";
+      lightboxPanel.style.opacity = "";
+      isAnimating = false;
+      lightboxClose.focus();
+      return;
+    }
+
     const revealFallbackId = window.setTimeout(() => {
       if (!lightbox || lightbox.hidden) return;
       playerEl.classList.remove("lightboxMediaPending");
@@ -707,6 +803,10 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
     width: min(420px, calc((100vh - 140px) * 0.5625), 92vw);
   }
 
+  .lightboxPanel.isImage {
+    width: min(1200px, 96vw);
+  }
+
   .lightbox.isAnimating .lightboxClose {
     visibility: hidden;
   }
@@ -821,6 +921,14 @@ const { tileSelector = ".tile[data-lightboxable='true']" } = Astro.props;
 
   :global(.lightboxMedia.isVertical) {
     aspect-ratio: 9 / 16;
+  }
+
+  :global(.lightboxMedia.lightboxImage) {
+    display: block;
+    max-height: min(82vh, 900px);
+    aspect-ratio: auto;
+    object-fit: contain;
+    background: transparent;
   }
 
   :global(.lightboxErrorCard) {
