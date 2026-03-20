@@ -107,7 +107,7 @@ const defaultAriaLabelBase =
       displayCopy && (
         <>
           <hr class="w-1/2" />
-          <div class="copy">{displayCopy}</div>
+          <div class="thumbCopy">{displayCopy}</div>
         </>
       )
     }
@@ -166,7 +166,7 @@ const defaultAriaLabelBase =
   }
 
   .subtitleText {
-    font-weight: 500;
+    font-weight: 600;
   }
 
   .titleText {
@@ -175,14 +175,14 @@ const defaultAriaLabelBase =
 
   .roles,
   .subtitleText,
-  .copy {
+  .thumbCopy {
     transform: translateY(10px);
   }
 
   .titleText,
   .roles,
   .subtitleText,
-  .copy {
+  .thumbCopy {
     opacity: 0;
     transition:
       opacity 200ms ease,
@@ -192,13 +192,13 @@ const defaultAriaLabelBase =
   .tile:hover .titleText,
   .tile:hover .roles,
   .tile:hover .subtitleText,
-  .tile:hover .copy,
+  .tile:hover .thumbCopy,
   .tile:focus-within .roles,
   .tile:focus-within .subtitleText,
-  .tile:focus-within .copy,
+  .tile:focus-within .thumbCopy,
   .tile:focus-visible .roles,
   .tile:focus-visible .subtitleText,
-  .tile:focus-visible .copy {
+  .tile:focus-visible .thumbCopy {
     opacity: 1;
     transform: translateY(0);
   }

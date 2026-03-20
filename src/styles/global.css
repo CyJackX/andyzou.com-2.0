@@ -62,6 +62,12 @@ body {
 	line-height: 1.2;
 }
 
+@media (max-width: 768px) {
+	body{
+		font-size: 1.2rem;
+	}
+}
+
 main {
 	padding: 1em;
 	max-width: 1280px;
@@ -74,7 +80,7 @@ h1 {
 }
 
 h2 {
-	font-size: clamp(2.441em, 5vw, 3.052em);
+	font-size: 2.441em
 }
 
 h3 {
@@ -92,10 +98,6 @@ h5 {
 strong,
 b {
 	font-weight: 700;
-}
-
-a {
-	text-decoration: underline
 }
 
 .prose p {
@@ -167,13 +169,13 @@ blockquote {
       justify-content: left; */
 	align-items: start;
 	gap: 16px;
-	padding: 1em 0;
+	margin: 1em 0;
+	list-style:none;
 }
 
 .bigtitle {
-	font-size: 8cqw;
+	font-size: clamp(2em, 8cqw, 6em);
 	font-weight: bold;
-	line-height: 1;
 }
 
 .tile {
@@ -185,4 +187,24 @@ blockquote {
 	border-radius: 12px;
 	text-decoration: none;
 	color: inherit;
+}
+
+.section-title {
+	border-bottom: 0.5cqw solid white;
+	text-align: left;
+	font-weight: bold;
+	cursor: pointer;
+	user-select: none;
+}
+
+@media (max-width: 768px) {
+	.section-title{
+		border-bottom: 1cqw solid white;
+	}
+}
+
+.copy {
+	font-size: 1.5em;
+	text-align: justify;
+	margin: .5em auto;
 }
