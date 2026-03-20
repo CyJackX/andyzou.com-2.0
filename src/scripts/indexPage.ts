@@ -2,7 +2,7 @@ const detailSections = Array.from(document.querySelectorAll("details"));
 const SUMMARY_SCROLL_TOP_OFFSET_PX = 0;
 const SUMMARY_SCROLL_EASE = 0.2;
 const SUMMARY_SCROLL_SETTLE_PX = 1;
-const SUMMARY_SCROLL_CHASE_MS = 600;
+const SUMMARY_SCROLL_CHASE_MS = 500;
 
 const pendingVideoHydration = new WeakMap<HTMLDetailsElement, number>();
 const activeSummaryChase = new WeakMap<HTMLDetailsElement, number>();
@@ -78,10 +78,7 @@ function chaseSummary(detail: HTMLDetailsElement, summary: HTMLElement) {
       window.scrollBy(0, scrollDelta);
     }
 
-    const remainingDelta =
-      summary.getBoundingClientRect().top - SUMMARY_SCROLL_TOP_OFFSET_PX;
-    const shouldContinue =
-      performance.now() < endAt || Math.abs(remainingDelta) > SUMMARY_SCROLL_SETTLE_PX;
+    const shouldContinue = performance.now() < endAt;
 
     if (!shouldContinue) {
       activeSummaryChase.delete(detail);
