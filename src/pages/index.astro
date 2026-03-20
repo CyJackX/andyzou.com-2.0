@@ -50,68 +50,61 @@ const andyGalleryImages = Object.entries(
         <WorkTileByID id="directing-reel" />
       </div> -->
       <Header />
-      <details name="top-level" open>
-        <summary><h2 class="section-title bigtitle">Director</h2></summary>
-        <div>
-          <details name="director-subsection">
-            <summary
-              ><h2 class="section-title subsection">
-                Scripted Digital Series
-              </h2></summary
-            >
-            <ol class="tilescontainer">
-              <WorkTilesBySeries seriesId="series" />
-            </ol>
-          </details>
+      <div>
+        <details open name="director-subsection">
+          <summary
+            ><h2 class="section-title subsection">
+              Scripted Digital Series
+            </h2></summary
+          >
+          <ol class="tilescontainer">
+            <WorkTilesBySeries seriesId="series" deferMedia={true} />
+          </ol>
+        </details>
 
-          <details name="director-subsection">
-            <summary
-              ><h2 class="section-title subsection">
-                Branded Content
-              </h2></summary
-            >
-            <ol class="tilescontainer two-col">
-              <WorkTilesBySeries seriesId="branded-content" />
-            </ol>
-          </details>
+        <details name="director-subsection">
+          <summary
+            ><h2 class="section-title subsection">Branded Content</h2></summary
+          >
+          <ol class="tilescontainer two-col">
+            <WorkTilesBySeries seriesId="branded-content" deferMedia={true} />
+          </ol>
+        </details>
 
-          <details name="director-subsection">
-            <summary
-              ><h2 class="section-title subsection">
-                Sketches & Shorts
-              </h2></summary
-            >
-            <ol class="tilescontainer">
-              <WorkTilesBySeries seriesId="sketch" />
-              <WorkTilesBySeries seriesId="shorts" />
-            </ol>
-          </details>
-          <details name="director-subsection">
-            <summary
-              ><h2 class="section-title subsection">Music Videos</h2></summary
-            >
-            <ol class="tilescontainer">
-              <WorkTilesBySeries seriesId="music-videos" />
-            </ol>
-          </details>
-          <details name="director-subsection">
-            <summary
-              ><h2 class="section-title subsection">
-                Fan Favorites
-              </h2></summary
-            ><ol class="tilescontainer">
-              <li><WorkTilebyId id="tuber" /></li>
-              <li>
-                <WorkTilebyId id="andys-roadshow" />
-              </li>
-              <li>
-                <WorkTilebyId id="pissterine" target="_blank" />
-              </li>
-            </ol>
-          </details>
-        </div>
-      </details>
-      <!-- <details name="top-level">
+        <details name="director-subsection">
+          <summary
+            ><h2 class="section-title subsection">
+              Sketches & Shorts
+            </h2></summary
+          >
+          <ol class="tilescontainer">
+            <WorkTilesBySeries seriesId="sketch" deferMedia={true} />
+            <WorkTilesBySeries seriesId="shorts" deferMedia={true} />
+          </ol>
+        </details>
+        <details name="director-subsection">
+          <summary
+            ><h2 class="section-title subsection">Music Videos</h2></summary
+          >
+          <ol class="tilescontainer">
+            <WorkTilesBySeries seriesId="music-videos" deferMedia={true} />
+          </ol>
+        </details>
+        <details name="director-subsection">
+          <summary
+            ><h2 class="section-title subsection">Fan Favorites</h2></summary
+          ><ol class="tilescontainer">
+            <li><WorkTilebyId id="tuber" deferMedia={true} /></li>
+            <li>
+              <WorkTilebyId id="andys-roadshow" deferMedia={true} />
+            </li>
+            <li>
+              <WorkTilebyId id="pissterine" target="_blank" deferMedia={true} />
+            </li>
+          </ol>
+        </details>
+      </div>
+      <!-- <details name="director-subsection">
         <summary><h2 class="section-title bigtitle">Creative</h2></summary><ol
           class="tilescontainer"
         >
@@ -121,24 +114,24 @@ const andyGalleryImages = Object.entries(
         </ol>
       </details> -->
 
-      <details name="top-level">
-        <summary><h2 class="section-title bigtitle">Technologist</h2></summary>
+      <details name="director-subsection">
+        <summary><h2 class="section-title subsection">Tech Chops</h2></summary>
         <p class="copy">
           From After Effects compositing to VR, 3D engines, genAI, webdev, and
           more, Andy has a wide range of technical skills that support his work
           as a director and an editor. He blogs occasionally about his projects
           at <a
-            href="https://medium.com/@andyzou"
+            href="https://medium.com/andys-coding-blog"
             target="_blank"
-            class="underline">https://medium.com/@andyzou</a
+            class="underline">https://medium.com/andys-coding-blog</a
           >
         </p>
         <ol class="tilescontainer">
-          <WorkTilesBySeries seriesId="tech" />
+          <WorkTilesBySeries seriesId="tech" deferMedia={true} />
         </ol>
       </details>
       <!-- 
-      <details name="top-level">
+      <details name="director-subsection">
         <summary
           ><h2 class="section-title bigtitle">Unscripted Editor</h2></summary
         >
@@ -147,8 +140,8 @@ const andyGalleryImages = Object.entries(
         </ol>
       </details> -->
 
-      <details name="top-level">
-        <summary><h2 class="section-title bigtitle">Weirdo</h2></summary>
+      <details name="director-subsection">
+        <summary><h2 class="section-title subsection">About</h2></summary>
         <p class="copy">
           With a background in Experimental Theatre & Computer Science, Andy has
           been hands-on as a director throughout his career. From creative
@@ -207,7 +200,12 @@ const andyGalleryImages = Object.entries(
           </li>
           <li>
             <div>
-            <WorkTilebyId id="tootsies" target="_blank" className="max-w-[560px] w-full mx-auto"/>
+              <WorkTilebyId
+                id="tootsies"
+                target="_blank"
+                className="max-w-[560px] w-full mx-auto"
+                deferMedia={true}
+              />
             </div>
             <p class="px-8 m-8">
               He's also a co-producer on annual short film festival <a

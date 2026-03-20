@@ -7,9 +7,10 @@ interface Props {
   className?: string;
   lightboxable?: boolean;
   target?: HTMLAnchorElement["target"];
+  deferMedia?: boolean;
 }
 
-const { seriesId, className, lightboxable, target } = Astro.props;
+const { seriesId, className, lightboxable, target, deferMedia } = Astro.props;
 
 if (!hasSeries(seriesId)) {
   throw new Error(`WorkTilesBySeries: unknown series id "${seriesId}".`);
@@ -34,6 +35,7 @@ const tiles = getSeriesTiles(seriesId);
         lightboxable={lightboxable}
         className={className}
         target={target}
+        deferMedia={deferMedia}
       />
     </li>
   ))

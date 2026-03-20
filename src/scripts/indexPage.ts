@@ -7,8 +7,20 @@ const SUMMARY_SCROLL_CHASE_MS = 500;
 const pendingVideoHydration = new WeakMap<HTMLDetailsElement, number>();
 const activeSummaryChase = new WeakMap<HTMLDetailsElement, number>();
 
-function hydrateDetailVideos(detail: HTMLDetailsElement) {
+function hydrateDetailMedia(detail: HTMLDetailsElement) {
+  const images = detail.querySelectorAll("img[data-src]");
   const videos = detail.querySelectorAll("video[data-src]");
+
+  images.forEach((image) => {
+    if (!(image instanceof HTMLImageElement)) return;
+
+    if (!image.currentSrc) {
+      const src = image.dataset.src;
+      if (!src) return;
+
+      image.src = src;
+    }
+  });
 
   videos.forEach((video) => {
     if (!(video instanceof HTMLVideoElement)) return;
@@ -38,7 +50,7 @@ function scheduleDetailVideoHydration(detail: HTMLDetailsElement) {
     pendingVideoHydration.delete(detail);
 
     if (!detail.open) return;
-    hydrateDetailVideos(detail);
+    hydrateDetailMedia(detail);
   });
 
   pendingVideoHydration.set(detail, frameId);

@@ -15,6 +15,7 @@ interface Props {
   ariaLabel?: string;
   className?: string;
   target?: HTMLAnchorElement["target"];
+  deferMedia?: boolean;
 }
 
 const {
@@ -31,6 +32,7 @@ const {
   ariaLabel,
   className = "",
   target,
+  deferMedia = false,
 } = Astro.props;
 
 const isExternal = /^https?:\/\//i.test(href);
@@ -63,7 +65,13 @@ const defaultAriaLabelBase =
 >
   {
     media.kind === "image" && (
-      <img class="media" src={media.src} alt={media.alt} loading="lazy" />
+      <img
+        class="media"
+        src={deferMedia ? undefined : media.src}
+        data-src={deferMedia ? media.src : undefined}
+        alt={media.alt}
+        loading="lazy"
+      />
     )
   }
   {
