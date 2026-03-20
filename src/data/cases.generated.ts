@@ -156,7 +156,8 @@ export const CASES: Case[] = [
     "id": "death-becomes-her-series",
     "media": {
       "kind": "video",
-      "src": "/videos/dbh.mp4"
+      "src": "/videos/dbh.mp4",
+      "poster": "/thumbposters/dbh.jpg"
     },
     "title": "Death Becomes Her",
     "subtitle": "RPM",
@@ -838,7 +839,8 @@ export const CASES: Case[] = [
     "id": "apocalypse-problems-series",
     "media": {
       "kind": "video",
-      "src": "/videos/apocalypse.mp4"
+      "src": "/videos/apocalypse.mp4",
+      "poster": "/thumbposters/klRZB8Q87oY-hqdefault.jpg"
     },
     "title": "Apocalypse Problems",
     "subtitle": "SpoiledNYC ft. Gianmarco Soresi & Megan Sass",
@@ -851,12 +853,9 @@ export const CASES: Case[] = [
   {
     "id": "asian-afterlife-series",
     "media": {
-      "kind": "strip",
-      "sources": [
-        "/videos/rizzle3.mp4",
-        "/videos/rizzle1.mp4",
-        "videos/rizzle2.mp4"
-      ]
+      "kind": "video",
+      "src": "/videos/rizzle.mp4",
+      "poster": "/thumbposters/rizzle.jpg"
     },
     "title": "Andy's Asian Afterlife",
     "subtitle": "Rizzle's Asian Comedy Fest",
@@ -870,10 +869,11 @@ export const CASES: Case[] = [
     "id": "comedy-central-series",
     "media": {
       "kind": "video",
-      "src": "/videos/comedycentral.mp4"
+      "src": "/videos/comedycentral.mp4",
+      "poster": "/thumbposters/comedycentraloriginals.jpg"
     },
     "title": "Comedy Central Originals",
-    "roles": "Director | Writer | Editor",
+    "roles": "Director | Producer | Writer | Editor",
     "copy": "At Comedy Central's Webby-winning Digital team, Andy directed, wrote, & produced Mini-Mocks, music videos, and content collabs with notable influencers.",
     "href": "series/comedy-central-originals",
     "seriesId": "series",
@@ -883,7 +883,8 @@ export const CASES: Case[] = [
     "id": "honest-waitress-series",
     "media": {
       "kind": "video",
-      "src": "/videos/waitress.mp4"
+      "src": "/videos/waitress.mp4",
+      "poster": "/thumbposters/0SX0n9FG_GY-hqdefault.jpg"
     },
     "title": "The Honest Waitress",
     "subtitle": "PitTV",
@@ -897,7 +898,8 @@ export const CASES: Case[] = [
     "id": "making-it-series",
     "media": {
       "kind": "video",
-      "src": "/videos/makingit.mp4"
+      "src": "/videos/makingit.mp4",
+      "poster": "/thumbposters/makingit.jpg"
     },
     "title": "Making It",
     "subtitle": "Snap Originals ft. Dave Mizzoni",
@@ -1304,22 +1306,24 @@ export const CASES: Case[] = [
   {
     "id": "Jackson-pollack",
     "media": {
-      "kind": "image",
-      "src": "/thumbposters/f53aKCMl7FQ-hqdefault.jpg",
-      "alt": "Jackson Pollack thumbnail"
+      "kind": "video",
+      "src": "/videos/jacksonpollock.mp4",
+      "poster": "/thumbposters/f53aKCMl7FQ-hqdefault.jpg"
     },
     "title": "Jackson Pollack",
     "subtitle": "ft. Douglas Widick",
     "roles": "Director | Editor",
     "youtubeId": "f53aKCMl7FQ",
-    "href": "https://www.youtube.com/watch?v=f53aKCMl7FQ"
+    "href": "https://www.youtube.com/watch?v=f53aKCMl7FQ",
+    "seriesId": "music-videos",
+    "videoOrder": 6
   },
   {
     "id": "Long-distance",
     "media": {
       "kind": "image",
       "src": "https://placehold.co/640x360",
-      "alt": "Long Distance Relationships thumbnail"
+      "alt": "Long Distance Relationships placeholder"
     },
     "title": "Long Distance Relationships",
     "subtitle": "SpoiledNYC ft. Gianmarco Soresi & Megan Sass",
@@ -1329,7 +1333,8 @@ export const CASES: Case[] = [
     "id": "pissterine",
     "media": {
       "kind": "video",
-      "src": "/videos/pissterine.mp4"
+      "src": "/videos/pissterine.mp4",
+      "poster": "/thumbposters/pissterine.jpg"
     },
     "title": "Pissterine",
     "copy": "Andy once kickstarted a Listerine knockoff that got shutdown in trademark court.",
@@ -1353,22 +1358,24 @@ export const CASES: Case[] = [
   {
     "id": "sugar",
     "media": {
-      "kind": "image",
-      "src": "/thumbposters/-53w2mv_upw-hqdefault.jpg",
-      "alt": "Sugar thumbnail"
+      "kind": "video",
+      "src": "/videos/sugar.mp4",
+      "poster": "/thumbposters/-53w2mv_upw-hqdefault.jpg"
     },
     "title": "Sugar",
     "subtitle": "Sister Sparrow",
     "roles": "DP | Editor",
     "youtubeId": "-53w2mv_upw",
-    "href": "https://www.youtube.com/watch?v=-53w2mv_upw"
+    "href": "https://www.youtube.com/watch?v=-53w2mv_upw",
+    "seriesId": "music-videos",
+    "videoOrder": 5
   },
   {
     "id": "three4",
     "media": {
       "kind": "image",
       "src": "https://placehold.co/640x360",
-      "alt": "three4 thumbnail"
+      "alt": "three4 placeholder"
     },
     "title": "three4",
     "subtitle": "ft. Yael Elisheva",
@@ -1378,7 +1385,8 @@ export const CASES: Case[] = [
     "id": "tootsies",
     "media": {
       "kind": "video",
-      "src": "/videos/tootsies.mp4"
+      "src": "/videos/tootsies.mp4",
+      "poster": "/thumbposters/tootsies.jpg"
     },
     "title": "Tootsie's Video Vault",
     "href": "https://tootsiesvideovault.com"
@@ -1388,7 +1396,7 @@ export const CASES: Case[] = [
     "media": {
       "kind": "image",
       "src": "https://placehold.co/640x360",
-      "alt": "Uber thumbnail"
+      "alt": "Uber placeholder"
     },
     "title": "Uber",
     "subtitle": "SpoiledNYC ft. Gianmarco Soresi & Megan Sass",
@@ -1432,5 +1440,35 @@ export const CASES: Case[] = [
     "youtubeId": "dcWy5-q_4I8",
     "href": "https://www.youtube.com/watch?v=dcWy5-q_4I8",
     "seriesId": "sketch"
+  },
+  {
+    "id": "big-downer",
+    "media": {
+      "kind": "video",
+      "src": "videos/bigdowner.mp4",
+      "poster": "/thumbposters/PTo-3d7cco4-hqdefault.jpg"
+    },
+    "title": "The Big Downer",
+    "subtitle": "Spec PSA for Long Covid",
+    "roles": "Director | Editor",
+    "youtubeId": "PTo-3d7cco4",
+    "href": "https://www.youtube.com/watch?v=PTo-3d7cco4",
+    "seriesId": "branded-content",
+    "videoOrder": 4
+  },
+  {
+    "id": "hooking-up-with-girls",
+    "media": {
+      "kind": "video",
+      "src": "videos/hookingupwithgirls.mp4",
+      "poster": "/thumbposters/t3rLCM9LFfE-hqdefault.jpg"
+    },
+    "title": "Hooking Up With Girls",
+    "subtitle": "ft. Lane Moore",
+    "roles": "DP | Editor",
+    "youtubeId": "t3rLCM9LFfE",
+    "href": "https://www.youtube.com/watch?v=t3rLCM9LFfE",
+    "seriesId": "music-videos",
+    "videoOrder": 4
   }
 ];

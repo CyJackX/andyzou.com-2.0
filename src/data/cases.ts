@@ -1,7 +1,6 @@
 export type Media =
   | { kind: "image"; src: string; alt: string }
-  | { kind: "video"; src: string; poster?: string }
-  | { kind: "strip"; sources: string[] };
+  | { kind: "video"; src: string; poster?: string };
 
 export type Case = {
   id: string;
