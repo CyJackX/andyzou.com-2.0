@@ -80,23 +80,6 @@ const defaultAriaLabelBase =
       />
     )
   }
-  {
-    media.kind === "strip" && (
-      <div class="strip">
-        {media.sources.map((source) => (
-          <video
-            class="stripItem"
-            data-src={source}
-            autoplay
-            loop
-            muted
-            playsinline
-            preload="none"
-          />
-        ))}
-      </div>
-    )
-  }
 
   <div class="overlay">
     {displayTitle && <div class="titleText">{displayTitle}</div>}
@@ -121,18 +104,6 @@ const defaultAriaLabelBase =
     height: 100%;
     object-fit: cover;
     display: block;
-  }
-
-  .strip {
-    display: flex;
-    width: 100%;
-    height: 100%;
-  }
-
-  .stripItem {
-    width: 33.333%;
-    height: 100%;
-    object-fit: cover;
   }
 
   .overlay {

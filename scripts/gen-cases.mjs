@@ -93,11 +93,10 @@ const requiredHeaders = [
   "copy",
   "youtubeId",
   "href",
-  "mediaKind",
-  "mediaSrc",
-  "mediaAlt",
-  "mediaPoster",
-  "stripSources",
+  "videoSrc",
+  "imageSrc",
+  "imageAlt",
+  "videoPoster",
 ];
 
 function fail(message) {
@@ -177,11 +176,10 @@ for (let i = 1; i < lines.length; i += 1) {
   const copy = get("copy");
   const youtubeId = get("youtubeId");
   const hrefRaw = get("href");
-  const mediaKind = get("mediaKind");
-  const mediaSrcRaw = get("mediaSrc");
-  const mediaAltRaw = get("mediaAlt");
-  const mediaPoster = get("mediaPoster");
-  const stripSourcesRaw = get("stripSources");
+  const videoSrcRaw = get("videoSrc");
+  const imageSrcRaw = get("imageSrc");
+  const imageAltRaw = get("imageAlt");
+  const videoPoster = get("videoPoster");
   const seriesId = getAny(aliases.seriesId);
   const sourceHref = getAny(aliases.sourceHref);
   const videoOrder = parseOptionalNumber(
@@ -198,7 +196,6 @@ for (let i = 1; i < lines.length; i += 1) {
   ensure(!seenIds.has(id), `line ${lineNumber}: duplicate id "${id}".`);
   seenIds.add(id);
 
-  ensure(mediaKind, `line ${lineNumber}: mediaKind is required.`);
   if (youtubeId) {
     ensure(
       /^[A-Za-z0-9_-]{11}$/.test(youtubeId),
@@ -216,36 +213,32 @@ for (let i = 1; i < lines.length; i += 1) {
   const href = hrefRaw || (youtubeId ? `https://www.youtube.com/watch?v=${youtubeId}` : "");
 
   let media;
-  if (mediaKind === "image") {
-    const defaultSrc = youtubeId ? getYoutubeThumbnailUrl(youtubeId) : defaultImagePlaceholder;
-    const src = await resolveThumbnailAsset(
-      mediaSrcRaw || defaultSrc,
-      youtubeId || id,
-      `image thumbnail for ${id}`,
-    );
-    const altBase = title || subtitle || id;
-    const alt = mediaAltRaw || `${altBase} thumbnail`;
-    media = { kind: "image", src, alt };
-  } else if (mediaKind === "video") {
-    ensure(mediaSrcRaw, `line ${lineNumber}: mediaSrc is required for video.`);
-    media = { kind: "video", src: mediaSrcRaw };
+  if (videoSrcRaw) {
+    media = { kind: "video", src: videoSrcRaw };
     const poster = await resolveThumbnailAsset(
-      mediaPoster || (youtubeId ? getYoutubeThumbnailUrl(youtubeId) : ""),
+      videoPoster || (youtubeId ? getYoutubeThumbnailUrl(youtubeId) : ""),
       youtubeId || id,
       `video poster for ${id}`,
     );
     if (poster) {
       media.poster = poster;
     }
-  } else if (mediaKind === "strip") {
-    const sources = stripSourcesRaw
-      .split("|")
-      .map((source) => source.trim())
-      .filter(Boolean);
-    ensure(sources.length > 0, `line ${lineNumber}: stripSources is required for strip media.`);
-    media = { kind: "strip", sources };
+  } else if (imageSrcRaw || youtubeId) {
+    const src = await resolveThumbnailAsset(
+      imageSrcRaw || getYoutubeThumbnailUrl(youtubeId),
+      youtubeId || id,
+      `image thumbnail for ${id}`,
+    );
+    const altBase = title || subtitle || id;
+    const alt = imageAltRaw || `${altBase} thumbnail`;
+    media = { kind: "image", src, alt };
   } else {
-    fail(`line ${lineNumber}: unsupported mediaKind "${mediaKind}".`);
+    const altBase = title || subtitle || id;
+    media = {
+      kind: "image",
+      src: defaultImagePlaceholder,
+      alt: imageAltRaw || `${altBase} placeholder`,
+    };
   }
 
   const entry = { id, media };

@@ -56,22 +56,22 @@ const andyGalleryImages = Object.entries(
           <details name="director-subsection">
             <summary
               ><h2 class="section-title subsection">
-                Branded Content
+                Scripted Digital Series
               </h2></summary
             >
             <ol class="tilescontainer">
-              <WorkTilesBySeries seriesId="branded-content" />
+              <WorkTilesBySeries seriesId="series" />
             </ol>
           </details>
 
           <details name="director-subsection">
             <summary
               ><h2 class="section-title subsection">
-                Scripted Digital Series
+                Branded Content
               </h2></summary
             >
-            <ol class="tilescontainer">
-              <WorkTilesBySeries seriesId="series" />
+            <ol class="tilescontainer two-col">
+              <WorkTilesBySeries seriesId="branded-content" />
             </ol>
           </details>
 
@@ -97,7 +97,7 @@ const andyGalleryImages = Object.entries(
           <details name="director-subsection">
             <summary
               ><h2 class="section-title subsection">
-                Andy's Favorites
+                Fan Favorites
               </h2></summary
             ><ol class="tilescontainer">
               <li><WorkTilebyId id="tuber" /></li>
@@ -126,7 +126,12 @@ const andyGalleryImages = Object.entries(
         <p class="copy">
           From After Effects compositing to VR, 3D engines, genAI, webdev, and
           more, Andy has a wide range of technical skills that support his work
-          as a director and an editor. He blogs occasionally about his projects at <a href="https://medium.com/@andyzou" target="_blank" class="underline">https://medium.com/@andyzou</a>
+          as a director and an editor. He blogs occasionally about his projects
+          at <a
+            href="https://medium.com/@andyzou"
+            target="_blank"
+            class="underline">https://medium.com/@andyzou</a
+          >
         </p>
         <ol class="tilescontainer">
           <WorkTilesBySeries seriesId="tech" />
@@ -192,6 +197,7 @@ const andyGalleryImages = Object.entries(
                 alt="Bug Family"
                 height="640"
                 loading="lazy"
+                class="aspect-video object-cover"
               />
             </a>
             <p class="px-8 m-8">
@@ -200,7 +206,9 @@ const andyGalleryImages = Object.entries(
             </p>
           </li>
           <li>
-            <WorkTilebyId id="tootsies" target="_blank" />
+            <div>
+            <WorkTilebyId id="tootsies" target="_blank" className="max-w-[560px] w-full mx-auto"/>
+            </div>
             <p class="px-8 m-8">
               He's also a co-producer on annual short film festival <a
                 class="text-nowrap"
@@ -215,69 +223,9 @@ const andyGalleryImages = Object.entries(
       </details>
     </main>
     <script>
-      const detailSections = Array.from(document.querySelectorAll("details"));
-      const DETAILS_SCROLL_DELAY_MS = 500;
+      import { initIndexPage } from "../scripts/indexPage";
 
-      function hydrateDetailVideos(detail) {
-        const videos = detail.querySelectorAll("video[data-src]");
-
-        videos.forEach((video) => {
-          if (!(video instanceof HTMLVideoElement)) return;
-
-          const hiddenByClosedAncestor = video.closest("details:not([open])");
-          if (hiddenByClosedAncestor) return;
-
-          if (!video.currentSrc) {
-            const src = video.dataset.src;
-            if (!src) return;
-
-            video.src = src;
-            video.load();
-          }
-
-          void video.play().catch(() => {});
-        });
-      }
-
-      function pauseDetailVideos(detail) {
-        const videos = detail.querySelectorAll("video");
-
-        videos.forEach((video) => {
-          if (!(video instanceof HTMLVideoElement)) return;
-          video.pause();
-        });
-      }
-
-      detailSections.forEach((detail) => {
-        if (detail.open) {
-          hydrateDetailVideos(detail);
-        }
-      });
-
-      detailSections.forEach((detail) => {
-        detail.addEventListener("toggle", () => {
-          if (!(detail instanceof HTMLDetailsElement)) return;
-
-          if (!detail.open) {
-            pauseDetailVideos(detail);
-            return;
-          }
-
-          hydrateDetailVideos(detail);
-
-          const summary = detail.querySelector(":scope > summary");
-          if (!(summary instanceof HTMLElement)) return;
-
-          window.setTimeout(() => {
-            if (!detail.open) return;
-
-            summary.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }, DETAILS_SCROLL_DELAY_MS);
-        });
-      });
+      initIndexPage();
     </script>
   </body><Footer />
 
@@ -339,6 +287,11 @@ const andyGalleryImages = Object.entries(
       display: block;
       border-radius: 12px;
       overflow: hidden;
+    }
+    @media (min-width: 768px) {
+      .tilescontainer.two-col {
+        grid-template-columns: repeat(2, minmax(320px, 1fr));
+      }
     }
   </style>
 </html>
