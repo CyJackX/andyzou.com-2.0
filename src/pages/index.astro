@@ -111,7 +111,7 @@ const andyGalleryImages = Object.entries(
           </details>
         </div>
       </details>
-      <details name="top-level">
+      <!-- <details name="top-level">
         <summary><h2 class="section-title bigtitle">Creative</h2></summary><ol
           class="tilescontainer"
         >
@@ -119,7 +119,7 @@ const andyGalleryImages = Object.entries(
           <li>Escadating</li>
           <li>Immersive?</li>
         </ol>
-      </details>
+      </details> -->
 
       <details name="top-level">
         <summary><h2 class="section-title bigtitle">Technologist</h2></summary>
@@ -218,9 +218,52 @@ const andyGalleryImages = Object.entries(
       const detailSections = Array.from(document.querySelectorAll("details"));
       const DETAILS_SCROLL_DELAY_MS = 500;
 
+      function hydrateDetailVideos(detail) {
+        const videos = detail.querySelectorAll("video[data-src]");
+
+        videos.forEach((video) => {
+          if (!(video instanceof HTMLVideoElement)) return;
+
+          const hiddenByClosedAncestor = video.closest("details:not([open])");
+          if (hiddenByClosedAncestor) return;
+
+          if (!video.currentSrc) {
+            const src = video.dataset.src;
+            if (!src) return;
+
+            video.src = src;
+            video.load();
+          }
+
+          void video.play().catch(() => {});
+        });
+      }
+
+      function pauseDetailVideos(detail) {
+        const videos = detail.querySelectorAll("video");
+
+        videos.forEach((video) => {
+          if (!(video instanceof HTMLVideoElement)) return;
+          video.pause();
+        });
+      }
+
+      detailSections.forEach((detail) => {
+        if (detail.open) {
+          hydrateDetailVideos(detail);
+        }
+      });
+
       detailSections.forEach((detail) => {
         detail.addEventListener("toggle", () => {
-          if (!(detail instanceof HTMLDetailsElement) || !detail.open) return;
+          if (!(detail instanceof HTMLDetailsElement)) return;
+
+          if (!detail.open) {
+            pauseDetailVideos(detail);
+            return;
+          }
+
+          hydrateDetailVideos(detail);
 
           const summary = detail.querySelector(":scope > summary");
           if (!(summary instanceof HTMLElement)) return;

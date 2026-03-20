@@ -70,7 +70,7 @@ const defaultAriaLabelBase =
     media.kind === "video" && (
       <video
         class="media"
-        src={media.src}
+        data-src={media.src}
         autoplay
         loop
         muted
@@ -86,7 +86,7 @@ const defaultAriaLabelBase =
         {media.sources.map((source) => (
           <video
             class="stripItem"
-            src={source}
+            data-src={source}
             autoplay
             loop
             muted
