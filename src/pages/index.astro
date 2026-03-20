@@ -50,10 +50,10 @@ const andyGalleryImages = Object.entries(
         <WorkTileByID id="directing-reel" />
       </div> -->
       <Header />
-      <details open>
+      <details name="top-level" open>
         <summary><h2 class="section-title bigtitle">Director</h2></summary>
         <div>
-          <details name="director-subsection" open>
+          <details name="director-subsection">
             <summary
               ><h2 class="section-title subsection">
                 Branded Content
@@ -64,7 +64,7 @@ const andyGalleryImages = Object.entries(
             </ol>
           </details>
 
-          <details name="director-subsection" open>
+          <details name="director-subsection">
             <summary
               ><h2 class="section-title subsection">
                 Scripted Digital Series
@@ -75,7 +75,7 @@ const andyGalleryImages = Object.entries(
             </ol>
           </details>
 
-          <details name="director-subsection" open>
+          <details name="director-subsection">
             <summary
               ><h2 class="section-title subsection">
                 Sketches & Shorts
@@ -86,7 +86,7 @@ const andyGalleryImages = Object.entries(
               <WorkTilesBySeries seriesId="shorts" />
             </ol>
           </details>
-          <details name="director-subsection" open>
+          <details name="director-subsection">
             <summary
               ><h2 class="section-title subsection">Music Videos</h2></summary
             >
@@ -94,7 +94,7 @@ const andyGalleryImages = Object.entries(
               <WorkTilesBySeries seriesId="music-videos" />
             </ol>
           </details>
-          <details name="director-subsection" open>
+          <details name="director-subsection">
             <summary
               ><h2 class="section-title subsection">
                 Andy's Favorites
@@ -111,7 +111,7 @@ const andyGalleryImages = Object.entries(
           </details>
         </div>
       </details>
-      <details>
+      <details name="top-level">
         <summary><h2 class="section-title bigtitle">Creative</h2></summary><ol
           class="tilescontainer"
         >
@@ -121,19 +121,19 @@ const andyGalleryImages = Object.entries(
         </ol>
       </details>
 
-      <details>
+      <details name="top-level">
         <summary><h2 class="section-title bigtitle">Technologist</h2></summary>
         <p class="copy">
           From After Effects compositing to VR, 3D engines, genAI, webdev, and
           more, Andy has a wide range of technical skills that support his work
-          as a director and an editor.
+          as a director and an editor. He blogs occasionally about his projects at <a href="https://medium.com/@andyzou" target="_blank" class="underline">https://medium.com/@andyzou</a>
         </p>
         <ol class="tilescontainer">
           <WorkTilesBySeries seriesId="tech" />
         </ol>
       </details>
       <!-- 
-      <details>
+      <details name="top-level">
         <summary
           ><h2 class="section-title bigtitle">Unscripted Editor</h2></summary
         >
@@ -142,14 +142,14 @@ const andyGalleryImages = Object.entries(
         </ol>
       </details> -->
 
-      <details>
+      <details name="top-level">
         <summary><h2 class="section-title bigtitle">Weirdo</h2></summary>
         <p class="copy">
           With a background in Experimental Theatre & Computer Science, Andy has
           been hands-on as a director throughout his career. From creative
           writing to line producing, cinematography to editing, Andy's holistic
           experience in content creation gives him the skills to smoothly take
-          projects from script to screen. As a director, Andy centers the
+          projects from script to screen. As a director, Andy focuses on the
           audience experience to find the relatability in everything he makes,
           utilizing pop culture and modern trends.
         </p>
@@ -157,7 +157,7 @@ const andyGalleryImages = Object.entries(
           Time spent as a scrappy one-man band enables him to scale to managing
           larger productions, etc, in ways that people typically can't manage
         </p>
-        <ol class="flex flex-wrap gap-8 items-center justify-center my-8">
+        <ol class="flex flex-wrap gap-8 items-start justify-center my-8">
           {
             andyGalleryImages.map((image) => (
               <li>
@@ -214,6 +214,28 @@ const andyGalleryImages = Object.entries(
         </ol>
       </details>
     </main>
+    <script>
+      const detailSections = Array.from(document.querySelectorAll("details"));
+      const DETAILS_SCROLL_DELAY_MS = 500;
+
+      detailSections.forEach((detail) => {
+        detail.addEventListener("toggle", () => {
+          if (!(detail instanceof HTMLDetailsElement) || !detail.open) return;
+
+          const summary = detail.querySelector(":scope > summary");
+          if (!(summary instanceof HTMLElement)) return;
+
+          window.setTimeout(() => {
+            if (!detail.open) return;
+
+            summary.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }, DETAILS_SCROLL_DELAY_MS);
+        });
+      });
+    </script>
   </body><Footer />
 
   <style>
