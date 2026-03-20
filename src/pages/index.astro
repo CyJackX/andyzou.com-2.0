@@ -1,5 +1,6 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import VideoLightbox from "../components/VideoLightbox.astro";
 import WorkTilebyId from "../components/WorkTileByID.astro";
@@ -10,7 +11,11 @@ import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 
 function formatGalleryAlt(filePath: string) {
-  const filename = filePath.split("/").pop()?.replace(/\.[^.]+$/, "") ?? "Andy photo";
+  const filename =
+    filePath
+      .split("/")
+      .pop()
+      ?.replace(/\.[^.]+$/, "") ?? "Andy photo";
 
   return filename.replace(/[-_]+/g, " ").replace(/\s+/g, " ").trim();
 }
@@ -26,7 +31,10 @@ const andyGalleryImages = Object.entries(
     src: module.default,
   }))
   .sort((a, b) =>
-    a.alt.localeCompare(b.alt, undefined, { numeric: true, sensitivity: "base" }),
+    a.alt.localeCompare(b.alt, undefined, {
+      numeric: true,
+      sensitivity: "base",
+    }),
   );
 ---
 
@@ -37,29 +45,117 @@ const andyGalleryImages = Object.entries(
   </head>
   <body>
     <main class="text-center">
-      <VideoLightbox
-        tileSelector="[data-lightboxable='true']"
-      />
+      <VideoLightbox tileSelector="[data-lightboxable='true']" />
       <!-- <ol class="tilescontainer">
         <WorkTileByID id="directing-reel" />
       </div> -->
+      <Header />
       <details open>
-        <summary class="header section-title">
-          <h1 class="bigtitle">Andy Zou</h1>
-          <video
-            src="videos/Comp 1.mp4"
-            muted
-            loop
-            autoplay
-            playsinline
-            class="h-full header-video"></video>
-          <p class="subtitle">
-            <span>Director & Creative</span>
-            <span>Andy@AndyZou.com</span>
-          </p>
-        </summary>
-        <p class="text-3xl md:text-5xl text-left my-8">
-          Andy Zou has been hands-on as a director throughout his career.  As a creative producer, cinematographer, and editor, Andy has a holistic perspective of content creation that translates to smooth productions from script to screen.  From pop culture to classic tropes, Andy strives to center the audience experience and find the kernel of relatability in everything he makes.
+        <summary><h2 class="section-title bigtitle">Director</h2></summary>
+        <div>
+          <details name="director-subsection" open>
+            <summary
+              ><h2 class="section-title subsection">
+                Branded Content
+              </h2></summary
+            >
+            <ol class="tilescontainer">
+              <WorkTilesBySeries seriesId="branded-content" />
+            </ol>
+          </details>
+
+          <details name="director-subsection" open>
+            <summary
+              ><h2 class="section-title subsection">
+                Scripted Digital Series
+              </h2></summary
+            >
+            <ol class="tilescontainer">
+              <WorkTilesBySeries seriesId="series" />
+            </ol>
+          </details>
+
+          <details name="director-subsection" open>
+            <summary
+              ><h2 class="section-title subsection">
+                Sketches & Shorts
+              </h2></summary
+            >
+            <ol class="tilescontainer">
+              <WorkTilesBySeries seriesId="sketch" />
+              <WorkTilesBySeries seriesId="shorts" />
+            </ol>
+          </details>
+          <details name="director-subsection" open>
+            <summary
+              ><h2 class="section-title subsection">Music Videos</h2></summary
+            >
+            <ol class="tilescontainer">
+              <WorkTilesBySeries seriesId="music-videos" />
+            </ol>
+          </details>
+          <details name="director-subsection" open>
+            <summary
+              ><h2 class="section-title subsection">
+                Andy's Favorites
+              </h2></summary
+            ><ol class="tilescontainer">
+              <li><WorkTilebyId id="tuber" /></li>
+              <li>
+                <WorkTilebyId id="andys-roadshow" />
+              </li>
+              <li>
+                <WorkTilebyId id="pissterine" target="_blank" />
+              </li>
+            </ol>
+          </details>
+        </div>
+      </details>
+      <details>
+        <summary><h2 class="section-title bigtitle">Creative</h2></summary><ol
+          class="tilescontainer"
+        >
+          <li>Polygon</li>
+          <li>Escadating</li>
+          <li>Immersive?</li>
+        </ol>
+      </details>
+
+      <details>
+        <summary><h2 class="section-title bigtitle">Technologist</h2></summary>
+        <p class="copy">
+          From After Effects compositing to VR, 3D engines, genAI, webdev, and
+          more, Andy has a wide range of technical skills that support his work
+          as a director and an editor.
+        </p>
+        <ol class="tilescontainer">
+          <WorkTilesBySeries seriesId="tech" />
+        </ol>
+      </details>
+      <!-- 
+      <details>
+        <summary
+          ><h2 class="section-title bigtitle">Unscripted Editor</h2></summary
+        >
+        <ol class="tilescontainer">
+          <WorkTilesBySeries seriesId="editing"  />
+        </ol>
+      </details> -->
+
+      <details>
+        <summary><h2 class="section-title bigtitle">Weirdo</h2></summary>
+        <p class="copy">
+          With a background in Experimental Theatre & Computer Science, Andy has
+          been hands-on as a director throughout his career. From creative
+          writing to line producing, cinematography to editing, Andy's holistic
+          experience in content creation gives him the skills to smoothly take
+          projects from script to screen. As a director, Andy centers the
+          audience experience to find the relatability in everything he makes,
+          utilizing pop culture and modern trends.
+        </p>
+        <p>
+          Time spent as a scrappy one-man band enables him to scale to managing
+          larger productions, etc, in ways that people typically can't manage
         </p>
         <ol class="flex flex-wrap gap-8 items-center justify-center my-8">
           {
@@ -77,124 +173,35 @@ const andyGalleryImages = Object.entries(
                     alt={image.alt}
                     height="640"
                     loading="lazy"
-                    class="h-60 w-auto md:h-100 gallery-photo"
+                    class="h-60 w-auto md:h-85 block"
                   />
                 </a>
               </li>
             ))
           }
-        </ol>
-      </details>
-      <details>
-        <summary><h2 class="section-title bigtitle">Director</h2></summary>
-
-        <h2 class="section-title subsection">Scripted Digital Series</h2>
-        <ol class="tilescontainer">
-          <WorkTilesBySeries seriesId="series" className="tile-series" />
-        </ol>
-
-        <h2 class="section-title subsection">Branded Content</h2>
-        <ol class="tilescontainer">
-          <WorkTilesBySeries
-            seriesId="branded-content"
-            className="tile-series"
-          />
-        </ol><h2 class="section-title subsection">Sketches & Shorts</h2>
-        <ol class="tilescontainer">
-          <WorkTilesBySeries seriesId="sketch" className="tile-series" />
-          <WorkTilesBySeries seriesId="shorts" className="tile-series" />
-        </ol>
-        <h2 class="section-title subsection">Music Videos</h2>
-        <ol class="tilescontainer">
-          <WorkTilesBySeries seriesId="music-videos" className="tile-series" />
-        </ol>
-        <h2 class="section-title subsection">Andy's Favorites</h2><ol
-          class="tilescontainer"
-        >
-          <li><WorkTilebyId id="tuber" className="tile-series" /></li>
-          <li>
-            <WorkTilebyId id="andys-roadshow" className="tile-series" />
-          </li>
-          <li>
-            <WorkTilebyId
-              id="pissterine"
-              className="tile-series"
-              target="_blank"
-            />
-          </li>
-        </ol>
-      </details>
-      <details>
-        <summary><h2 class="section-title bigtitle">Creative</h2></summary><ol
-          class="tilescontainer"
-        >
-          <li>Polygon</li>
-          <li>Escadating</li>
-          <li>Immersive?</li>
-        </ol>
-      </details>
-
-      <details>
-        <summary><h2 class="section-title bigtitle">Technologist</h2></summary>
-        <ol class="tilescontainer">
-          <li>
-            <p class="text-4xl text-left p-4">
-              From After Effects compositing to experience with VR streaming, 3D
-              engines, genAI, and more, Andy has a wide range of technical
-              skills that he applies to his work as a director and an editor.
-            </p>
-          </li>
-          <WorkTilesBySeries seriesId="tech" className="tile-series" />
-          <li>
-            <video
-              src="/videos/tootsiespromo.mp4"
-              muted
-              loop
-              autoplay
-              playsinline
-              class="tile"></video>
-          </li>
-          <!-- <Image src={mirum} height="360" alt="Mirum VR BTS" class="tile" /> -->
-          <li>
-            <video
-              src="/videos/Head to Head_640.mp4"
-              muted
-              loop
-              autoplay
-              playsinline
-              class="tile"></video>
-          </li>
-        </ol>
-      </details>
-<!-- 
-      <details>
-        <summary
-          ><h2 class="section-title bigtitle">Unscripted Editor</h2></summary
-        >
-        <ol class="tilescontainer">
-          <WorkTilesBySeries seriesId="editing" className="tile-series" />
-        </ol>
-      </details> -->
-
-      <details>
-        <summary><h2 class="section-title bigtitle">Weirdo</h2></summary>
-        <ol class="tilescontainer">
-          <li>
-            <Image
-              src={azaleaShoot}
-              width="1280"
-              height="720"
-              alt="Making It"
-              class="aspect-video object-cover w-full object-top rounded-lg"
-              loading="lazy"
-            />
+          <li class="max-w-4xl">
+            <a
+              href={azaleaShoot.src}
+              class="gallery-lightbox"
+              data-lightboxable="true"
+              data-title="Bug Family"
+              aria-label={`Family Bugs full image`}
+            >
+              <Image
+                src={azaleaShoot}
+                alt="Bug Family"
+                height="640"
+                loading="lazy"
+              />
+            </a>
             <p class="px-8 m-8">
               Andy lives in Brooklyn with his wife and collaborator Katie
               Sicking and their daughter Azalea.
             </p>
           </li>
           <li>
-            <WorkTilebyId id="tootsies" target="_blank" /><p class="px-8 m-8">
+            <WorkTilebyId id="tootsies" target="_blank" />
+            <p class="px-8 m-8">
               He's also a co-producer on annual short film festival <a
                 class="text-nowrap"
                 href="https://www.tootsiesvideovault.com"
@@ -238,18 +245,9 @@ const andyGalleryImages = Object.entries(
     details:open::details-content {
       block-size: auto;
     }
-    summary {
-      width: 100%;
-      list-style: none;
-    }
 
-    .section-title {
-      border-bottom: 0.5cqw solid white;
-      width: 100%;
-      text-align: left;
-      font-weight: bold;
-      cursor: pointer;
-      user-select: none;
+    summary {
+      list-style: none;
     }
 
     .section-title:hover {
@@ -261,34 +259,21 @@ const andyGalleryImages = Object.entries(
       display: none;
     }
 
+    .subsection {
+      /* width: fit-content; */
+      /* margin: 0 auto; */
+    }
+
+    @media (max-width: 768px) {
+      .subsection {
+        font-size: 1.75em;
+      }
+    }
+
     .gallery-lightbox {
       display: block;
       border-radius: 12px;
       overflow: hidden;
-      line-height: 0;
-    }
-
-    .gallery-photo {
-      display: block;
-    }
-
-    .header {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: end;
-      height: 8cqw;
-    }
-
-    .subtitle {
-      font-size: 3cqw;
-      line-height: 1.25;
-      display: flex;
-      flex-direction: column;
-
-      text-align: justify;
-      text-justify: inter-word;
-      text-align-last: justify;
     }
   </style>
 </html>

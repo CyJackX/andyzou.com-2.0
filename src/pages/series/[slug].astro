@@ -43,18 +43,16 @@ const pageTitle = `${seriesTitle} | ${SITE_TITLE}`;
     />
   </head>
   <body>
-    <main class="text-left">
+    <main>
       <Titleheader />
-      <div class="header-container">
-        <a href="/" class="backlink z-10" data-series-back-link>Back Home</a>
-        <h2 class="bigtitle">{seriesTitle}</h2>
-        {seriesCopy && <p class="series-copy">{seriesCopy}</p>}
-      </div>
+      <a href="/" class="backlink my-4 block text-left" data-series-back-link>← Back Home</a>
+      <h2 class="text-center font-bold my-2">{seriesTitle}</h2>
+      {seriesCopy && <p class="copy max-w-7xl">{seriesCopy}</p>}
 
       <div class="tilescontainer">
         <WorkTilesBySeries seriesId={seriesId} />
       </div>
-      <VideoLightbox tileSelector=".tiles .tile[data-lightboxable='true']" />
+      <VideoLightbox />
       <Footer />
     </main>
     <script>
@@ -64,38 +62,3 @@ const pageTitle = `${seriesTitle} | ${SITE_TITLE}`;
     </script>
   </body>
 </html>
-
-<style>
-  .backlink {
-    font-size: 2em;
-    color: white;
-    cursor: pointer;
-  }
-
-  .bigtitle {
-    border-bottom: 0.5cqw solid white;
-  }
-  .backlink:hover {
-    text-decoration: underline;
-  }
-
-  .header-container {
-    display: grid;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .header-container h2 {
-    margin: 0;
-  }
-
-  .series-copy {
-    margin: 0;
-    font-size: 3rem;
-    line-height: 1.3;
-  }
-
-  .tilescontainer {
-    padding: 0;
-  }
-</style>
