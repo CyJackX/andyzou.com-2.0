@@ -1,29 +1,35 @@
----
-import HeaderLink from "./HeaderLink.astro";
-import { SITE_TITLE } from "../consts";
----
-
-<header class="text-left">
-	<h1 class="bigtitle">Andy Zou</h1>
-	<p class="subtitle">
-		Director & Creative
-		<br />Andy@AndyZou.com
+<header class="header section-title flex-wrap">
+	<h1 class="bigtitle order-1">Andy Zou</h1>
+	<video
+		src="/videos/Comp 1.mp4"
+		muted
+		loop
+		autoplay
+		playsinline
+		class="md:h-[8cqw] w-full order-4 md:w-auto md:order-2 header-video"
+	></video>
+	<p class="subtitle order-3">
+		<span>Director & Producer</span>
+		<span>Andy@AndyZou.com</span>
 	</p>
 </header>
 <style>
-	header {
-		max-width: 1280px;
-		margin: 0 auto;
-		width: 100%;
-		border-bottom: 0.5cqw solid white;
-		display:flex;
+	.header {
+		display: flex;
+		flex-direction: row;
 		justify-content: space-between;
 		align-items: end;
 	}
 
 	.subtitle {
 		font-size: 3cqw;
-		line-height: 1.25;
-		text-align:right;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		text-align: justify;
+		text-justify: inter-word;
+		text-align-last: justify;
 	}
 </style>
