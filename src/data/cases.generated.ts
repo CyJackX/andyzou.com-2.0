@@ -1025,7 +1025,6 @@ export const CASES: Case[] = [
     "roles": "Director | DP | Editor",
     "youtubeId": "ZGDTHeyeO-w",
     "href": "https://www.youtube.com/watch?v=ZGDTHeyeO-w",
-    "seriesId": "sketch",
     "videoOrder": 7
   },
   {
@@ -1145,7 +1144,8 @@ export const CASES: Case[] = [
     "copy": "Devlog of using Blender, Wonder Dynamics, Unreal Engine to design a 3D scene",
     "youtubeId": "bpkZSxtZd7Y",
     "href": "https://www.youtube.com/watch?v=bpkZSxtZd7Y",
-    "seriesId": "tech"
+    "seriesId": "tech",
+    "videoOrder": 2
   },
   {
     "id": "projectiles",
@@ -1157,8 +1157,7 @@ export const CASES: Case[] = [
     "title": "Projectile Intercept Math",
     "copy": "Devlog of explaining projectile intercept math",
     "youtubeId": "MpUUsDDE1sI",
-    "href": "https://www.youtube.com/watch?v=MpUUsDDE1sI",
-    "seriesId": "tech"
+    "href": "https://www.youtube.com/watch?v=MpUUsDDE1sI"
   },
   {
     "id": "unreal",
@@ -1171,7 +1170,22 @@ export const CASES: Case[] = [
     "copy": "Devlog of Unreal Engine AI mechanics",
     "youtubeId": "c22gpypHv2k",
     "href": "https://www.youtube.com/watch?v=c22gpypHv2k",
-    "seriesId": "tech"
+    "seriesId": "tech",
+    "videoOrder": 3
+  },
+  {
+    "id": "tootsies-promo-bts",
+    "media": {
+      "kind": "video",
+      "src": "/videos/tootsiespromo.mp4",
+      "poster": "/thumbposters/a-gHLCFfNEs-hqdefault.jpg"
+    },
+    "title": "Environment Replacement Vlog",
+    "copy": "Devlog of Enviroment replacement",
+    "youtubeId": "a-gHLCFfNEs",
+    "href": "https://www.youtube.com/watch?v=a-gHLCFfNEs",
+    "seriesId": "tech",
+    "videoOrder": 1
   },
   {
     "id": "Honest-waitress-1",
@@ -1392,5 +1406,31 @@ export const CASES: Case[] = [
     "youtubeId": "_98xIvAvOhE",
     "href": "https://www.youtube.com/watch?v=_98xIvAvOhE",
     "videoOrder": 9
+  },
+  {
+    "id": "dune",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/VilAyt3VQH4-hqdefault.jpg",
+      "alt": "Dune Meme thumbnail"
+    },
+    "title": "Dune Meme",
+    "youtubeId": "VilAyt3VQH4",
+    "href": "https://www.youtube.com/watch?v=VilAyt3VQH4",
+    "seriesId": "sketch"
+  },
+  {
+    "id": "less",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/dcWy5-q_4I8-hqdefault.jpg",
+      "alt": "Less thumbnail"
+    },
+    "title": "Less",
+    "subtitle": "ft. Matt Rogers, Tessa Skara",
+    "roles": "Director | Writer | DP | Editor",
+    "youtubeId": "dcWy5-q_4I8",
+    "href": "https://www.youtube.com/watch?v=dcWy5-q_4I8",
+    "seriesId": "sketch"
   }
 ];
