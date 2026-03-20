@@ -804,7 +804,12 @@ function isImageUrl(url) {
   }
 
   .lightboxPanel.isImage {
-    width: min(1200px, 96vw);
+    width: auto;
+    max-width: 96vw;
+  }
+
+  .lightboxPanel.isImage :global(#lightboxContent) {
+    width: auto;
   }
 
   .lightbox.isAnimating .lightboxClose {
@@ -925,6 +930,8 @@ function isImageUrl(url) {
 
   :global(.lightboxMedia.lightboxImage) {
     display: block;
+    width: auto;
+    max-width: min(96vw, 1200px);
     max-height: min(82vh, 900px);
     aspect-ratio: auto;
     object-fit: contain;
