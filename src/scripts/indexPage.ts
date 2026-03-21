@@ -1,8 +1,8 @@
 const detailSections = Array.from(document.querySelectorAll("details"));
-const SUMMARY_SCROLL_TOP_OFFSET_PX = 0;
-const SUMMARY_SCROLL_EASE = 0.2;
+const SUMMARY_SCROLL_TOP_OFFSET_PX = 10;
+const SUMMARY_SCROLL_EASE = 0.1;
 const SUMMARY_SCROLL_SETTLE_PX = 1;
-const SUMMARY_SCROLL_CHASE_MS = 500;
+const SUMMARY_SCROLL_CHASE_MS = 600;
 
 const pendingVideoHydration = new WeakMap<HTMLDetailsElement, number>();
 const activeSummaryChase = new WeakMap<HTMLDetailsElement, number>();
@@ -22,19 +22,28 @@ function getHashTargetDetail(
   return htmlDetailSections.find((detail) => detail.id === targetId);
 }
 
+function syncHashToDetail(detail: HTMLDetailsElement) {
+  if (!detail.id) return;
+
+  const nextHash = `#${detail.id}`;
+  if (window.location.hash === nextHash) return;
+
+  window.history.replaceState(null, "", nextHash);
+}
+
 function syncOpenDetailWithHash({
   htmlDetailSections,
   allowFallback,
 }: {
   htmlDetailSections: HTMLDetailsElement[];
   allowFallback: boolean;
-}) {
+}): HTMLDetailsElement | undefined {
   if (htmlDetailSections.length === 0) return;
 
   const hashTargetDetail = getHashTargetDetail(htmlDetailSections);
   if (hashTargetDetail) {
     hashTargetDetail.open = true;
-    return;
+    return hashTargetDetail;
   }
 
   if (!allowFallback) return;
@@ -43,6 +52,7 @@ function syncOpenDetailWithHash({
   if (hasOpenDetail) return;
 
   htmlDetailSections[0].open = true;
+  return htmlDetailSections[0];
 }
 
 function hydrateDetailMedia(detail: HTMLDetailsElement) {
@@ -124,7 +134,7 @@ function chaseSummary(detail: HTMLDetailsElement, summary: HTMLElement) {
 
     const delta = summary.getBoundingClientRect().top - SUMMARY_SCROLL_TOP_OFFSET_PX;
     if (Math.abs(delta) > SUMMARY_SCROLL_SETTLE_PX) {
-      const scrollDelta = Math.abs(delta) < 8 ? delta : delta * SUMMARY_SCROLL_EASE;
+      const scrollDelta = delta * SUMMARY_SCROLL_EASE;
       window.scrollBy(0, scrollDelta);
     }
 
@@ -143,8 +153,15 @@ function chaseSummary(detail: HTMLDetailsElement, summary: HTMLElement) {
 
 export function initIndexPage() {
   const htmlDetailSections = getHtmlDetailSections();
+  const initialHashTarget = getHashTargetDetail(htmlDetailSections);
 
-  syncOpenDetailWithHash({ htmlDetailSections, allowFallback: true });
+  const initiallyOpenedDetail = syncOpenDetailWithHash({
+    htmlDetailSections,
+    allowFallback: true,
+  });
+  const suppressInitialSummaryChase = !initialHashTarget
+    ? initiallyOpenedDetail
+    : undefined;
 
   htmlDetailSections.forEach((detail) => {
     if (detail.open) {
@@ -167,9 +184,11 @@ export function initIndexPage() {
       }
 
       scheduleDetailVideoHydration(detail);
+      syncHashToDetail(detail);
 
       const summary = detail.querySelector(":scope > summary");
       if (!(summary instanceof HTMLElement)) return;
+      if (detail === suppressInitialSummaryChase) return;
 
       chaseSummary(detail, summary);
     });
