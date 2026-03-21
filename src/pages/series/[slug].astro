@@ -5,6 +5,7 @@ import VideoLightbox from "../../components/VideoLightbox.astro";
 import WorkTilesBySeries from "../../components/WorkTilesBySeries.astro";
 import { SITE_TITLE } from "../../consts";
 import {
+  getSeriesHomeHref,
   getSeriesIds,
   getSeriesMeta,
   getSeriesTitle,
@@ -31,6 +32,7 @@ const seriesId = slug;
 const seriesMeta = getSeriesMeta(seriesId);
 const seriesTitle = getSeriesTitle(seriesId);
 const seriesCopy = seriesMeta?.copy;
+const homeHref = getSeriesHomeHref(seriesId);
 const pageTitle = `${seriesTitle} | ${SITE_TITLE}`;
 ---
 
@@ -45,7 +47,7 @@ const pageTitle = `${seriesTitle} | ${SITE_TITLE}`;
   <body>
     <main>
       <Titleheader />
-      <a href="/" class="backlink my-4 block text-left" data-series-back-link>← Back Home</a>
+      <a href={homeHref} class="backlink my-4 block text-left">&larr; Back Home</a>
       <h2 class="text-center font-bold my-2">{seriesTitle}</h2>
       {seriesCopy && <p class="copy max-w-7xl">{seriesCopy}</p>}
 
@@ -55,10 +57,5 @@ const pageTitle = `${seriesTitle} | ${SITE_TITLE}`;
       <VideoLightbox />
       <Footer />
     </main>
-    <script>
-      import { initSeriesBackLink } from "../../scripts/seriesBackLink";
-
-      initSeriesBackLink();
-    </script>
   </body>
 </html>

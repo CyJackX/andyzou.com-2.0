@@ -70,6 +70,11 @@ export function getSeriesMeta(seriesId: string): SeriesMeta | undefined {
   return SERIES_META[seriesId];
 }
 
+export function getSeriesHomeHref(seriesId: string): string {
+  const homeSectionId = getSeriesMeta(seriesId)?.homeSectionId;
+  return homeSectionId ? `/#${homeSectionId}` : "/";
+}
+
 export function getSeriesTitle(seriesId: string): string {
   return getSeriesMeta(seriesId)?.title ?? formatSeriesId(seriesId);
 }

@@ -7,6 +7,44 @@ const SUMMARY_SCROLL_CHASE_MS = 500;
 const pendingVideoHydration = new WeakMap<HTMLDetailsElement, number>();
 const activeSummaryChase = new WeakMap<HTMLDetailsElement, number>();
 
+function getHtmlDetailSections(): HTMLDetailsElement[] {
+  return detailSections.filter(
+    (detail): detail is HTMLDetailsElement => detail instanceof HTMLDetailsElement,
+  );
+}
+
+function getHashTargetDetail(
+  htmlDetailSections: HTMLDetailsElement[],
+): HTMLDetailsElement | undefined {
+  const targetId = window.location.hash.slice(1);
+  if (!targetId) return undefined;
+
+  return htmlDetailSections.find((detail) => detail.id === targetId);
+}
+
+function syncOpenDetailWithHash({
+  htmlDetailSections,
+  allowFallback,
+}: {
+  htmlDetailSections: HTMLDetailsElement[];
+  allowFallback: boolean;
+}) {
+  if (htmlDetailSections.length === 0) return;
+
+  const hashTargetDetail = getHashTargetDetail(htmlDetailSections);
+  if (hashTargetDetail) {
+    hashTargetDetail.open = true;
+    return;
+  }
+
+  if (!allowFallback) return;
+
+  const hasOpenDetail = htmlDetailSections.some((detail) => detail.open);
+  if (hasOpenDetail) return;
+
+  htmlDetailSections[0].open = true;
+}
+
 function hydrateDetailMedia(detail: HTMLDetailsElement) {
   const images = detail.querySelectorAll("img[data-src]");
   const videos = detail.querySelectorAll("video[data-src]");
@@ -104,17 +142,17 @@ function chaseSummary(detail: HTMLDetailsElement, summary: HTMLElement) {
 }
 
 export function initIndexPage() {
-  detailSections.forEach((detail) => {
-    if (!(detail instanceof HTMLDetailsElement)) return;
+  const htmlDetailSections = getHtmlDetailSections();
 
+  syncOpenDetailWithHash({ htmlDetailSections, allowFallback: true });
+
+  htmlDetailSections.forEach((detail) => {
     if (detail.open) {
       scheduleDetailVideoHydration(detail);
     }
   });
 
-  detailSections.forEach((detail) => {
-    if (!(detail instanceof HTMLDetailsElement)) return;
-
+  htmlDetailSections.forEach((detail) => {
     detail.addEventListener("toggle", () => {
       if (!detail.open) {
         const pendingFrame = pendingVideoHydration.get(detail);
@@ -135,5 +173,9 @@ export function initIndexPage() {
 
       chaseSummary(detail, summary);
     });
+  });
+
+  window.addEventListener("hashchange", () => {
+    syncOpenDetailWithHash({ htmlDetailSections, allowFallback: false });
   });
 }
