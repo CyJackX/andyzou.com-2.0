@@ -16,7 +16,7 @@ export const SERIES_META: Record<string, SeriesMeta> = {
   },
   "asian-afterlife": {
     title: "Andy's Asian Afterlife",
-    copy: "1000$ grand prize winner of Rizzle's Asian Comedy Fest.",
+    copy: "Grand prize winner of Rizzle's Asian Comedy Fest.",
     homeSectionId: "scripted-digital-series",
   },
   "branded-content": {
