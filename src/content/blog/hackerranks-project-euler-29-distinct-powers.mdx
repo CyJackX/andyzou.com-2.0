@@ -1,0 +1,15 @@
+---
+title: "HackerRank’s Project Euler 29: Distinct Powers"
+description: "This one is pretty straightforward for the original version, where you need to find the answer for n = 100. A straightforward brute force approach works for that:"
+pubDate: "2023-08-11T05:02:33.000Z"
+heroImage: "/medium/hackerranks-project-euler-29-distinct-powers/01-1-hm4ctltbij4xwm7_pqthcg.png"
+---
+<figure><img alt="" src="/medium/hackerranks-project-euler-29-distinct-powers/01-1-hm4ctltbij4xwm7_pqthcg.png" /></figure><p>This one is pretty straightforward for the original version, where you need to find the answer for n = 100. A straightforward brute force approach works for that:</p>
+<pre>def distinctPowers(n):<br />    arr = set()<br />    for a in range(2, n + 1):<br />        for b in range(2, n + 1):<br />            arr.add(a**b)<br />    return len(arr)</pre>
+<p>However, this is O(n²), and HackerRank’s version asks you to solve for n up to 10⁵; this approach won’t work.</p>
+<p>The first obvious observation is that successive powers of a given number will collide with previous numbers. Powers of 4 will overlap with powers of 2, which will overlap with powers of 8, etc. So, the key is not to add up unique terms, but to <em>subtract the number of repeat terms, </em>since there will be far fewer collisions than unique terms.</p>
+<p>The total number of terms possible is easily seen to be a square, (n-1)². Now, there are no duplicates in numbers that are not powers of others; i.e. 2,3,5,6,7… Its similarity to the primes led me to thinking of at least a sieve, much like the sieve of Eratosthenes, for evaluating <em>which </em>values of a to check. So, I used a boolean array with values for each n and started with 2, then processed every subsequent power of 2.</p>
+<p>For example, 4 = 2². So, 4² = (2²)² = 2⁴. For every successive power of 2, I would calculate the “combined” power with b, and basically do some divisibility checks with previous powers. If it was possible to divide this combined_power by a previous power, and that quotient was less than n, it meant that a previous power <em>already </em>came up with that number!</p>
+<p>For example, let’s say n == 20, a = 16, and b = 3.</p>
+<p>16³ = (2⁴)³ = 2¹². Checking 12 for divisibility starting with the next lowest power of 3 shows that 12 / 3 = 4. Since 4 is within the range of n, that shows what we intuitively understand as this: we’ve already seen this value, because 2¹² = (2³)⁴. We would’ve seen this value when a = 8!</p>
+<p>It may not be strictly O(n) time; but it’s definitely much easier to check than evaluating every term possible. I wracked my brain trying to see if there was a way to math out all the repeated terms at once, but ultimately felt it was easier to just implement and see how it did. Considering that even with n=10000 that there are only 16 powers of 2 possible, and that the number of powers just gets smaller and smaller as the bases get bigger and bigger, it’s far fewer calculations than n².</p>

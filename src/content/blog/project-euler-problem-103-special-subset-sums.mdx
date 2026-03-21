@@ -1,0 +1,11 @@
+---
+title: "Project Euler Problem 103: Special Subset Sums"
+description: "This one sort of varies significantly from the original problem , in that it wants us to continue using the “bad” algorithm it provides. I suppose it relates to how later versio..."
+pubDate: "2023-08-09T21:48:36.000Z"
+heroImage: "/medium/project-euler-problem-103-special-subset-sums/01-1-1iuzfut0pchzud3lv12_la.png"
+---
+<figure><img alt="" src="/medium/project-euler-problem-103-special-subset-sums/01-1-1iuzfut0pchzud3lv12_la.png" /></figure><p>This one sort of varies significantly from the original <a href="https://projecteuler.net/problem=103">problem</a>, in that it wants us to continue using the “bad” algorithm it provides. I suppose it relates to how later versions of the question will demand solving the same issue, so the puzzlemakers at HackerRank decided to change it up a little.</p>
+<p><a href="https://www.hackerrank.com/contests/projecteuler/challenges/euler103/problem?h_r=profile">Project Euler #103: Special subset sums: optimum | HackerRank</a></p>
+<p>So, instead of dealing at all with the “set” up that they describe, and merely attempting to build a more robust version of their algorithm, I first implemented a naive approach which was definitely O(n²). I simply followed their rules and implemented an iterative version that would pick the next new <em>b</em> and then build out another string, adding to each element along the way.</p>
+<p>Obviously this wouldn’t work, so I tried looking for patterns in the terms. The first term <em>almost</em> doubles everytime, but not quite. I went down a dead end where I thought it alternated subtracting 1 each time, but that also doensn’t hold for higher values.</p>
+<p>Eventually, I started trying to trace the values as they went on their path, with the first term being a, the next first term being b, etc. Then, I knew each successive number in the rows would be a sum of a + b, a + b + c, etc. Pretty soon a clear pattern emerged that allowed me to get pretty close to an optimized solution. There were still some redundancies with too much addition, but I found a running sum solution that brought the problem into O(n) time.</p>

@@ -1,0 +1,38 @@
+---
+title: "AI Projectile Intercept Formula for Gaming, without Trigonometry"
+description: "Companion video here: https://youtu.be/MpUUsDDE1sI"
+pubDate: "2024-02-19T11:04:30.000Z"
+heroImage: "/medium/ai-projectile-intercept-formula-for-gaming-without-trigonometry/01-1-jj3azoh0d_ukwy7aerbpq.png"
+---
+<figure><img alt="" src="/medium/ai-projectile-intercept-formula-for-gaming-without-trigonometry/01-1-jj3azoh0d_ukwy7aerbpq.png" /></figure><p>Companion video here: <a href="https://youtu.be/MpUUsDDE1sI">https://youtu.be/MpUUsDDE1sI</a></p>
+<h3>Background:</h3>
+<p>I know that this is a problem that has been described many times over on the internet, but frankly, after learning how to derive it myself, I found that most explanations were too dense or jargon heavy for my taste. I did calculus in highschool, but I don’t have a strong linear algebra background, so some of the vector equations such as in <a href="https://indyandyjones.wordpress.com/2010/04/08/intercepting-a-target-with-projectile/">here</a> were unfamiliar, while other solutions relied on solving a triangle with the Law of Cosines. I think most of that is overkill. This solution boils down to some elegant dot products and a quadratic equation, and I hope to simplify it for future game developers who know basic algebra and kinematics if nothing else.</p>
+<figure><img alt="" src="/medium/ai-projectile-intercept-formula-for-gaming-without-trigonometry/02-0-jqar9rvnn6l_0daa.png" /></figure><h3>The Problem:</h3>
+<p>The problem is simple: For a moving shooter to shoot a bullet to hit a moving target, it must lead the shot in a specific direction. The direction to aim can be represented as a unit vector, usable in most gaming engines without need for angles.</p>
+<h3>Initial Variables:</h3>
+<p>We are ignoring gravity and assuming constant velocities.</p>
+<p>We will set all the positions and velocities <strong><em>relative to the shooter</em></strong>. So, the shooter will be at (0,0) with a velocity of 0. You will have to add back any inherited positions and velocities from the shooter to the bullets yourself. We will solve for 2 dimensions, but the<em> vector math will ultimately be the same for 3D.</em></p>
+<p>Our known variables are:<br /><strong>Shooter Position = Sₚ<br />Bullet Speed = Bₛ<br />Target Position = Tₚ<br />Target Velocity = Tᵥ</strong></p>
+<p>Our unknowns are:<br />Time = Δt<br />The unit vector solution = û<br />Given two unknowns, we’ll need two equations to solve for them.</p>
+<h3><strong>Equation 1:</strong></h3>
+<p>We know the bullet and the target will meet each other at the same point after Δt seconds, so we can set their final positions equal to each other.</p>
+<figure><img alt="Final Bullet Position= Sₚ + Bₛ×u×Δt Final Target Position= Tₚ + Tᵥ×Δt Sₚ + Bₛ×u×Δt = Tₚ + Tᵥ×Δt We can ignore Sp since it’s the origin. Bₛ×u×Δt = Tₚ + Tᵥ×Δt" src="/medium/ai-projectile-intercept-formula-for-gaming-without-trigonometry/03-1-nedcgktmnoprfkfvjrapqw.png" /><figcaption><a href="https://latexeditor.lagrida.com/">https://latexeditor.lagrida.com/</a></figcaption></figure><h3><strong>Equation 2:</strong></h3>
+<p>This one was the harder one for me to intuit, but <strong>the distance the bullet travels is equal to the distance from the final and initial position of the bullet.</strong><em> </em>Sounds redundant, right? Except based on Equation 1, <strong><em>we can express the final position of the Bullet as the final position of the Target.</em></strong><em> </em>This gives us a way to tie the two equations together without being redundant, and allows us to <em>temporarily ignore the direction of the bullet.</em></p>
+<p>Another easy way to visualize this is that the path of the Target is a line, and the <strong>possible final positions </strong>of the bullet are in a circle around the shooter; we’re just trying to find <strong>where the Target’s path intercepts that circle.</strong></p>
+<figure><img alt="" src="/medium/ai-projectile-intercept-formula-for-gaming-without-trigonometry/04-1-eypjky_fztk3stur8tw4uw.gif" /><figcaption>Made in Desmos</figcaption></figure><p>The distance the bullet travels is <strong>Bₛ×Δt.</strong><br />The distance between two points is given by the <strong>Euclidian Distance Formula</strong>, an extension of the Pythagorean Theorem:</p>
+<figure><img alt="" src="/medium/ai-projectile-intercept-formula-for-gaming-without-trigonometry/05-0-o7bbsi0etr9c7i35.png" /><figcaption>Distance Formula between points (x,y) and (a,b)</figcaption></figure><h3><strong>Combining the Equations</strong></h3>
+<p>So, using our Target’s Final Position and the origin, we can set these distance equations equal to each other and solve for Δt. You’ll notice that we <em>split the Target’s Final Position (T_F) into its dimensions.</em></p>
+<figure><img alt="" src="/medium/ai-projectile-intercept-formula-for-gaming-without-trigonometry/06-1-4bnlk4dniovewsedprkfdw.png" /><figcaption><a href="https://latexeditor.lagrida.com/">https://latexeditor.lagrida.com/</a></figcaption></figure><p>We then get these as our quadratic coefficients:</p>
+<figure><img alt="" src="/medium/ai-projectile-intercept-formula-for-gaming-without-trigonometry/07-1-eb5-ecsftgc2teqykfyt3a.png" /></figure><h3>The Dot Products</h3>
+<p>What you might now notice is <em>these are the Dot Products of the original vectors</em>! The Dot Product is when you multiply each dimension of one vector together and sum the results:</p>
+<p>(x₁,y₁)⋅(x₂,y₂) = x₁x₂ + y₁y₂</p>
+<p>Or, in 3D:<br />(x₁,y₁,z₁)⋅(x₂,y₂,z₂) = x₁x₂ + y₁y₂ + z₁z₂</p>
+<p>The general form is why these equations will work in 3D or 2D; the process will work out the same in the previous equations even if you add the Z dimension.</p>
+<p>Take a look at what happens after we replace the terms of the coefficients with their Dot Product equivalents:</p>
+<figure><img alt="" src="/medium/ai-projectile-intercept-formula-for-gaming-without-trigonometry/08-1-igwwtsnlmqpmg_8ygcbhmq.png" /><figcaption>Simplified quadratic coefficients!</figcaption></figure><p>These are very clean and easy values to manipulate in any game engine!</p>
+<h3>Quadratic Equations and the rest of it</h3>
+<p>I’m not going too much through the rest of it; now that you’ve got a quadratic equation for time, you should be able to find the two roots.</p>
+<figure><img alt="" src="/medium/ai-projectile-intercept-formula-for-gaming-without-trigonometry/09-1-b-isizdealznazhtkueg_g.png" /></figure><p>The fact that sometimes there can be two solutions can be intuited again from the previous circle and line demonstration; perhaps the trajectory can cross the bullet’s possible range in two points. Or perhaps there is no solution, because the target is faster and farther than the bullet will be. But regardless, you can now solve <strong>Equation 1 for the û:</strong></p>
+<p>Bₛ×û×Δt = Tₚ + Tᵥ×Δt<br /><strong>û = (Tₚ + Tᵥ×Δt) / (Bₛ×Δt)</strong></p>
+<p>This is the direction that the shooter will have to shoot to hit the target. Since we were working from relative to the shooter, you will also now have to add back any inherited velocities from the shooter, in case the bullets should carry momentum from the shooter.</p>
+<p>This still wound up being a little denser than I’d hoped, but I hope it was easy enough to follow the mathematics behind these calculations. You can reuse the same principles for many other variations, such as how a ship can intercept another ship, or dealing with acceleration as well. Adding projectiles with gravity is a little more complex, but ultimately a similar process.</p>

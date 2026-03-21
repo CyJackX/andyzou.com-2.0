@@ -1,0 +1,29 @@
+---
+title: "HackerRank’s Project Euler Problem 105: Special Subset Sums Testing"
+description: "Okay, so here’s the actual problem in the special subset sums series they have: https://www.hackerrank.com/contests/projecteuler/challenges/euler105/problem?isFullScreen=true"
+pubDate: "2023-08-10T00:00:40.000Z"
+heroImage: "/medium/hackerranks-project-euler-problem-105-special-subset-sums-testing/01-1-3mgmrqs3e9aki0xss2yt6g.png"
+---
+<p>Okay, so here’s the <em>actual</em> problem in the special subset sums series they have:<br /><a href="https://www.hackerrank.com/contests/projecteuler/challenges/euler105/problem?isFullScreen=true">https://www.hackerrank.com/contests/projecteuler/challenges/euler105/problem?isFullScreen=true</a></p>
+<p>Given that the number of subsets of a set is 2^n, I don’t think combinatorics is really going to help us here. I implemented some methods that created all pairs of sets possible, but it’s clear that it’s only going to work for very small n, and on HackerRank, it goes to 100.</p>
+<p>My first intuition is that there must be some more intuitive ways to solve at least the second condition about the sums of larger subsets always being larger than smaller subsets. By sorting the array, it should be easy enough to rule out every possible “smaller” subset of sizes from 1 to n//2. There can be some optimizations here (O(n²) to O(n¹) to avoid calculating sum() for each subset with a running sum like we used in previous problems, but I’ll do it later.</p>
+<p>Doing this first, at least, allows us to skip comparing unequally sized sets. Still, creating all unique pairs of same-sized subsets is an explosive combinatorics problem. And there are definitely lots of redundancies; I shouldn’t need to sum each subset every time I compare, so maybe a dictionary of each subset’s sums?</p>
+<p>For a given subset and its elements, I need to find when, say:</p>
+<p><strong>a + b == c + d</strong>, or <strong>a + b + c == d + e + f</strong>, etc…</p>
+<p>What intuitions can be drawn from this? Well, many sums are just sums of smaller subsets…will that help?</p>
+<p>Starting from sets of size 2, can I just see if there are any duplicate sums? Will there be false positives? Not with 2, there’s no way for two different 2-sized sets to overlap and have an equal value. 2-sets with equal sums must have unique terms. Maybe this intuition can be built up into something about 3-terms? Perhaps this problem is at its worst O(n²) instead of O(2^n).</p>
+<p>The <a href="https://projecteuler.net/problem=105">Project Euler page</a> at least has a set of sample cases that only go up to n = 12, so it might be a good tester.</p>
+<p>Hm, my checkCondition2 doesn’t seem to be returning any negatives and I’m not getting the right answer so far for the original…</p>
+<p>Of course, a few OBO and equality mistakes. I had set the index for the runningSum for the larger set wrong, as well as only compared for “=” instead of “≤”. But now I pass the 100 sets for the original, so now I know at least my algorithm is correct.</p>
+<p>It’s still causing runtime errors in each of the HackerRank testcases, so likely memory overflow. So how do I avoid making the combinatoric sets?</p>
+<p>Time to start reading:<br /><a href="https://en.wikipedia.org/wiki/Subset_sum_problem">https://en.wikipedia.org/wiki/Subset_sum_problem</a></p>
+<p>So, it turns out that this is the <a href="https://en.wikipedia.org/wiki/Partition_problem">Partition Problem</a>, and I could probably find the direct solution if I looked at the Wikipedia, but I will try to see if I can suss it out first.</p>
+<p>Going off of what I was thinking before, there’s probably a way to “build up” running sums from sets of size 1, to size 2, without having to do a ton of re-addition. But, the problem for me is how to keep track of each subset’s elements to avoid collisions.</p>
+<p>It definitely seems like there is a way to count through all combinations <em>without</em> needing to pass an index around; the first element of a set:</p>
+<p>&#123;a,b,c,d,e…&#125;</p>
+<p>has n-1 options for creating a 2-set: ab, ac, ad, etc…</p>
+<p><strong>b </strong>will have one less option than that, n-2, because it doesn’t need to make another set with a, it only needs count upwards (bc, bd, be…). Likewise, ab only has n-2 options (abc,abd,abe…)</p>
+<figure><img alt="" src="/medium/hackerranks-project-euler-problem-105-special-subset-sums-testing/01-1-3mgmrqs3e9aki0xss2yt6g.png" /></figure><p>This tree is not going to be also too big; the number of first terms is the sum of the numbers 1 to n-1; for n = 100 on HackerRank, this is 4950 sums. And the number of sums gets smaller every iteration; there are less combinations of 3 after each combination of 2, etc… Well into manageable territory with an algorithm that can simply maintain state based on the insertion order into the list!</p>
+<p>And I just considered another insight; what I realized about equal 2-sets having unique elements. If we guarantee that, that means every 2-set has a unique sum, which means every distinct 3-set should have a unique sum if it’s made of a unique number and a 2-set!</p>
+<p>Hm, realizing the number might not necessarily go down after EACH iteration; for 5-set, there are 10 2-subsets as well as 10 3-subsets… maybe this will be easier just passing around an index!</p>
+<figure><img alt="" src="/medium/hackerranks-project-euler-problem-105-special-subset-sums-testing/02-1-i2n7qikk3jby-roi9fjkzq.png" /><figcaption>Identifying patterns in the indexes to add to previous subsets for a set &#123;0,1,2,3,4&#125;</figcaption></figure><p>Alright, I gave up on the inner loop counting, as the pattern was starting to become not so decipherable to me. I just enumerated the sums and passed those pointers around so that each sum knew which values it could pull from, and honestly, much more elegant than the looped mess I was developing, and it worked!</p>

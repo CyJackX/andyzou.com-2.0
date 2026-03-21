@@ -1,0 +1,18 @@
+---
+title: "LeetCode 2594 - Minimum Time to Repair Cars"
+description: "“You are given an integer array ranks representing the ranks of some mechanics. ranks[i] is the rank of the i’th mechanic. A mechanic with a rank r can repair n cars in r * n² m..."
+pubDate: "2023-08-15T00:40:06.000Z"
+heroImage: "/medium/leetcode-2594-minimum-time-to-repair-cars/01-1-g0ce37n0w-1hbhrjat1j2a.png"
+---
+<p><a href="https://leetcode.com/problems/minimum-time-to-repair-cars/description/">Minimum Time to Repair Cars - LeetCode</a></p>
+<figure><img alt="" src="/medium/leetcode-2594-minimum-time-to-repair-cars/01-1-g0ce37n0w-1hbhrjat1j2a.png" /></figure><p>“You are given an integer array ranks representing the <strong>ranks</strong> of some mechanics. ranks[i] is the rank of the i’th mechanic. A mechanic with a rank r can repair n cars in r * n² minutes.</p>
+<p>You are also given an integer cars representing the total number of cars waiting in the garage to be repaired.</p>
+<p>Return <em>the </em><strong><em>minimum</em></strong><em> time taken to repair all the cars.</em></p>
+<p><strong>Note:</strong> All the mechanics can repair the cars simultaneously.”</p>
+<p>Thought I’d try out some LeetCode and this one was an interesting one. The first thought I had was to distribute the cars evenly, then gauge which mechanics could accept another car from another mechanic while minimizing the increase in time.</p>
+<p>I started off making a Mechanic object with some custom methods and functions to return the values I was interested in, such as the time they’d take with an additional car.</p>
+<p>The major hiccup at first was just the constant sorting; I knew I’d get rid of it later, but implementing it first was more important than elegance. I then started maintaining two lists, one list for the slowest times and another for the mechanics with the most spare capacity. This became cumbersome enough that I started looking into the algebra for a better idea.</p>
+<figure><img alt="" src="/medium/leetcode-2594-minimum-time-to-repair-cars/02-1-5pnqchd90pq19husbdpuwg.png" /></figure><p>Instead of distributing them all evenly from the start, I now scaled their initial values based on their proportions. Clearly the faster mechanics should start with more; and I was able to math out a generally even distribution. Since you can’t distribute fractional cars, though, I had to start with the floor values and then work from there. But now it was easier to count and distribute remaining cars.</p>
+<p>There were still some optimizations to make; instead of resorting I started using a binary insert on the first sorted list, sorted by the potential time capacity of each mechanic. It didn’t win any awards for speed or memory usage, but it passed all testcases.</p>
+<p>The cleverer solution in the discussions was really quite ingenious, and I realized I was only a few steps away from a similar idea. Instead of iterating over mechanics and checking minimum times, it iterated over Times to see what was the most cars the mechanics could finish in a given time:</p>
+<figure><img alt="" src="/medium/leetcode-2594-minimum-time-to-repair-cars/03-1-xenump2a7-ac0f6vidqbva.png" /></figure><p>By taking the floor of the squareroots, you could find the maximum number of cars these mechanics could finish if they all took the same amount of time. Then it’s a matter of finding the right Time, and for that, they used a binary search of the problem space.</p>
