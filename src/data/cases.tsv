@@ -1,8 +1,6 @@
 slugID	title	subtitle	roles	seriesid	videoOrder	copy	youtubeId	href	videoSrc	imageSrc	imageAlt	videoPoster	vertical
-andys-roadshow	Andy's Roadshow		Director | Writer | Editor	favorites	2		iLNypL04zH0		/videos/roadshow.mp4				
 interstellar	Interstellar in Real Life	PitTV	Director | Writer | Editor	andys-originals			nl2-5DDL5nM						
 securocam-3000	Securocam 3000	IFC Comedy Crib	Director | Co-writer | Editor	andys-originals		Web series selected by NYTVF and IFC Comedy Crib.	_SRIskz2JOY						
-tuber	Tuber		Director | Writer | Editor	favorites	1		0U5SCBko2XM		/videos/tuber.mp4				
 Apocalypse-1	Apocalypse Problems 1	SpoiledNYC ft. Gianmarco Soresi & Megan Sass	Director | DP | Editor	apocalypse-problems	1		X-u9YpCOkk4						
 Apocalypse-gluten	Apocalypse Problems 2 - Gluten	SpoiledNYC ft. Gianmarco Soresi & Megan Sass	Director | DP | Editor	apocalypse-problems	2		klRZB8Q87oY						
 Apocalypse-milk	Apocalypse Problems 3 - Milk	SpoiledNYC ft. Gianmarco Soresi & Megan Sass	Director | DP | Editor	apocalypse-problems	3		yeie8hpMldw						
@@ -12,6 +10,7 @@ Rizzle-3	Andy's Asian Afterlife Ep. 3	Rizzle's Asian Comedy Fest	Creator	asian-a
 death-becomes-her-series	Death Becomes Her	RPM		branded-content	1	A series of BTS Social Promos for Broadway's Death Becomes Her.		series/death-becomes-her	/videos/dbh.mp4			/thumbposters/dbh.jpg	
 garden-of-eden	Mark Fisher Fitness	Garden of Eden ft. Douglas Widick	Director | Editor	branded-content	3	Social Promo for local gym	_oUdAdTUk0c		/videos/garden-of-eden.mp4				TRUE
 Looking-like-a-snack	Combos	Lookin' Like a Snack ft. Akilah Hughes	Director | DP	branded-content	2	Branded spot for Combos	lMFubod8Gdc		/videos/looking-like-a-snack.mp4				
+big-downer	The Big Downer	Spec PSA for Long Covid	Director | Editor	branded-content	4		PTo-3d7cco4		videos/bigdowner.mp4				
 European-boys	European Boys	Comedy Central Digital ft. Rose Kelso	Director | Editor	comedy-central-originals	16		uE1Y7PHMdPc						
 freezing-your-eggs	Freezing Your Eggs	Comedy Central Digital	Director | Writer | Editor	comedy-central-originals	10			https://www.instagram.com/reel/Cqs1xAFpnwI		/thumbposters/cadbury.jpg			TRUE
 icontact	iContact	Comedy Central Digital ft. DeStorm	Director | Writer | Editor	comedy-central-originals	6		aQN6jBk_LWc						
@@ -41,6 +40,9 @@ barstool	Barstool Survivor	Barstool Sports	Editor	editing			uYB3IziD3Ls
 monkey	Better Man: Regent Street BTS		Editor	editing			h-bsM5kzFSA						
 babes	Babes	Social Promos	Editor	editing			IhhD8l476-I						
 immaculate	Immaculate	Social Promos	Editor	editing			yShigrHv-4g						
+andys-roadshow	Andy's Roadshow		Director | Writer | Editor	favorites	1		iLNypL04zH0		/videos/roadshow.mp4				
+tuber	Tuber		Director | Writer | Editor	favorites	3		0U5SCBko2XM		/videos/tuber.mp4				
+pissterine	Pissterine			favorites	2	Andy once kickstarted a Listerine knockoff that got shutdown in trademark court.		https://www.kickstarter.com/projects/andyzou/pissterine-a-genuine-novelty-mouthwash	/videos/pissterine.mp4			/thumbposters/pissterine.jpg	
 Making-it-1	Making It Episode 1	Snap Originals ft. Dave Mizzoni	Director | DP | Editor	making-it	1		dwXaeTYc3Tg						TRUE
 Making-it-10	Making It Episode 10	Snap Originals ft. Dave Mizzoni	Director | DP | Editor	making-it	10		AROtp_lq240						TRUE
 Making-it-2	Making It Episode 2	Snap Originals ft. Dave Mizzoni	Director | DP | Editor	making-it	2		bewb5mvMt2I						TRUE
@@ -54,6 +56,9 @@ Making-it-9	Making It Episode 9	Snap Originals ft. Dave Mizzoni	Director | DP | 
 instagram-betches	Instagram Betches		Director | DP	music-videos	3	Winner of Best Sketch at NYC Short Comedy Film Fest	hQO_LLV9tms		/videos/instagram_betches.mp4				
 Pay-for-me	Pay For Me		Co-director | DP | Editor	music-videos	2		hVrMjp22IM0		/videos/payforme.mp4				
 poor	Poor	ft. Anna Roisman	Director | DP	music-videos	1		AzjRdPLgj_k		/videos/poor.mp4				
+Jackson-pollack	Jackson Pollock	ft. Douglas Widick	Director | Editor	music-videos	6		f53aKCMl7FQ		/videos/jacksonpollock.mp4				
+sugar	Sugar	Sister Sparrow	DP | Editor	music-videos	5		-53w2mv_upw		/videos/sugar.mp4				
+hooking-up-with-girls	Hooking Up With Girls	ft. Lane Moore	DP | Editor	music-videos	4		t3rLCM9LFfE		videos/hookingupwithgirls.mp4				
 apocalypse-problems-series	Apocalypse Problems	SpoiledNYC ft. Gianmarco Soresi & Megan Sass	Director | DP | Editor	series	6	A comedic webseries for SpoiledNYC.		series/apocalypse-problems	/videos/apocalypse.mp4			/thumbposters/klRZB8Q87oY-hqdefault.jpg	
 asian-afterlife-series	Andy's Asian Afterlife	Rizzle's Asian Comedy Fest	Creator	series	4	1000$ grand prize winner of Rizzle's Asian Comedy Fest.		series/asian-afterlife	/videos/rizzle.mp4			/thumbposters/rizzle.jpg	
 comedy-central-series	Comedy Central Originals		Director | Producer | Writer | Editor	series	1	At Comedy Central's Webby-winning Digital team, Andy directed, wrote, & produced Mini-Mocks, music videos, and content collabs with notable influencers.		series/comedy-central-originals	/videos/comedycentral.mp4			/thumbposters/comedycentraloriginals.jpg	
@@ -66,7 +71,6 @@ Tell-my-wife	Tell My Wife	Big Apple Film Fest 2023	Co-director | Co-writer | Edi
 ask-alexa	Ask Alexa	ft. Anna Roisman & Lane Kwederis	Director | Editor	sketch	11		dQtJTZeBWUQ		/videos/alexa.mp4				
 beauty-and-the-bowl	Beauty and the Bowl	ft. Gianmarco Soresi & Uncle Function	Director | DP | Editor	sketch	1	Sketch comedy featured on Funny Or Die.	nRWyNY1xmto		/videos/beautyandthebowl.mp4				
 cocaine	Cocaine PSA	ft. Bridgette Everett, Arthur Meyer, Joel Kim Booster	Director | Editor	sketch	10		5n_Zl5bhUhU		/videos/cocaine.mp4				
-dinner	Meeting the Parents	ft. Megan Sass, Jerah Milligan	Director | DP | Editor		7		ZGDTHeyeO-w						
 dog	The Only Dog Video You Need to Watch	Funny or Die	Director | DP	sketch	6	ft. Lauren Ireland, Elyse Brandau, Brennan Lee Mulligan, Lilu Du, Dan Chamberlain & more.	tgND22y7uuA		/videos/dogs.mp4				
 grandmothers-announcement	Grandmother's Announcement	ft. Natalie Walker & Lulu Krause	Director | DP | Editor	sketch	4		PEwfwxtwkWE		/videos/grandma.mp4				
 Mta-shames-nyc	MTA Shames NYC	SpoiledNYC ft. Gianmarco Soresi & Megan Sass	Director | Editor	sketch	3	Featured in Metro News!	qhXZjxXbW4s		/videos/mta.mp4			/thumbposters/mta.jpg	
@@ -74,8 +78,9 @@ poly-bachelorette	Poly Bachelorette		Director | DP | Co-Writer | Editor	sketch	5
 Secret-agent	Secret Agent Betrayal	Andy's Originals ft. Geil Comedy	Director | Writer | Editor	sketch			kNGsC9uqwVs		videos/secretagent.mp4				
 settling	Settling	ft. Gianmarco Soresi & Megan Sass	Director | DP | Editor	sketch	2		qSPdMoxsZoU		/videos/settling.mp4				
 The-painter	The Painter	Quickiefest	Director | DP | Editor	sketch	8	Winner Audience Award	WnEJ9xsAkZ0		/videos/painter.mp4				
+dune	Dune Meme			sketch			VilAyt3VQH4						
+less	Less	ft. Matt Rogers, Tessa Skara	Director | Writer | DP | Editor	sketch			dcWy5-q_4I8						
 tech-videos-showreel	Making Of Garden of Eden			tech	2	Devlog of using Blender, Wonder Dynamics, Unreal Engine to design a 3D scene	bpkZSxtZd7Y		/videos/mff.mp4				
-projectiles	Projectile Intercept Math					Devlog of explaining projectile intercept math	MpUUsDDE1sI		/videos/intercepts.mp4				
 unreal	Unreal Engine Devlog			tech	3	Devlog of Unreal Engine AI mechanics	c22gpypHv2k		/videos/unreal.mp4				
 tootsies-promo-bts	Environment Replacement Vlog			tech	1	Devlog of Enviroment replacement	a-gHLCFfNEs		/videos/tootsiespromo.mp4				
 Honest-waitress-1	The Honest Waitress: Ignored	PitTV ft. Leila Graham	Director | Editor	the-honest-waitress	1		zlFyjWf4hOk						
@@ -83,19 +88,14 @@ Honest-waitress-2	The Honest Waitress: Lemons	PitTV ft. Leila Graham	Director | 
 Honest-waitress-3	The Honest Waitress: Soda	PitTV ft. Leila Graham	Director | Editor	the-honest-waitress	3		Gk7n1WSpxXg						
 Honest-waitress-4	The Honest Waitress: Euope	PitTV ft. Leila Graham	Director | Editor	the-honest-waitress	4		2z09RB3wsGk						
 Honest-waitress-5	The Honest Waitress: Menu	PitTV ft. Leila Graham	Director | Editor	the-honest-waitress	5		FUto6VeJfbI						
+dinner	Meeting the Parents	ft. Megan Sass, Jerah Milligan	Director | DP | Editor		7		ZGDTHeyeO-w						
+projectiles	Projectile Intercept Math					Devlog of explaining projectile intercept math	MpUUsDDE1sI		/videos/intercepts.mp4				
 election-science-duvergers-law	Duverger's Law	Center for Election Science	Director | Editor			Volunteer work for election non-profit ElectionScience.org!	HpBRGXK-QNs						
 architects-newspaper-interviews	Architect's Newspaper	Interview Series	Videographer & Editor			Videographer and editor for interviews on new architecture projects.	Bzhb1WBUNps						
 directing-reel	Andy Zou's Comedy Directing Reel						bmKPJLfm4lk			/thumbposters/bmKPJLfm4lk-maxresdefault.jpg			
-Jackson-pollack	Jackson Pollock	ft. Douglas Widick	Director | Editor	music-videos	6		f53aKCMl7FQ		/videos/jacksonpollock.mp4				
 Long-distance	Long Distance Relationships	SpoiledNYC ft. Gianmarco Soresi & Megan Sass	Director | DP | Editor										
-pissterine	Pissterine			favorites	3	Andy once kickstarted a Listerine knockoff that got shutdown in trademark court.		https://www.kickstarter.com/projects/andyzou/pissterine-a-genuine-novelty-mouthwash	/videos/pissterine.mp4			/thumbposters/pissterine.jpg	
 Royal-heart	Royal Heart	Choreo Hayden Frederick	DP | Editor				zG2amIyE1Es						
-sugar	Sugar	Sister Sparrow	DP | Editor	music-videos	5		-53w2mv_upw		/videos/sugar.mp4				
 three4	three4	ft. Yael Elisheva	Director | DP | Editor										
 tootsies	Tootsie's Video Vault							https://tootsiesvideovault.com	/videos/tootsies.mp4			/thumbposters/tootsies.jpg	
 uber	Uber	SpoiledNYC ft. Gianmarco Soresi & Megan Sass	Director | DP | Editor										
 Wonderful-life	It's a Wonderful Life		Director | Editor		9		_98xIvAvOhE						
-dune	Dune Meme			sketch			VilAyt3VQH4						
-less	Less	ft. Matt Rogers, Tessa Skara	Director | Writer | DP | Editor	sketch			dcWy5-q_4I8						
-big-downer	The Big Downer	Spec PSA for Long Covid	Director | Editor	branded-content	4		PTo-3d7cco4		videos/bigdowner.mp4				
-hooking-up-with-girls	Hooking Up With Girls	ft. Lane Moore	DP | Editor	music-videos	4		t3rLCM9LFfE		videos/hookingupwithgirls.mp4				

@@ -3,20 +3,6 @@ import type { Case } from "./cases";
 
 export const CASES: Case[] = [
   {
-    "id": "andys-roadshow",
-    "media": {
-      "kind": "video",
-      "src": "/videos/roadshow.mp4",
-      "poster": "/thumbposters/iLNypL04zH0-hqdefault.jpg"
-    },
-    "title": "Andy's Roadshow",
-    "roles": "Director | Writer | Editor",
-    "youtubeId": "iLNypL04zH0",
-    "href": "https://www.youtube.com/watch?v=iLNypL04zH0",
-    "seriesId": "favorites",
-    "videoOrder": 2
-  },
-  {
     "id": "interstellar",
     "media": {
       "kind": "image",
@@ -44,20 +30,6 @@ export const CASES: Case[] = [
     "youtubeId": "_SRIskz2JOY",
     "href": "https://www.youtube.com/watch?v=_SRIskz2JOY",
     "seriesId": "andys-originals"
-  },
-  {
-    "id": "tuber",
-    "media": {
-      "kind": "video",
-      "src": "/videos/tuber.mp4",
-      "poster": "/thumbposters/0U5SCBko2XM-hqdefault.jpg"
-    },
-    "title": "Tuber",
-    "roles": "Director | Writer | Editor",
-    "youtubeId": "0U5SCBko2XM",
-    "href": "https://www.youtube.com/watch?v=0U5SCBko2XM",
-    "seriesId": "favorites",
-    "videoOrder": 1
   },
   {
     "id": "Apocalypse-1",
@@ -198,6 +170,21 @@ export const CASES: Case[] = [
     "href": "https://www.youtube.com/watch?v=lMFubod8Gdc",
     "seriesId": "branded-content",
     "videoOrder": 2
+  },
+  {
+    "id": "big-downer",
+    "media": {
+      "kind": "video",
+      "src": "videos/bigdowner.mp4",
+      "poster": "/thumbposters/PTo-3d7cco4-hqdefault.jpg"
+    },
+    "title": "The Big Downer",
+    "subtitle": "Spec PSA for Long Covid",
+    "roles": "Director | Editor",
+    "youtubeId": "PTo-3d7cco4",
+    "href": "https://www.youtube.com/watch?v=PTo-3d7cco4",
+    "seriesId": "branded-content",
+    "videoOrder": 4
   },
   {
     "id": "European-boys",
@@ -632,6 +619,47 @@ export const CASES: Case[] = [
     "seriesId": "editing"
   },
   {
+    "id": "andys-roadshow",
+    "media": {
+      "kind": "video",
+      "src": "/videos/roadshow.mp4",
+      "poster": "/thumbposters/iLNypL04zH0-hqdefault.jpg"
+    },
+    "title": "Andy's Roadshow",
+    "roles": "Director | Writer | Editor",
+    "youtubeId": "iLNypL04zH0",
+    "href": "https://www.youtube.com/watch?v=iLNypL04zH0",
+    "seriesId": "favorites",
+    "videoOrder": 1
+  },
+  {
+    "id": "tuber",
+    "media": {
+      "kind": "video",
+      "src": "/videos/tuber.mp4",
+      "poster": "/thumbposters/0U5SCBko2XM-hqdefault.jpg"
+    },
+    "title": "Tuber",
+    "roles": "Director | Writer | Editor",
+    "youtubeId": "0U5SCBko2XM",
+    "href": "https://www.youtube.com/watch?v=0U5SCBko2XM",
+    "seriesId": "favorites",
+    "videoOrder": 3
+  },
+  {
+    "id": "pissterine",
+    "media": {
+      "kind": "video",
+      "src": "/videos/pissterine.mp4",
+      "poster": "/thumbposters/pissterine.jpg"
+    },
+    "title": "Pissterine",
+    "copy": "Andy once kickstarted a Listerine knockoff that got shutdown in trademark court.",
+    "href": "https://www.kickstarter.com/projects/andyzou/pissterine-a-genuine-novelty-mouthwash",
+    "seriesId": "favorites",
+    "videoOrder": 2
+  },
+  {
     "id": "Making-it-1",
     "media": {
       "kind": "image",
@@ -836,6 +864,51 @@ export const CASES: Case[] = [
     "videoOrder": 1
   },
   {
+    "id": "Jackson-pollack",
+    "media": {
+      "kind": "video",
+      "src": "/videos/jacksonpollock.mp4",
+      "poster": "/thumbposters/f53aKCMl7FQ-hqdefault.jpg"
+    },
+    "title": "Jackson Pollock",
+    "subtitle": "ft. Douglas Widick",
+    "roles": "Director | Editor",
+    "youtubeId": "f53aKCMl7FQ",
+    "href": "https://www.youtube.com/watch?v=f53aKCMl7FQ",
+    "seriesId": "music-videos",
+    "videoOrder": 6
+  },
+  {
+    "id": "sugar",
+    "media": {
+      "kind": "video",
+      "src": "/videos/sugar.mp4",
+      "poster": "/thumbposters/-53w2mv_upw-hqdefault.jpg"
+    },
+    "title": "Sugar",
+    "subtitle": "Sister Sparrow",
+    "roles": "DP | Editor",
+    "youtubeId": "-53w2mv_upw",
+    "href": "https://www.youtube.com/watch?v=-53w2mv_upw",
+    "seriesId": "music-videos",
+    "videoOrder": 5
+  },
+  {
+    "id": "hooking-up-with-girls",
+    "media": {
+      "kind": "video",
+      "src": "videos/hookingupwithgirls.mp4",
+      "poster": "/thumbposters/t3rLCM9LFfE-hqdefault.jpg"
+    },
+    "title": "Hooking Up With Girls",
+    "subtitle": "ft. Lane Moore",
+    "roles": "DP | Editor",
+    "youtubeId": "t3rLCM9LFfE",
+    "href": "https://www.youtube.com/watch?v=t3rLCM9LFfE",
+    "seriesId": "music-videos",
+    "videoOrder": 4
+  },
+  {
     "id": "apocalypse-problems-series",
     "media": {
       "kind": "video",
@@ -1016,20 +1089,6 @@ export const CASES: Case[] = [
     "videoOrder": 10
   },
   {
-    "id": "dinner",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/ZGDTHeyeO-w-hqdefault.jpg",
-      "alt": "Meeting the Parents thumbnail"
-    },
-    "title": "Meeting the Parents",
-    "subtitle": "ft. Megan Sass, Jerah Milligan",
-    "roles": "Director | DP | Editor",
-    "youtubeId": "ZGDTHeyeO-w",
-    "href": "https://www.youtube.com/watch?v=ZGDTHeyeO-w",
-    "videoOrder": 7
-  },
-  {
     "id": "dog",
     "media": {
       "kind": "video",
@@ -1136,6 +1195,32 @@ export const CASES: Case[] = [
     "videoOrder": 8
   },
   {
+    "id": "dune",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/VilAyt3VQH4-hqdefault.jpg",
+      "alt": "Dune Meme thumbnail"
+    },
+    "title": "Dune Meme",
+    "youtubeId": "VilAyt3VQH4",
+    "href": "https://www.youtube.com/watch?v=VilAyt3VQH4",
+    "seriesId": "sketch"
+  },
+  {
+    "id": "less",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/dcWy5-q_4I8-hqdefault.jpg",
+      "alt": "Less thumbnail"
+    },
+    "title": "Less",
+    "subtitle": "ft. Matt Rogers, Tessa Skara",
+    "roles": "Director | Writer | DP | Editor",
+    "youtubeId": "dcWy5-q_4I8",
+    "href": "https://www.youtube.com/watch?v=dcWy5-q_4I8",
+    "seriesId": "sketch"
+  },
+  {
     "id": "tech-videos-showreel",
     "media": {
       "kind": "video",
@@ -1148,18 +1233,6 @@ export const CASES: Case[] = [
     "href": "https://www.youtube.com/watch?v=bpkZSxtZd7Y",
     "seriesId": "tech",
     "videoOrder": 2
-  },
-  {
-    "id": "projectiles",
-    "media": {
-      "kind": "video",
-      "src": "/videos/intercepts.mp4",
-      "poster": "/thumbposters/MpUUsDDE1sI-hqdefault.jpg"
-    },
-    "title": "Projectile Intercept Math",
-    "copy": "Devlog of explaining projectile intercept math",
-    "youtubeId": "MpUUsDDE1sI",
-    "href": "https://www.youtube.com/watch?v=MpUUsDDE1sI"
   },
   {
     "id": "unreal",
@@ -1265,6 +1338,32 @@ export const CASES: Case[] = [
     "videoOrder": 5
   },
   {
+    "id": "dinner",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/ZGDTHeyeO-w-hqdefault.jpg",
+      "alt": "Meeting the Parents thumbnail"
+    },
+    "title": "Meeting the Parents",
+    "subtitle": "ft. Megan Sass, Jerah Milligan",
+    "roles": "Director | DP | Editor",
+    "youtubeId": "ZGDTHeyeO-w",
+    "href": "https://www.youtube.com/watch?v=ZGDTHeyeO-w",
+    "videoOrder": 7
+  },
+  {
+    "id": "projectiles",
+    "media": {
+      "kind": "video",
+      "src": "/videos/intercepts.mp4",
+      "poster": "/thumbposters/MpUUsDDE1sI-hqdefault.jpg"
+    },
+    "title": "Projectile Intercept Math",
+    "copy": "Devlog of explaining projectile intercept math",
+    "youtubeId": "MpUUsDDE1sI",
+    "href": "https://www.youtube.com/watch?v=MpUUsDDE1sI"
+  },
+  {
     "id": "election-science-duvergers-law",
     "media": {
       "kind": "image",
@@ -1304,21 +1403,6 @@ export const CASES: Case[] = [
     "href": "https://www.youtube.com/watch?v=bmKPJLfm4lk"
   },
   {
-    "id": "Jackson-pollack",
-    "media": {
-      "kind": "video",
-      "src": "/videos/jacksonpollock.mp4",
-      "poster": "/thumbposters/f53aKCMl7FQ-hqdefault.jpg"
-    },
-    "title": "Jackson Pollack",
-    "subtitle": "ft. Douglas Widick",
-    "roles": "Director | Editor",
-    "youtubeId": "f53aKCMl7FQ",
-    "href": "https://www.youtube.com/watch?v=f53aKCMl7FQ",
-    "seriesId": "music-videos",
-    "videoOrder": 6
-  },
-  {
     "id": "Long-distance",
     "media": {
       "kind": "image",
@@ -1328,19 +1412,6 @@ export const CASES: Case[] = [
     "title": "Long Distance Relationships",
     "subtitle": "SpoiledNYC ft. Gianmarco Soresi & Megan Sass",
     "roles": "Director | DP | Editor"
-  },
-  {
-    "id": "pissterine",
-    "media": {
-      "kind": "video",
-      "src": "/videos/pissterine.mp4",
-      "poster": "/thumbposters/pissterine.jpg"
-    },
-    "title": "Pissterine",
-    "copy": "Andy once kickstarted a Listerine knockoff that got shutdown in trademark court.",
-    "href": "https://www.kickstarter.com/projects/andyzou/pissterine-a-genuine-novelty-mouthwash",
-    "seriesId": "favorites",
-    "videoOrder": 3
   },
   {
     "id": "Royal-heart",
@@ -1354,21 +1425,6 @@ export const CASES: Case[] = [
     "roles": "DP | Editor",
     "youtubeId": "zG2amIyE1Es",
     "href": "https://www.youtube.com/watch?v=zG2amIyE1Es"
-  },
-  {
-    "id": "sugar",
-    "media": {
-      "kind": "video",
-      "src": "/videos/sugar.mp4",
-      "poster": "/thumbposters/-53w2mv_upw-hqdefault.jpg"
-    },
-    "title": "Sugar",
-    "subtitle": "Sister Sparrow",
-    "roles": "DP | Editor",
-    "youtubeId": "-53w2mv_upw",
-    "href": "https://www.youtube.com/watch?v=-53w2mv_upw",
-    "seriesId": "music-videos",
-    "videoOrder": 5
   },
   {
     "id": "three4",
@@ -1414,61 +1470,5 @@ export const CASES: Case[] = [
     "youtubeId": "_98xIvAvOhE",
     "href": "https://www.youtube.com/watch?v=_98xIvAvOhE",
     "videoOrder": 9
-  },
-  {
-    "id": "dune",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/VilAyt3VQH4-hqdefault.jpg",
-      "alt": "Dune Meme thumbnail"
-    },
-    "title": "Dune Meme",
-    "youtubeId": "VilAyt3VQH4",
-    "href": "https://www.youtube.com/watch?v=VilAyt3VQH4",
-    "seriesId": "sketch"
-  },
-  {
-    "id": "less",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/dcWy5-q_4I8-hqdefault.jpg",
-      "alt": "Less thumbnail"
-    },
-    "title": "Less",
-    "subtitle": "ft. Matt Rogers, Tessa Skara",
-    "roles": "Director | Writer | DP | Editor",
-    "youtubeId": "dcWy5-q_4I8",
-    "href": "https://www.youtube.com/watch?v=dcWy5-q_4I8",
-    "seriesId": "sketch"
-  },
-  {
-    "id": "big-downer",
-    "media": {
-      "kind": "video",
-      "src": "videos/bigdowner.mp4",
-      "poster": "/thumbposters/PTo-3d7cco4-hqdefault.jpg"
-    },
-    "title": "The Big Downer",
-    "subtitle": "Spec PSA for Long Covid",
-    "roles": "Director | Editor",
-    "youtubeId": "PTo-3d7cco4",
-    "href": "https://www.youtube.com/watch?v=PTo-3d7cco4",
-    "seriesId": "branded-content",
-    "videoOrder": 4
-  },
-  {
-    "id": "hooking-up-with-girls",
-    "media": {
-      "kind": "video",
-      "src": "videos/hookingupwithgirls.mp4",
-      "poster": "/thumbposters/t3rLCM9LFfE-hqdefault.jpg"
-    },
-    "title": "Hooking Up With Girls",
-    "subtitle": "ft. Lane Moore",
-    "roles": "DP | Editor",
-    "youtubeId": "t3rLCM9LFfE",
-    "href": "https://www.youtube.com/watch?v=t3rLCM9LFfE",
-    "seriesId": "music-videos",
-    "videoOrder": 4
   }
 ];

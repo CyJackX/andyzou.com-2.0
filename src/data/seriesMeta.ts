@@ -26,7 +26,7 @@ export const SERIES_META: Record<string, SeriesMeta> = {
   "comedy-central-originals": {
     title: "Comedy Central Originals",
     copy:
-      "At Comedy Central's Webby-winning Digital team, Andy directed and produced multiple series, music videos, and other collaborations with notable influencers.",
+      "At Comedy Central's Webby-winning Digital team, Andy directed and produced multiple series, music videos, and other collaborations with notable influencers like Anwar, Adam Waheed, Sven Johnson, Rose Kelso, & more.",
     homeSectionId: "scripted-digital-series",
   },
   "death-becomes-her": {
