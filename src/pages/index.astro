@@ -3,12 +3,14 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import VideoLightbox from "../components/VideoLightbox.astro";
+import WorkTile from "../components/WorkTile.astro";
 import WorkTilebyId from "../components/WorkTileByID.astro";
 import WorkTilesBySeries from "../components/WorkTilesBySeries.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import azaleaShoot from "../images/AzaleaShootSelects-07.jpg";
 import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
+import { getCollection } from "astro:content";
 
 function formatGalleryAlt(filePath: string) {
   const filename =
@@ -36,6 +38,28 @@ const andyGalleryImages = Object.entries(
       sensitivity: "base",
     }),
   );
+
+const blogDateFormatter = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+});
+
+const latestBlogPosts = (await getCollection("blog"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3)
+  .map((post) => ({
+    id: `blog-${post.id}`,
+    title: post.data.title,
+    subtitle: blogDateFormatter.format(post.data.pubDate),
+    copy: post.data.description,
+    href: `/blog/${post.id}/`,
+    media: {
+      kind: "image" as const,
+      src: post.data.heroImage ?? "/blog-placeholder-1.jpg",
+      alt: post.data.title,
+    },
+  }));
 ---
 
 <!doctype html>
@@ -43,19 +67,19 @@ const andyGalleryImages = Object.entries(
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body>
+  <body
+    >
     <main class="text-center">
+      <Header />
       <VideoLightbox tileSelector="[data-lightboxable='true']" />
       <!-- <ol class="tilescontainer">
         <WorkTileByID id="directing-reel" />
       </div> -->
-      <Header />
+
       <div>
         <details id="scripted-digital-series" name="director-subsection">
           <summary
-            ><h2 class="section-title subsection">
-              Scripted Digital Series
-            </h2></summary
+            ><h2 class="section-title subsection">Scripted Series</h2></summary
           >
           <ol class="tilescontainer">
             <WorkTilesBySeries seriesId="series" deferMedia={true} />
@@ -66,6 +90,13 @@ const andyGalleryImages = Object.entries(
           <summary
             ><h2 class="section-title subsection">Branded Content</h2></summary
           >
+          <p class="copy">
+            tktktktktktkAfter a decade of producing content and seeing the ins
+            and outs, Andy parlayed his skills into his own boutique production
+            company for content at <a
+              href="https://www.instantmagenta.com"
+              class="underline">Instant Magenta.</a>
+          </p>
           <ol class="tilescontainer two-col">
             <WorkTilesBySeries seriesId="branded-content" deferMedia={true} />
           </ol>
@@ -77,6 +108,11 @@ const andyGalleryImages = Object.entries(
               Sketches & Shorts
             </h2></summary
           >
+          <p class="copy">
+            An alum of Upright Citizen's Brigade and NYU's Hammerkatz, Andy has
+            worked closely with the local comedy scene for years as a go-to
+            director, DP, and editor.
+          </p>
           <ol class="tilescontainer">
             <WorkTilesBySeries seriesId="sketch" deferMedia={true} />
             <WorkTilesBySeries seriesId="shorts" deferMedia={true} />
@@ -86,6 +122,10 @@ const andyGalleryImages = Object.entries(
           <summary
             ><h2 class="section-title subsection">Music Videos</h2></summary
           >
+          <p class="copy">
+            One of Andy's favorite mediums, he loves the creative freedom and
+            emotional resonance that comes from a great music video.
+          </p>
           <ol class="tilescontainer">
             <WorkTilesBySeries seriesId="music-videos" deferMedia={true} />
           </ol>
@@ -93,14 +133,19 @@ const andyGalleryImages = Object.entries(
         <details id="fan-favorites" name="director-subsection">
           <summary
             ><h2 class="section-title subsection">Fan Favorites</h2></summary
-          ><ol class="tilescontainer">
-            <li><WorkTilebyId id="tuber" deferMedia={true} /></li>
+          >
+          <p class="copy">
+            Just some classic Andy. These are what his friends bring up the
+            most.
+          </p>
+          <ol class="tilescontainer">
             <li>
               <WorkTilebyId id="andys-roadshow" deferMedia={true} />
             </li>
             <li>
               <WorkTilebyId id="pissterine" target="_blank" deferMedia={true} />
             </li>
+            <li><WorkTilebyId id="tuber" deferMedia={true} /></li>
           </ol>
         </details>
       </div>
@@ -114,20 +159,39 @@ const andyGalleryImages = Object.entries(
         </ol>
       </details> -->
 
-      <details id="tech-chops" name="director-subsection">
-        <summary><h2 class="section-title subsection">Tech Chops</h2></summary>
+      <details id="technology" name="director-subsection">
+        <summary><h2 class="section-title subsection">Technology</h2></summary>
         <p class="copy">
           From After Effects compositing to VR, 3D engines, genAI, webdev, and
           more, Andy has a wide range of technical skills that support his work
-          as a director and an editor. He blogs occasionally about his projects
-          at <a
-            href="https://medium.com/andys-coding-blog"
-            target="_blank"
-            class="underline">https://medium.com/andys-coding-blog</a
-          >
+          as a director and an editor.
         </p>
         <ol class="tilescontainer">
           <WorkTilesBySeries seriesId="tech" deferMedia={true} />
+        </ol>
+        <p class="copy">
+          He blogs occasionally about tech right <a
+            href="/blog"
+            target="_blank"
+            class="underline">here!</a
+          >
+        </p>
+        <ol class="tilescontainer">
+          {
+            latestBlogPosts.map((post) => (
+              <li>
+                <WorkTile
+                  id={post.id}
+                  type="series"
+                  title={post.title}
+                  subtitle={post.subtitle}
+                  copy={post.copy}
+                  media={post.media}
+                  href={post.href}
+                />
+              </li>
+            ))
+          }
         </ol>
       </details>
       <!-- 
@@ -141,19 +205,19 @@ const andyGalleryImages = Object.entries(
       </details> -->
 
       <details id="about" name="director-subsection">
-        <summary><h2 class="section-title subsection">About</h2></summary>
+        <summary
+          ><h2 class="section-title subsection">About</h2></summary
+        >
         <p class="copy">
           With a background in Experimental Theatre & Computer Science, Andy has
           been hands-on as a director throughout his career. From creative
-          writing to line producing, cinematography to editing, Andy's holistic
-          experience in content creation gives him the skills to smoothly take
-          projects from script to screen. As a director, Andy focuses on the
-          audience experience to find the relatability in everything he makes,
-          utilizing pop culture and modern trends.
-        </p>
-        <p>
-          Time spent as a scrappy one-man band enables him to scale to managing
-          larger productions, etc, in ways that people typically can't manage
+          writing to line producing, cinematography to editing, Andy's done it
+          all, going from a scrappy one-man band to directing for Comedy Central
+          Digital. His holistic production experience gives him the skills to
+          navigate complex productions and take projects smoothly from script to
+          screen. As a director, Andy's priority is tapping in to the audience
+          experience. When you need someone that knows how to make scrappiness
+          work at scale, reach out at Andy@AndyZou.com
         </p>
         <ol class="flex flex-wrap gap-8 items-start justify-center my-8">
           {
@@ -177,6 +241,7 @@ const andyGalleryImages = Object.entries(
               </li>
             ))
           }
+
           <li class="max-w-4xl">
             <a
               href={azaleaShoot.src}
@@ -209,7 +274,7 @@ const andyGalleryImages = Object.entries(
             </div>
             <p class="px-8 m-8">
               He's also a co-producer on annual short film festival <a
-                class="text-nowrap"
+                class="text-nowrap underline"
                 href="https://www.tootsiesvideovault.com"
                 target="_blank"
               >
@@ -242,7 +307,6 @@ const andyGalleryImages = Object.entries(
       content: "";
       inset: 0;
       pointer-events: none;
-      border-bottom: 0.5cqw solid white;
     }
 
     details::details-content {
@@ -262,17 +326,17 @@ const andyGalleryImages = Object.entries(
     }
 
     .section-title:hover {
-      background-color: white;
-      color: black;
+      background-color: rgb(var(--gray-light));
+      color: rgb(var(--black));
     }
 
     .section-title:hover .header-video {
       display: none;
     }
-
+    /* 
     .subsection {
-      /* width: fit-content; */
-      /* margin: 0 auto; */
+      width: fit-content;
+      margin: 0 auto;
     }
 
     @media (max-width: 768px) {
@@ -280,12 +344,14 @@ const andyGalleryImages = Object.entries(
         font-size: 1.75em;
       }
     }
+      */
 
     .gallery-lightbox {
       display: block;
       border-radius: 12px;
       overflow: hidden;
     }
+
     @media (min-width: 768px) {
       .tilescontainer.two-col {
         grid-template-columns: repeat(2, minmax(320px, 1fr));

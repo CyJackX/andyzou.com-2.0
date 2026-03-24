@@ -45,9 +45,11 @@ const pageTitle = `${seriesTitle} | ${SITE_TITLE}`;
     />
   </head>
   <body>
+    <Titleheader />
     <main>
-      <Titleheader />
-      <a href={homeHref} class="backlink my-4 block text-left">&larr; Back Home</a>
+      <a href={homeHref} class="backlink my-4 block text-left hover:underline"
+        >&larr; Back Home</a
+      >
       <h2 class="text-center font-bold my-2">{seriesTitle}</h2>
       {seriesCopy && <p class="copy max-w-7xl w-fit mx-auto">{seriesCopy}</p>}
 

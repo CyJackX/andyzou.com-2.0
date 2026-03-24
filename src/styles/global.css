@@ -14,9 +14,9 @@
 	font-size: 62.5%;
 	--accent: #2337ff;
 	--accent-dark: #000d8a;
-	--black: 15,
-	18,
-	25;
+	--black: 0,
+	0,
+	0;
 	--gray: 96,
 	115,
 	159;
@@ -32,6 +32,7 @@
 	0 8px 24px rgba(var(--gray), 33%),
 	0 16px 32px rgba(var(--gray), 33%);
 }
+
 
 @font-face {
 	font-family: "Atkinson";
@@ -54,22 +55,25 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	color: white;
-	background: black;
+	color: rgb(var(--gray-light));
+	background: rgb(var(--black));
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	font-size: 1.6rem;
 	line-height: 1.2;
+	scrollbar-gutter: stable;
 }
 
 @media (max-width: 768px) {
-	body{
+	body {
 		font-size: 1.2rem;
 	}
 }
 
 main {
-	padding: 1em;
+	box-sizing: border-box;
+	padding: 2em;
+	width: 100%;
 	max-width: 1280px;
 	margin: 0 auto;
 	container-type: inline-size;
@@ -168,14 +172,21 @@ blockquote {
       flex-wrap: wrap;
       justify-content: left; */
 	align-items: start;
-	gap: 16px;
+	gap: 1em;
 	margin: 1em 0;
-	list-style:none;
+	list-style: none;
 }
 
 .bigtitle {
-	font-size: clamp(2em, 8cqw, 6em);
+	font-size: 6em;
 	font-weight: bold;
+	line-height: 1;
+}
+
+.section-title,
+/* .bigtitle, */
+details::after {
+	border-bottom: .4rem solid rgb(var(--gray-light));
 }
 
 .tile {
@@ -190,21 +201,28 @@ blockquote {
 }
 
 .section-title {
-	border-bottom: 0.5cqw solid white;
 	text-align: left;
 	font-weight: bold;
 	cursor: pointer;
 	user-select: none;
-}
-
-@media (max-width: 768px) {
-	.section-title{
-		border-bottom: 1cqw solid white;
-	}
+	font-size: 3.5em;
 }
 
 .copy {
-	font-size: 1.5em;
+	font-size: 1.25em;
 	text-align: left;
 	margin: .5em auto;
+}
+
+figure {
+	margin-bottom: 1em;
+}
+
+figure img {
+	margin: 0 auto;
+}
+
+figcaption {
+	text-align: center;
+	font-size: .8em;
 }

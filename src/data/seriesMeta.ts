@@ -62,7 +62,7 @@ export const SERIES_META: Record<string, SeriesMeta> = {
     title: "Technologist",
     copy:
       "From After Effects compositing to VR streaming, 3D engines, genAI, and more, Andy applies a wide range of technical skills to his work as a director and editor.",
-    homeSectionId: "tech-chops",
+    homeSectionId: "technology",
   },
   "the-honest-waitress": {
     title: "The Honest Waitress",
