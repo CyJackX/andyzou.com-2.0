@@ -67,221 +67,47 @@ const latestBlogPosts = (await getCollection("blog"))
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body
-    >
+  <body>
     <main class="text-center">
       <Header />
+      <p class="copy">
+        Instant Magenta is the producing arm of director Andy Zou. Get in touch
+        with Andy at Andy@AndyZou.com for boutique creative video production
+        services from full-service creative to editing.
+      </p>
       <VideoLightbox tileSelector="[data-lightboxable='true']" />
-      <!-- <ol class="tilescontainer">
-        <WorkTileByID id="directing-reel" />
-      </div> -->
-
-      <div>
-        <details id="scripted-digital-series" name="director-subsection">
-          <summary
-            ><h2 class="section-title subsection">Scripted Series</h2></summary
-          >
-          <ol class="tilescontainer">
-            <WorkTilesBySeries seriesId="series" deferMedia={true} />
-          </ol>
-        </details>
-
-        <details id="branded-content" name="director-subsection">
-          <summary
-            ><h2 class="section-title subsection">Branded Content</h2></summary
-          >
-          <p class="copy">
-            tktktktktktkAfter a decade of producing content and seeing the ins
-            and outs, Andy parlayed his skills into his own boutique production
-            company for content at <a
-              href="https://www.instantmagenta.com"
-              class="underline">Instant Magenta.</a>
-          </p>
-          <ol class="tilescontainer two-col">
-            <WorkTilesBySeries seriesId="branded-content" deferMedia={true} />
-          </ol>
-        </details>
-
-        <details id="sketches-shorts" name="director-subsection">
-          <summary
-            ><h2 class="section-title subsection">
-              Sketches & Shorts
-            </h2></summary
-          >
-          <p class="copy">
-            An alum of Upright Citizen's Brigade and NYU's Hammerkatz, Andy has
-            worked closely with the local comedy scene for years as a go-to
-            director, DP, and editor.
-          </p>
-          <ol class="tilescontainer">
-            <WorkTilesBySeries seriesId="sketch" deferMedia={true} />
-            <WorkTilesBySeries seriesId="shorts" deferMedia={true} />
-          </ol>
-        </details>
-        <details id="music-videos" name="director-subsection">
-          <summary
-            ><h2 class="section-title subsection">Music Videos</h2></summary
-          >
-          <p class="copy">
-            One of Andy's favorite mediums, he loves the creative freedom and
-            emotional resonance that comes from a great music video.
-          </p>
-          <ol class="tilescontainer">
-            <WorkTilesBySeries seriesId="music-videos" deferMedia={true} />
-          </ol>
-        </details>
-        <details id="fan-favorites" name="director-subsection">
-          <summary
-            ><h2 class="section-title subsection">Fan Favorites</h2></summary
-          >
-          <p class="copy">
-            Just some classic Andy. These are what his friends bring up the
-            most.
-          </p>
-          <ol class="tilescontainer">
-            <li>
-              <WorkTilebyId id="andys-roadshow" deferMedia={true} />
-            </li>
-            <li>
-              <WorkTilebyId id="pissterine" target="_blank" deferMedia={true} />
-            </li>
-            <li><WorkTilebyId id="tuber" deferMedia={true} /></li>
-          </ol>
-        </details>
-      </div>
-      <!-- <details id="scripted-digital-series" name="director-subsection">
-        <summary><h2 class="section-title bigtitle">Creative</h2></summary><ol
-          class="tilescontainer"
+      <details open id="scripted-digital-series">
+        <summary
+          ><h2 class="section-title bigtitle">
+            Armada Projects / Sony / Paramount
+          </h2></summary
         >
-          <li>Polygon</li>
-          <li>Escadating</li>
-          <li>Immersive?</li>
-        </ol>
-      </details> -->
-
-      <details id="technology" name="director-subsection">
-        <summary><h2 class="section-title subsection">Technology</h2></summary>
-        <p class="copy">
-          From After Effects compositing to VR, 3D engines, genAI, webdev, and
-          more, Andy has a wide range of technical skills that support his work
-          as a director and an editor.
-        </p>
         <ol class="tilescontainer">
-          <WorkTilesBySeries seriesId="tech" deferMedia={true} />
-        </ol>
-        <p class="copy">
-          He blogs occasionally about tech right <a
-            href="/blog"
-            target="_blank"
-            class="underline">here!</a
-          >
-        </p>
-        <ol class="tilescontainer">
-          {
-            latestBlogPosts.map((post) => (
-              <li>
-                <WorkTile
-                  id={post.id}
-                  type="series"
-                  title={post.title}
-                  subtitle={post.subtitle}
-                  copy={post.copy}
-                  media={post.media}
-                  href={post.href}
-                />
-              </li>
-            ))
-          }
+          <WorkTilesBySeries seriesId="armada" />
         </ol>
       </details>
-      <!-- 
-      <details id="scripted-digital-series" name="director-subsection">
+      <details open id="scripted-digital-series">
         <summary
-          ><h2 class="section-title bigtitle">Unscripted Editor</h2></summary
+          ><h2 class="section-title bigtitle">Barstool Sports</h2></summary
         >
         <ol class="tilescontainer">
-          <WorkTilesBySeries seriesId="editing"  />
+          <WorkTilesBySeries seriesId="barstool" />
         </ol>
-      </details> -->
-
-      <details id="about" name="director-subsection">
+      </details>
+      <details open id="scripted-digital-series">
         <summary
-          ><h2 class="section-title subsection">About</h2></summary
+          ><h2 class="section-title bigtitle">Westbrook Studios</h2></summary
         >
-        <p class="copy">
-          With a background in Experimental Theatre & Computer Science, Andy has
-          been hands-on as a director throughout his career. From creative
-          writing to line producing, cinematography to editing, Andy's done it
-          all, going from a scrappy one-man band to directing for Comedy Central
-          Digital. His holistic production experience gives him the skills to
-          navigate complex productions and take projects smoothly from script to
-          screen. As a director, Andy's priority is tapping in to the audience
-          experience. When you need someone that knows how to make scrappiness
-          work at scale, reach out at Andy@AndyZou.com
-        </p>
-        <ol class="flex flex-wrap gap-8 items-start justify-center my-8">
-          {
-            andyGalleryImages.map((image) => (
-              <li>
-                <a
-                  href={image.src.src}
-                  class="gallery-lightbox"
-                  data-lightboxable="true"
-                  data-title={image.alt}
-                  aria-label={`${image.alt} full image`}
-                >
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    height="640"
-                    loading="lazy"
-                    class="h-60 w-auto md:h-85 block"
-                  />
-                </a>
-              </li>
-            ))
-          }
-
-          <li class="max-w-4xl">
-            <a
-              href={azaleaShoot.src}
-              class="gallery-lightbox"
-              data-lightboxable="true"
-              data-title="Bug Family"
-              aria-label={`Family Bugs full image`}
-            >
-              <Image
-                src={azaleaShoot}
-                alt="Bug Family"
-                height="640"
-                loading="lazy"
-                class="aspect-video object-cover"
-              />
-            </a>
-            <p class="px-8 m-8">
-              Andy lives in Brooklyn with his wife and collaborator Katie
-              Sicking and their daughter Azalea.
-            </p>
-          </li>
-          <li>
-            <div>
-              <WorkTilebyId
-                id="tootsies"
-                target="_blank"
-                className="max-w-[560px] w-full mx-auto"
-                deferMedia={true}
-              />
-            </div>
-            <p class="px-8 m-8">
-              He's also a co-producer on annual short film festival <a
-                class="text-nowrap underline"
-                href="https://www.tootsiesvideovault.com"
-                target="_blank"
-              >
-                Tootsie's Video Vault!</a
-              >
-            </p>
-          </li>
+        <ol class="tilescontainer two-col">
+          <WorkTilesBySeries seriesId="westbrook" />
+        </ol>
+      </details>
+      <details open id="scripted-digital-series">
+        <summary
+          ><h2 class="section-title bigtitle">Death Becomes Her</h2></summary
+        >
+        <ol class="tilescontainer">
+          <WorkTilesBySeries seriesId="death-becomes-her" />
         </ol>
       </details>
     </main>

@@ -3,188 +3,902 @@ import type { Case } from "./cases";
 
 export const CASES: Case[] = [
   {
-    "id": "interstellar",
+    "id": "will-smith",
     "media": {
       "kind": "image",
-      "src": "/thumbposters/nl2-5DDL5nM-hqdefault.jpg",
-      "alt": "Interstellar in Real Life thumbnail"
+      "src": "/thumbposters/Will Smith Compliment.jpg",
+      "alt": "Will Smith in Riyadh thumbnail"
     },
-    "title": "Interstellar in Real Life",
-    "subtitle": "PitTV",
-    "roles": "Director | Writer | Editor",
-    "youtubeId": "nl2-5DDL5nM",
-    "href": "https://www.youtube.com/watch?v=nl2-5DDL5nM",
-    "seriesId": "andys-originals"
-  },
-  {
-    "id": "securocam-3000",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/_SRIskz2JOY-hqdefault.jpg",
-      "alt": "Securocam 3000 thumbnail"
-    },
-    "title": "Securocam 3000",
-    "subtitle": "IFC Comedy Crib",
-    "roles": "Director | Co-writer | Editor",
-    "copy": "Web series selected by NYTVF and IFC Comedy Crib.",
-    "youtubeId": "_SRIskz2JOY",
-    "href": "https://www.youtube.com/watch?v=_SRIskz2JOY",
-    "seriesId": "andys-originals"
-  },
-  {
-    "id": "Apocalypse-1",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/X-u9YpCOkk4-hqdefault.jpg",
-      "alt": "Apocalypse Problems 1 thumbnail"
-    },
-    "title": "Apocalypse Problems 1",
-    "subtitle": "SpoiledNYC ft. Gianmarco Soresi & Megan Sass",
-    "roles": "Director | DP | Editor",
-    "youtubeId": "X-u9YpCOkk4",
-    "href": "https://www.youtube.com/watch?v=X-u9YpCOkk4",
-    "seriesId": "apocalypse-problems",
+    "title": "Will Smith in Riyadh",
+    "subtitle": "Westbrook Studios",
+    "roles": "Editor",
+    "copy": "Will Smith performing in Riyadh at Soundstorm 2023",
+    "youtubeId": "_NiN2zU79is",
+    "href": "https://www.youtube.com/watch?v=_NiN2zU79is",
+    "seriesId": "westbrook",
     "videoOrder": 1
   },
   {
-    "id": "Apocalypse-gluten",
+    "id": "will-smith2",
     "media": {
       "kind": "image",
-      "src": "/thumbposters/klRZB8Q87oY-hqdefault.jpg",
-      "alt": "Apocalypse Problems 2 - Gluten thumbnail"
+      "src": "/thumbposters/WCnB9UlEVR8-hqdefault.jpg",
+      "alt": "Will Smith at Grammy's thumbnail"
     },
-    "title": "Apocalypse Problems 2 - Gluten",
-    "subtitle": "SpoiledNYC ft. Gianmarco Soresi & Megan Sass",
-    "roles": "Director | DP | Editor",
-    "youtubeId": "klRZB8Q87oY",
-    "href": "https://www.youtube.com/watch?v=klRZB8Q87oY",
-    "seriesId": "apocalypse-problems",
+    "title": "Will Smith at Grammy's",
+    "subtitle": "Westbrook Studios",
+    "roles": "Editor",
+    "copy": "A GRAMMY Salute To 50 Years Of Hip-Hop",
+    "youtubeId": "WCnB9UlEVR8",
+    "href": "https://www.youtube.com/watch?v=WCnB9UlEVR8",
+    "seriesId": "westbrook",
     "videoOrder": 2
   },
   {
-    "id": "Apocalypse-milk",
+    "id": "mamadou",
     "media": {
       "kind": "image",
-      "src": "/thumbposters/yeie8hpMldw-hqdefault.jpg",
-      "alt": "Apocalypse Problems 3 - Milk thumbnail"
+      "src": "/thumbposters/oBA3wbubAfc-hqdefault.jpg",
+      "alt": "Mamadou Safaiou Barry thumbnail"
     },
-    "title": "Apocalypse Problems 3 - Milk",
-    "subtitle": "SpoiledNYC ft. Gianmarco Soresi & Megan Sass",
-    "roles": "Director | DP | Editor",
-    "youtubeId": "yeie8hpMldw",
-    "href": "https://www.youtube.com/watch?v=yeie8hpMldw",
-    "seriesId": "apocalypse-problems",
+    "title": "Mamadou Safaiou Barry",
+    "subtitle": "Westbrook Studios",
+    "roles": "Editor",
+    "youtubeId": "oBA3wbubAfc",
+    "href": "https://www.youtube.com/watch?v=oBA3wbubAfc",
     "videoOrder": 3
   },
   {
-    "id": "Rizzle-1",
+    "id": "class-88-1",
     "media": {
       "kind": "image",
-      "src": "/thumbposters/iZDqZ6Bq1yI-hqdefault.jpg",
-      "alt": "Andy's Asian Afterlife Ep. 1 thumbnail"
+      "src": "/thumbposters/XoBB3s_6K7I-hqdefault.jpg",
+      "alt": "Class of '88 Run-DMC Teaser thumbnail"
     },
-    "title": "Andy's Asian Afterlife Ep. 1",
+    "title": "Class of '88 Run-DMC Teaser",
+    "subtitle": "Westbrook Studios",
+    "roles": "Editor",
+    "youtubeId": "XoBB3s_6K7I",
+    "href": "https://www.youtube.com/watch?v=XoBB3s_6K7I",
+    "seriesId": "westbrook",
+    "videoOrder": 4
+  },
+  {
+    "id": "class-88-2",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/BVw1jqYo5j4-hqdefault.jpg",
+      "alt": "Class of '88 Queen Latifah Teaser thumbnail"
+    },
+    "title": "Class of '88 Queen Latifah Teaser",
+    "subtitle": "Westbrook Studios",
+    "roles": "Editor",
+    "youtubeId": "BVw1jqYo5j4",
+    "href": "https://www.youtube.com/watch?v=BVw1jqYo5j4",
+    "seriesId": "westbrook",
+    "videoOrder": 5
+  },
+  {
+    "id": "Honest-waitress-1",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/zlFyjWf4hOk-hqdefault.jpg",
+      "alt": "The Honest Waitress: Ignored thumbnail"
+    },
+    "title": "The Honest Waitress: Ignored",
+    "subtitle": "PitTV ft. Leila Graham",
+    "roles": "Director | Editor",
+    "youtubeId": "zlFyjWf4hOk",
+    "href": "https://www.youtube.com/watch?v=zlFyjWf4hOk",
+    "seriesId": "the-honest-waitress",
+    "videoOrder": 1
+  },
+  {
+    "id": "Honest-waitress-2",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/0SX0n9FG_GY-hqdefault.jpg",
+      "alt": "The Honest Waitress: Lemons thumbnail"
+    },
+    "title": "The Honest Waitress: Lemons",
+    "subtitle": "PitTV ft. Leila Graham",
+    "roles": "Director | Editor",
+    "youtubeId": "0SX0n9FG_GY",
+    "href": "https://www.youtube.com/watch?v=0SX0n9FG_GY",
+    "seriesId": "the-honest-waitress",
+    "videoOrder": 2
+  },
+  {
+    "id": "Honest-waitress-3",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/Gk7n1WSpxXg-hqdefault.jpg",
+      "alt": "The Honest Waitress: Soda thumbnail"
+    },
+    "title": "The Honest Waitress: Soda",
+    "subtitle": "PitTV ft. Leila Graham",
+    "roles": "Director | Editor",
+    "youtubeId": "Gk7n1WSpxXg",
+    "href": "https://www.youtube.com/watch?v=Gk7n1WSpxXg",
+    "seriesId": "the-honest-waitress",
+    "videoOrder": 3
+  },
+  {
+    "id": "Honest-waitress-4",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/2z09RB3wsGk-hqdefault.jpg",
+      "alt": "The Honest Waitress: Euope thumbnail"
+    },
+    "title": "The Honest Waitress: Euope",
+    "subtitle": "PitTV ft. Leila Graham",
+    "roles": "Director | Editor",
+    "youtubeId": "2z09RB3wsGk",
+    "href": "https://www.youtube.com/watch?v=2z09RB3wsGk",
+    "seriesId": "the-honest-waitress",
+    "videoOrder": 4
+  },
+  {
+    "id": "Honest-waitress-5",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/FUto6VeJfbI-hqdefault.jpg",
+      "alt": "The Honest Waitress: Menu thumbnail"
+    },
+    "title": "The Honest Waitress: Menu",
+    "subtitle": "PitTV ft. Leila Graham",
+    "roles": "Director | Editor",
+    "youtubeId": "FUto6VeJfbI",
+    "href": "https://www.youtube.com/watch?v=FUto6VeJfbI",
+    "seriesId": "the-honest-waitress",
+    "videoOrder": 5
+  },
+  {
+    "id": "tech-videos-showreel",
+    "media": {
+      "kind": "video",
+      "src": "/videos/mff.mp4",
+      "poster": "/thumbposters/bpkZSxtZd7Y-hqdefault.jpg"
+    },
+    "title": "Making Of Garden of Eden",
+    "copy": "Devlog of using Blender, Wonder Dynamics, Unreal Engine to design a 3D scene",
+    "youtubeId": "bpkZSxtZd7Y",
+    "href": "https://www.youtube.com/watch?v=bpkZSxtZd7Y",
+    "seriesId": "tech",
+    "videoOrder": 2
+  },
+  {
+    "id": "unreal",
+    "media": {
+      "kind": "video",
+      "src": "/videos/unreal.mp4",
+      "poster": "/thumbposters/c22gpypHv2k-hqdefault.jpg"
+    },
+    "title": "Unreal Engine Devlog",
+    "copy": "Devlog of Unreal Engine AI mechanics",
+    "youtubeId": "c22gpypHv2k",
+    "href": "https://www.youtube.com/watch?v=c22gpypHv2k",
+    "seriesId": "tech",
+    "videoOrder": 3
+  },
+  {
+    "id": "tootsies-promo-bts",
+    "media": {
+      "kind": "video",
+      "src": "/videos/tootsiespromo.mp4",
+      "poster": "/thumbposters/a-gHLCFfNEs-hqdefault.jpg"
+    },
+    "title": "Environment Replacement Vlog",
+    "copy": "Devlog of Enviroment replacement",
+    "youtubeId": "a-gHLCFfNEs",
+    "href": "https://www.youtube.com/watch?v=a-gHLCFfNEs",
+    "seriesId": "tech",
+    "videoOrder": 1
+  },
+  {
+    "id": "ask-alexa",
+    "media": {
+      "kind": "video",
+      "src": "/videos/alexa.mp4",
+      "poster": "/thumbposters/dQtJTZeBWUQ-hqdefault.jpg"
+    },
+    "title": "Ask Alexa",
+    "subtitle": "ft. Anna Roisman & Lane Kwederis",
+    "roles": "Director | Editor",
+    "youtubeId": "dQtJTZeBWUQ",
+    "href": "https://www.youtube.com/watch?v=dQtJTZeBWUQ",
+    "seriesId": "sketch",
+    "videoOrder": 11
+  },
+  {
+    "id": "beauty-and-the-bowl",
+    "media": {
+      "kind": "video",
+      "src": "/videos/beautyandthebowl.mp4",
+      "poster": "/thumbposters/nRWyNY1xmto-hqdefault.jpg"
+    },
+    "title": "Beauty and the Bowl",
+    "subtitle": "ft. Gianmarco Soresi & Uncle Function",
+    "roles": "Director | DP | Editor",
+    "copy": "Sketch comedy featured on Funny Or Die.",
+    "youtubeId": "nRWyNY1xmto",
+    "href": "https://www.youtube.com/watch?v=nRWyNY1xmto",
+    "seriesId": "sketch",
+    "videoOrder": 1
+  },
+  {
+    "id": "cocaine",
+    "media": {
+      "kind": "video",
+      "src": "/videos/cocaine.mp4",
+      "poster": "/thumbposters/5n_Zl5bhUhU-hqdefault.jpg"
+    },
+    "title": "Cocaine PSA",
+    "subtitle": "ft. Bridgette Everett, Arthur Meyer, Joel Kim Booster",
+    "roles": "Director | Editor",
+    "youtubeId": "5n_Zl5bhUhU",
+    "href": "https://www.youtube.com/watch?v=5n_Zl5bhUhU",
+    "seriesId": "sketch",
+    "videoOrder": 10
+  },
+  {
+    "id": "dog",
+    "media": {
+      "kind": "video",
+      "src": "/videos/dogs.mp4",
+      "poster": "/thumbposters/tgND22y7uuA-hqdefault.jpg"
+    },
+    "title": "The Only Dog Video You Need to Watch",
+    "subtitle": "Funny or Die",
+    "roles": "Director | DP",
+    "copy": "ft. Lauren Ireland, Elyse Brandau, Brennan Lee Mulligan, Lilu Du, Dan Chamberlain & more.",
+    "youtubeId": "tgND22y7uuA",
+    "href": "https://www.youtube.com/watch?v=tgND22y7uuA",
+    "seriesId": "sketch",
+    "videoOrder": 6
+  },
+  {
+    "id": "grandmothers-announcement",
+    "media": {
+      "kind": "video",
+      "src": "/videos/grandma.mp4",
+      "poster": "/thumbposters/PEwfwxtwkWE-hqdefault.jpg"
+    },
+    "title": "Grandmother's Announcement",
+    "subtitle": "ft. Natalie Walker & Lulu Krause",
+    "roles": "Director | DP | Editor",
+    "youtubeId": "PEwfwxtwkWE",
+    "href": "https://www.youtube.com/watch?v=PEwfwxtwkWE",
+    "seriesId": "sketch",
+    "videoOrder": 4
+  },
+  {
+    "id": "Mta-shames-nyc",
+    "media": {
+      "kind": "video",
+      "src": "/videos/mta.mp4",
+      "poster": "/thumbposters/mta.jpg"
+    },
+    "title": "MTA Shames NYC",
+    "subtitle": "SpoiledNYC ft. Gianmarco Soresi & Megan Sass",
+    "roles": "Director | Editor",
+    "copy": "Featured in Metro News!",
+    "youtubeId": "qhXZjxXbW4s",
+    "href": "https://www.youtube.com/watch?v=qhXZjxXbW4s",
+    "seriesId": "sketch",
+    "videoOrder": 3
+  },
+  {
+    "id": "poly-bachelorette",
+    "media": {
+      "kind": "video",
+      "src": "/videos/poly.mp4",
+      "poster": "/thumbposters/RhzSqWrjx7Q-hqdefault.jpg"
+    },
+    "title": "Poly Bachelorette",
+    "roles": "Director | DP | Co-Writer | Editor",
+    "youtubeId": "RhzSqWrjx7Q",
+    "href": "https://www.youtube.com/watch?v=RhzSqWrjx7Q",
+    "seriesId": "sketch",
+    "videoOrder": 5
+  },
+  {
+    "id": "Secret-agent",
+    "media": {
+      "kind": "video",
+      "src": "videos/secretagent.mp4",
+      "poster": "/thumbposters/kNGsC9uqwVs-hqdefault.jpg"
+    },
+    "title": "Secret Agent Betrayal",
+    "subtitle": "Andy's Originals ft. Geil Comedy",
+    "roles": "Director | Writer | Editor",
+    "youtubeId": "kNGsC9uqwVs",
+    "href": "https://www.youtube.com/watch?v=kNGsC9uqwVs",
+    "seriesId": "sketch"
+  },
+  {
+    "id": "settling",
+    "media": {
+      "kind": "video",
+      "src": "/videos/settling.mp4",
+      "poster": "/thumbposters/qSPdMoxsZoU-hqdefault.jpg"
+    },
+    "title": "Settling",
+    "subtitle": "ft. Gianmarco Soresi & Megan Sass",
+    "roles": "Director | DP | Editor",
+    "youtubeId": "qSPdMoxsZoU",
+    "href": "https://www.youtube.com/watch?v=qSPdMoxsZoU",
+    "seriesId": "sketch",
+    "videoOrder": 2
+  },
+  {
+    "id": "The-painter",
+    "media": {
+      "kind": "video",
+      "src": "/videos/painter.mp4",
+      "poster": "/thumbposters/WnEJ9xsAkZ0-hqdefault.jpg"
+    },
+    "title": "The Painter",
+    "subtitle": "Quickiefest",
+    "roles": "Director | DP | Editor",
+    "copy": "Winner Audience Award",
+    "youtubeId": "WnEJ9xsAkZ0",
+    "href": "https://www.youtube.com/watch?v=WnEJ9xsAkZ0",
+    "seriesId": "sketch",
+    "videoOrder": 8
+  },
+  {
+    "id": "dune",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/VilAyt3VQH4-hqdefault.jpg",
+      "alt": "Dune Meme thumbnail"
+    },
+    "title": "Dune Meme",
+    "youtubeId": "VilAyt3VQH4",
+    "href": "https://www.youtube.com/watch?v=VilAyt3VQH4",
+    "seriesId": "sketch"
+  },
+  {
+    "id": "less",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/dcWy5-q_4I8-hqdefault.jpg",
+      "alt": "Less thumbnail"
+    },
+    "title": "Less",
+    "subtitle": "ft. Matt Rogers, Tessa Skara",
+    "roles": "Director | Writer | DP | Editor",
+    "youtubeId": "dcWy5-q_4I8",
+    "href": "https://www.youtube.com/watch?v=dcWy5-q_4I8",
+    "seriesId": "sketch"
+  },
+  {
+    "id": "operators",
+    "media": {
+      "kind": "video",
+      "src": "/videos/Operators.mp4",
+      "poster": "/thumbposters/aa2zI7PO-X8-hqdefault.jpg"
+    },
+    "title": "Operators",
+    "subtitle": "Nevermore Film Fest 2024",
+    "roles": "Director | Co-writer | Editor",
+    "youtubeId": "aa2zI7PO-X8",
+    "href": "https://www.youtube.com/watch?v=aa2zI7PO-X8",
+    "seriesId": "shorts",
+    "videoOrder": 1
+  },
+  {
+    "id": "sqand",
+    "media": {
+      "kind": "video",
+      "src": "/videos/sqand.mp4",
+      "poster": "/thumbposters/fTbRmOHJp1I-hqdefault.jpg"
+    },
+    "title": "Sqand",
+    "roles": "Director | DP | Writer | Editor",
+    "youtubeId": "fTbRmOHJp1I",
+    "href": "https://www.youtube.com/watch?v=fTbRmOHJp1I",
+    "seriesId": "shorts",
+    "videoOrder": 3
+  },
+  {
+    "id": "Tell-my-wife",
+    "media": {
+      "kind": "video",
+      "src": "/videos/Tell_My_Wife.mp4",
+      "poster": "/thumbposters/daNydp3mpI0-hqdefault.jpg"
+    },
+    "title": "Tell My Wife",
+    "subtitle": "Big Apple Film Fest 2023",
+    "roles": "Co-director | Co-writer | Editor",
+    "youtubeId": "daNydp3mpI0",
+    "href": "https://www.youtube.com/watch?v=daNydp3mpI0",
+    "seriesId": "shorts",
+    "videoOrder": 2
+  },
+  {
+    "id": "apocalypse-problems-series",
+    "media": {
+      "kind": "video",
+      "src": "/videos/apocalypse.mp4",
+      "poster": "/thumbposters/klRZB8Q87oY-hqdefault.jpg"
+    },
+    "title": "Apocalypse Problems",
+    "subtitle": "SpoiledNYC ft. Gianmarco Soresi & Megan Sass",
+    "roles": "Director | DP | Editor",
+    "copy": "A comedic webseries for SpoiledNYC.",
+    "href": "series/apocalypse-problems",
+    "seriesId": "series",
+    "videoOrder": 6
+  },
+  {
+    "id": "asian-afterlife-series",
+    "media": {
+      "kind": "video",
+      "src": "/videos/rizzle.mp4",
+      "poster": "/thumbposters/rizzle.jpg"
+    },
+    "title": "Andy's Asian Afterlife",
     "subtitle": "Rizzle's Asian Comedy Fest",
     "roles": "Creator",
-    "youtubeId": "iZDqZ6Bq1yI",
-    "href": "https://www.youtube.com/watch?v=iZDqZ6Bq1yI",
-    "seriesId": "asian-afterlife",
+    "copy": "1000$ grand prize winner of Rizzle's Asian Comedy Fest.",
+    "href": "series/asian-afterlife",
+    "seriesId": "series",
+    "videoOrder": 4
+  },
+  {
+    "id": "comedy-central-series",
+    "media": {
+      "kind": "video",
+      "src": "/videos/comedycentral.mp4",
+      "poster": "/thumbposters/comedycentraloriginals.jpg"
+    },
+    "title": "Comedy Central Originals",
+    "roles": "Director | Producer | Writer | Editor",
+    "copy": "At Comedy Central's Webby-winning Digital team, Andy directed, wrote, & produced Mini-Mocks, music videos, and content collabs with notable influencers.",
+    "href": "series/comedy-central-originals",
+    "seriesId": "series",
+    "videoOrder": 1
+  },
+  {
+    "id": "honest-waitress-series",
+    "media": {
+      "kind": "video",
+      "src": "/videos/waitress.mp4",
+      "poster": "/thumbposters/0SX0n9FG_GY-hqdefault.jpg"
+    },
+    "title": "The Honest Waitress",
+    "subtitle": "PitTV",
+    "roles": "Director",
+    "copy": "A comedic webseries for PitTV.",
+    "href": "series/the-honest-waitress",
+    "seriesId": "series",
+    "videoOrder": 7
+  },
+  {
+    "id": "making-it-series",
+    "media": {
+      "kind": "video",
+      "src": "/videos/makingit.mp4",
+      "poster": "/thumbposters/makingit.jpg"
+    },
+    "title": "Making It",
+    "subtitle": "Snap Originals ft. Dave Mizzoni",
+    "roles": "Director | DP | Editor",
+    "copy": "A vertical series for Snapchat's Snap Originals.",
+    "href": "series/making-it",
+    "seriesId": "series",
+    "videoOrder": 2
+  },
+  {
+    "id": "securocam-series",
+    "media": {
+      "kind": "video",
+      "src": "/videos/securocam.mp4",
+      "poster": "/thumbposters/_SRIskz2JOY-hqdefault.jpg"
+    },
+    "title": "Securocam 3000",
+    "subtitle": "NYTVF & IFC Comedy Crib",
+    "roles": "Co-director | Co-writer | Editor",
+    "copy": "A short webseries featured at NYTVF and hosted on IFC's Comedy Crib!",
+    "youtubeId": "_SRIskz2JOY",
+    "href": "https://www.youtube.com/watch?v=_SRIskz2JOY",
+    "seriesId": "series",
+    "videoOrder": 5
+  },
+  {
+    "id": "instagram-betches",
+    "media": {
+      "kind": "video",
+      "src": "/videos/instagram_betches.mp4",
+      "poster": "/thumbposters/hQO_LLV9tms-hqdefault.jpg"
+    },
+    "title": "Instagram Betches",
+    "roles": "Director | DP",
+    "copy": "Winner of Best Sketch at NYC Short Comedy Film Fest",
+    "youtubeId": "hQO_LLV9tms",
+    "href": "https://www.youtube.com/watch?v=hQO_LLV9tms",
+    "seriesId": "music-videos",
+    "videoOrder": 3
+  },
+  {
+    "id": "Pay-for-me",
+    "media": {
+      "kind": "video",
+      "src": "/videos/payforme.mp4",
+      "poster": "/thumbposters/hVrMjp22IM0-hqdefault.jpg"
+    },
+    "title": "Pay For Me",
+    "roles": "Co-director | DP | Editor",
+    "youtubeId": "hVrMjp22IM0",
+    "href": "https://www.youtube.com/watch?v=hVrMjp22IM0",
+    "seriesId": "music-videos",
+    "videoOrder": 2
+  },
+  {
+    "id": "poor",
+    "media": {
+      "kind": "video",
+      "src": "/videos/poor.mp4",
+      "poster": "/thumbposters/AzjRdPLgj_k-hqdefault.jpg"
+    },
+    "title": "Poor",
+    "subtitle": "ft. Anna Roisman",
+    "roles": "Director | DP",
+    "youtubeId": "AzjRdPLgj_k",
+    "href": "https://www.youtube.com/watch?v=AzjRdPLgj_k",
+    "seriesId": "music-videos",
+    "videoOrder": 1
+  },
+  {
+    "id": "Jackson-pollack",
+    "media": {
+      "kind": "video",
+      "src": "/videos/jacksonpollock.mp4",
+      "poster": "/thumbposters/f53aKCMl7FQ-hqdefault.jpg"
+    },
+    "title": "Jackson Pollock",
+    "subtitle": "ft. Douglas Widick",
+    "roles": "Director | Editor",
+    "youtubeId": "f53aKCMl7FQ",
+    "href": "https://www.youtube.com/watch?v=f53aKCMl7FQ",
+    "seriesId": "music-videos",
+    "videoOrder": 6
+  },
+  {
+    "id": "sugar",
+    "media": {
+      "kind": "video",
+      "src": "/videos/sugar.mp4",
+      "poster": "/thumbposters/-53w2mv_upw-hqdefault.jpg"
+    },
+    "title": "Sugar",
+    "subtitle": "Sister Sparrow",
+    "roles": "DP | Editor",
+    "youtubeId": "-53w2mv_upw",
+    "href": "https://www.youtube.com/watch?v=-53w2mv_upw",
+    "seriesId": "music-videos",
+    "videoOrder": 5
+  },
+  {
+    "id": "hooking-up-with-girls",
+    "media": {
+      "kind": "video",
+      "src": "videos/hookingupwithgirls.mp4",
+      "poster": "/thumbposters/t3rLCM9LFfE-hqdefault.jpg"
+    },
+    "title": "Hooking Up With Girls",
+    "subtitle": "ft. Lane Moore",
+    "roles": "DP | Editor",
+    "youtubeId": "t3rLCM9LFfE",
+    "href": "https://www.youtube.com/watch?v=t3rLCM9LFfE",
+    "seriesId": "music-videos",
+    "videoOrder": 4
+  },
+  {
+    "id": "Making-it-1",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/dwXaeTYc3Tg-hqdefault.jpg",
+      "alt": "Making It Episode 1 thumbnail"
+    },
+    "title": "Making It Episode 1",
+    "subtitle": "Snap Originals ft. Dave Mizzoni",
+    "roles": "Director | DP | Editor",
+    "youtubeId": "dwXaeTYc3Tg",
+    "href": "https://www.youtube.com/watch?v=dwXaeTYc3Tg",
+    "seriesId": "making-it",
     "videoOrder": 1,
     "vertical": true
   },
   {
-    "id": "Rizzle-2",
+    "id": "Making-it-10",
     "media": {
       "kind": "image",
-      "src": "/thumbposters/taRJ5K7Emdo-hqdefault.jpg",
-      "alt": "Andy's Asian Afterlife Ep. 2 thumbnail"
+      "src": "/thumbposters/AROtp_lq240-hqdefault.jpg",
+      "alt": "Making It Episode 10 thumbnail"
     },
-    "title": "Andy's Asian Afterlife Ep. 2",
-    "subtitle": "Rizzle's Asian Comedy Fest",
-    "roles": "Creator",
-    "youtubeId": "taRJ5K7Emdo",
-    "href": "https://www.youtube.com/watch?v=taRJ5K7Emdo",
-    "seriesId": "asian-afterlife",
+    "title": "Making It Episode 10",
+    "subtitle": "Snap Originals ft. Dave Mizzoni",
+    "roles": "Director | DP | Editor",
+    "youtubeId": "AROtp_lq240",
+    "href": "https://www.youtube.com/watch?v=AROtp_lq240",
+    "seriesId": "making-it",
+    "videoOrder": 10,
+    "vertical": true
+  },
+  {
+    "id": "Making-it-2",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/bewb5mvMt2I-hqdefault.jpg",
+      "alt": "Making It Episode 2 thumbnail"
+    },
+    "title": "Making It Episode 2",
+    "subtitle": "Snap Originals ft. Dave Mizzoni",
+    "roles": "Director | DP | Editor",
+    "youtubeId": "bewb5mvMt2I",
+    "href": "https://www.youtube.com/watch?v=bewb5mvMt2I",
+    "seriesId": "making-it",
     "videoOrder": 2,
     "vertical": true
   },
   {
-    "id": "Rizzle-3",
+    "id": "Making-it-3",
     "media": {
       "kind": "image",
-      "src": "/thumbposters/HxXucJ6rFQA-hqdefault.jpg",
-      "alt": "Andy's Asian Afterlife Ep. 3 thumbnail"
+      "src": "/thumbposters/8Y7yt1P1gDc-hqdefault.jpg",
+      "alt": "Making It Episode 3 thumbnail"
     },
-    "title": "Andy's Asian Afterlife Ep. 3",
-    "subtitle": "Rizzle's Asian Comedy Fest",
-    "roles": "Creator",
-    "youtubeId": "HxXucJ6rFQA",
-    "href": "https://www.youtube.com/watch?v=HxXucJ6rFQA",
-    "seriesId": "asian-afterlife",
+    "title": "Making It Episode 3",
+    "subtitle": "Snap Originals ft. Dave Mizzoni",
+    "roles": "Director | DP | Editor",
+    "youtubeId": "8Y7yt1P1gDc",
+    "href": "https://www.youtube.com/watch?v=8Y7yt1P1gDc",
+    "seriesId": "making-it",
     "videoOrder": 3,
     "vertical": true
   },
   {
-    "id": "death-becomes-her-series",
+    "id": "Making-it-4",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/MufrKX9LY_Q-hqdefault.jpg",
+      "alt": "Making It Episode 4 thumbnail"
+    },
+    "title": "Making It Episode 4",
+    "subtitle": "Snap Originals ft. Dave Mizzoni",
+    "roles": "Director | DP | Editor",
+    "youtubeId": "MufrKX9LY_Q",
+    "href": "https://www.youtube.com/watch?v=MufrKX9LY_Q",
+    "seriesId": "making-it",
+    "videoOrder": 4,
+    "vertical": true
+  },
+  {
+    "id": "Making-it-5",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/OomH2JjVwrw-hqdefault.jpg",
+      "alt": "Making It Episode 5 thumbnail"
+    },
+    "title": "Making It Episode 5",
+    "subtitle": "Snap Originals ft. Dave Mizzoni",
+    "roles": "Director | DP | Editor",
+    "youtubeId": "OomH2JjVwrw",
+    "href": "https://www.youtube.com/watch?v=OomH2JjVwrw",
+    "seriesId": "making-it",
+    "videoOrder": 5,
+    "vertical": true
+  },
+  {
+    "id": "Making-it-6",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/Y3335Qn42qI-hqdefault.jpg",
+      "alt": "Making It Episode 6 thumbnail"
+    },
+    "title": "Making It Episode 6",
+    "subtitle": "Snap Originals ft. Dave Mizzoni",
+    "roles": "Director | DP | Editor",
+    "youtubeId": "Y3335Qn42qI",
+    "href": "https://www.youtube.com/watch?v=Y3335Qn42qI",
+    "seriesId": "making-it",
+    "videoOrder": 6,
+    "vertical": true
+  },
+  {
+    "id": "Making-it-7",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/wtLmfuCHG2A-hqdefault.jpg",
+      "alt": "Making It Episode 7 thumbnail"
+    },
+    "title": "Making It Episode 7",
+    "subtitle": "Snap Originals ft. Dave Mizzoni",
+    "roles": "Director | DP | Editor",
+    "youtubeId": "wtLmfuCHG2A",
+    "href": "https://www.youtube.com/watch?v=wtLmfuCHG2A",
+    "seriesId": "making-it",
+    "videoOrder": 7,
+    "vertical": true
+  },
+  {
+    "id": "Making-it-8",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/S1L7zvRjuoM-hqdefault.jpg",
+      "alt": "Making It Episode 8 thumbnail"
+    },
+    "title": "Making It Episode 8",
+    "subtitle": "Snap Originals ft. Dave Mizzoni",
+    "roles": "Director | DP | Editor",
+    "youtubeId": "S1L7zvRjuoM",
+    "href": "https://www.youtube.com/watch?v=S1L7zvRjuoM",
+    "seriesId": "making-it",
+    "videoOrder": 8,
+    "vertical": true
+  },
+  {
+    "id": "Making-it-9",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/kZTRyPCdhes-hqdefault.jpg",
+      "alt": "Making It Episode 9 thumbnail"
+    },
+    "title": "Making It Episode 9",
+    "subtitle": "Snap Originals ft. Dave Mizzoni",
+    "roles": "Director | DP | Editor",
+    "youtubeId": "kZTRyPCdhes",
+    "href": "https://www.youtube.com/watch?v=kZTRyPCdhes",
+    "seriesId": "making-it",
+    "videoOrder": 9,
+    "vertical": true
+  },
+  {
+    "id": "andys-roadshow",
     "media": {
       "kind": "video",
-      "src": "/videos/dbh.mp4",
-      "poster": "/thumbposters/dbh.jpg"
+      "src": "/videos/roadshow.mp4",
+      "poster": "/thumbposters/iLNypL04zH0-hqdefault.jpg"
     },
-    "title": "Death Becomes Her",
-    "subtitle": "RPM",
-    "copy": "A series of BTS Social Promos for Broadway's Death Becomes Her.",
-    "href": "series/death-becomes-her",
-    "seriesId": "branded-content",
+    "title": "Andy's Roadshow",
+    "roles": "Director | Writer | Editor",
+    "youtubeId": "iLNypL04zH0",
+    "href": "https://www.youtube.com/watch?v=iLNypL04zH0",
+    "seriesId": "favorites",
     "videoOrder": 1
   },
   {
-    "id": "garden-of-eden",
+    "id": "tuber",
     "media": {
       "kind": "video",
-      "src": "/videos/garden-of-eden.mp4",
-      "poster": "/thumbposters/_oUdAdTUk0c-hqdefault.jpg"
+      "src": "/videos/tuber.mp4",
+      "poster": "/thumbposters/0U5SCBko2XM-hqdefault.jpg"
     },
-    "title": "Mark Fisher Fitness",
-    "subtitle": "Garden of Eden ft. Douglas Widick",
-    "roles": "Director | Editor",
-    "copy": "Social Promo for local gym",
-    "youtubeId": "_oUdAdTUk0c",
-    "href": "https://www.youtube.com/watch?v=_oUdAdTUk0c",
-    "seriesId": "branded-content",
-    "videoOrder": 3,
-    "vertical": true
+    "title": "Tuber",
+    "roles": "Director | Writer | Editor",
+    "youtubeId": "0U5SCBko2XM",
+    "href": "https://www.youtube.com/watch?v=0U5SCBko2XM",
+    "seriesId": "favorites",
+    "videoOrder": 3
   },
   {
-    "id": "Looking-like-a-snack",
+    "id": "pissterine",
     "media": {
       "kind": "video",
-      "src": "/videos/looking-like-a-snack.mp4",
-      "poster": "/thumbposters/lMFubod8Gdc-hqdefault.jpg"
+      "src": "/videos/pissterine.mp4",
+      "poster": "/thumbposters/pissterine.jpg"
     },
-    "title": "Combos",
-    "subtitle": "Lookin' Like a Snack ft. Akilah Hughes",
-    "roles": "Director | DP",
-    "copy": "Branded spot for Combos",
-    "youtubeId": "lMFubod8Gdc",
-    "href": "https://www.youtube.com/watch?v=lMFubod8Gdc",
-    "seriesId": "branded-content",
+    "title": "Pissterine",
+    "copy": "Andy once kickstarted a Listerine knockoff that got shutdown in trademark court.",
+    "href": "https://www.kickstarter.com/projects/andyzou/pissterine-a-genuine-novelty-mouthwash",
+    "seriesId": "favorites",
     "videoOrder": 2
   },
   {
-    "id": "big-downer",
+    "id": "Dbh-1",
     "media": {
-      "kind": "video",
-      "src": "videos/bigdowner.mp4",
-      "poster": "/thumbposters/PTo-3d7cco4-hqdefault.jpg"
+      "kind": "image",
+      "src": "/thumbposters/8QGYE_5nfQM-hqdefault.jpg",
+      "alt": "Rolling in the Aisles thumbnail"
     },
-    "title": "The Big Downer",
-    "subtitle": "Spec PSA for Long Covid",
-    "roles": "Director | Editor",
-    "youtubeId": "PTo-3d7cco4",
-    "href": "https://www.youtube.com/watch?v=PTo-3d7cco4",
-    "seriesId": "branded-content",
+    "title": "Rolling in the Aisles",
+    "roles": "Editor",
+    "youtubeId": "8QGYE_5nfQM",
+    "href": "https://www.youtube.com/watch?v=8QGYE_5nfQM",
+    "seriesId": "death-becomes-her",
+    "videoOrder": 8
+  },
+  {
+    "id": "Dbh-2",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/IBTQMTwN7vc-hqdefault.jpg",
+      "alt": "Best Friends thumbnail"
+    },
+    "title": "Best Friends",
+    "roles": "Editor",
+    "youtubeId": "IBTQMTwN7vc",
+    "href": "https://www.youtube.com/watch?v=IBTQMTwN7vc",
+    "seriesId": "death-becomes-her",
+    "videoOrder": 9
+  },
+  {
+    "id": "Dbh-3",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/gvjDOk8T9Lo-hqdefault.jpg",
+      "alt": "Now a Musical? Ep. 1 thumbnail"
+    },
+    "title": "Now a Musical? Ep. 1",
+    "subtitle": "ft. Noel Carey & Julia Mattison",
+    "roles": "Director | Producer | Editor",
+    "youtubeId": "gvjDOk8T9Lo",
+    "href": "https://www.youtube.com/watch?v=gvjDOk8T9Lo",
+    "seriesId": "death-becomes-her",
+    "videoOrder": 3
+  },
+  {
+    "id": "Dbh-4",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/aLHsoQG-jEg-hqdefault.jpg",
+      "alt": "Now a Musical? Ep. 2 thumbnail"
+    },
+    "title": "Now a Musical? Ep. 2",
+    "subtitle": "ft. Noel Carey & Julia Mattison",
+    "roles": "Director | Producer | Editor",
+    "youtubeId": "aLHsoQG-jEg",
+    "href": "https://www.youtube.com/watch?v=aLHsoQG-jEg",
+    "seriesId": "death-becomes-her",
     "videoOrder": 4
+  },
+  {
+    "id": "Dbh-5",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/j9SF9ys4IhA-hqdefault.jpg",
+      "alt": "Now a Musical? Ep. 3 thumbnail"
+    },
+    "title": "Now a Musical? Ep. 3",
+    "subtitle": "ft. Noel Carey & Julia Mattison",
+    "roles": "Director | Producer | Editor",
+    "youtubeId": "j9SF9ys4IhA",
+    "href": "https://www.youtube.com/watch?v=j9SF9ys4IhA",
+    "seriesId": "death-becomes-her",
+    "videoOrder": 5
+  },
+  {
+    "id": "Dbh-6",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/p0EQcb7oays-hqdefault.jpg",
+      "alt": "Ask Marco Ep. 1 thumbnail"
+    },
+    "title": "Ask Marco Ep. 1",
+    "subtitle": "ft. Marco Pennette",
+    "roles": "Director | Producer | Editor",
+    "youtubeId": "p0EQcb7oays",
+    "href": "https://www.youtube.com/watch?v=p0EQcb7oays",
+    "seriesId": "death-becomes-her",
+    "videoOrder": 6
+  },
+  {
+    "id": "Dbh-7",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/go1LBg6iEew-hqdefault.jpg",
+      "alt": "Ask Marco Ep. 2 thumbnail"
+    },
+    "title": "Ask Marco Ep. 2",
+    "subtitle": "ft. Marco Pennette",
+    "roles": "Director | Producer | Editor",
+    "youtubeId": "go1LBg6iEew",
+    "href": "https://www.youtube.com/watch?v=go1LBg6iEew",
+    "seriesId": "death-becomes-her",
+    "videoOrder": 7
   },
   {
     "id": "European-boys",
@@ -431,154 +1145,162 @@ export const CASES: Case[] = [
     "videoOrder": 8
   },
   {
-    "id": "Dbh-1",
+    "id": "death-becomes-her-series",
     "media": {
-      "kind": "image",
-      "src": "/thumbposters/8QGYE_5nfQM-hqdefault.jpg",
-      "alt": "Rolling in the Aisles thumbnail"
+      "kind": "video",
+      "src": "/videos/dbh.mp4",
+      "poster": "/thumbposters/dbh.jpg"
     },
-    "title": "Rolling in the Aisles",
-    "roles": "Editor",
-    "youtubeId": "8QGYE_5nfQM",
-    "href": "https://www.youtube.com/watch?v=8QGYE_5nfQM",
-    "seriesId": "death-becomes-her",
-    "videoOrder": 8
+    "title": "Death Becomes Her",
+    "subtitle": "RPM",
+    "copy": "A series of BTS Social Promos for Broadway's Death Becomes Her.",
+    "href": "series/death-becomes-her",
+    "seriesId": "branded-content",
+    "videoOrder": 1
   },
   {
-    "id": "Dbh-2",
+    "id": "garden-of-eden",
     "media": {
-      "kind": "image",
-      "src": "/thumbposters/IBTQMTwN7vc-hqdefault.jpg",
-      "alt": "Best Friends thumbnail"
+      "kind": "video",
+      "src": "/videos/garden-of-eden.mp4",
+      "poster": "/thumbposters/_oUdAdTUk0c-hqdefault.jpg"
     },
-    "title": "Best Friends",
-    "roles": "Editor",
-    "youtubeId": "IBTQMTwN7vc",
-    "href": "https://www.youtube.com/watch?v=IBTQMTwN7vc",
-    "seriesId": "death-becomes-her",
-    "videoOrder": 9
+    "title": "Mark Fisher Fitness",
+    "subtitle": "Garden of Eden ft. Douglas Widick",
+    "roles": "Director | Editor",
+    "copy": "Social Promo for local gym",
+    "youtubeId": "_oUdAdTUk0c",
+    "href": "https://www.youtube.com/watch?v=_oUdAdTUk0c",
+    "seriesId": "branded-content",
+    "videoOrder": 3,
+    "vertical": true
   },
   {
-    "id": "Dbh-3",
+    "id": "Looking-like-a-snack",
     "media": {
-      "kind": "image",
-      "src": "/thumbposters/gvjDOk8T9Lo-hqdefault.jpg",
-      "alt": "Now a Musical? Ep. 1 thumbnail"
+      "kind": "video",
+      "src": "/videos/looking-like-a-snack.mp4",
+      "poster": "/thumbposters/lMFubod8Gdc-hqdefault.jpg"
     },
-    "title": "Now a Musical? Ep. 1",
-    "subtitle": "ft. Noel Carey & Julia Mattison",
-    "roles": "Director | Producer | Editor",
-    "youtubeId": "gvjDOk8T9Lo",
-    "href": "https://www.youtube.com/watch?v=gvjDOk8T9Lo",
-    "seriesId": "death-becomes-her",
-    "videoOrder": 3
+    "title": "Combos",
+    "subtitle": "Lookin' Like a Snack ft. Akilah Hughes",
+    "roles": "Director | DP",
+    "copy": "Branded spot for Combos",
+    "youtubeId": "lMFubod8Gdc",
+    "href": "https://www.youtube.com/watch?v=lMFubod8Gdc",
+    "seriesId": "branded-content",
+    "videoOrder": 2
   },
   {
-    "id": "Dbh-4",
+    "id": "big-downer",
     "media": {
-      "kind": "image",
-      "src": "/thumbposters/aLHsoQG-jEg-hqdefault.jpg",
-      "alt": "Now a Musical? Ep. 2 thumbnail"
+      "kind": "video",
+      "src": "videos/bigdowner.mp4",
+      "poster": "/thumbposters/PTo-3d7cco4-hqdefault.jpg"
     },
-    "title": "Now a Musical? Ep. 2",
-    "subtitle": "ft. Noel Carey & Julia Mattison",
-    "roles": "Director | Producer | Editor",
-    "youtubeId": "aLHsoQG-jEg",
-    "href": "https://www.youtube.com/watch?v=aLHsoQG-jEg",
-    "seriesId": "death-becomes-her",
+    "title": "The Big Downer",
+    "subtitle": "Spec PSA for Long Covid",
+    "roles": "Director | Editor",
+    "youtubeId": "PTo-3d7cco4",
+    "href": "https://www.youtube.com/watch?v=PTo-3d7cco4",
+    "seriesId": "branded-content",
     "videoOrder": 4
-  },
-  {
-    "id": "Dbh-5",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/j9SF9ys4IhA-hqdefault.jpg",
-      "alt": "Now a Musical? Ep. 3 thumbnail"
-    },
-    "title": "Now a Musical? Ep. 3",
-    "subtitle": "ft. Noel Carey & Julia Mattison",
-    "roles": "Director | Producer | Editor",
-    "youtubeId": "j9SF9ys4IhA",
-    "href": "https://www.youtube.com/watch?v=j9SF9ys4IhA",
-    "seriesId": "death-becomes-her",
-    "videoOrder": 5
-  },
-  {
-    "id": "Dbh-6",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/p0EQcb7oays-hqdefault.jpg",
-      "alt": "Ask Marco Ep. 1 thumbnail"
-    },
-    "title": "Ask Marco Ep. 1",
-    "subtitle": "ft. Marco Pennette",
-    "roles": "Director | Producer | Editor",
-    "youtubeId": "p0EQcb7oays",
-    "href": "https://www.youtube.com/watch?v=p0EQcb7oays",
-    "seriesId": "death-becomes-her",
-    "videoOrder": 6
-  },
-  {
-    "id": "Dbh-7",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/go1LBg6iEew-hqdefault.jpg",
-      "alt": "Ask Marco Ep. 2 thumbnail"
-    },
-    "title": "Ask Marco Ep. 2",
-    "subtitle": "ft. Marco Pennette",
-    "roles": "Director | Producer | Editor",
-    "youtubeId": "go1LBg6iEew",
-    "href": "https://www.youtube.com/watch?v=go1LBg6iEew",
-    "seriesId": "death-becomes-her",
-    "videoOrder": 7
-  },
-  {
-    "id": "will-smith",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/Will Smith Compliment.jpg",
-      "alt": "Will Smith in Riyadh thumbnail"
-    },
-    "title": "Will Smith in Riyadh",
-    "subtitle": "Westbrook Studios",
-    "roles": "Editor",
-    "copy": "Will Smith performing in Riyadh at Soundstorm 2023",
-    "youtubeId": "_NiN2zU79is",
-    "href": "https://www.youtube.com/watch?v=_NiN2zU79is",
-    "seriesId": "editing"
-  },
-  {
-    "id": "will-smith2",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/WCnB9UlEVR8-hqdefault.jpg",
-      "alt": "Will Smith at Grammy's thumbnail"
-    },
-    "title": "Will Smith at Grammy's",
-    "subtitle": "Westbrook Studios",
-    "roles": "Editor",
-    "copy": "A GRAMMY Salute To 50 Years Of Hip-Hop",
-    "youtubeId": "WCnB9UlEVR8",
-    "href": "https://www.youtube.com/watch?v=WCnB9UlEVR8",
-    "seriesId": "editing"
   },
   {
     "id": "barstool",
     "media": {
       "kind": "image",
       "src": "/thumbposters/uYB3IziD3Ls-hqdefault.jpg",
-      "alt": "Barstool Survivor thumbnail"
+      "alt": "Barstool Survivor S4E3 thumbnail"
     },
-    "title": "Barstool Survivor",
+    "title": "Barstool Survivor S4E3",
     "subtitle": "Barstool Sports",
     "roles": "Editor",
     "youtubeId": "uYB3IziD3Ls",
     "href": "https://www.youtube.com/watch?v=uYB3IziD3Ls",
-    "seriesId": "editing"
+    "seriesId": "barstool",
+    "videoOrder": 2
   },
   {
-    "id": "monkey",
+    "id": "invitational",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/lN0jRqTlGeU-hqdefault.jpg",
+      "alt": "Internet Invitational Ep. 2 thumbnail"
+    },
+    "title": "Internet Invitational Ep. 2",
+    "subtitle": "Barstool Sports",
+    "roles": "Editor",
+    "youtubeId": "lN0jRqTlGeU",
+    "href": "https://www.youtube.com/watch?v=lN0jRqTlGeU",
+    "seriesId": "barstool",
+    "videoOrder": 1
+  },
+  {
+    "id": "survivor-2",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/t5QW-IbdtzE-hqdefault.jpg",
+      "alt": "Barstool Survivor S3E6 thumbnail"
+    },
+    "title": "Barstool Survivor S3E6",
+    "subtitle": "Barstool Sports",
+    "roles": "Editor",
+    "youtubeId": "t5QW-IbdtzE",
+    "href": "https://www.youtube.com/watch?v=t5QW-IbdtzE",
+    "seriesId": "barstool",
+    "videoOrder": 3
+  },
+  {
+    "id": "Rizzle-1",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/iZDqZ6Bq1yI-hqdefault.jpg",
+      "alt": "Andy's Asian Afterlife Ep. 1 thumbnail"
+    },
+    "title": "Andy's Asian Afterlife Ep. 1",
+    "subtitle": "Rizzle's Asian Comedy Fest",
+    "roles": "Creator",
+    "youtubeId": "iZDqZ6Bq1yI",
+    "href": "https://www.youtube.com/watch?v=iZDqZ6Bq1yI",
+    "seriesId": "asian-afterlife",
+    "videoOrder": 1,
+    "vertical": true
+  },
+  {
+    "id": "Rizzle-2",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/taRJ5K7Emdo-hqdefault.jpg",
+      "alt": "Andy's Asian Afterlife Ep. 2 thumbnail"
+    },
+    "title": "Andy's Asian Afterlife Ep. 2",
+    "subtitle": "Rizzle's Asian Comedy Fest",
+    "roles": "Creator",
+    "youtubeId": "taRJ5K7Emdo",
+    "href": "https://www.youtube.com/watch?v=taRJ5K7Emdo",
+    "seriesId": "asian-afterlife",
+    "videoOrder": 2,
+    "vertical": true
+  },
+  {
+    "id": "Rizzle-3",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/HxXucJ6rFQA-hqdefault.jpg",
+      "alt": "Andy's Asian Afterlife Ep. 3 thumbnail"
+    },
+    "title": "Andy's Asian Afterlife Ep. 3",
+    "subtitle": "Rizzle's Asian Comedy Fest",
+    "roles": "Creator",
+    "youtubeId": "HxXucJ6rFQA",
+    "href": "https://www.youtube.com/watch?v=HxXucJ6rFQA",
+    "seriesId": "asian-afterlife",
+    "videoOrder": 3,
+    "vertical": true
+  },
+  {
+    "id": "betterman",
     "media": {
       "kind": "image",
       "src": "/thumbposters/h-bsM5kzFSA-hqdefault.jpg",
@@ -588,7 +1310,7 @@ export const CASES: Case[] = [
     "roles": "Editor",
     "youtubeId": "h-bsM5kzFSA",
     "href": "https://www.youtube.com/watch?v=h-bsM5kzFSA",
-    "seriesId": "editing"
+    "seriesId": "armada"
   },
   {
     "id": "babes",
@@ -602,7 +1324,7 @@ export const CASES: Case[] = [
     "roles": "Editor",
     "youtubeId": "IhhD8l476-I",
     "href": "https://www.youtube.com/watch?v=IhhD8l476-I",
-    "seriesId": "editing"
+    "seriesId": "armada"
   },
   {
     "id": "immaculate",
@@ -616,726 +1338,81 @@ export const CASES: Case[] = [
     "roles": "Editor",
     "youtubeId": "yShigrHv-4g",
     "href": "https://www.youtube.com/watch?v=yShigrHv-4g",
-    "seriesId": "editing"
+    "seriesId": "armada"
   },
   {
-    "id": "andys-roadshow",
-    "media": {
-      "kind": "video",
-      "src": "/videos/roadshow.mp4",
-      "poster": "/thumbposters/iLNypL04zH0-hqdefault.jpg"
-    },
-    "title": "Andy's Roadshow",
-    "roles": "Director | Writer | Editor",
-    "youtubeId": "iLNypL04zH0",
-    "href": "https://www.youtube.com/watch?v=iLNypL04zH0",
-    "seriesId": "favorites",
-    "videoOrder": 1
-  },
-  {
-    "id": "tuber",
-    "media": {
-      "kind": "video",
-      "src": "/videos/tuber.mp4",
-      "poster": "/thumbposters/0U5SCBko2XM-hqdefault.jpg"
-    },
-    "title": "Tuber",
-    "roles": "Director | Writer | Editor",
-    "youtubeId": "0U5SCBko2XM",
-    "href": "https://www.youtube.com/watch?v=0U5SCBko2XM",
-    "seriesId": "favorites",
-    "videoOrder": 3
-  },
-  {
-    "id": "pissterine",
-    "media": {
-      "kind": "video",
-      "src": "/videos/pissterine.mp4",
-      "poster": "/thumbposters/pissterine.jpg"
-    },
-    "title": "Pissterine",
-    "copy": "Andy once kickstarted a Listerine knockoff that got shutdown in trademark court.",
-    "href": "https://www.kickstarter.com/projects/andyzou/pissterine-a-genuine-novelty-mouthwash",
-    "seriesId": "favorites",
-    "videoOrder": 2
-  },
-  {
-    "id": "Making-it-1",
+    "id": "Apocalypse-1",
     "media": {
       "kind": "image",
-      "src": "/thumbposters/dwXaeTYc3Tg-hqdefault.jpg",
-      "alt": "Making It Episode 1 thumbnail"
+      "src": "/thumbposters/X-u9YpCOkk4-hqdefault.jpg",
+      "alt": "Apocalypse Problems 1 thumbnail"
     },
-    "title": "Making It Episode 1",
-    "subtitle": "Snap Originals ft. Dave Mizzoni",
-    "roles": "Director | DP | Editor",
-    "youtubeId": "dwXaeTYc3Tg",
-    "href": "https://www.youtube.com/watch?v=dwXaeTYc3Tg",
-    "seriesId": "making-it",
-    "videoOrder": 1,
-    "vertical": true
-  },
-  {
-    "id": "Making-it-10",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/AROtp_lq240-hqdefault.jpg",
-      "alt": "Making It Episode 10 thumbnail"
-    },
-    "title": "Making It Episode 10",
-    "subtitle": "Snap Originals ft. Dave Mizzoni",
-    "roles": "Director | DP | Editor",
-    "youtubeId": "AROtp_lq240",
-    "href": "https://www.youtube.com/watch?v=AROtp_lq240",
-    "seriesId": "making-it",
-    "videoOrder": 10,
-    "vertical": true
-  },
-  {
-    "id": "Making-it-2",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/bewb5mvMt2I-hqdefault.jpg",
-      "alt": "Making It Episode 2 thumbnail"
-    },
-    "title": "Making It Episode 2",
-    "subtitle": "Snap Originals ft. Dave Mizzoni",
-    "roles": "Director | DP | Editor",
-    "youtubeId": "bewb5mvMt2I",
-    "href": "https://www.youtube.com/watch?v=bewb5mvMt2I",
-    "seriesId": "making-it",
-    "videoOrder": 2,
-    "vertical": true
-  },
-  {
-    "id": "Making-it-3",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/8Y7yt1P1gDc-hqdefault.jpg",
-      "alt": "Making It Episode 3 thumbnail"
-    },
-    "title": "Making It Episode 3",
-    "subtitle": "Snap Originals ft. Dave Mizzoni",
-    "roles": "Director | DP | Editor",
-    "youtubeId": "8Y7yt1P1gDc",
-    "href": "https://www.youtube.com/watch?v=8Y7yt1P1gDc",
-    "seriesId": "making-it",
-    "videoOrder": 3,
-    "vertical": true
-  },
-  {
-    "id": "Making-it-4",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/MufrKX9LY_Q-hqdefault.jpg",
-      "alt": "Making It Episode 4 thumbnail"
-    },
-    "title": "Making It Episode 4",
-    "subtitle": "Snap Originals ft. Dave Mizzoni",
-    "roles": "Director | DP | Editor",
-    "youtubeId": "MufrKX9LY_Q",
-    "href": "https://www.youtube.com/watch?v=MufrKX9LY_Q",
-    "seriesId": "making-it",
-    "videoOrder": 4,
-    "vertical": true
-  },
-  {
-    "id": "Making-it-5",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/OomH2JjVwrw-hqdefault.jpg",
-      "alt": "Making It Episode 5 thumbnail"
-    },
-    "title": "Making It Episode 5",
-    "subtitle": "Snap Originals ft. Dave Mizzoni",
-    "roles": "Director | DP | Editor",
-    "youtubeId": "OomH2JjVwrw",
-    "href": "https://www.youtube.com/watch?v=OomH2JjVwrw",
-    "seriesId": "making-it",
-    "videoOrder": 5,
-    "vertical": true
-  },
-  {
-    "id": "Making-it-6",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/Y3335Qn42qI-hqdefault.jpg",
-      "alt": "Making It Episode 6 thumbnail"
-    },
-    "title": "Making It Episode 6",
-    "subtitle": "Snap Originals ft. Dave Mizzoni",
-    "roles": "Director | DP | Editor",
-    "youtubeId": "Y3335Qn42qI",
-    "href": "https://www.youtube.com/watch?v=Y3335Qn42qI",
-    "seriesId": "making-it",
-    "videoOrder": 6,
-    "vertical": true
-  },
-  {
-    "id": "Making-it-7",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/wtLmfuCHG2A-hqdefault.jpg",
-      "alt": "Making It Episode 7 thumbnail"
-    },
-    "title": "Making It Episode 7",
-    "subtitle": "Snap Originals ft. Dave Mizzoni",
-    "roles": "Director | DP | Editor",
-    "youtubeId": "wtLmfuCHG2A",
-    "href": "https://www.youtube.com/watch?v=wtLmfuCHG2A",
-    "seriesId": "making-it",
-    "videoOrder": 7,
-    "vertical": true
-  },
-  {
-    "id": "Making-it-8",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/S1L7zvRjuoM-hqdefault.jpg",
-      "alt": "Making It Episode 8 thumbnail"
-    },
-    "title": "Making It Episode 8",
-    "subtitle": "Snap Originals ft. Dave Mizzoni",
-    "roles": "Director | DP | Editor",
-    "youtubeId": "S1L7zvRjuoM",
-    "href": "https://www.youtube.com/watch?v=S1L7zvRjuoM",
-    "seriesId": "making-it",
-    "videoOrder": 8,
-    "vertical": true
-  },
-  {
-    "id": "Making-it-9",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/kZTRyPCdhes-hqdefault.jpg",
-      "alt": "Making It Episode 9 thumbnail"
-    },
-    "title": "Making It Episode 9",
-    "subtitle": "Snap Originals ft. Dave Mizzoni",
-    "roles": "Director | DP | Editor",
-    "youtubeId": "kZTRyPCdhes",
-    "href": "https://www.youtube.com/watch?v=kZTRyPCdhes",
-    "seriesId": "making-it",
-    "videoOrder": 9,
-    "vertical": true
-  },
-  {
-    "id": "instagram-betches",
-    "media": {
-      "kind": "video",
-      "src": "/videos/instagram_betches.mp4",
-      "poster": "/thumbposters/hQO_LLV9tms-hqdefault.jpg"
-    },
-    "title": "Instagram Betches",
-    "roles": "Director | DP",
-    "copy": "Winner of Best Sketch at NYC Short Comedy Film Fest",
-    "youtubeId": "hQO_LLV9tms",
-    "href": "https://www.youtube.com/watch?v=hQO_LLV9tms",
-    "seriesId": "music-videos",
-    "videoOrder": 3
-  },
-  {
-    "id": "Pay-for-me",
-    "media": {
-      "kind": "video",
-      "src": "/videos/payforme.mp4",
-      "poster": "/thumbposters/hVrMjp22IM0-hqdefault.jpg"
-    },
-    "title": "Pay For Me",
-    "roles": "Co-director | DP | Editor",
-    "youtubeId": "hVrMjp22IM0",
-    "href": "https://www.youtube.com/watch?v=hVrMjp22IM0",
-    "seriesId": "music-videos",
-    "videoOrder": 2
-  },
-  {
-    "id": "poor",
-    "media": {
-      "kind": "video",
-      "src": "/videos/poor.mp4",
-      "poster": "/thumbposters/AzjRdPLgj_k-hqdefault.jpg"
-    },
-    "title": "Poor",
-    "subtitle": "ft. Anna Roisman",
-    "roles": "Director | DP",
-    "youtubeId": "AzjRdPLgj_k",
-    "href": "https://www.youtube.com/watch?v=AzjRdPLgj_k",
-    "seriesId": "music-videos",
-    "videoOrder": 1
-  },
-  {
-    "id": "Jackson-pollack",
-    "media": {
-      "kind": "video",
-      "src": "/videos/jacksonpollock.mp4",
-      "poster": "/thumbposters/f53aKCMl7FQ-hqdefault.jpg"
-    },
-    "title": "Jackson Pollock",
-    "subtitle": "ft. Douglas Widick",
-    "roles": "Director | Editor",
-    "youtubeId": "f53aKCMl7FQ",
-    "href": "https://www.youtube.com/watch?v=f53aKCMl7FQ",
-    "seriesId": "music-videos",
-    "videoOrder": 6
-  },
-  {
-    "id": "sugar",
-    "media": {
-      "kind": "video",
-      "src": "/videos/sugar.mp4",
-      "poster": "/thumbposters/-53w2mv_upw-hqdefault.jpg"
-    },
-    "title": "Sugar",
-    "subtitle": "Sister Sparrow",
-    "roles": "DP | Editor",
-    "youtubeId": "-53w2mv_upw",
-    "href": "https://www.youtube.com/watch?v=-53w2mv_upw",
-    "seriesId": "music-videos",
-    "videoOrder": 5
-  },
-  {
-    "id": "hooking-up-with-girls",
-    "media": {
-      "kind": "video",
-      "src": "videos/hookingupwithgirls.mp4",
-      "poster": "/thumbposters/t3rLCM9LFfE-hqdefault.jpg"
-    },
-    "title": "Hooking Up With Girls",
-    "subtitle": "ft. Lane Moore",
-    "roles": "DP | Editor",
-    "youtubeId": "t3rLCM9LFfE",
-    "href": "https://www.youtube.com/watch?v=t3rLCM9LFfE",
-    "seriesId": "music-videos",
-    "videoOrder": 4
-  },
-  {
-    "id": "apocalypse-problems-series",
-    "media": {
-      "kind": "video",
-      "src": "/videos/apocalypse.mp4",
-      "poster": "/thumbposters/klRZB8Q87oY-hqdefault.jpg"
-    },
-    "title": "Apocalypse Problems",
+    "title": "Apocalypse Problems 1",
     "subtitle": "SpoiledNYC ft. Gianmarco Soresi & Megan Sass",
     "roles": "Director | DP | Editor",
-    "copy": "A comedic webseries for SpoiledNYC.",
-    "href": "series/apocalypse-problems",
-    "seriesId": "series",
-    "videoOrder": 6
-  },
-  {
-    "id": "asian-afterlife-series",
-    "media": {
-      "kind": "video",
-      "src": "/videos/rizzle.mp4",
-      "poster": "/thumbposters/rizzle.jpg"
-    },
-    "title": "Andy's Asian Afterlife",
-    "subtitle": "Rizzle's Asian Comedy Fest",
-    "roles": "Creator",
-    "copy": "1000$ grand prize winner of Rizzle's Asian Comedy Fest.",
-    "href": "series/asian-afterlife",
-    "seriesId": "series",
-    "videoOrder": 4
-  },
-  {
-    "id": "comedy-central-series",
-    "media": {
-      "kind": "video",
-      "src": "/videos/comedycentral.mp4",
-      "poster": "/thumbposters/comedycentraloriginals.jpg"
-    },
-    "title": "Comedy Central Originals",
-    "roles": "Director | Producer | Writer | Editor",
-    "copy": "At Comedy Central's Webby-winning Digital team, Andy directed, wrote, & produced Mini-Mocks, music videos, and content collabs with notable influencers.",
-    "href": "series/comedy-central-originals",
-    "seriesId": "series",
+    "youtubeId": "X-u9YpCOkk4",
+    "href": "https://www.youtube.com/watch?v=X-u9YpCOkk4",
+    "seriesId": "apocalypse-problems",
     "videoOrder": 1
   },
   {
-    "id": "honest-waitress-series",
+    "id": "Apocalypse-gluten",
     "media": {
-      "kind": "video",
-      "src": "/videos/waitress.mp4",
-      "poster": "/thumbposters/0SX0n9FG_GY-hqdefault.jpg"
+      "kind": "image",
+      "src": "/thumbposters/klRZB8Q87oY-hqdefault.jpg",
+      "alt": "Apocalypse Problems 2 - Gluten thumbnail"
     },
-    "title": "The Honest Waitress",
-    "subtitle": "PitTV",
-    "roles": "Director",
-    "copy": "A comedic webseries for PitTV.",
-    "href": "series/the-honest-waitress",
-    "seriesId": "series",
-    "videoOrder": 7
-  },
-  {
-    "id": "making-it-series",
-    "media": {
-      "kind": "video",
-      "src": "/videos/makingit.mp4",
-      "poster": "/thumbposters/makingit.jpg"
-    },
-    "title": "Making It",
-    "subtitle": "Snap Originals ft. Dave Mizzoni",
+    "title": "Apocalypse Problems 2 - Gluten",
+    "subtitle": "SpoiledNYC ft. Gianmarco Soresi & Megan Sass",
     "roles": "Director | DP | Editor",
-    "copy": "A vertical series for Snapchat's Snap Originals.",
-    "href": "series/making-it",
-    "seriesId": "series",
+    "youtubeId": "klRZB8Q87oY",
+    "href": "https://www.youtube.com/watch?v=klRZB8Q87oY",
+    "seriesId": "apocalypse-problems",
     "videoOrder": 2
   },
   {
-    "id": "securocam-series",
+    "id": "Apocalypse-milk",
     "media": {
-      "kind": "video",
-      "src": "/videos/securocam.mp4",
-      "poster": "/thumbposters/_SRIskz2JOY-hqdefault.jpg"
+      "kind": "image",
+      "src": "/thumbposters/yeie8hpMldw-hqdefault.jpg",
+      "alt": "Apocalypse Problems 3 - Milk thumbnail"
+    },
+    "title": "Apocalypse Problems 3 - Milk",
+    "subtitle": "SpoiledNYC ft. Gianmarco Soresi & Megan Sass",
+    "roles": "Director | DP | Editor",
+    "youtubeId": "yeie8hpMldw",
+    "href": "https://www.youtube.com/watch?v=yeie8hpMldw",
+    "seriesId": "apocalypse-problems",
+    "videoOrder": 3
+  },
+  {
+    "id": "interstellar",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/nl2-5DDL5nM-hqdefault.jpg",
+      "alt": "Interstellar in Real Life thumbnail"
+    },
+    "title": "Interstellar in Real Life",
+    "subtitle": "PitTV",
+    "roles": "Director | Writer | Editor",
+    "youtubeId": "nl2-5DDL5nM",
+    "href": "https://www.youtube.com/watch?v=nl2-5DDL5nM",
+    "seriesId": "andys-originals"
+  },
+  {
+    "id": "securocam-3000",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/_SRIskz2JOY-hqdefault.jpg",
+      "alt": "Securocam 3000 thumbnail"
     },
     "title": "Securocam 3000",
-    "subtitle": "NYTVF & IFC Comedy Crib",
-    "roles": "Co-director | Co-writer | Editor",
-    "copy": "A short webseries featured at NYTVF and hosted on IFC's Comedy Crib!",
+    "subtitle": "IFC Comedy Crib",
+    "roles": "Director | Co-writer | Editor",
+    "copy": "Web series selected by NYTVF and IFC Comedy Crib.",
     "youtubeId": "_SRIskz2JOY",
     "href": "https://www.youtube.com/watch?v=_SRIskz2JOY",
-    "seriesId": "series",
-    "videoOrder": 5
-  },
-  {
-    "id": "operators",
-    "media": {
-      "kind": "video",
-      "src": "/videos/Operators.mp4",
-      "poster": "/thumbposters/aa2zI7PO-X8-hqdefault.jpg"
-    },
-    "title": "Operators",
-    "subtitle": "Nevermore Film Fest 2024",
-    "roles": "Director | Co-writer | Editor",
-    "youtubeId": "aa2zI7PO-X8",
-    "href": "https://www.youtube.com/watch?v=aa2zI7PO-X8",
-    "seriesId": "shorts",
-    "videoOrder": 1
-  },
-  {
-    "id": "sqand",
-    "media": {
-      "kind": "video",
-      "src": "/videos/sqand.mp4",
-      "poster": "/thumbposters/fTbRmOHJp1I-hqdefault.jpg"
-    },
-    "title": "Sqand",
-    "roles": "Director | DP | Writer | Editor",
-    "youtubeId": "fTbRmOHJp1I",
-    "href": "https://www.youtube.com/watch?v=fTbRmOHJp1I",
-    "seriesId": "shorts",
-    "videoOrder": 3
-  },
-  {
-    "id": "Tell-my-wife",
-    "media": {
-      "kind": "video",
-      "src": "/videos/Tell_My_Wife.mp4",
-      "poster": "/thumbposters/daNydp3mpI0-hqdefault.jpg"
-    },
-    "title": "Tell My Wife",
-    "subtitle": "Big Apple Film Fest 2023",
-    "roles": "Co-director | Co-writer | Editor",
-    "youtubeId": "daNydp3mpI0",
-    "href": "https://www.youtube.com/watch?v=daNydp3mpI0",
-    "seriesId": "shorts",
-    "videoOrder": 2
-  },
-  {
-    "id": "ask-alexa",
-    "media": {
-      "kind": "video",
-      "src": "/videos/alexa.mp4",
-      "poster": "/thumbposters/dQtJTZeBWUQ-hqdefault.jpg"
-    },
-    "title": "Ask Alexa",
-    "subtitle": "ft. Anna Roisman & Lane Kwederis",
-    "roles": "Director | Editor",
-    "youtubeId": "dQtJTZeBWUQ",
-    "href": "https://www.youtube.com/watch?v=dQtJTZeBWUQ",
-    "seriesId": "sketch",
-    "videoOrder": 11
-  },
-  {
-    "id": "beauty-and-the-bowl",
-    "media": {
-      "kind": "video",
-      "src": "/videos/beautyandthebowl.mp4",
-      "poster": "/thumbposters/nRWyNY1xmto-hqdefault.jpg"
-    },
-    "title": "Beauty and the Bowl",
-    "subtitle": "ft. Gianmarco Soresi & Uncle Function",
-    "roles": "Director | DP | Editor",
-    "copy": "Sketch comedy featured on Funny Or Die.",
-    "youtubeId": "nRWyNY1xmto",
-    "href": "https://www.youtube.com/watch?v=nRWyNY1xmto",
-    "seriesId": "sketch",
-    "videoOrder": 1
-  },
-  {
-    "id": "cocaine",
-    "media": {
-      "kind": "video",
-      "src": "/videos/cocaine.mp4",
-      "poster": "/thumbposters/5n_Zl5bhUhU-hqdefault.jpg"
-    },
-    "title": "Cocaine PSA",
-    "subtitle": "ft. Bridgette Everett, Arthur Meyer, Joel Kim Booster",
-    "roles": "Director | Editor",
-    "youtubeId": "5n_Zl5bhUhU",
-    "href": "https://www.youtube.com/watch?v=5n_Zl5bhUhU",
-    "seriesId": "sketch",
-    "videoOrder": 10
-  },
-  {
-    "id": "dog",
-    "media": {
-      "kind": "video",
-      "src": "/videos/dogs.mp4",
-      "poster": "/thumbposters/tgND22y7uuA-hqdefault.jpg"
-    },
-    "title": "The Only Dog Video You Need to Watch",
-    "subtitle": "Funny or Die",
-    "roles": "Director | DP",
-    "copy": "ft. Lauren Ireland, Elyse Brandau, Brennan Lee Mulligan, Lilu Du, Dan Chamberlain & more.",
-    "youtubeId": "tgND22y7uuA",
-    "href": "https://www.youtube.com/watch?v=tgND22y7uuA",
-    "seriesId": "sketch",
-    "videoOrder": 6
-  },
-  {
-    "id": "grandmothers-announcement",
-    "media": {
-      "kind": "video",
-      "src": "/videos/grandma.mp4",
-      "poster": "/thumbposters/PEwfwxtwkWE-hqdefault.jpg"
-    },
-    "title": "Grandmother's Announcement",
-    "subtitle": "ft. Natalie Walker & Lulu Krause",
-    "roles": "Director | DP | Editor",
-    "youtubeId": "PEwfwxtwkWE",
-    "href": "https://www.youtube.com/watch?v=PEwfwxtwkWE",
-    "seriesId": "sketch",
-    "videoOrder": 4
-  },
-  {
-    "id": "Mta-shames-nyc",
-    "media": {
-      "kind": "video",
-      "src": "/videos/mta.mp4",
-      "poster": "/thumbposters/mta.jpg"
-    },
-    "title": "MTA Shames NYC",
-    "subtitle": "SpoiledNYC ft. Gianmarco Soresi & Megan Sass",
-    "roles": "Director | Editor",
-    "copy": "Featured in Metro News!",
-    "youtubeId": "qhXZjxXbW4s",
-    "href": "https://www.youtube.com/watch?v=qhXZjxXbW4s",
-    "seriesId": "sketch",
-    "videoOrder": 3
-  },
-  {
-    "id": "poly-bachelorette",
-    "media": {
-      "kind": "video",
-      "src": "/videos/poly.mp4",
-      "poster": "/thumbposters/RhzSqWrjx7Q-hqdefault.jpg"
-    },
-    "title": "Poly Bachelorette",
-    "roles": "Director | DP | Co-Writer | Editor",
-    "youtubeId": "RhzSqWrjx7Q",
-    "href": "https://www.youtube.com/watch?v=RhzSqWrjx7Q",
-    "seriesId": "sketch",
-    "videoOrder": 5
-  },
-  {
-    "id": "Secret-agent",
-    "media": {
-      "kind": "video",
-      "src": "videos/secretagent.mp4",
-      "poster": "/thumbposters/kNGsC9uqwVs-hqdefault.jpg"
-    },
-    "title": "Secret Agent Betrayal",
-    "subtitle": "Andy's Originals ft. Geil Comedy",
-    "roles": "Director | Writer | Editor",
-    "youtubeId": "kNGsC9uqwVs",
-    "href": "https://www.youtube.com/watch?v=kNGsC9uqwVs",
-    "seriesId": "sketch"
-  },
-  {
-    "id": "settling",
-    "media": {
-      "kind": "video",
-      "src": "/videos/settling.mp4",
-      "poster": "/thumbposters/qSPdMoxsZoU-hqdefault.jpg"
-    },
-    "title": "Settling",
-    "subtitle": "ft. Gianmarco Soresi & Megan Sass",
-    "roles": "Director | DP | Editor",
-    "youtubeId": "qSPdMoxsZoU",
-    "href": "https://www.youtube.com/watch?v=qSPdMoxsZoU",
-    "seriesId": "sketch",
-    "videoOrder": 2
-  },
-  {
-    "id": "The-painter",
-    "media": {
-      "kind": "video",
-      "src": "/videos/painter.mp4",
-      "poster": "/thumbposters/WnEJ9xsAkZ0-hqdefault.jpg"
-    },
-    "title": "The Painter",
-    "subtitle": "Quickiefest",
-    "roles": "Director | DP | Editor",
-    "copy": "Winner Audience Award",
-    "youtubeId": "WnEJ9xsAkZ0",
-    "href": "https://www.youtube.com/watch?v=WnEJ9xsAkZ0",
-    "seriesId": "sketch",
-    "videoOrder": 8
-  },
-  {
-    "id": "dune",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/VilAyt3VQH4-hqdefault.jpg",
-      "alt": "Dune Meme thumbnail"
-    },
-    "title": "Dune Meme",
-    "youtubeId": "VilAyt3VQH4",
-    "href": "https://www.youtube.com/watch?v=VilAyt3VQH4",
-    "seriesId": "sketch"
-  },
-  {
-    "id": "less",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/dcWy5-q_4I8-hqdefault.jpg",
-      "alt": "Less thumbnail"
-    },
-    "title": "Less",
-    "subtitle": "ft. Matt Rogers, Tessa Skara",
-    "roles": "Director | Writer | DP | Editor",
-    "youtubeId": "dcWy5-q_4I8",
-    "href": "https://www.youtube.com/watch?v=dcWy5-q_4I8",
-    "seriesId": "sketch"
-  },
-  {
-    "id": "tech-videos-showreel",
-    "media": {
-      "kind": "video",
-      "src": "/videos/mff.mp4",
-      "poster": "/thumbposters/bpkZSxtZd7Y-hqdefault.jpg"
-    },
-    "title": "Making Of Garden of Eden",
-    "copy": "Devlog of using Blender, Wonder Dynamics, Unreal Engine to design a 3D scene",
-    "youtubeId": "bpkZSxtZd7Y",
-    "href": "https://www.youtube.com/watch?v=bpkZSxtZd7Y",
-    "seriesId": "tech",
-    "videoOrder": 2
-  },
-  {
-    "id": "unreal",
-    "media": {
-      "kind": "video",
-      "src": "/videos/unreal.mp4",
-      "poster": "/thumbposters/c22gpypHv2k-hqdefault.jpg"
-    },
-    "title": "Unreal Engine Devlog",
-    "copy": "Devlog of Unreal Engine AI mechanics",
-    "youtubeId": "c22gpypHv2k",
-    "href": "https://www.youtube.com/watch?v=c22gpypHv2k",
-    "seriesId": "tech",
-    "videoOrder": 3
-  },
-  {
-    "id": "tootsies-promo-bts",
-    "media": {
-      "kind": "video",
-      "src": "/videos/tootsiespromo.mp4",
-      "poster": "/thumbposters/a-gHLCFfNEs-hqdefault.jpg"
-    },
-    "title": "Environment Replacement Vlog",
-    "copy": "Devlog of Enviroment replacement",
-    "youtubeId": "a-gHLCFfNEs",
-    "href": "https://www.youtube.com/watch?v=a-gHLCFfNEs",
-    "seriesId": "tech",
-    "videoOrder": 1
-  },
-  {
-    "id": "Honest-waitress-1",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/zlFyjWf4hOk-hqdefault.jpg",
-      "alt": "The Honest Waitress: Ignored thumbnail"
-    },
-    "title": "The Honest Waitress: Ignored",
-    "subtitle": "PitTV ft. Leila Graham",
-    "roles": "Director | Editor",
-    "youtubeId": "zlFyjWf4hOk",
-    "href": "https://www.youtube.com/watch?v=zlFyjWf4hOk",
-    "seriesId": "the-honest-waitress",
-    "videoOrder": 1
-  },
-  {
-    "id": "Honest-waitress-2",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/0SX0n9FG_GY-hqdefault.jpg",
-      "alt": "The Honest Waitress: Lemons thumbnail"
-    },
-    "title": "The Honest Waitress: Lemons",
-    "subtitle": "PitTV ft. Leila Graham",
-    "roles": "Director | Editor",
-    "youtubeId": "0SX0n9FG_GY",
-    "href": "https://www.youtube.com/watch?v=0SX0n9FG_GY",
-    "seriesId": "the-honest-waitress",
-    "videoOrder": 2
-  },
-  {
-    "id": "Honest-waitress-3",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/Gk7n1WSpxXg-hqdefault.jpg",
-      "alt": "The Honest Waitress: Soda thumbnail"
-    },
-    "title": "The Honest Waitress: Soda",
-    "subtitle": "PitTV ft. Leila Graham",
-    "roles": "Director | Editor",
-    "youtubeId": "Gk7n1WSpxXg",
-    "href": "https://www.youtube.com/watch?v=Gk7n1WSpxXg",
-    "seriesId": "the-honest-waitress",
-    "videoOrder": 3
-  },
-  {
-    "id": "Honest-waitress-4",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/2z09RB3wsGk-hqdefault.jpg",
-      "alt": "The Honest Waitress: Euope thumbnail"
-    },
-    "title": "The Honest Waitress: Euope",
-    "subtitle": "PitTV ft. Leila Graham",
-    "roles": "Director | Editor",
-    "youtubeId": "2z09RB3wsGk",
-    "href": "https://www.youtube.com/watch?v=2z09RB3wsGk",
-    "seriesId": "the-honest-waitress",
-    "videoOrder": 4
-  },
-  {
-    "id": "Honest-waitress-5",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/FUto6VeJfbI-hqdefault.jpg",
-      "alt": "The Honest Waitress: Menu thumbnail"
-    },
-    "title": "The Honest Waitress: Menu",
-    "subtitle": "PitTV ft. Leila Graham",
-    "roles": "Director | Editor",
-    "youtubeId": "FUto6VeJfbI",
-    "href": "https://www.youtube.com/watch?v=FUto6VeJfbI",
-    "seriesId": "the-honest-waitress",
-    "videoOrder": 5
+    "seriesId": "andys-originals"
   },
   {
     "id": "dinner",
@@ -1470,5 +1547,19 @@ export const CASES: Case[] = [
     "youtubeId": "_98xIvAvOhE",
     "href": "https://www.youtube.com/watch?v=_98xIvAvOhE",
     "videoOrder": 9
+  },
+  {
+    "id": "class-88-3",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/_daCOmHG9Ew-hqdefault.jpg",
+      "alt": "Class of '88 Chuck D Teaser thumbnail"
+    },
+    "title": "Class of '88 Chuck D Teaser",
+    "subtitle": "Westbrook Studios",
+    "roles": "Editor",
+    "youtubeId": "_daCOmHG9Ew",
+    "href": "https://www.youtube.com/watch?v=_daCOmHG9Ew",
+    "videoOrder": 6
   }
 ];
