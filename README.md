@@ -22,6 +22,10 @@ Features:
 
 ## Getting Started
 
+Use native Windows `npm` for this repo.
+
+This working tree lives on `G:`, and the intended setup is Windows-native Node/npm. Running npm from WSL against `/mnt/g/...` slows file watching and can mix native dependencies. Run installs and npm scripts from a Windows terminal only.
+
 Outside of this repo, you can start a new project with this template using [C3](https://developers.cloudflare.com/pages/get-started/c3/) (the `create-cloudflare` CLI):
 
 ```bash
@@ -46,7 +50,7 @@ All commands are run from the root of the project, from a terminal:
 
 | Command                           | Action                                           |
 | :-------------------------------- | :----------------------------------------------- |
-| `npm install`                     | Installs dependencies                            |
+| `npm install`                     | Installs dependencies from native Windows npm    |
 | `npm run dev`                     | Starts local dev server at `localhost:4321`      |
 | `npm run build`                   | Build your production site to `./dist/`          |
 | `npm run preview`                 | Preview your build locally, before deploying     |

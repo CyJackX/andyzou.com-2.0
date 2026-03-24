@@ -26,17 +26,19 @@
 	},
 	"private": true,
 	"scripts": {
-		"astro": "astro",
-		"build": "astro build",
-		"cf-typegen": "wrangler types",
-		"check": "astro build && tsc && wrangler deploy --dry-run",
-		"deploy": "wrangler deploy",
-		"dev": "astro dev",
-		"import:medium": "node scripts/import-medium.mjs",
-		"gen:cases": "node scripts/gen-cases.mjs",
-		"gen:all": "npm run gen:cases && npx tsc --noEmit",
-		"preview": "astro build && wrangler dev"
+		"preinstall": "node scripts/ensure-windows-runtime.mjs",
+		"guard:runtime": "node scripts/ensure-windows-runtime.mjs",
+		"astro": "npm run guard:runtime && astro",
+		"build": "npm run guard:runtime && astro build",
+		"cf-typegen": "npm run guard:runtime && wrangler types",
+		"check": "npm run guard:runtime && astro build && tsc && wrangler deploy --dry-run",
+		"deploy": "npm run guard:runtime && wrangler deploy",
+		"dev": "npm run guard:runtime && astro dev",
+		"import:medium": "npm run guard:runtime && node scripts/import-medium.mjs",
+		"gen:cases": "npm run guard:runtime && node scripts/gen-cases.mjs",
+		"gen:all": "npm run guard:runtime && npm run gen:cases && npx tsc --noEmit",
+		"preview": "npm run guard:runtime && astro build && wrangler dev"
 	},
 	"type": "module",
-	"packageManager": "pnpm@10.21.0+sha512.da3337267e400fdd3d479a6c68079ac6db01d8ca4f67572083e722775a796788a7a9956613749e000fac20d424b594f7a791a5f4e2e13581c5ef947f26968a40"
+	"packageManager": "npm@11.0.0"
 }
