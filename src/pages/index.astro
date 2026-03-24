@@ -97,7 +97,7 @@ const latestBlogPosts = (await getCollection("blog"))
               href="https://www.instantmagenta.com"
               class="underline">Instant Magenta.</a>
           </p>
-          <ol class="tilescontainer two-col">
+          <ol class="tilescontainer">
             <WorkTilesBySeries seriesId="branded-content" deferMedia={true} />
           </ol>
         </details>
@@ -188,6 +188,7 @@ const latestBlogPosts = (await getCollection("blog"))
                   copy={post.copy}
                   media={post.media}
                   href={post.href}
+                  deferMedia={true}
                 />
               </li>
             ))

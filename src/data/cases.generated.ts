@@ -184,7 +184,39 @@ export const CASES: Case[] = [
     "youtubeId": "PTo-3d7cco4",
     "href": "https://www.youtube.com/watch?v=PTo-3d7cco4",
     "seriesId": "branded-content",
+    "videoOrder": 6
+  },
+  {
+    "id": "will-smith",
+    "media": {
+      "kind": "video",
+      "src": "/videos/willsmith.mp4",
+      "poster": "/thumbposters/_NiN2zU79is-hqdefault.jpg"
+    },
+    "title": "Will Smith in Riyadh",
+    "subtitle": "Westbrook Studios",
+    "roles": "Editor",
+    "copy": "Will Smith performing in Riyadh at Soundstorm 2023",
+    "youtubeId": "_NiN2zU79is",
+    "href": "https://www.youtube.com/watch?v=_NiN2zU79is",
+    "seriesId": "branded-content",
     "videoOrder": 4
+  },
+  {
+    "id": "election-science-duvergers-law",
+    "media": {
+      "kind": "video",
+      "src": "/videos/duverger.mp4",
+      "poster": "/thumbposters/HpBRGXK-QNs-hqdefault.jpg"
+    },
+    "title": "Duverger's Law",
+    "subtitle": "Center for Election Science",
+    "roles": "Director | Editor",
+    "copy": "Volunteer work for election non-profit ElectionScience.org!",
+    "youtubeId": "HpBRGXK-QNs",
+    "href": "https://www.youtube.com/watch?v=HpBRGXK-QNs",
+    "seriesId": "branded-content",
+    "videoOrder": 5
   },
   {
     "id": "European-boys",
@@ -532,21 +564,6 @@ export const CASES: Case[] = [
     "href": "https://www.youtube.com/watch?v=go1LBg6iEew",
     "seriesId": "death-becomes-her",
     "videoOrder": 7
-  },
-  {
-    "id": "will-smith",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/Will Smith Compliment.jpg",
-      "alt": "Will Smith in Riyadh thumbnail"
-    },
-    "title": "Will Smith in Riyadh",
-    "subtitle": "Westbrook Studios",
-    "roles": "Editor",
-    "copy": "Will Smith performing in Riyadh at Soundstorm 2023",
-    "youtubeId": "_NiN2zU79is",
-    "href": "https://www.youtube.com/watch?v=_NiN2zU79is",
-    "seriesId": "editing"
   },
   {
     "id": "will-smith2",
@@ -999,21 +1016,6 @@ export const CASES: Case[] = [
     "videoOrder": 5
   },
   {
-    "id": "operators",
-    "media": {
-      "kind": "video",
-      "src": "/videos/Operators.mp4",
-      "poster": "/thumbposters/aa2zI7PO-X8-hqdefault.jpg"
-    },
-    "title": "Operators",
-    "subtitle": "Nevermore Film Fest 2024",
-    "roles": "Director | Co-writer | Editor",
-    "youtubeId": "aa2zI7PO-X8",
-    "href": "https://www.youtube.com/watch?v=aa2zI7PO-X8",
-    "seriesId": "shorts",
-    "videoOrder": 1
-  },
-  {
     "id": "sqand",
     "media": {
       "kind": "video",
@@ -1195,32 +1197,6 @@ export const CASES: Case[] = [
     "videoOrder": 8
   },
   {
-    "id": "dune",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/VilAyt3VQH4-hqdefault.jpg",
-      "alt": "Dune Meme thumbnail"
-    },
-    "title": "Dune Meme",
-    "youtubeId": "VilAyt3VQH4",
-    "href": "https://www.youtube.com/watch?v=VilAyt3VQH4",
-    "seriesId": "sketch"
-  },
-  {
-    "id": "less",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/dcWy5-q_4I8-hqdefault.jpg",
-      "alt": "Less thumbnail"
-    },
-    "title": "Less",
-    "subtitle": "ft. Matt Rogers, Tessa Skara",
-    "roles": "Director | Writer | DP | Editor",
-    "youtubeId": "dcWy5-q_4I8",
-    "href": "https://www.youtube.com/watch?v=dcWy5-q_4I8",
-    "seriesId": "sketch"
-  },
-  {
     "id": "tech-videos-showreel",
     "media": {
       "kind": "video",
@@ -1338,6 +1314,44 @@ export const CASES: Case[] = [
     "videoOrder": 5
   },
   {
+    "id": "operators",
+    "media": {
+      "kind": "video",
+      "src": "/videos/Operators.mp4",
+      "poster": "/thumbposters/aa2zI7PO-X8-hqdefault.jpg"
+    },
+    "title": "Operators",
+    "subtitle": "Nevermore Film Fest 2024",
+    "roles": "Director | Co-writer | Editor",
+    "youtubeId": "aa2zI7PO-X8",
+    "href": "https://www.youtube.com/watch?v=aa2zI7PO-X8",
+    "videoOrder": 1
+  },
+  {
+    "id": "dune",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/VilAyt3VQH4-hqdefault.jpg",
+      "alt": "Dune Meme thumbnail"
+    },
+    "title": "Dune Meme",
+    "youtubeId": "VilAyt3VQH4",
+    "href": "https://www.youtube.com/watch?v=VilAyt3VQH4"
+  },
+  {
+    "id": "less",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/dcWy5-q_4I8-hqdefault.jpg",
+      "alt": "Less thumbnail"
+    },
+    "title": "Less",
+    "subtitle": "ft. Matt Rogers, Tessa Skara",
+    "roles": "Director | Writer | DP | Editor",
+    "youtubeId": "dcWy5-q_4I8",
+    "href": "https://www.youtube.com/watch?v=dcWy5-q_4I8"
+  },
+  {
     "id": "dinner",
     "media": {
       "kind": "image",
@@ -1362,20 +1376,6 @@ export const CASES: Case[] = [
     "copy": "Devlog of explaining projectile intercept math",
     "youtubeId": "MpUUsDDE1sI",
     "href": "https://www.youtube.com/watch?v=MpUUsDDE1sI"
-  },
-  {
-    "id": "election-science-duvergers-law",
-    "media": {
-      "kind": "image",
-      "src": "/thumbposters/HpBRGXK-QNs-hqdefault.jpg",
-      "alt": "Duverger's Law thumbnail"
-    },
-    "title": "Duverger's Law",
-    "subtitle": "Center for Election Science",
-    "roles": "Director | Editor",
-    "copy": "Volunteer work for election non-profit ElectionScience.org!",
-    "youtubeId": "HpBRGXK-QNs",
-    "href": "https://www.youtube.com/watch?v=HpBRGXK-QNs"
   },
   {
     "id": "architects-newspaper-interviews",
@@ -1470,5 +1470,18 @@ export const CASES: Case[] = [
     "youtubeId": "_98xIvAvOhE",
     "href": "https://www.youtube.com/watch?v=_98xIvAvOhE",
     "videoOrder": 9
+  },
+  {
+    "id": "breaking-bad",
+    "media": {
+      "kind": "image",
+      "src": "/thumbposters/zewomnLNxZA-hqdefault.jpg",
+      "alt": "\"No One Feels Bad that You're Being Forced to Watch \"\"Breaking Bad\"\"\" thumbnail"
+    },
+    "title": "\"No One Feels Bad that You're Being Forced to Watch \"\"Breaking Bad\"\"\"",
+    "subtitle": "The New Yorker",
+    "roles": "Co-Director | DP",
+    "youtubeId": "zewomnLNxZA",
+    "href": "https://www.youtube.com/watch?v=zewomnLNxZA"
   }
 ];
