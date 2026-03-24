@@ -1,35 +1,129 @@
-<header class="header section-title flex-wrap">
-	<h1 class="bigtitle order-1">Andy Zou</h1>
-	<video
-		src="/videos/Comp 1.mp4"
-		muted
-		loop
-		autoplay
-		playsinline
-		class="md:h-[8cqw] w-full order-4 md:w-auto md:order-2 header-video"
-	></video>
-	<p class="subtitle order-3">
-		<span>Director & Producer</span>
-		<span>Andy@AndyZou.com</span>
-	</p>
+---
+const marqueeText =
+  "Director producer editor creative technologist weirdo\u00A0";
+---
+
+<header class="header">
+  <h1 class="bigtitle"><a href="/">Andy Zou</a></h1>
+  <video
+    src="/videos/Comp 1.mp4"
+    muted
+    loop
+    autoplay
+    playsinline
+    class="md:h-[8cqw] w-full md:w-auto header-video"
+  ></video>
+  <a class="marquee" href="/" data-marquee aria-label={marqueeText}>
+    <div class="marquee__content">
+      <h1 class="marquee__text">{marqueeText}</h1>
+      <div class="marquee__copies" aria-hidden="true"></div>
+    </div>
+  </a>
 </header>
+
+<script>
+  function setMarqueeContents(marquee) {
+    const text = marquee.querySelector(".marquee__text");
+    const copies = marquee.querySelector(".marquee__copies");
+
+    if (!text || !copies) {
+      return;
+    }
+
+    const textWidth = text.getBoundingClientRect().width;
+
+    if (!textWidth) {
+      return;
+    }
+
+    const numberOfCopies = Math.ceil(window.innerWidth / textWidth) + 1;
+
+    marquee.style.setProperty("--textWidth", `${textWidth}`);
+    copies.replaceChildren();
+
+    for (let index = 0; index < numberOfCopies; index += 1) {
+      copies.appendChild(text.cloneNode(true));
+    }
+  }
+
+  function initMarquees() {
+    document.querySelectorAll("[data-marquee]").forEach(setMarqueeContents);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initMarquees, { once: true });
+  } else {
+    initMarquees();
+  }
+
+  window.addEventListener("resize", initMarquees);
+</script>
+
 <style>
-	.header {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: end;
-	}
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-	.subtitle {
-		font-size: 3cqw;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+  .subtitle {
+    font-size: 3cqw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    text-justify: inter-word;
+    text-align-last: justify;
+  }
 
-		text-align: justify;
-		text-justify: inter-word;
-		text-align-last: justify;
-	}
+  .marquee {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    overflow: hidden;
+    font-weight: bold;
+    border-top: .4rem rgb(var(--gray-light)) solid; 
+    border-bottom: 0.4rem rgb(var(--gray-light)) solid;
+    --textWidth: 100px;
+    --animSpeed: 50;
+  }
+
+  .marquee__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-shrink: 0;
+    animation: marquee-scroll calc((var(--textWidth) * 1s) / var(--animSpeed))
+      linear infinite;
+  }
+
+  .marquee__text {
+    display: block;
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .marquee__copies {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 0;
+    height: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  @keyframes marquee-scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 </style>
