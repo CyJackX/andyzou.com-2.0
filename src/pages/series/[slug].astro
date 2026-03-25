@@ -5,6 +5,7 @@ import VideoLightbox from "../../components/VideoLightbox.astro";
 import WorkTilesBySeries from "../../components/WorkTilesBySeries.astro";
 import { SITE_TITLE } from "../../consts";
 import {
+  getSeriesTiles,
   getSeriesHomeHref,
   getSeriesIds,
   getSeriesMeta,
@@ -12,6 +13,11 @@ import {
   hasSeries,
 } from "../../lib/work";
 import Titleheader from "../../components/Header.astro";
+import {
+  buildBreadcrumbJsonLd,
+  buildCollectionPageJsonLd,
+  summarizeText,
+} from "../../lib/seo";
 
 export async function getStaticPaths() {
   return getSeriesIds().map((seriesId) => ({
@@ -34,6 +40,28 @@ const seriesTitle = getSeriesTitle(seriesId);
 const seriesCopy = seriesMeta?.copy;
 const homeHref = getSeriesHomeHref(seriesId);
 const pageTitle = `${seriesTitle} | ${SITE_TITLE}`;
+const pageDescription = summarizeText(
+  seriesCopy ?? `${seriesTitle} video series directed by Andy Zou.`,
+);
+const seriesImage = getSeriesTiles(seriesId)[0]?.media;
+const socialImage = seriesImage?.kind === "image" ? seriesImage.src : seriesImage?.poster;
+const socialImageAlt =
+  seriesImage?.kind === "image"
+    ? seriesImage.alt
+    : `${seriesTitle} series thumbnail`;
+const jsonLd = Astro.site
+  ? [
+      buildCollectionPageJsonLd(Astro.site, {
+        title: seriesTitle,
+        description: pageDescription,
+        path: `/series/${seriesId}/`,
+      }),
+      buildBreadcrumbJsonLd(Astro.site, [
+        { name: "Home", path: "/" },
+        { name: seriesTitle, path: `/series/${seriesId}/` },
+      ]),
+    ]
+  : [];
 ---
 
 <!doctype html>
@@ -41,7 +69,10 @@ const pageTitle = `${seriesTitle} | ${SITE_TITLE}`;
   <head>
     <BaseHead
       title={pageTitle}
-      description={seriesCopy ?? `${seriesTitle} video series`}
+      description={pageDescription}
+      image={socialImage}
+      imageAlt={socialImageAlt}
+      jsonLd={jsonLd}
     />
   </head>
   <body>

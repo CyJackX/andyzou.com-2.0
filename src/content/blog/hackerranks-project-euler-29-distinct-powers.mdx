@@ -3,6 +3,7 @@ title: "HackerRank’s Project Euler 29: Distinct Powers"
 description: "This one is pretty straightforward for the original version, where you need to find the answer for n = 100. A straightforward brute force approach works for that:"
 pubDate: "2023-08-11T05:02:33.000Z"
 heroImage: "/medium/hackerranks-project-euler-29-distinct-powers/01-1-hm4ctltbij4xwm7_pqthcg.png"
+heroImageAlt: "Code snippet showing the brute force distinct powers solution"
 ---
 <figure><img alt="" src="/medium/hackerranks-project-euler-29-distinct-powers/01-1-hm4ctltbij4xwm7_pqthcg.png" /></figure><p>This one is pretty straightforward for the original version, where you need to find the answer for n = 100. A straightforward brute force approach works for that:</p>
 <pre>def distinctPowers(n):<br />    arr = set()<br />    for a in range(2, n + 1):<br />        for b in range(2, n + 1):<br />            arr.add(a**b)<br />    return len(arr)</pre>

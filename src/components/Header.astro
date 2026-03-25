@@ -1,21 +1,26 @@
 ---
-const marqueeText =
-  "Director producer editor creative technologist weirdo\u00A0";
+const marqueeLabel = "Director producer editor creative technologist weirdo";
 ---
 
 <header class="header">
   <h1 class="bigtitle"><a href="/">Andy Zou</a></h1>
-  <video
+  <!-- <video
     src="/videos/Comp 1.mp4"
     muted
     loop
     autoplay
     playsinline
-    class="md:h-[8cqw] w-full md:w-auto header-video"
-  ></video>
-  <a class="marquee" href="/" data-marquee aria-label={marqueeText}>
+    class="md:h-[8cqw] w-full md:w-auto header-video"></video> -->
+  <a class="marquee" href="/" data-marquee aria-label={marqueeLabel}>
     <div class="marquee__content">
-      <h1 class="marquee__text">{marqueeText}</h1>
+      <div class="marquee__group">
+        <h1>Director</h1>
+        <h1>Producer</h1>
+        <h1>Editor</h1>
+        <h1>creative</h1>
+        <h1>technologist</h1>
+        <h1>weirdo</h1>
+      </div>
       <div class="marquee__copies" aria-hidden="true"></div>
     </div>
   </a>
@@ -23,31 +28,39 @@ const marqueeText =
 
 <script>
   function setMarqueeContents(marquee) {
-    const text = marquee.querySelector(".marquee__text");
+    const group = marquee.querySelector(".marquee__group");
     const copies = marquee.querySelector(".marquee__copies");
 
-    if (!text || !copies) {
+    if (!group || !copies) {
       return;
     }
 
-    const textWidth = text.getBoundingClientRect().width;
+    const groupWidth = group.getBoundingClientRect().width;
 
-    if (!textWidth) {
+    if (!groupWidth) {
       return;
     }
 
-    const numberOfCopies = Math.ceil(window.innerWidth / textWidth) + 1;
+    const numberOfCopies = Math.ceil(window.innerWidth / groupWidth) + 1;
 
-    marquee.style.setProperty("--textWidth", `${textWidth}`);
+    marquee.style.setProperty("--trackWidth", `${groupWidth}`);
     copies.replaceChildren();
 
     for (let index = 0; index < numberOfCopies; index += 1) {
-      copies.appendChild(text.cloneNode(true));
+      copies.appendChild(group.cloneNode(true));
     }
   }
 
   function initMarquees() {
     document.querySelectorAll("[data-marquee]").forEach(setMarqueeContents);
+  }
+
+  function handleMarqueeMediaLoad(event) {
+    const marquee = event.target.closest("[data-marquee]");
+
+    if (marquee) {
+      setMarqueeContents(marquee);
+    }
   }
 
   if (document.readyState === "loading") {
@@ -57,6 +70,8 @@ const marqueeText =
   }
 
   window.addEventListener("resize", initMarquees);
+  document.addEventListener("loadedmetadata", handleMarqueeMediaLoad, true);
+  document.addEventListener("loadeddata", handleMarqueeMediaLoad, true);
 </script>
 
 <style>
@@ -84,9 +99,9 @@ const marqueeText =
     width: 100%;
     overflow: hidden;
     font-weight: bold;
-    border-top: .4rem rgb(var(--gray-light)) solid; 
+    border-top: 0.4rem rgb(var(--gray-light)) solid;
     border-bottom: 0.4rem rgb(var(--gray-light)) solid;
-    --textWidth: 100px;
+    --trackWidth: 100;
     --animSpeed: 50;
   }
 
@@ -95,26 +110,40 @@ const marqueeText =
     flex-direction: row;
     align-items: center;
     flex-shrink: 0;
-    animation: marquee-scroll calc((var(--textWidth) * 1s) / var(--animSpeed))
+    width: max-content;
+    animation: marquee-scroll calc((var(--trackWidth) * 1s) / var(--animSpeed))
       linear infinite;
   }
 
-  .marquee__text {
-    display: block;
-    flex-shrink: 0;
-    flex-grow: 0;
-    margin: 0;
-    text-transform: uppercase;
-  }
-
+  .marquee__group,
   .marquee__copies {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    width: 0;
-    height: 100%;
-    flex-grow: 0;
+    align-items: end;
     flex-shrink: 0;
+    gap: 3rem;
+    padding-top: 0.1em; /* to center text*/
+  }
+
+  .marquee__group > *,
+  .marquee__copies > * {
+    flex-shrink: 0;
+  }
+
+  .marquee__group :is(h1, h2, h3, h4, h5, h6),
+  .marquee__copies :is(h1, h2, h3, h4, h5, h6) {
+    display: block;
+    margin: 0;
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+
+  .marquee__group video,
+  .marquee__copies video {
+    height: 4rem;
+    width: auto;
+    border-radius: 0.3rem;
+    object-fit: cover;
   }
 
   @keyframes marquee-scroll {
@@ -123,7 +152,7 @@ const marqueeText =
     }
 
     100% {
-      transform: translateX(-100%);
+      transform: translateX(calc(-1px * var(--trackWidth)));
     }
   }
 </style>

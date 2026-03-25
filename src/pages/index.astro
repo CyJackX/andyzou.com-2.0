@@ -10,7 +10,12 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import azaleaShoot from "../images/AzaleaShootSelects-07.jpg";
 import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
-import { getCollection } from "astro:content";
+import { getPublishedBlogPosts } from "../lib/blog";
+import {
+  buildPersonJsonLd,
+  buildWebSiteJsonLd,
+  summarizeText,
+} from "../lib/seo";
 
 function formatGalleryAlt(filePath: string) {
   const filename =
@@ -45,8 +50,7 @@ const blogDateFormatter = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
 });
 
-const latestBlogPosts = (await getCollection("blog"))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+const latestBlogPosts = (await getPublishedBlogPosts())
   .slice(0, 3)
   .map((post) => ({
     id: `blog-${post.id}`,
@@ -57,15 +61,28 @@ const latestBlogPosts = (await getCollection("blog"))
     media: {
       kind: "image" as const,
       src: post.data.heroImage ?? "/blog-placeholder-1.jpg",
-      alt: post.data.title,
+      alt: post.data.heroImageAlt,
     },
   }));
+
+const pageDescription = summarizeText(
+  "Andy Zou is a director and creative technologist creating comedy, branded content, and technical experiments across video, interactive media, and the web.",
+);
+const jsonLd = Astro.site
+  ? [buildWebSiteJsonLd(Astro.site), buildPersonJsonLd(Astro.site)]
+  : [];
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead
+      title={SITE_TITLE}
+      description={pageDescription || SITE_DESCRIPTION}
+      image={azaleaShoot.src}
+      imageAlt="Portrait of Andy Zou on set"
+      jsonLd={jsonLd}
+    />
   </head>
   <body
     >
@@ -91,9 +108,9 @@ const latestBlogPosts = (await getCollection("blog"))
             ><h2 class="section-title subsection">Branded Content</h2></summary
           >
           <p class="copy">
-            tktktktktktkAfter a decade of producing content and seeing the ins
-            and outs, Andy parlayed his skills into his own boutique production
-            company for content at <a
+            After a decade of making digital content for publishers, brands, and
+            comedy platforms, Andy now channels that production experience into
+            nimble campaign and branded work through <a
               href="https://www.instantmagenta.com"
               class="underline">Instant Magenta.</a>
           </p>
@@ -162,7 +179,7 @@ const latestBlogPosts = (await getCollection("blog"))
       <details id="technology" name="director-subsection">
         <summary><h2 class="section-title subsection">Technology</h2></summary>
         <p class="copy">
-          From After Effects compositing to VR, 3D engines, genAI, webdev, and
+          From After Effects to VR, 3D engines, genAI, webdev, and
           more, Andy has a wide range of technical skills that support his work
           as a director and an editor.
         </p>

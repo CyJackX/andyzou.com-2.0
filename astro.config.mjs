@@ -5,10 +5,11 @@ import sitemap from "@astrojs/sitemap";
 
 import cloudflare from "@astrojs/cloudflare";
 import tailwindcss from "@tailwindcss/vite";
+import { SITE_URL } from "./site.config.js";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://example.com",
+	site: SITE_URL,
 	integrations: [mdx(), sitemap()],
 	adapter: cloudflare({
 		platformProxy: {

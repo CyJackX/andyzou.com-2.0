@@ -2,20 +2,40 @@
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import { getCollection } from 'astro:content';
+import { SITE_TITLE } from '../../consts';
 import FormattedDate from '../../components/FormattedDate.astro';
+import { getPublishedBlogPosts } from '../../lib/blog';
+import {
+	buildBreadcrumbJsonLd,
+	buildCollectionPageJsonLd,
+	summarizeText,
+} from '../../lib/seo';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+const posts = await getPublishedBlogPosts();
+const pageTitle = `Blog | ${SITE_TITLE}`;
+const pageDescription = summarizeText(
+	"Technical writing, development notes, and production breakdowns from Andy Zou on game dev, web engineering, creative tools, and whatever he's working on.",
 );
+const jsonLd = Astro.site
+	? [
+			buildCollectionPageJsonLd(Astro.site, {
+				title: "Andy Zou Blog",
+				description: pageDescription,
+				path: "/blog/",
+			}),
+			buildBreadcrumbJsonLd(Astro.site, [
+				{ name: "Home", path: "/" },
+				{ name: "Blog", path: "/blog/" },
+			]),
+		]
+	: [];
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
+	<html lang="en">
+		<head>
+			<BaseHead title={pageTitle} description={pageDescription} jsonLd={jsonLd} />
+			<style>
 			main {
 				box-sizing: border-box;
 				width: 1280px;
@@ -96,11 +116,16 @@ const posts = (await getCollection('blog')).sort(
 			<section>
 				<ul>
 					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
-									<h4 class="title">{post.data.title}</h4>
+							posts.map((post) => (
+								<li>
+									<a href={`/blog/${post.id}/`}>
+										<img
+											width={720}
+											height={360}
+											src={post.data.heroImage}
+											alt={post.data.heroImageAlt}
+										/>
+										<h4 class="title">{post.data.title}</h4>
 									<p class="date">
 										<FormattedDate date={post.data.pubDate} />
 									</p>
