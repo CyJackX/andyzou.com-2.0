@@ -3,6 +3,8 @@ import {
   SITE_AUTHOR_NAME,
   SITE_DEFAULT_OG_IMAGE,
   SITE_DESCRIPTION,
+  SITE_ORGANIZATION,
+  SITE_SOCIAL_PROFILES,
   SITE_TITLE,
 } from "../../site.config.js";
 
@@ -66,6 +68,16 @@ export function buildPersonJsonLd(site: URL): JsonLd {
     url: site.toString(),
     jobTitle: "Video Director and Creative Technologist",
     description: SITE_DESCRIPTION,
+    sameAs: SITE_SOCIAL_PROFILES,
+  };
+}
+
+export function buildOrganizationJsonLd(): JsonLd {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: SITE_ORGANIZATION.name,
+    url: SITE_ORGANIZATION.url,
   };
 }
 

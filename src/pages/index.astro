@@ -12,6 +12,7 @@ import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 import { getPublishedBlogPosts } from "../lib/blog";
 import {
+  buildOrganizationJsonLd,
   buildPersonJsonLd,
   buildWebSiteJsonLd,
   summarizeText,
@@ -69,7 +70,11 @@ const pageDescription = summarizeText(
   "Andy Zou is a director and creative technologist creating comedy, branded content, and technical experiments across video, interactive media, and the web.",
 );
 const jsonLd = Astro.site
-  ? [buildWebSiteJsonLd(Astro.site), buildPersonJsonLd(Astro.site)]
+  ? [
+      buildWebSiteJsonLd(Astro.site),
+      buildPersonJsonLd(Astro.site),
+      buildOrganizationJsonLd(),
+    ]
   : [];
 ---
 
