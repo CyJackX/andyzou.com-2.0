@@ -6,6 +6,7 @@ const SUMMARY_SCROLL_CHASE_MS = 600;
 
 const pendingVideoHydration = new WeakMap<HTMLDetailsElement, number>();
 const activeSummaryChase = new WeakMap<HTMLDetailsElement, number>();
+const suppressNextHashSync = new WeakSet<HTMLDetailsElement>();
 
 function getHtmlDetailSections(): HTMLDetailsElement[] {
   return detailSections.filter(
@@ -51,6 +52,7 @@ function syncOpenDetailWithHash({
   const hasOpenDetail = htmlDetailSections.some((detail) => detail.open);
   if (hasOpenDetail) return;
 
+  suppressNextHashSync.add(htmlDetailSections[0]);
   htmlDetailSections[0].open = true;
   return htmlDetailSections[0];
 }
@@ -184,7 +186,11 @@ export function initIndexPage() {
       }
 
       scheduleDetailVideoHydration(detail);
-      syncHashToDetail(detail);
+      if (suppressNextHashSync.has(detail)) {
+        suppressNextHashSync.delete(detail);
+      } else {
+        syncHashToDetail(detail);
+      }
 
       const summary = detail.querySelector(":scope > summary");
       if (!(summary instanceof HTMLElement)) return;
