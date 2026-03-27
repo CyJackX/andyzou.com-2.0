@@ -1,5 +1,4 @@
 import {
-  SITE_AUTHOR_EMAIL,
   SITE_AUTHOR_NAME,
   SITE_DEFAULT_OG_IMAGE,
   SITE_DESCRIPTION,
@@ -64,7 +63,6 @@ export function buildPersonJsonLd(site: URL): JsonLd {
     "@context": "https://schema.org",
     "@type": "Person",
     name: SITE_AUTHOR_NAME,
-    email: SITE_AUTHOR_EMAIL,
     url: site.toString(),
     jobTitle: "Video Director and Creative Technologist",
     description: SITE_DESCRIPTION,
@@ -133,13 +131,11 @@ export function buildBlogPostingJsonLd(
     author: {
       "@type": "Person",
       name: SITE_AUTHOR_NAME,
-      email: SITE_AUTHOR_EMAIL,
       url: site.toString(),
     },
     publisher: {
       "@type": "Person",
       name: SITE_AUTHOR_NAME,
-      email: SITE_AUTHOR_EMAIL,
       url: site.toString(),
     },
     image,

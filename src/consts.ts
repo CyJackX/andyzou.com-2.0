@@ -2,7 +2,6 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export {
-  SITE_AUTHOR_EMAIL,
   SITE_AUTHOR_NAME,
   SITE_DEFAULT_OG_IMAGE,
   SITE_DESCRIPTION,

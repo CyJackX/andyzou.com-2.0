@@ -89,8 +89,7 @@ const jsonLd = Astro.site
       jsonLd={jsonLd}
     />
   </head>
-  <body
-    >
+  <body>
     <main class="text-center">
       <Header />
       <VideoLightbox tileSelector="[data-lightboxable='true']" />
@@ -113,11 +112,10 @@ const jsonLd = Astro.site
             ><h2 class="section-title subsection">Branded Content</h2></summary
           >
           <p class="copy">
-            After a decade of making digital content for publishers, brands, and
-            comedy platforms, Andy now channels that production experience into
-            nimble campaign and branded work through <a
+            Client work & more thru Andy's boutique production company <a
               href="https://www.instantmagenta.com"
-              class="underline">Instant Magenta.</a>
+              class="underline">Instant Magenta</a
+            >!
           </p>
           <ol class="tilescontainer">
             <WorkTilesBySeries seriesId="branded-content" deferMedia={true} />
@@ -132,8 +130,7 @@ const jsonLd = Astro.site
           >
           <p class="copy">
             An alum of Upright Citizen's Brigade and NYU's Hammerkatz, Andy has
-            worked closely with the local comedy scene for years as a go-to
-            director, DP, and editor.
+            been a go-to director, DP, and editor for the local comedy scene.
           </p>
           <ol class="tilescontainer">
             <WorkTilesBySeries seriesId="sketch" deferMedia={true} />
@@ -144,10 +141,6 @@ const jsonLd = Astro.site
           <summary
             ><h2 class="section-title subsection">Music Videos</h2></summary
           >
-          <p class="copy">
-            One of Andy's favorite mediums, he loves the creative freedom and
-            emotional resonance that comes from a great music video.
-          </p>
           <ol class="tilescontainer">
             <WorkTilesBySeries seriesId="music-videos" deferMedia={true} />
           </ol>
@@ -157,8 +150,8 @@ const jsonLd = Astro.site
             ><h2 class="section-title subsection">Fan Favorites</h2></summary
           >
           <p class="copy">
-            Just some classic Andy. These are what his friends bring up the
-            most.
+            Just some classic Andy. (These are what his friends bring up the
+            most.)
           </p>
           <ol class="tilescontainer">
             <li>
@@ -184,9 +177,9 @@ const jsonLd = Astro.site
       <details id="technology" name="director-subsection">
         <summary><h2 class="section-title subsection">Technology</h2></summary>
         <p class="copy">
-          From After Effects to VR, 3D engines, genAI, webdev, and
-          more, Andy has a wide range of technical skills that support his work
-          as a director and an editor.
+          From After Effects to VR, 3D engines, genAI, webdev, and more, Andy
+          has a wide range of technical skills that support his work as a
+          director and an editor.
         </p>
         <ol class="tilescontainer">
           <WorkTilesBySeries seriesId="tech" deferMedia={true} />
@@ -228,19 +221,18 @@ const jsonLd = Astro.site
       </details> -->
 
       <details id="about" name="director-subsection">
-        <summary
-          ><h2 class="section-title subsection">About</h2></summary
-        >
+        <summary><h2 class="section-title subsection">About & Contact</h2></summary>
         <p class="copy">
           With a background in Experimental Theatre & Computer Science, Andy has
           been hands-on as a director throughout his career. From creative
           writing to line producing, cinematography to editing, Andy's done it
-          all, going from a scrappy one-man band to directing for Comedy Central
-          Digital. His holistic production experience gives him the skills to
-          navigate complex productions and take projects smoothly from script to
-          screen. As a director, Andy's priority is tapping in to the audience
-          experience. When you need someone that knows how to make scrappiness
-          work at scale, reach out at Andy@AndyZou.com
+          all, transforming from a scrappy one-man band to directing & producing
+          at Comedy Central Digital & more. His holistic production experience
+          gives him the skills to navigate complex productions, foresee unique
+          hurdles, and take projects smoothly from script to screen. As a
+          creative, Andy's goal is always to tap into the audience experience
+          and find what resonates. Reach out at
+          <span id="about-email-link" data-email-container hidden></span>
         </p>
         <ol class="flex flex-wrap gap-8 items-start justify-center my-8">
           {
@@ -312,6 +304,37 @@ const jsonLd = Astro.site
       import { initIndexPage } from "../scripts/indexPage";
 
       initIndexPage();
+
+      const aboutSection = document.querySelector("#about");
+      const emailContainer = document.querySelector("[data-email-container]");
+
+      if (
+        aboutSection instanceof HTMLDetailsElement &&
+        emailContainer instanceof HTMLElement
+      ) {
+        const revealEmail = () => {
+          if (!aboutSection.open || emailContainer.childElementCount > 0) {
+            return;
+          }
+
+          const localPart = ["Andy", "@", "AndyZou"].join("");
+          const domain = ["com"].join("");
+          const email = `${localPart}.${domain}`;
+
+          emailContainer.hidden = false;
+          emailContainer.innerHTML = "";
+
+          const emailLink = document.createElement("a");
+          emailLink.href = `mailto:${email}`;
+          emailLink.className = "underline";
+          emailLink.textContent = email;
+
+          emailContainer.append(" ", emailLink, "!");
+        };
+
+        aboutSection.addEventListener("toggle", revealEmail);
+        revealEmail();
+      }
     </script>
   </body><Footer />
 
