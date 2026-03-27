@@ -3,156 +3,311 @@ const marqueeLabel = "Director producer editor creative technologist weirdo";
 ---
 
 <header class="header">
-  <h1 class="bigtitle"><a href="/">Andy Zou</a></h1>
-  <!-- <video
-    src="/videos/Comp 1.mp4"
-    muted
-    loop
-    autoplay
-    playsinline
-    class="md:h-[8cqw] w-full md:w-auto header-video"></video> -->
-  <a class="marquee" href="/" data-marquee aria-label={marqueeLabel}>
+  <h1 class="bigtitle w-full lg:hidden">
+    <a href="/" class="inline-block">Andy Zou</a>
+  </h1>
+  <div class="flex justify-between items-end w-full headertiles">
+    <video
+      src="/videos/Square 6.mp4"
+      muted
+      loop
+      autoplay
+      playsinline
+      class="header-tile"></video>
+    <video
+      src="/videos/Square 2A.mp4"
+      muted
+      loop
+      autoplay
+      playsinline
+      class="header-tile"></video>
+    <video
+      src="/videos/Square 4.mp4"
+      muted
+      loop
+      autoplay
+      playsinline
+      class="header-tile"></video>
+    <h1 class="bigtitle text-nowrap w-fit hidden lg:block">
+      <a href="/" class="inline-block">Andy Zou</a>
+    </h1>
+    <video
+      src="/videos/Square 3.mp4"
+      muted
+      loop
+      autoplay
+      playsinline
+      class="header-tile"></video>
+    <div
+      class="header-tile astronaut-tile"
+      data-floating-astronaut
+    >
+      <img
+        src="/Andy Astronaut small.png"
+        alt="Andy as an Astronaut"
+        class="astronaut-image"
+      />
+    </div>
+
+    <video
+      src="/videos/Square 1.mp4"
+      muted
+      loop
+      autoplay
+      playsinline
+      class="header-tile"></video>
+  </div>
+  <div class="marquee" data-marquee aria-label={marqueeLabel}>
     <div class="marquee__content">
       <div class="marquee__group">
-        <h1>Director</h1>
-        <h1>Producer</h1>
-        <h1>Editor</h1>
-        <h1>creative</h1>
-        <h1>technologist</h1>
-        <h1>weirdo</h1>
+        <h2>Director</h2>
+        <h2>creative</h2>
+        <h2>technologist</h2>
+        <h2>weirdo</h2>
       </div>
       <div class="marquee__copies" aria-hidden="true"></div>
     </div>
-  </a>
+  </div>
+
+  <script>
+    function setMarqueeContents(marquee) {
+      const group = marquee.querySelector(".marquee__group");
+      const copies = marquee.querySelector(".marquee__copies");
+
+      if (!group || !copies) {
+        return;
+      }
+
+      const groupWidth = group.getBoundingClientRect().width;
+
+      if (!groupWidth) {
+        return;
+      }
+
+      const numberOfCopies = Math.ceil(window.innerWidth / groupWidth) + 1;
+
+      marquee.style.setProperty("--trackWidth", `${groupWidth}`);
+      copies.replaceChildren();
+
+      for (let index = 0; index < numberOfCopies; index += 1) {
+        copies.appendChild(group.cloneNode(true));
+      }
+    }
+
+    function initMarquees() {
+      document.querySelectorAll("[data-marquee]").forEach(setMarqueeContents);
+    }
+
+    function initFloatingAstronaut() {
+      const astronaut = document.querySelector("[data-floating-astronaut]");
+      if (!(astronaut instanceof HTMLElement)) {
+        return;
+      }
+
+      const styles = window.getComputedStyle(astronaut);
+      const maxDriftX =
+        Number.parseFloat(styles.getPropertyValue("--astronaut-max-drift-x")) ||
+        5;
+      const maxDriftY =
+        Number.parseFloat(styles.getPropertyValue("--astronaut-max-drift-y")) ||
+        5;
+      const maxTilt =
+        Number.parseFloat(styles.getPropertyValue("--astronaut-max-tilt")) || 3;
+
+      astronaut.style.setProperty(
+        "--astronaut-float-duration",
+        `${7 + Math.random() * 4}s`,
+      );
+      astronaut.style.setProperty(
+        "--astronaut-float-delay",
+        `${-Math.random() * 6}s`,
+      );
+      astronaut.style.setProperty(
+        "--astronaut-drift-x",
+        `${((Math.random() * 2 - 1) * maxDriftX).toFixed(2)}px`,
+      );
+      astronaut.style.setProperty(
+        "--astronaut-drift-y",
+        `${((Math.random() * 2 - 1) * maxDriftY).toFixed(2)}px`,
+      );
+      astronaut.style.setProperty(
+        "--astronaut-tilt",
+        `${((Math.random() * 2 - 1) * maxTilt).toFixed(2)}deg`,
+      );
+    }
+
+    function handleMarqueeMediaLoad(event) {
+      const marquee = event.target.closest("[data-marquee]");
+
+      if (marquee) {
+        setMarqueeContents(marquee);
+      }
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initMarquees, {
+        once: true,
+      });
+      document.addEventListener("DOMContentLoaded", initFloatingAstronaut, {
+        once: true,
+      });
+    } else {
+      initMarquees();
+      initFloatingAstronaut();
+    }
+
+    window.addEventListener("resize", initMarquees);
+    document.addEventListener("loadedmetadata", handleMarqueeMediaLoad, true);
+    document.addEventListener("loadeddata", handleMarqueeMediaLoad, true);
+  </script>
+
+  <style>
+    .header-tile {
+      flex: 0 1 96px;
+      min-width: 0;
+      position: relative;
+      z-index: -1;
+    }
+    .header {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .headertiles {
+      border-bottom: 0.4rem rgb(var(--gray-light)) solid;
+    }
+
+    .marquee {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      overflow: hidden;
+      font-weight: bold;
+      border-bottom: 0.4rem rgb(var(--gray-light)) solid;
+      cursor: default;
+      --trackWidth: 100;
+      --animSpeed: 25;
+    }
+
+    .marquee__content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-shrink: 0;
+      width: max-content;
+
+      font-size: 0.75em;
+      animation: marquee-scroll
+        calc((var(--trackWidth) * 1s) / var(--animSpeed)) linear infinite;
+    }
+
+    .marquee__group,
+    .marquee__copies {
+      display: flex;
+      flex-direction: row;
+      align-items: end;
+      flex-shrink: 0;
+    }
+
+    .marquee__group h1,
+    h2 {
+      padding: 0 0.25em;
+    }
+
+    .marquee__group > *,
+    .marquee__copies > * {
+      flex-shrink: 0;
+    }
+
+    .marquee__group :is(h1, h2, h3, h4, h5, h6),
+    .marquee__copies :is(h1, h2, h3, h4, h5, h6) {
+      display: block;
+      margin: 0;
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+
+    .marquee__group video,
+    .marquee__copies video {
+      height: 4rem;
+      width: auto;
+      border-radius: 0.3rem;
+      object-fit: cover;
+    }
+
+    .astronaut-tile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: visible;
+      --astronaut-float-duration: 9s;
+      --astronaut-float-delay: -2s;
+      --astronaut-max-drift-x: 10;
+      --astronaut-max-drift-y: 10;
+      --astronaut-max-tilt: 30;
+      --astronaut-drift-x: 4px;
+      --astronaut-drift-y: 4px;
+      --astronaut-tilt: 2deg;
+    }
+
+    .astronaut-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      transform-origin: center;
+      animation: astronaut-float var(--astronaut-float-duration) ease-in-out
+        infinite;
+      animation-delay: var(--astronaut-float-delay);
+      will-change: transform;
+    }
+
+    @keyframes marquee-scroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(calc(-1px * var(--trackWidth)));
+      }
+    }
+
+    @keyframes astronaut-float {
+      0% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+      }
+
+      25% {
+        transform: translate3d(
+            calc(var(--astronaut-drift-x) * 0.65),
+            calc(var(--astronaut-drift-y) * 0.55),
+            0
+          )
+          rotate(calc(var(--astronaut-tilt) * 0.5));
+      }
+
+      50% {
+        transform: translate3d(
+            var(--astronaut-drift-x),
+            var(--astronaut-drift-y),
+            0
+          )
+          rotate(var(--astronaut-tilt));
+      }
+
+      75% {
+        transform: translate3d(
+            calc(var(--astronaut-drift-x) * -0.35),
+            calc(var(--astronaut-drift-y) * -0.45),
+            0
+          )
+          rotate(calc(var(--astronaut-tilt) * -0.35));
+      }
+
+      100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+      }
+    }
+  </style>
 </header>
-
-<script>
-  function setMarqueeContents(marquee) {
-    const group = marquee.querySelector(".marquee__group");
-    const copies = marquee.querySelector(".marquee__copies");
-
-    if (!group || !copies) {
-      return;
-    }
-
-    const groupWidth = group.getBoundingClientRect().width;
-
-    if (!groupWidth) {
-      return;
-    }
-
-    const numberOfCopies = Math.ceil(window.innerWidth / groupWidth) + 1;
-
-    marquee.style.setProperty("--trackWidth", `${groupWidth}`);
-    copies.replaceChildren();
-
-    for (let index = 0; index < numberOfCopies; index += 1) {
-      copies.appendChild(group.cloneNode(true));
-    }
-  }
-
-  function initMarquees() {
-    document.querySelectorAll("[data-marquee]").forEach(setMarqueeContents);
-  }
-
-  function handleMarqueeMediaLoad(event) {
-    const marquee = event.target.closest("[data-marquee]");
-
-    if (marquee) {
-      setMarqueeContents(marquee);
-    }
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initMarquees, { once: true });
-  } else {
-    initMarquees();
-  }
-
-  window.addEventListener("resize", initMarquees);
-  document.addEventListener("loadedmetadata", handleMarqueeMediaLoad, true);
-  document.addEventListener("loadeddata", handleMarqueeMediaLoad, true);
-</script>
-
-<style>
-  .header {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .subtitle {
-    font-size: 3cqw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: justify;
-    text-justify: inter-word;
-    text-align-last: justify;
-  }
-
-  .marquee {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    overflow: hidden;
-    font-weight: bold;
-    border-top: 0.4rem rgb(var(--gray-light)) solid;
-    border-bottom: 0.4rem rgb(var(--gray-light)) solid;
-    --trackWidth: 100;
-    --animSpeed: 50;
-  }
-
-  .marquee__content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-shrink: 0;
-    width: max-content;
-    animation: marquee-scroll calc((var(--trackWidth) * 1s) / var(--animSpeed))
-      linear infinite;
-  }
-
-  .marquee__group,
-  .marquee__copies {
-    display: flex;
-    flex-direction: row;
-    align-items: end;
-    flex-shrink: 0;
-    gap: 3rem;
-    padding-top: 0.1em; /* to center text*/
-  }
-
-  .marquee__group > *,
-  .marquee__copies > * {
-    flex-shrink: 0;
-  }
-
-  .marquee__group :is(h1, h2, h3, h4, h5, h6),
-  .marquee__copies :is(h1, h2, h3, h4, h5, h6) {
-    display: block;
-    margin: 0;
-    white-space: nowrap;
-    text-transform: uppercase;
-  }
-
-  .marquee__group video,
-  .marquee__copies video {
-    height: 4rem;
-    width: auto;
-    border-radius: 0.3rem;
-    object-fit: cover;
-  }
-
-  @keyframes marquee-scroll {
-    0% {
-      transform: translateX(0);
-    }
-
-    100% {
-      transform: translateX(calc(-1px * var(--trackWidth)));
-    }
-  }
-</style>
