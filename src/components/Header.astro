@@ -27,7 +27,7 @@ const marqueeLabel = "Director producer editor creative technologist weirdo";
       loop
       autoplay
       playsinline
-      class="header-tile"></video>
+      class="header-tile hidden sm:block"></video>
     <h1 class="bigtitle text-nowrap w-fit hidden lg:block">
       <a href="/" class="inline-block">Andy Zou</a>
     </h1>
@@ -39,7 +39,7 @@ const marqueeLabel = "Director producer editor creative technologist weirdo";
       playsinline
       class="header-tile"></video>
     <div
-      class="header-tile astronaut-tile"
+      class="header-tile astronaut-tile hidden md:block"
       data-floating-astronaut
     >
       <img
@@ -239,9 +239,6 @@ const marqueeLabel = "Director producer editor creative technologist weirdo";
     }
 
     .astronaut-tile {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       overflow: visible;
       --astronaut-float-duration: 9s;
       --astronaut-float-delay: -2s;
