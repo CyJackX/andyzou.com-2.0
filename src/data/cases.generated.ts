@@ -882,7 +882,6 @@ export const CASES: Case[] = [
     "roles": "Director | Producer | Editor",
     "youtubeId": "p0EQcb7oays",
     "href": "https://www.youtube.com/watch?v=p0EQcb7oays",
-    "seriesId": "death-becomes-her",
     "videoOrder": 6
   },
   {

@@ -1,49 +1,9 @@
----
-const marqueeText =
-  "Director producer editor creative technologist weirdo\u00A0";
----
 
 <header class="header">
-  <h1 class="bigtitle"><a href="/">Instant Magenta</a></h1>
+  <a href="/"
+    ><img src="InstantMagentaLogo white.png" alt="Instant Magenta Logo" /></a
+  >
 </header>
-
-<script>
-  function setMarqueeContents(marquee) {
-    const text = marquee.querySelector(".marquee__text");
-    const copies = marquee.querySelector(".marquee__copies");
-
-    if (!text || !copies) {
-      return;
-    }
-
-    const textWidth = text.getBoundingClientRect().width;
-
-    if (!textWidth) {
-      return;
-    }
-
-    const numberOfCopies = Math.ceil(window.innerWidth / textWidth) + 1;
-
-    marquee.style.setProperty("--textWidth", `${textWidth}`);
-    copies.replaceChildren();
-
-    for (let index = 0; index < numberOfCopies; index += 1) {
-      copies.appendChild(text.cloneNode(true));
-    }
-  }
-
-  function initMarquees() {
-    document.querySelectorAll("[data-marquee]").forEach(setMarqueeContents);
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initMarquees, { once: true });
-  } else {
-    initMarquees();
-  }
-
-  window.addEventListener("resize", initMarquees);
-</script>
 
 <style>
   .header {
@@ -70,7 +30,7 @@ const marqueeText =
     width: 100%;
     overflow: hidden;
     font-weight: bold;
-    border-top: .4rem rgb(var(--gray-light)) solid; 
+    border-top: 0.4rem rgb(var(--gray-light)) solid;
     border-bottom: 0.4rem rgb(var(--gray-light)) solid;
     --textWidth: 100px;
     --animSpeed: 50;
