@@ -13,6 +13,7 @@ const marqueeLabel = "Director producer editor creative technologist weirdo";
       loop
       autoplay
       playsinline
+      preload="auto"
       class="header-tile"></video>
     <video
       src="/videos/Square 2A.mp4"
@@ -20,6 +21,7 @@ const marqueeLabel = "Director producer editor creative technologist weirdo";
       loop
       autoplay
       playsinline
+      preload="auto"
       class="header-tile"></video>
     <video
       src="/videos/Square 4.mp4"
@@ -27,6 +29,7 @@ const marqueeLabel = "Director producer editor creative technologist weirdo";
       loop
       autoplay
       playsinline
+      preload="auto"
       class="header-tile hidden sm:block"></video>
     <h1 class="bigtitle text-nowrap w-fit hidden lg:block">
       <a href="/" class="inline-block">Andy Zou</a>
@@ -37,6 +40,7 @@ const marqueeLabel = "Director producer editor creative technologist weirdo";
       loop
       autoplay
       playsinline
+      preload="auto"
       class="header-tile"></video>
     <div
       class="header-tile astronaut-tile hidden md:block"
@@ -45,6 +49,9 @@ const marqueeLabel = "Director producer editor creative technologist weirdo";
       <img
         src="/Andy Astronaut small.png"
         alt="Andy as an Astronaut"
+        loading="eager"
+        fetchpriority="high"
+        decoding="sync"
         class="astronaut-image"
       />
     </div>
@@ -55,6 +62,7 @@ const marqueeLabel = "Director producer editor creative technologist weirdo";
       loop
       autoplay
       playsinline
+      preload="auto"
       class="header-tile"></video>
   </div>
   <div class="marquee" data-marquee aria-label={marqueeLabel}>

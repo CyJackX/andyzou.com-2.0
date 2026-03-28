@@ -84,6 +84,13 @@ function hydrateDetailVideoSources(detail: HTMLDetailsElement) {
   videos.forEach((video) => {
     if (!(video instanceof HTMLVideoElement)) return;
 
+    if (!video.poster) {
+      const poster = video.dataset.poster;
+      if (poster) {
+        video.poster = poster;
+      }
+    }
+
     if (!video.currentSrc) {
       const src = video.dataset.src;
       if (!src) return;
@@ -220,7 +227,7 @@ export function initIndexPage() {
 
   const initiallyOpenedDetail = syncOpenDetailWithHash({
     htmlDetailSections,
-    allowFallback: initialHashTarget ? true : false,
+    allowFallback: true,
   });
   const suppressInitialSummaryChase = !initialHashTarget
     ? initiallyOpenedDetail

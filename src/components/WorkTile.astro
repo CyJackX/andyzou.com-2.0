@@ -79,11 +79,12 @@ const defaultAriaLabelBase =
       <video
         class="media"
         data-src={media.src}
+        poster={deferMedia ? undefined : media.poster}
+        data-poster={deferMedia ? media.poster : undefined}
         autoplay
         loop
         muted
         playsinline
-        poster={media.poster}
         preload="none"
       />
     )
