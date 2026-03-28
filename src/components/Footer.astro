@@ -3,7 +3,7 @@ const today = new Date();
 ---
 
 <footer>
-  &copy; {today.getFullYear()} Andy Zou. All rights reserved.
+  
   <div class="social-links">
     <a
       href="https://twitter.com/yoAndyZou"
@@ -131,14 +131,15 @@ const today = new Date();
       <img
         src="/InstantMagentaLogo white.png"
         alt="Instant Magenta Logo"
-        class="h-[4rem]"
+        class="h-[3.5rem]"
       />
     </a>
   </div>
+  &copy; {today.getFullYear()} Andy Zou. All rights reserved.
 </footer>
 <style>
   footer {
-    margin: 2em 1em 6em 1em;
+    margin: 2em 1em 4em 1em;
     /* background: linear-gradient(var(--gray-gradient)) no-repeat; */
     color: rgb(var(--light-gray));
     text-align: center;
@@ -147,12 +148,12 @@ const today = new Date();
     display: flex;
     justify-content: center;
     gap: 1em;
-    margin-top: 1em;
+    margin: 1em 0;
   }
 
   .social-links svg {
-    width: 4rem;
-    height: 4rem;
+    width: 3.5rem;
+    height: 3.5rem;
   }
 
   .social-links a:hover {
