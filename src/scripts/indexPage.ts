@@ -1,8 +1,16 @@
+// Homepage section behavior:
+// - Hash navigation opens the matching section immediately.
+// - With no hash, the first section auto-opens as the default state.
+// - That default auto-open should keep the URL clean until a section is explicitly chosen.
+// - The default auto-open waits for deferred videos in the first section to load,
+//   with a timeout fallback so the page does not stay collapsed indefinitely.
+// - Once a section is opened, its deferred media hydrates and video playback resumes.
 const detailSections = Array.from(document.querySelectorAll("details"));
 const SUMMARY_SCROLL_TOP_OFFSET_PX = 10;
 const SUMMARY_SCROLL_EASE = 0.1;
 const SUMMARY_SCROLL_SETTLE_PX = 1;
 const SUMMARY_SCROLL_CHASE_MS = 600;
+const DETAIL_VIDEO_PRELOAD_TIMEOUT_MS = 1000;
 
 const pendingVideoHydration = new WeakMap<HTMLDetailsElement, number>();
 const activeSummaryChase = new WeakMap<HTMLDetailsElement, number>();
@@ -52,14 +60,11 @@ function syncOpenDetailWithHash({
   const hasOpenDetail = htmlDetailSections.some((detail) => detail.open);
   if (hasOpenDetail) return;
 
-  suppressNextHashSync.add(htmlDetailSections[0]);
-  htmlDetailSections[0].open = true;
   return htmlDetailSections[0];
 }
 
-function hydrateDetailMedia(detail: HTMLDetailsElement) {
+function hydrateDetailImages(detail: HTMLDetailsElement) {
   const images = detail.querySelectorAll("img[data-src]");
-  const videos = detail.querySelectorAll("video[data-src]");
 
   images.forEach((image) => {
     if (!(image instanceof HTMLImageElement)) return;
@@ -71,12 +76,13 @@ function hydrateDetailMedia(detail: HTMLDetailsElement) {
       image.src = src;
     }
   });
+}
+
+function hydrateDetailVideoSources(detail: HTMLDetailsElement) {
+  const videos = detail.querySelectorAll("video[data-src]");
 
   videos.forEach((video) => {
     if (!(video instanceof HTMLVideoElement)) return;
-
-    const hiddenByClosedAncestor = video.closest("details:not([open])");
-    if (hiddenByClosedAncestor) return;
 
     if (!video.currentSrc) {
       const src = video.dataset.src;
@@ -85,9 +91,63 @@ function hydrateDetailMedia(detail: HTMLDetailsElement) {
       video.src = src;
       video.load();
     }
+  });
+}
+
+function hydrateDetailMedia(detail: HTMLDetailsElement) {
+  hydrateDetailImages(detail);
+  hydrateDetailVideoSources(detail);
+
+  const videos = detail.querySelectorAll("video[data-src]");
+
+  videos.forEach((video) => {
+    if (!(video instanceof HTMLVideoElement)) return;
+
+    const hiddenByClosedAncestor = video.closest("details:not([open])");
+    if (hiddenByClosedAncestor) return;
 
     void video.play().catch(() => {});
   });
+}
+
+function preloadDetailVideos(detail: HTMLDetailsElement): Promise<void> {
+  hydrateDetailVideoSources(detail);
+
+  const videos = Array.from(detail.querySelectorAll("video[data-src]")).filter(
+    (video): video is HTMLVideoElement => video instanceof HTMLVideoElement,
+  );
+
+  if (videos.length === 0) {
+    return Promise.resolve();
+  }
+
+  return Promise.all(
+    videos.map(
+      (video) =>
+        new Promise<void>((resolve) => {
+          if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+            resolve();
+            return;
+          }
+
+          const cleanup = () => {
+            window.clearTimeout(timeoutId);
+            video.removeEventListener("loadeddata", handleReady);
+            video.removeEventListener("error", handleReady);
+          };
+
+          const handleReady = () => {
+            cleanup();
+            resolve();
+          };
+
+          const timeoutId = window.setTimeout(handleReady, DETAIL_VIDEO_PRELOAD_TIMEOUT_MS);
+
+          video.addEventListener("loadeddata", handleReady, { once: true });
+          video.addEventListener("error", handleReady, { once: true });
+        }),
+    ),
+  ).then(() => undefined);
 }
 
 function scheduleDetailVideoHydration(detail: HTMLDetailsElement) {
@@ -156,14 +216,27 @@ function chaseSummary(detail: HTMLDetailsElement, summary: HTMLElement) {
 export function initIndexPage() {
   const htmlDetailSections = getHtmlDetailSections();
   const initialHashTarget = getHashTargetDetail(htmlDetailSections);
+  const hasInitiallyOpenDetail = htmlDetailSections.some((detail) => detail.open);
 
   const initiallyOpenedDetail = syncOpenDetailWithHash({
     htmlDetailSections,
-    allowFallback: true,
+    allowFallback: initialHashTarget ? true : false,
   });
   const suppressInitialSummaryChase = !initialHashTarget
     ? initiallyOpenedDetail
     : undefined;
+
+  if (!initialHashTarget && !hasInitiallyOpenDetail && initiallyOpenedDetail) {
+    suppressNextHashSync.add(initiallyOpenedDetail);
+    hydrateDetailImages(initiallyOpenedDetail);
+
+    void preloadDetailVideos(initiallyOpenedDetail).then(() => {
+      const hasSinceOpenedDetail = htmlDetailSections.some((detail) => detail.open);
+      if (hasSinceOpenedDetail || window.location.hash) return;
+
+      initiallyOpenedDetail.open = true;
+    });
+  }
 
   htmlDetailSections.forEach((detail) => {
     if (detail.open) {
