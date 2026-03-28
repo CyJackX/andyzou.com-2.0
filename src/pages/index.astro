@@ -90,7 +90,7 @@ const jsonLd = Astro.site
     />
   </head>
   <body>
-      <Header />
+    <Header />
     <main class="text-center">
       <VideoLightbox tileSelector="[data-lightboxable='true']" />
       <!-- <ol class="tilescontainer">
@@ -175,21 +175,26 @@ const jsonLd = Astro.site
       </details> -->
 
       <details id="technology" name="director-subsection">
-        <summary><h2 class="section-title subsection">Technologist</h2></summary>
+        <summary><h2 class="section-title subsection">Technologist</h2></summary
+        >
         <p class="copy">
           From After Effects to VR, 3D engines, genAI, webdev, and more, Andy
           has a wide range of technical skills that support his work as a
-          director and an editor.
+          director and an editor. Check out some devlogs below from his <a
+            href="https://www.youtube.com/@YoAndyZou"
+            target="_blank"
+            rel="me noopener noreferrer" class="underline">Youtube!</a
+          >
         </p>
         <ol class="tilescontainer">
           <WorkTilesBySeries seriesId="tech" deferMedia={true} />
         </ol>
-        <p class="copy">
-          He blogs occasionally about tech right <a
+        <!-- <p class="copy">
+          He vlogs and <a
             href="/blog"
             target="_blank"
-            class="underline">here!</a
-          >
+            class="underline">blogs</a
+          > occasionally about workflows and techscapades! (3 Latest posts below)
         </p>
         <ol class="tilescontainer">
           {
@@ -208,8 +213,9 @@ const jsonLd = Astro.site
               </li>
             ))
           }
-        </ol>
+        </ol> -->
       </details>
+      <h2 class="section-title subsection"><a href="/blog/" class="block">Blog</a></h2>
       <!-- 
       <details id="scripted-digital-series" name="director-subsection">
         <summary
@@ -221,15 +227,15 @@ const jsonLd = Astro.site
       </details> -->
 
       <details id="about" name="director-subsection">
-        <summary><h2 class="section-title subsection">About & Contact</h2></summary>
+        <summary
+          ><h2 class="section-title subsection">About & Contact</h2></summary
+        >
         <p class="copy">
           With a background in Experimental Theatre & Computer Science, Andy has
           been hands-on as a director throughout his career. From creative
           writing to line producing, cinematography to editing, Andy's done it
           all, transforming from a scrappy one-man band to directing & producing
-          at Comedy Central Digital & more. His holistic production experience
-          gives him the skills to navigate complex productions, foresee unique
-          hurdles, and take projects smoothly from script to screen. As a
+          at Comedy Central Digital & more. His holistic production experience enables him the perspective to navigate complex productions, foresee hurdles, and take projects smoothly from script to screen. As a
           creative, Andy's goal is always to tap into the audience experience
           and find what resonates. Reach out at
           <span id="about-email-link" data-email-container hidden></span>
