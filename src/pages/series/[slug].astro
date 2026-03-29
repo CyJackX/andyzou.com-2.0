@@ -7,7 +7,7 @@ import { SITE_TITLE } from "../../consts";
 import {
   getSeriesTiles,
   getSeriesHomeHref,
-  getSeriesIds,
+  getSeriesPageIds,
   getSeriesMeta,
   getSeriesTitle,
   hasSeries,
@@ -20,7 +20,7 @@ import {
 } from "../../lib/seo";
 
 export async function getStaticPaths() {
-  return getSeriesIds().map((seriesId) => ({
+  return getSeriesPageIds().map((seriesId) => ({
     params: { slug: seriesId },
   }));
 }

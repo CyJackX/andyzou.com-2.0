@@ -1,0 +1,44 @@
+---
+import WorkTile from "./WorkTile.astro";
+import { getSeriesHomeTileData } from "../lib/work";
+
+interface Props {
+  seriesId: string;
+  href?: string;
+  ariaLabel?: string;
+  className?: string;
+  target?: HTMLAnchorElement["target"];
+  deferMedia?: boolean;
+}
+
+const {
+  seriesId,
+  href: hrefOverride,
+  ariaLabel,
+  className,
+  target,
+  deferMedia,
+} = Astro.props;
+
+const tile = getSeriesHomeTileData(seriesId, hrefOverride);
+
+if (!tile) {
+  throw new Error(`WorkTileBySeriesID: unknown series id "${seriesId}".`);
+}
+---
+
+<WorkTile
+  id={tile.id}
+  type={tile.type}
+  title={tile.title}
+  subtitle={tile.subtitle}
+  roles={tile.roles}
+  copy={tile.copy}
+  media={tile.media}
+  href={tile.href}
+  vertical={tile.vertical === true}
+  ariaLabel={ariaLabel}
+  className={className}
+  target={target}
+  deferMedia={deferMedia}
+/>

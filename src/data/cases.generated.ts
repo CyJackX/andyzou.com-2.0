@@ -125,20 +125,6 @@ export const CASES: Case[] = [
     "vertical": true
   },
   {
-    "id": "death-becomes-her-series",
-    "media": {
-      "kind": "video",
-      "src": "/videos/dbh.mp4",
-      "poster": "/thumbposters/dbh.jpg"
-    },
-    "title": "Death Becomes Her",
-    "subtitle": "RPM",
-    "copy": "A series of BTS Social Promos for Broadway's Death Becomes Her.",
-    "href": "series/death-becomes-her",
-    "seriesId": "branded-content",
-    "videoOrder": 1
-  },
-  {
     "id": "garden-of-eden",
     "media": {
       "kind": "video",
@@ -924,96 +910,6 @@ export const CASES: Case[] = [
     "href": "https://www.youtube.com/watch?v=t3rLCM9LFfE",
     "seriesId": "music-videos",
     "videoOrder": 4
-  },
-  {
-    "id": "apocalypse-problems-series",
-    "media": {
-      "kind": "video",
-      "src": "/videos/apocalypse.mp4",
-      "poster": "/thumbposters/klRZB8Q87oY-hqdefault.jpg"
-    },
-    "title": "Apocalypse Problems",
-    "subtitle": "SpoiledNYC ft. Gianmarco Soresi & Megan Sass",
-    "roles": "Director | DP | Editor",
-    "copy": "A comedic webseries for SpoiledNYC.",
-    "href": "series/apocalypse-problems",
-    "seriesId": "series",
-    "videoOrder": 6
-  },
-  {
-    "id": "asian-afterlife-series",
-    "media": {
-      "kind": "video",
-      "src": "/videos/rizzle.mp4",
-      "poster": "/thumbposters/rizzle.jpg"
-    },
-    "title": "Andy's Asian Afterlife",
-    "subtitle": "Rizzle's Asian Comedy Fest",
-    "roles": "Creator",
-    "copy": "1000$ grand prize winner of Rizzle's Asian Comedy Fest.",
-    "href": "series/asian-afterlife",
-    "seriesId": "series",
-    "videoOrder": 4
-  },
-  {
-    "id": "comedy-central-series",
-    "media": {
-      "kind": "video",
-      "src": "/videos/comedycentral.mp4",
-      "poster": "/thumbposters/comedycentraloriginals.jpg"
-    },
-    "title": "Comedy Central Originals",
-    "roles": "Director | Producer | Writer | Editor",
-    "copy": "At Comedy Central's Webby-winning Digital team, Andy directed, wrote, & produced Mini-Mocks, music videos, and content collabs with notable influencers.",
-    "href": "series/comedy-central-originals",
-    "seriesId": "series",
-    "videoOrder": 1
-  },
-  {
-    "id": "honest-waitress-series",
-    "media": {
-      "kind": "video",
-      "src": "/videos/waitress.mp4",
-      "poster": "/thumbposters/0SX0n9FG_GY-hqdefault.jpg"
-    },
-    "title": "The Honest Waitress",
-    "subtitle": "PitTV",
-    "roles": "Director",
-    "copy": "A comedic webseries for PitTV.",
-    "href": "series/the-honest-waitress",
-    "seriesId": "series",
-    "videoOrder": 7
-  },
-  {
-    "id": "making-it-series",
-    "media": {
-      "kind": "video",
-      "src": "/videos/makingit.mp4",
-      "poster": "/thumbposters/makingit.jpg"
-    },
-    "title": "Making It",
-    "subtitle": "Snap Originals ft. Dave Mizzoni",
-    "roles": "Director | DP | Editor",
-    "copy": "A vertical series for Snapchat's Snap Originals.",
-    "href": "series/making-it",
-    "seriesId": "series",
-    "videoOrder": 2
-  },
-  {
-    "id": "securocam-series",
-    "media": {
-      "kind": "video",
-      "src": "/videos/securocam.mp4",
-      "poster": "/thumbposters/_SRIskz2JOY-hqdefault.jpg"
-    },
-    "title": "Securocam 3000",
-    "subtitle": "NYTVF & IFC Comedy Crib",
-    "roles": "Co-director | Co-writer | Editor",
-    "copy": "A short webseries featured at NYTVF and hosted on IFC's Comedy Crib!",
-    "youtubeId": "_SRIskz2JOY",
-    "href": "https://www.youtube.com/watch?v=_SRIskz2JOY",
-    "seriesId": "series",
-    "videoOrder": 5
   },
   {
     "id": "sqand",

@@ -11,7 +11,7 @@ export type WorkVideo = Case & {
 };
 
 export type WorkTileData = {
-  type: "video";
+  type: "video" | "series";
   id: string;
   title?: string;
   subtitle?: string;
@@ -35,8 +35,16 @@ const SERIES_IDS = Array.from(
   ),
 );
 
+const SERIES_PAGE_IDS = Object.keys(SERIES_META).filter((seriesId) =>
+  SERIES_IDS.includes(seriesId),
+);
+
 export function getSeriesIds(): string[] {
   return [...SERIES_IDS];
+}
+
+export function getSeriesPageIds(): string[] {
+  return [...SERIES_PAGE_IDS];
 }
 
 export function getVideoById(id: string): WorkVideo | undefined {
@@ -54,7 +62,17 @@ export function getVideosBySeries(seriesId: string): WorkVideo[] {
 }
 
 function getVideoHref(video: WorkVideo): string {
-  return video.sourceHref ?? video.href ?? `/video/${video.slug}/`;
+  const href = video.sourceHref ?? video.href ?? `/video/${video.slug}/`;
+
+  if (
+    /^(?:[a-z]+:)?\/\//i.test(href) ||
+    href.startsWith("/") ||
+    href.startsWith("#")
+  ) {
+    return href;
+  }
+
+  return `/${href.replace(/^\.?\//, "")}`;
 }
 
 function formatSeriesId(seriesId: string): string {
@@ -70,6 +88,10 @@ export function getSeriesMeta(seriesId: string): SeriesMeta | undefined {
   return SERIES_META[seriesId];
 }
 
+function getSeriesPageHref(seriesId: string): string {
+  return `/series/${seriesId}/`;
+}
+
 export function getSeriesHomeHref(seriesId: string): string {
   const homeSectionId = getSeriesMeta(seriesId)?.homeSectionId;
   return homeSectionId ? `/#${homeSectionId}` : "/";
@@ -77,6 +99,29 @@ export function getSeriesHomeHref(seriesId: string): string {
 
 export function getSeriesTitle(seriesId: string): string {
   return getSeriesMeta(seriesId)?.title ?? formatSeriesId(seriesId);
+}
+
+export function getSeriesHomeTileData(
+  seriesId: string,
+  hrefOverride?: string,
+): WorkTileData | undefined {
+  const seriesMeta = getSeriesMeta(seriesId);
+  const homeTile = seriesMeta?.homeTile;
+
+  if (!seriesMeta || !homeTile) {
+    return undefined;
+  }
+
+  return {
+    type: "series",
+    id: `${seriesId}-series`,
+    title: seriesMeta.title,
+    subtitle: homeTile.subtitle,
+    roles: homeTile.roles,
+    copy: homeTile.copy ?? seriesMeta.copy,
+    media: homeTile.media,
+    href: hrefOverride ?? getSeriesPageHref(seriesId),
+  };
 }
 
 export function getVideoTileData(
