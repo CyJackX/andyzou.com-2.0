@@ -28,6 +28,15 @@ const { title } = Astro.props;
     list-style: none;
     transition: background-color 0.3s ease;
   }
+
+  .summary-title::-webkit-details-marker {
+    display: none;
+  }
+
+  .summary-title::marker {
+    content: "";
+  }
+
   /* Only enable hover on hover-capable devices */
   @media (hover: hover) and (pointer: fine) {
     .summary-title:hover {

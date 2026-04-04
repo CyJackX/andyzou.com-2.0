@@ -66,6 +66,18 @@ const jsonLd = Astro.site
       imageAlt="Portrait of Andy Zou and family."
       jsonLd={jsonLd}
     />
+    <script is:inline>
+      const ua = navigator.userAgent;
+      const isIOSDevice =
+        /iPhone|iPad|iPod/i.test(ua) ||
+        (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+      const isDesktopSafari =
+        /Safari/i.test(ua) && !/Chrome|Chromium|Edg|OPR/i.test(ua);
+
+      if (isIOSDevice || isDesktopSafari) {
+        document.documentElement.classList.add("webkit-details-fallback");
+      }
+    </script>
   </head>
   <body>
     <Header />
@@ -347,6 +359,10 @@ const jsonLd = Astro.site
       overflow: hidden;
     }
 
+    :root.webkit-details-fallback details {
+      overflow: visible;
+    }
+
     details::after {
       position: absolute;
       content: "";
@@ -354,7 +370,7 @@ const jsonLd = Astro.site
       pointer-events: none;
     }
 
-    details::details-content {
+    :root:not(.webkit-details-fallback) details::details-content {
       block-size: 0;
       transition:
         block-size 0.5s,
@@ -362,13 +378,21 @@ const jsonLd = Astro.site
       transition-behavior: allow-discrete;
     }
 
-    details[open]::details-content,
-    details:open::details-content {
+    :root:not(.webkit-details-fallback) details[open]::details-content,
+    :root:not(.webkit-details-fallback) details:open::details-content {
       block-size: auto;
     }
 
     summary {
       list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::marker {
+      content: "";
     }
 
     .section-title:hover {
