@@ -92,6 +92,9 @@ const jsonLd = Astro.site
           <summary
             ><h2 class="section-title subsection">Scripted Series</h2></summary
           >
+          <p class="copy">
+            A collection of longer-form series and collaborations that Andy was proud of.
+          </p>
           <ol class="tilescontainer">
             <li class="list-none">
               <WorkTileBySeriesID
@@ -235,14 +238,8 @@ const jsonLd = Astro.site
           ><h2 class="section-title subsection">About & Contact</h2></summary
         >
         <p class="copy">
-          With a background in Experimental Theatre & Computer Science, Andy has
-          been hands-on as a director throughout his career. From creative
-          writing to line producing, cinematography to editing, Andy's done it
-          all, transforming from a scrappy one-man band to directing & producing
-          at Comedy Central Digital & more. His holistic production experience gives him the perspective to navigate complex productions, foresee hurdles, and take projects smoothly from script to screen. As a
-          creative, Andy's goal is always to tap into the audience experience
-          and find what resonates. Reach out at
-          <span id="about-email-link" data-email-container hidden></span>
+          With a unique background in Experimental Theatre and Computer Science, I’ve built a hands-on career working across every stage of production. From creative writing and line producing to cinematography and editing, I started as a scrappy one-man band and grew into directing and producing at Comedy Central Digital & more. I see myself as more than a creative—I’m a creative <i>problem-solver</i> who enjoys finding technical and logistical solutions to creative challenges. My holistic production experience gives me the perspective to navigate the complexities of modern, tech-forward projects and take ideas smoothly from script to screen. And ultimately, as a director, my main focus is on my audience and finding what will resonate on a human level. Reach out at
+          <span id="about-email-link" data-email-container hidden></span> to find out what we can make together!
         </p>
         <ol class="flex flex-wrap gap-8 items-start justify-center my-8">
           {
@@ -340,7 +337,7 @@ const jsonLd = Astro.site
           emailLink.className = "underline";
           emailLink.textContent = email;
 
-          emailContainer.append(" ", emailLink, "!");
+          emailContainer.append(" ", emailLink);
         };
 
         aboutSection.addEventListener("toggle", revealEmail);
