@@ -32,7 +32,7 @@ const jsonLd = Astro.site
       buildBlogPostingJsonLd(Astro.site, {
         title,
         description: pageDescription,
-        path: `/blog/${slug}/`,
+        path: `/blog/${slug}`,
         image: heroImage,
         imageAlt: heroImageAlt,
         publishedTime: pubDate,
@@ -41,8 +41,8 @@ const jsonLd = Astro.site
       }),
       buildBreadcrumbJsonLd(Astro.site, [
         { name: "Home", path: "/" },
-        { name: "Blog", path: "/blog/" },
-        { name: title, path: `/blog/${slug}/` },
+        { name: "Blog", path: "/blog" },
+        { name: title, path: `/blog/${slug}` },
       ]),
     ]
   : [];
@@ -55,6 +55,7 @@ const jsonLd = Astro.site
       description={pageDescription}
       image={heroImage}
       imageAlt={heroImageAlt}
+      canonical={`/blog/${slug}`}
       type="article"
       publishedTime={pubDate}
       modifiedTime={updatedDate}

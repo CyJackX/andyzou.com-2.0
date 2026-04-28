@@ -31,7 +31,7 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(canonical ?? Astro.url.pathname, Astro.site);
-const pageURL = new URL(Astro.url.pathname, Astro.site);
+const pageURL = canonicalURL;
 const socialImageURL = new URL(image, Astro.site);
 const jsonLdItems = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
 ---
