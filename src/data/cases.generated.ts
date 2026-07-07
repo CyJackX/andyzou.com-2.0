@@ -1184,9 +1184,9 @@ export const CASES: Case[] = [
     "media": {
       "kind": "image",
       "src": "/thumbposters/2z09RB3wsGk-hqdefault.jpg",
-      "alt": "The Honest Waitress: Euope thumbnail"
+      "alt": "The Honest Waitress: Europe thumbnail"
     },
-    "title": "The Honest Waitress: Euope",
+    "title": "The Honest Waitress: Europe",
     "subtitle": "PitTV ft. Leila Graham",
     "roles": "Director | Editor",
     "youtubeId": "2z09RB3wsGk",
@@ -1379,5 +1379,18 @@ export const CASES: Case[] = [
     "roles": "Co-Director | DP",
     "youtubeId": "zewomnLNxZA",
     "href": "https://www.youtube.com/watch?v=zewomnLNxZA"
+  },
+  {
+    "id": "zizilla-dev",
+    "media": {
+      "kind": "video",
+      "src": "/videos/zizilla dev.mp4",
+      "poster": "/thumbposters/GsHZVJB3NR0-hqdefault.jpg"
+    },
+    "title": "Turning My Kid into a Kaiju with ComfyUI",
+    "roles": "Co-Director | Editor | DP",
+    "copy": "Devlog of using AI Tools in Production",
+    "youtubeId": "GsHZVJB3NR0",
+    "href": "https://www.youtube.com/watch?v=GsHZVJB3NR0"
   }
 ];
