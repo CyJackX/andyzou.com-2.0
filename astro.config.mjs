@@ -10,7 +10,7 @@ import { SITE_URL } from "./site.config.js";
 // https://astro.build/config
 export default defineConfig({
 	site: SITE_URL,
-	trailingSlash: "never",
+	trailingSlash: "ignore",
 	build: {
 		format: "file",
 	},
